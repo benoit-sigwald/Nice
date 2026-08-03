@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Smooth 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Ultra-Slow 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -472,13 +472,13 @@
         }
 
         /* ==========================================================================
-           CONTINUOUS SMOOTH 3D Y-ROTATION & FULLSCREEN BLUE LASER FIREWORKS
+           ULTRA-SLOW 3D Y-ROTATION (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
            ========================================================================== */
         #savings-card {
             cursor: pointer;
             transform-origin: center center;
             transform-style: preserve-3d;
-            transition: transform 0.65s linear, border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 1.5s linear, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         #savings-card.exploding {
@@ -901,7 +901,7 @@
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
-                <!-- SPECIAL CONTINUOUS 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
+                <!-- SPECIAL ULTRA-SLOW 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
                     <div class="metric-val" id="savings-display">0,0 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
@@ -1305,7 +1305,7 @@
         }
 
         // ==========================================================================
-        // 7. SMOOTH CONTINUOUS 3D Y-AXIS SPINNING (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
+        // 7. ULTRA-SLOW MAJESTIC 3D Y-SPINNING (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
         // ==========================================================================
         let isSavingsAnimating = false;
 
@@ -1317,18 +1317,18 @@
             const display = document.getElementById('savings-display');
             
             card.classList.remove('exploding');
-            card.style.transition = 'transform 0.65s linear, border-color 0.4s ease, box-shadow 0.4s ease';
+            card.style.transition = 'transform 1.4s linear, border-color 0.4s ease, box-shadow 0.4s ease';
 
             const totalSteps = 15; // 0,0 M€ to 1,5 M€
             let currentStep = 0;
-            const stepDuration = 650; // Majestic smooth rotation speed (650ms per 360° turn)
+            const stepDuration = 1400; // Very slow, majestic rotation speed (1.4 seconds per 360° turn)
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
                     const valueInMillions = (currentStep * 0.1).toFixed(1).replace('.', ',');
                     display.innerText = `${valueInMillions} M€`;
 
-                    // Rotate Card continuously around vertical Y axis
+                    // Rotate Card continuously around vertical Y axis slowly
                     const rotationDeg = currentStep * 360;
                     card.style.transform = `rotateY(${rotationDeg}deg)`;
 
@@ -1354,7 +1354,7 @@
                         card.style.transform = 'rotateY(0deg)';
                         card.classList.remove('exploding');
                         isSavingsAnimating = false;
-                    }, 3200);
+                    }, 3500);
                 }
             }
 
