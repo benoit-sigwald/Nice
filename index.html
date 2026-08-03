@@ -18,7 +18,7 @@
             --bg-charcoal: #16130F;
             --bg-card: rgba(255, 255, 255, 0.025);
             --border-color: #26221D;
-            --border-highlight: rgba(216, 185, 138, 0.3);
+            --border-highlight: rgba(216, 185, 138, 0.35);
             
             --text-bone: #F7F4EF;
             --text-bone-muted: #A39E93;
@@ -135,28 +135,37 @@
             padding: 0 24px;
         }
 
-        /* Header Navigation */
+        /* ==========================================================================
+           ULTRA-LUXURY FLOATING GLASSMORPHIC NAVIGATION BAR (VOLUTIONS STYLE)
+           ========================================================================== */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            backdrop-filter: blur(12px);
-            background: rgba(18, 16, 14, 0.85);
-            border-bottom: 1px solid var(--border-color);
+            top: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 32px);
+            max-width: 1150px;
+            z-index: 100;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        nav {
+        .nav-pill {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px;
+            height: 64px;
+            padding: 0 24px;
+            border-radius: 9999px;
+            background: rgba(22, 19, 15, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(216, 185, 138, 0.22);
+            box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.7), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
         }
 
         .logo {
             font-family: var(--font-serif);
-            font-size: 1.35rem;
+            font-size: 1.3rem;
             color: var(--text-bone);
             text-decoration: none;
             letter-spacing: -0.01em;
@@ -165,34 +174,62 @@
             gap: 10px;
         }
 
-        .logo-badge {
-            font-family: var(--font-sans);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            background: var(--accent-champagne-light);
-            color: var(--accent-champagne);
-            padding: 2px 8px;
-            border-radius: 4px;
-            border: 1px solid rgba(216, 185, 138, 0.2);
+        .logo-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent-champagne);
+            box-shadow: 0 0 10px var(--accent-champagne);
+            display: inline-block;
         }
 
-        .nav-links {
+        .logo-badge {
+            font-family: var(--font-sans);
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: var(--accent-champagne-light);
+            color: var(--accent-champagne);
+            padding: 3px 9px;
+            border-radius: 9999px;
+            border: 1px solid rgba(216, 185, 138, 0.3);
+        }
+
+        .nav-menu {
             display: flex;
             align-items: center;
-            gap: 32px;
+            gap: 8px;
             list-style: none;
         }
 
-        .nav-links a {
+        .nav-menu a {
             color: var(--text-bone-muted);
             text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 9999px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        .nav-links a:hover {
+        .nav-menu a:hover {
             color: var(--text-bone);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-menu a.active {
+            color: var(--accent-champagne);
+            background: rgba(216, 185, 138, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-champagne {
@@ -201,47 +238,112 @@
             gap: 8px;
             background-color: var(--accent-champagne);
             color: var(--bg-espresso);
-            font-size: 0.875rem;
+            font-size: 0.825rem;
             font-weight: 600;
-            padding: 10px 22px;
+            padding: 8px 18px;
             border-radius: 9999px;
             text-decoration: none;
             transition: all 0.2s ease;
             border: 1px solid var(--accent-champagne);
+            box-shadow: 0 4px 14px rgba(216, 185, 138, 0.25);
         }
 
         .btn-champagne:hover {
-            opacity: 0.9;
+            opacity: 0.92;
             transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(216, 185, 138, 0.4);
         }
 
         .btn-outline {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background-color: transparent;
+            gap: 6px;
+            background-color: rgba(255, 255, 255, 0.03);
             color: var(--text-bone);
-            font-size: 0.875rem;
+            font-size: 0.825rem;
             font-weight: 500;
-            padding: 10px 22px;
+            padding: 8px 16px;
             border-radius: 9999px;
             text-decoration: none;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             transition: all 0.2s ease;
         }
 
         .btn-outline:hover {
             border-color: var(--accent-champagne);
             color: var(--accent-champagne);
+            background: rgba(216, 185, 138, 0.06);
         }
 
-        /* Hero Section */
+        /* Mobile Hamburger Button */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            width: 36px;
+            height: 36px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border-radius: 50%;
+            transition: background 0.2s ease;
+        }
+
+        .mobile-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background-color: var(--text-bone);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-overlay {
+            display: none;
+            position: absolute;
+            top: 76px;
+            left: 0;
+            right: 0;
+            background: rgba(22, 19, 15, 0.95);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(216, 185, 138, 0.25);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .mobile-overlay a {
+            color: var(--text-bone-muted);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 12px 16px;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-overlay a:hover {
+            color: var(--accent-champagne);
+            background: rgba(216, 185, 138, 0.08);
+        }
+
+        /* Responsive Navbar Rules */
+        @media (max-width: 990px) {
+            .nav-menu { display: none; }
+            .mobile-toggle { display: flex; }
+            .mobile-overlay.open { display: flex; }
+        }
+
+        /* Hero Section Adjustment for Floating Navbar */
         .hero {
             position: relative;
             min-height: 92vh;
             display: flex;
             align-items: center;
-            padding-top: 120px;
+            padding-top: 150px;
             padding-bottom: 80px;
             border-bottom: 1px solid var(--border-color);
         }
@@ -554,17 +656,6 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-title { font-size: 2.8rem; }
-            .cyber-box { padding: 24px; }
-            .roi-calculator { padding: 24px; }
-            .timeline-item { padding-left: 60px; }
-            .timeline-badge { width: 44px; height: 44px; font-size: 0.95rem; }
-            .timeline::before { left: 22px; }
-        }
     </style>
 </head>
 <body>
@@ -572,30 +663,46 @@
     <!-- Ambient Noise Texture -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
-    <!-- Header Navigation -->
+    <!-- Floating Glassmorphic Header Navigation (Volutions.ai Aesthetics) -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">
-                    Nice <span class="font-serif italic text-champagne">IA 2026</span>
-                    <span class="logo-badge">Capitale IA</span>
+        <div class="nav-pill">
+            <a href="#" class="logo">
+                <span class="logo-dot"></span>
+                Nice <span class="font-serif italic text-champagne">IA 2026</span>
+                <span class="logo-badge">Capitale IA</span>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#axes">Axes Ville & Métropole</a></li>
+                <li><a href="#cyber">Bouclier Cyber</a></li>
+                <li><a href="#monaco">Alliance Monaco</a></li>
+                <li><a href="#roi">Simulateur ROI</a></li>
+                <li><a href="#feuille-de-route">Feuille de Route</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="https://github.com/benoit-sigwald/Nice" target="_blank" class="btn-outline">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    GitHub
                 </a>
-                <ul class="nav-links">
-                    <li><a href="#axes">Axes Villes & Métropole</a></li>
-                    <li><a href="#cyber">Bouclier Cyber</a></li>
-                    <li><a href="#monaco">Alliance Monaco</a></li>
-                    <li><a href="#roi">Calculateur ROI</a></li>
-                    <li><a href="#feuille-de-route">Feuille de Route</a></li>
-                </ul>
-                <div style="display: flex; gap: 12px; align-items: center;">
-                    <a href="https://github.com/benoit-sigwald/Nice" target="_blank" class="btn-outline">
-                        GitHub Nice
-                    </a>
-                    <a href="#cadrage" class="btn-champagne">
-                        Note pour le Maire
-                    </a>
-                </div>
-            </nav>
+                <a href="#cadrage" class="btn-champagne">
+                    Note pour le Maire
+                </a>
+                <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-overlay" id="mobileMenu">
+            <a href="#axes" onclick="toggleMobileMenu()">🏛️ Axes Ville & Métropole</a>
+            <a href="#cyber" onclick="toggleMobileMenu()">🛡️ Bouclier Cyber-IA</a>
+            <a href="#monaco" onclick="toggleMobileMenu()">🇲🇨 Alliance Extended Monaco</a>
+            <a href="#roi" onclick="toggleMobileMenu()">📊 Simulateur ROI Budgétaire</a>
+            <a href="#feuille-de-route" onclick="toggleMobileMenu()">📅 Feuille de Route 100j</a>
+            <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne);">📄 Note de Position Complète (.MD)</a>
         </div>
     </header>
 
@@ -927,6 +1034,10 @@
 
     <!-- Interactive Scripting -->
     <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
@@ -954,6 +1065,27 @@
             document.getElementById('roi-savings').innerText = savings + ' M€ / an';
             document.getElementById('roi-net').innerText = (net >= 0 ? '+' : '') + net + ' M€ / an';
         }
+
+        // Scroll Spy to highlight active nav link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const scrollY = window.pageYOffset;
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop - 120;
+                const sectionId = current.getAttribute('id');
+                const link = document.querySelector(`.nav-menu a[href*=${sectionId}]`);
+
+                if (link) {
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
