@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Sequential Infinite Looping Cards Engine) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Plaine du Var 3D Traffic Simulation) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -28,6 +28,7 @@
             --emerald-dark: #0A2F2B;
             --laser-blue: #00F0FF;
             --laser-blue-deep: #0066FF;
+            --jam-red: #EF4444;
 
             --font-serif: 'Fraunces', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -425,7 +426,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 28px 24px;
+            padding: 24px 20px;
             overflow: hidden;
             backdrop-filter: blur(10px);
             transform-style: preserve-3d;
@@ -463,9 +464,9 @@
 
         .metric-val {
             font-family: var(--font-serif);
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             color: var(--accent-champagne);
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             font-weight: 340;
             letter-spacing: -0.02em;
             display: flex;
@@ -474,14 +475,63 @@
         }
 
         .metric-label {
-            font-size: 0.875rem;
+            font-size: 0.825rem;
             color: var(--text-bone-muted);
             line-height: 1.45;
         }
 
-        /* ==========================================================================
-           0,25 M€ STEP 3D Y-ROTATION & FULLSCREEN BLUE LASER FIREWORKS
-           ========================================================================== */
+        /* PLAINE DU VAR 3D TRAFFIC REDUCTION SIMULATION WIDGET (CARD 3) */
+        .traffic-mini-visual {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 12px;
+            border: 1px solid rgba(216, 185, 138, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .traffic-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.8) contrast(1.1);
+            transition: filter 0.5s ease;
+        }
+
+        .traffic-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .traffic-badge {
+            position: absolute;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: rgba(22, 19, 15, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: var(--jam-red);
+            transition: all 0.5s ease;
+            text-align: center;
+        }
+
+        .traffic-badge.fluid {
+            border-color: rgba(16, 185, 129, 0.5);
+            color: var(--laser-blue);
+            box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
+        }
+
+        /* 3D Savings Card */
         #savings-card {
             cursor: pointer;
             transform-origin: center center;
@@ -916,7 +966,13 @@
                     <span class="replay-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
                 </div>
 
+                <!-- CARTE 3 : PLAINE DU VAR 3D TRAFFIC CONGESTION REDUCTION SIMULATION -->
                 <div class="metric-card spotlight-card" id="metric-card-3">
+                    <div class="traffic-mini-visual">
+                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-img" id="traffic-img">
+                        <canvas id="traffic-canvas" class="traffic-canvas"></canvas>
+                        <div class="traffic-badge" id="traffic-status-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
+                    </div>
                     <div class="metric-val"><span class="counter" id="counter-3" data-target="45000">0</span>+</div>
                     <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco</div>
                 </div>
@@ -1324,10 +1380,12 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : 45 000+ Flux Monaco ---
+                // --- CARTE 3 : 45 000+ Flux Monaco + SIMULATION 3D EMBOUTEILLAGES PLAINE DU VAR ---
                 card3.classList.add('active-sequence-card');
-                animateSingleCounter('counter-3', 45000, 2000, () => {
-                    setTimeout(() => runCardSequence(3), 1200);
+                runPlaineVarTrafficSimulation(() => {
+                    animateSingleCounter('counter-3', 45000, 2000, () => {
+                        setTimeout(() => runCardSequence(3), 1200);
+                    });
                 });
             } else if (cardIndex === 3) {
                 // --- CARTE 4 : 100 % Autofinancé ---
@@ -1362,7 +1420,88 @@
             requestAnimationFrame(update);
         }
 
-        // 7. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS
+        // ==========================================================================
+        // 7. CARTE 3 : ANIMATION 3D EMBOUTEILLAGES PLAINE DU VAR ➔ FLUIDIFICATION IA
+        // ==========================================================================
+        function runPlaineVarTrafficSimulation(onComplete) {
+            const badge = document.getElementById('traffic-status-badge');
+            const canvas = document.getElementById('traffic-canvas');
+            const miniVisual = canvas.parentElement;
+            
+            canvas.width = miniVisual.offsetWidth;
+            canvas.height = miniVisual.offsetHeight;
+            const ctx = canvas.getContext('2d');
+
+            badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
+            badge.classList.remove('fluid');
+
+            const particles = [];
+            const count = 35;
+
+            // Generate red jammed traffic particles along A8 corridor
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * (canvas.width * 0.7) + (canvas.width * 0.15),
+                    y: Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25),
+                    speed: Math.random() * 0.3 + 0.1, // Slow jammed speed
+                    color: '#EF4444',
+                    size: Math.random() * 3 + 2.5
+                });
+            }
+
+            let frame = 0;
+            let animId;
+
+            function animateTraffic() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                frame++;
+
+                if (frame === 60) {
+                    // Activate AI Regulation: Fluidification!
+                    badge.innerText = '⚡ Régulation IA : Trafic Fluidifié (-70% bouchons)';
+                    badge.classList.add('fluid');
+                }
+
+                particles.forEach(p => {
+                    if (frame >= 60) {
+                        // AI Fluid State: turn cyan/green & speed up!
+                        p.color = '#00F0FF';
+                        p.speed = Math.min(p.speed + 0.12, 3.5);
+                    }
+
+                    p.x += p.speed * 1.5;
+                    p.y -= p.speed * 0.4; // Diagonal movement along highway angle
+
+                    // Wrap around highway line
+                    if (p.x > canvas.width + 10) {
+                        p.x = -10;
+                        p.y = Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25);
+                    }
+
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = p.color;
+                    ctx.shadowBlur = frame >= 60 ? 10 : 4;
+                    ctx.shadowColor = p.color;
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                if (frame < 140) {
+                    animId = requestAnimationFrame(animateTraffic);
+                } else {
+                    cancelAnimationFrame(animId);
+                    if (onComplete) onComplete();
+                }
+            }
+
+            animateTraffic();
+        }
+
+        // ==========================================================================
+        // 8. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS
+        // ==========================================================================
         function triggerSavingsAnimation(onCompleteCallback) {
             const card = document.getElementById('savings-card');
             const display = document.getElementById('savings-display');
@@ -1372,7 +1511,7 @@
 
             const totalSteps = 6; // 0,00 M€ -> 0,25 M€ -> 0,50 M€ -> 0,75 M€ -> 1,00 M€ -> 1,25 M€ -> 1,5 M€
             let currentStep = 0;
-            const stepDuration = 1200; // Majestic rotation speed (1.2s per 360° turn)
+            const stepDuration = 1200;
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
@@ -1411,7 +1550,7 @@
             stepAnimation();
         }
 
-        // 8. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
+        // 9. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
         function launchFullscreenLaserFireworks(originX, originY) {
             const canvas = document.getElementById('fullscreen-fireworks-canvas');
             canvas.width = window.innerWidth;
@@ -1420,7 +1559,6 @@
             
             canvas.classList.add('active');
 
-            // Fullscreen Fireworks Particles
             const particles = [];
             const particleCount = 450;
             const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF', '#38BDF8'];
@@ -1441,7 +1579,6 @@
                 });
             }
 
-            // Fullscreen Electric Blue Laser Rays
             const laserRays = [];
             const rayCount = 32;
             for (let i = 0; i < rayCount; i++) {
@@ -1536,7 +1673,7 @@
             animateScene();
         }
 
-        // 9. Scroll Spy Navigation Highlight
+        // 10. Scroll Spy Navigation Highlight
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
