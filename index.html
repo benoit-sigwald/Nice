@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Plaine du Var 3D Traffic Simulation) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Enhanced Security & Plaine du Var 3D Simulations) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -439,6 +439,20 @@
             box-shadow: 0 0 35px rgba(216, 185, 138, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7) !important;
             transform: translateY(-5px) scale(1.02);
             background: rgba(255, 255, 255, 0.045);
+        }
+
+        /* Card 1 Mini Badge */
+        .security-tag {
+            font-size: 10px;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 6px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--accent-champagne);
+            border: 1px solid rgba(216, 185, 138, 0.3);
+            margin-bottom: 8px;
+            display: inline-block;
+            transition: all 0.3s ease;
         }
 
         /* Mouse Spotlight Glow */
@@ -954,12 +968,14 @@
 
             <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
+                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
+                    <span class="security-tag" id="security-tag">🛡️ IA CSU : Moins de risques, Plus de Sécurité</span>
                     <div class="metric-val"><span class="counter" id="counter-1" data-target="4300">0</span>+</div>
-                    <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
+                    <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par l'IA : <strong>Grâce à la VSA, c'est d'autant moins de risques d'agression et plus de sécurité au quotidien pour les Niçois.</strong></div>
                 </div>
 
-                <!-- SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
+                <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="runCardSequence(1)">
                     <div class="metric-val" id="savings-display">0,00 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
@@ -977,6 +993,7 @@
                     <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco</div>
                 </div>
 
+                <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
                 <div class="metric-card spotlight-card" id="metric-card-4">
                     <div class="metric-val"><span class="counter" id="counter-4" data-target="100">0</span> %</div>
                     <div class="metric-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
@@ -1366,10 +1383,13 @@
             const card2 = document.getElementById('savings-card');
             const card3 = document.getElementById('metric-card-3');
             const card4 = document.getElementById('metric-card-4');
+            const securityTag = document.getElementById('security-tag');
 
             if (cardIndex === 0) {
                 // --- CARTE 1 : 4 300+ Caméras ---
                 card1.classList.add('active-sequence-card');
+                securityTag.innerText = '🛡️ IA CSU : Moins de Risques (-65%), Plus de Sécurité (+85%)';
+                
                 animateSingleCounter('counter-1', 4300, 1800, () => {
                     setTimeout(() => runCardSequence(1), 1200);
                 });
@@ -1438,12 +1458,11 @@
             const particles = [];
             const count = 35;
 
-            // Generate red jammed traffic particles along A8 corridor
             for (let i = 0; i < count; i++) {
                 particles.push({
                     x: Math.random() * (canvas.width * 0.7) + (canvas.width * 0.15),
                     y: Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25),
-                    speed: Math.random() * 0.3 + 0.1, // Slow jammed speed
+                    speed: Math.random() * 0.3 + 0.1,
                     color: '#EF4444',
                     size: Math.random() * 3 + 2.5
                 });
@@ -1457,22 +1476,19 @@
                 frame++;
 
                 if (frame === 60) {
-                    // Activate AI Regulation: Fluidification!
                     badge.innerText = '⚡ Régulation IA : Trafic Fluidifié (-70% bouchons)';
                     badge.classList.add('fluid');
                 }
 
                 particles.forEach(p => {
                     if (frame >= 60) {
-                        // AI Fluid State: turn cyan/green & speed up!
                         p.color = '#00F0FF';
                         p.speed = Math.min(p.speed + 0.12, 3.5);
                     }
 
                     p.x += p.speed * 1.5;
-                    p.y -= p.speed * 0.4; // Diagonal movement along highway angle
+                    p.y -= p.speed * 0.4;
 
-                    // Wrap around highway line
                     if (p.x > canvas.width + 10) {
                         p.x = -10;
                         p.y = Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25);
