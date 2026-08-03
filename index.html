@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + 3D Y-Axis & Firework Effects) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + 3D Y-Axis & Laser Fireworks Effects) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -26,8 +26,8 @@
             --accent-champagne-light: rgba(216, 185, 138, 0.15);
             --emerald-glow: #0F766E;
             --emerald-dark: #0A2F2B;
-            --danger-red: #EF4444;
-            --success-green: #10B981;
+            --laser-blue: #00F0FF;
+            --laser-blue-deep: #0066FF;
 
             --font-serif: 'Fraunces', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -411,9 +411,9 @@
             border-radius: 18px;
             padding: 28px 24px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             backdrop-filter: blur(10px);
             transform-style: preserve-3d;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         /* Mouse Spotlight Glow */
@@ -456,22 +456,23 @@
         }
 
         /* ==========================================================================
-           3D Y-AXIS ROTATION & FIREWORKS EXPLOSION EFFECT ON THE 1,5M€ CARD
+           SLOW SLOW 3D Y-ROTATION (+0,1 M€/TURN) & SPECTACULAR BLUE LASER FIREWORKS
            ========================================================================== */
         #savings-card {
             cursor: pointer;
-            will-change: transform;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            transform-origin: center center;
         }
 
         #savings-card.exploding {
-            animation: burstFlash 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-            border-color: var(--accent-champagne) !important;
+            animation: laserBurstFlash 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            border-color: var(--laser-blue) !important;
         }
 
-        @keyframes burstFlash {
-            0% { transform: scale(1) rotateY(0deg); box-shadow: 0 0 0 rgba(216, 185, 138, 0); }
-            30% { transform: scale(1.08) rotateY(0deg); box-shadow: 0 0 60px rgba(216, 185, 138, 0.9), 0 0 100px rgba(15, 118, 110, 0.6); }
-            100% { transform: scale(1) rotateY(0deg); box-shadow: 0 10px 30px rgba(216, 185, 138, 0.25); }
+        @keyframes laserBurstFlash {
+            0% { transform: scale(1) rotateY(0deg); box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
+            20% { transform: scale(1.08) rotateY(0deg); box-shadow: 0 0 80px rgba(0, 240, 255, 0.95), 0 0 120px rgba(216, 185, 138, 0.8); }
+            100% { transform: scale(1) rotateY(0deg); box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3); }
         }
 
         #fireworks-canvas {
@@ -489,7 +490,7 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             color: var(--accent-champagne);
-            opacity: 0.7;
+            opacity: 0.75;
             margin-top: 6px;
             display: inline-block;
         }
@@ -890,12 +891,12 @@
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
-                <!-- SPECIAL 3D ROTATION & FIREWORKS CARD (1,5 M€) -->
+                <!-- SPECIAL SLOW 3D Y-ROTATION & BLUE LASER FIREWORKS CARD (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
                     <canvas id="fireworks-canvas"></canvas>
-                    <div class="metric-val" id="savings-display">0 €</div>
+                    <div class="metric-val" id="savings-display">0,0 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint">✨ Cliquer pour rejouer la rotation</span>
+                    <span class="replay-hint">✨ Cliquer pour lancer l'animation</span>
                 </div>
 
                 <div class="metric-card spotlight-card">
@@ -1295,7 +1296,7 @@
         }
 
         // ==========================================================================
-        // 7. EXCLUSIVE 3D VERTICAL Y-AXIS ROTATION (+100 000€ / turn) & FIREWORK EXPLOSION
+        // 7. EXCLUSIVE SLOW 3D Y-ROTATION (+0,1 M€ / turn) & SPECTACULAR BLUE LASER FIREWORKS
         // ==========================================================================
         let isSavingsAnimating = false;
 
@@ -1315,90 +1316,139 @@
 
             card.classList.remove('exploding');
 
-            let currentVal = 0;
-            const targetVal = 1500000; // 1,5 M€
-            const stepIncrement = 100000; // +100 000 € per turn
-            const totalSteps = targetVal / stepIncrement; // 15 turns/steps
+            const totalSteps = 15; // 0,0 M€ to 1,5 M€
             let currentStep = 0;
-            let currentRotationDeg = 0;
 
-            const rotationPerStep = 360; // Full 360° rotation on Y axis per 100 000 €
-            const stepDuration = 220; // Time in ms per 360° turn
+            const stepDuration = 650; // Slow, majestic rotation (650ms per 360° turn)
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
-                    currentVal = currentStep * stepIncrement;
-                    
-                    // Format display text dynamically
-                    if (currentVal >= 1000000) {
-                        const formatted = (currentVal / 1000000).toFixed(1).replace('.', ',');
-                        display.innerText = `${formatted} M€`;
-                    } else {
-                        display.innerText = `${currentVal.toLocaleString('fr-FR')} €`;
-                    }
+                    const valueInMillions = (currentStep * 0.1).toFixed(1).replace('.', ',');
+                    display.innerText = `${valueInMillions} M€`;
 
-                    // Rotate Card around vertical Y axis
-                    currentRotationDeg = currentStep * rotationPerStep;
-                    card.style.transform = `rotateY(${currentRotationDeg}deg)`;
+                    // Rotate Card around vertical Y axis slowly
+                    const rotationDeg = currentStep * 360;
+                    card.style.transform = `rotateY(${rotationDeg}deg)`;
 
                     currentStep++;
                     setTimeout(stepAnimation, stepDuration);
                 } else {
-                    // Final state: 1 500 000 € reached!
+                    // Final state: 1,5 M€ reached!
                     display.innerText = '1,5 M€';
                     card.style.transform = 'rotateY(0deg)';
                     card.classList.add('exploding');
 
-                    // Launch Firework Explosion!
-                    launchFireworks(canvas, ctx);
+                    // Launch Spectacular Fireworks with Blue Laser Rays!
+                    launchSpectacularLaserFireworks(canvas, ctx);
 
                     setTimeout(() => {
                         isSavingsAnimating = false;
-                    }, 1200);
+                    }, 2500);
                 }
             }
 
             stepAnimation();
         }
 
-        // 8. HTML5 Canvas Firework Explosion Particles System
-        function launchFireworks(canvas, ctx) {
-            const particles = [];
-            const particleCount = 120;
+        // 8. HTML5 Canvas Laser Rays + Fireworks Explosive Particle System
+        function launchSpectacularLaserFireworks(canvas, ctx) {
             const centerX = canvas.width / 2;
             const centerY = canvas.height / 2;
 
-            const colors = ['#D8B98A', '#F7F4EF', '#0F766E', '#10B981', '#FFD700', '#FFFFFF'];
+            // 1. Fireworks Particles
+            const particles = [];
+            const particleCount = 220;
+            const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF'];
 
             for (let i = 0; i < particleCount; i++) {
                 const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 8 + 3;
+                const speed = Math.random() * 11 + 3;
                 particles.push({
                     x: centerX,
                     y: centerY,
                     vx: Math.cos(angle) * speed,
                     vy: Math.sin(angle) * speed,
-                    radius: Math.random() * 3 + 1.5,
-                    color: colors[Math.floor(Math.random() * colors.length)],
+                    radius: Math.random() * 3.5 + 1.5,
+                    color: particleColors[Math.floor(Math.random() * particleColors.length)],
                     alpha: 1,
-                    decay: Math.random() * 0.02 + 0.015,
-                    gravity: 0.15
+                    decay: Math.random() * 0.018 + 0.008,
+                    gravity: 0.12
                 });
             }
 
+            // 2. Electric Blue Laser Rays
+            const laserRays = [];
+            const rayCount = 18;
+            for (let i = 0; i < rayCount; i++) {
+                laserRays.push({
+                    angle: (i / rayCount) * Math.PI * 2 + (Math.random() * 0.2),
+                    length: 0,
+                    maxLength: Math.max(canvas.width, canvas.height) * 1.2,
+                    speed: Math.random() * 14 + 10,
+                    width: Math.random() * 4 + 2,
+                    alpha: 1,
+                    color: i % 2 === 0 ? '#00F0FF' : '#0066FF'
+                });
+            }
+
+            // 3. Shockwave Ring
+            let shockwaveRadius = 0;
+            let shockwaveAlpha = 1;
+
             let animationFrameId;
-            function animateParticles() {
+            function animateScene() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                let aliveCount = 0;
+                // Draw Electric Blue Laser Rays
+                let activeRays = false;
+                laserRays.forEach(ray => {
+                    if (ray.alpha > 0) {
+                        activeRays = true;
+                        ray.length += ray.speed;
+                        ray.alpha -= 0.015;
+
+                        ctx.save();
+                        ctx.globalAlpha = Math.max(0, ray.alpha);
+                        ctx.beginPath();
+                        ctx.moveTo(centerX, centerY);
+                        const endX = centerX + Math.cos(ray.angle) * ray.length;
+                        const endY = centerY + Math.sin(ray.angle) * ray.length;
+                        ctx.lineTo(endX, endY);
+                        ctx.strokeStyle = ray.color;
+                        ctx.lineWidth = ray.width;
+                        ctx.shadowBlur = 15;
+                        ctx.shadowColor = '#00F0FF';
+                        ctx.stroke();
+                        ctx.restore();
+                    }
+                });
+
+                // Draw Expanding Shockwave
+                if (shockwaveAlpha > 0) {
+                    shockwaveRadius += 8;
+                    shockwaveAlpha -= 0.02;
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, shockwaveAlpha);
+                    ctx.beginPath();
+                    ctx.arc(centerX, centerY, shockwaveRadius, 0, Math.PI * 2);
+                    ctx.strokeStyle = '#00F0FF';
+                    ctx.lineWidth = 3;
+                    ctx.shadowBlur = 20;
+                    ctx.shadowColor = '#00F0FF';
+                    ctx.stroke();
+                    ctx.restore();
+                }
+
+                // Draw Fireworks Particles
+                let activeParticles = false;
                 particles.forEach(p => {
                     if (p.alpha > 0) {
-                        aliveCount++;
+                        activeParticles = true;
                         p.x += p.vx;
                         p.y += p.vy;
                         p.vy += p.gravity;
-                        p.vx *= 0.98;
-                        p.vy *= 0.98;
+                        p.vx *= 0.97;
+                        p.vy *= 0.97;
                         p.alpha -= p.decay;
 
                         ctx.save();
@@ -1406,22 +1456,22 @@
                         ctx.beginPath();
                         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                         ctx.fillStyle = p.color;
-                        ctx.shadowBlur = 10;
+                        ctx.shadowBlur = 12;
                         ctx.shadowColor = p.color;
                         ctx.fill();
                         ctx.restore();
                     }
                 });
 
-                if (aliveCount > 0) {
-                    animationFrameId = requestAnimationFrame(animateParticles);
+                if (activeRays || activeParticles || shockwaveAlpha > 0) {
+                    animationFrameId = requestAnimationFrame(animateScene);
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
                     cancelAnimationFrame(animationFrameId);
                 }
             }
 
-            animateParticles();
+            animateScene();
         }
 
         // 9. Scroll Spy Navigation Highlight
