@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + 0.25M€ Step 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Sequential Infinite Looping Cards Engine) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -429,7 +429,15 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             transform-style: preserve-3d;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        /* Active Card Sequence Highlight */
+        .metric-card.active-sequence-card {
+            border-color: var(--accent-champagne) !important;
+            box-shadow: 0 0 35px rgba(216, 185, 138, 0.4), 0 15px 35px rgba(0, 0, 0, 0.7) !important;
+            transform: translateY(-5px) scale(1.02);
+            background: rgba(255, 255, 255, 0.045);
         }
 
         /* Mouse Spotlight Glow */
@@ -896,25 +904,25 @@
 
             <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
-                <div class="metric-card spotlight-card">
-                    <div class="metric-val"><span class="counter" data-target="4300">0</span>+</div>
+                <div class="metric-card spotlight-card" id="metric-card-1">
+                    <div class="metric-val"><span class="counter" id="counter-1" data-target="4300">0</span>+</div>
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
                 <!-- SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
-                <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
+                <div class="metric-card spotlight-card" id="savings-card" onclick="runCardSequence(1)">
                     <div class="metric-val" id="savings-display">0,00 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint">✨ Cliquer pour lancer la rotation (+0,25 M€)</span>
+                    <span class="replay-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
                 </div>
 
-                <div class="metric-card spotlight-card">
-                    <div class="metric-val"><span class="counter" data-target="45000">0</span>+</div>
+                <div class="metric-card spotlight-card" id="metric-card-3">
+                    <div class="metric-val"><span class="counter" id="counter-3" data-target="45000">0</span>+</div>
                     <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco</div>
                 </div>
 
-                <div class="metric-card spotlight-card">
-                    <div class="metric-val"><span class="counter" data-target="100">0</span> %</div>
+                <div class="metric-card spotlight-card" id="metric-card-4">
+                    <div class="metric-val"><span class="counter" id="counter-4" data-target="100">0</span> %</div>
                     <div class="metric-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
                 </div>
             </div>
@@ -1258,14 +1266,16 @@
         });
 
         // 5. Scroll Reveal Intersection Observer
+        let sequenceStarted = false;
+
         const revealObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
 
-                    if (entry.target.querySelector('.counter') || entry.target.classList.contains('metrics-grid')) {
-                        startCountUp();
-                        triggerSavingsAnimation();
+                    if (!sequenceStarted && (entry.target.querySelector('.counter') || entry.target.classList.contains('metrics-grid'))) {
+                        sequenceStarted = true;
+                        startMasterSequence();
                     }
                 }
             });
@@ -1275,53 +1285,94 @@
             revealObserver.observe(element);
         });
 
-        // 6. Integer Counters Animation Engine
-        let animated = false;
-        function startCountUp() {
-            if (animated) return;
-            animated = true;
+        // ==========================================================================
+        // 6. MASTER INFINITE SEQUENTIAL ANIMATION ENGINE (CARDS 1 ➔ 2 ➔ 3 ➔ 4 ➔ LOOP)
+        // ==========================================================================
+        let isSequenceRunning = false;
 
-            document.querySelectorAll('.counter').forEach(counter => {
-                const target = +counter.getAttribute('data-target');
-                const duration = 2200;
-                const startTime = performance.now();
+        function startMasterSequence() {
+            if (isSequenceRunning) return;
+            isSequenceRunning = true;
+            runCardSequence(0);
+        }
 
-                function updateCount(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const easeProgress = 1 - (1 - progress) * (1 - progress);
-                    const currentVal = Math.floor(easeProgress * target);
-
-                    counter.innerText = currentVal.toLocaleString('fr-FR');
-
-                    if (progress < 1) {
-                        requestAnimationFrame(updateCount);
-                    } else {
-                        counter.innerText = target.toLocaleString('fr-FR');
-                    }
-                }
-                requestAnimationFrame(updateCount);
+        function clearAllCardHighlights() {
+            document.querySelectorAll('.metric-card').forEach(c => {
+                c.classList.remove('active-sequence-card');
+                c.style.borderColor = 'var(--border-color)';
             });
         }
 
-        // ==========================================================================
-        // 7. 0.25 M€ STEP 3D Y-SPINNING (+0,25 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
-        // ==========================================================================
-        let isSavingsAnimating = false;
+        function runCardSequence(cardIndex) {
+            clearAllCardHighlights();
 
-        function triggerSavingsAnimation() {
-            if (isSavingsAnimating) return;
-            isSavingsAnimating = true;
+            const card1 = document.getElementById('metric-card-1');
+            const card2 = document.getElementById('savings-card');
+            const card3 = document.getElementById('metric-card-3');
+            const card4 = document.getElementById('metric-card-4');
 
+            if (cardIndex === 0) {
+                // --- CARTE 1 : 4 300+ Caméras ---
+                card1.classList.add('active-sequence-card');
+                animateSingleCounter('counter-1', 4300, 1800, () => {
+                    setTimeout(() => runCardSequence(1), 1200);
+                });
+            } else if (cardIndex === 1) {
+                // --- CARTE 2 : 1,5 M€ + Rotation 3D + Feu d'artifice laser ---
+                card2.classList.add('active-sequence-card');
+                triggerSavingsAnimation(() => {
+                    setTimeout(() => runCardSequence(2), 1200);
+                });
+            } else if (cardIndex === 2) {
+                // --- CARTE 3 : 45 000+ Flux Monaco ---
+                card3.classList.add('active-sequence-card');
+                animateSingleCounter('counter-3', 45000, 2000, () => {
+                    setTimeout(() => runCardSequence(3), 1200);
+                });
+            } else if (cardIndex === 3) {
+                // --- CARTE 4 : 100 % Autofinancé ---
+                card4.classList.add('active-sequence-card');
+                animateSingleCounter('counter-4', 100, 1500, () => {
+                    // LOOP BACK TO CARTE 1 (index 0)!
+                    setTimeout(() => runCardSequence(0), 2000);
+                });
+            }
+        }
+
+        // Helper for Single Counter Animation
+        function animateSingleCounter(elementId, targetValue, duration, onComplete) {
+            const counter = document.getElementById(elementId);
+            const startTime = performance.now();
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = 1 - (1 - progress) * (1 - progress);
+                const currentVal = Math.floor(easeProgress * targetValue);
+
+                counter.innerText = currentVal.toLocaleString('fr-FR');
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = targetValue.toLocaleString('fr-FR');
+                    if (onComplete) onComplete();
+                }
+            }
+            requestAnimationFrame(update);
+        }
+
+        // 7. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS
+        function triggerSavingsAnimation(onCompleteCallback) {
             const card = document.getElementById('savings-card');
             const display = document.getElementById('savings-display');
             
             card.classList.remove('exploding');
             card.style.transition = 'transform 1.2s linear, border-color 0.4s ease, box-shadow 0.4s ease';
 
-            const totalSteps = 6; // 0,00 M€ -> 0,25 M€ -> 0,50 M€ -> 0,75 M€ -> 1,00 M€ -> 1,25 M€ -> 1,50 M€
+            const totalSteps = 6; // 0,00 M€ -> 0,25 M€ -> 0,50 M€ -> 0,75 M€ -> 1,00 M€ -> 1,25 M€ -> 1,5 M€
             let currentStep = 0;
-            const stepDuration = 1200; // Majestic rotation speed (1.2 seconds per 360° turn)
+            const stepDuration = 1200; // Majestic rotation speed (1.2s per 360° turn)
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
@@ -1329,7 +1380,6 @@
                     const valueInMillions = val === 1.5 ? '1,5 M€' : (val.toFixed(2).replace('.', ',') + ' M€');
                     display.innerText = valueInMillions;
 
-                    // Rotate Card continuously around vertical Y axis slowly
                     const rotationDeg = currentStep * 360;
                     card.style.transform = `rotateY(${rotationDeg}deg)`;
 
@@ -1349,13 +1399,12 @@
                     // Launch Fullscreen Blue Laser Fireworks Explosion!
                     launchFullscreenLaserFireworks(originX, originY);
 
-                    // Smoothly reset transition state back after full-screen explosion completes
                     setTimeout(() => {
                         card.style.transition = 'none';
                         card.style.transform = 'rotateY(0deg)';
                         card.classList.remove('exploding');
-                        isSavingsAnimating = false;
-                    }, 3500);
+                        if (onCompleteCallback) onCompleteCallback();
+                    }, 3400);
                 }
             }
 
@@ -1371,7 +1420,7 @@
             
             canvas.classList.add('active');
 
-            // 1. Fullscreen Fireworks Particles
+            // Fullscreen Fireworks Particles
             const particles = [];
             const particleCount = 450;
             const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF', '#38BDF8'];
@@ -1392,7 +1441,7 @@
                 });
             }
 
-            // 2. Fullscreen Electric Blue Laser Rays
+            // Fullscreen Electric Blue Laser Rays
             const laserRays = [];
             const rayCount = 32;
             for (let i = 0; i < rayCount; i++) {
@@ -1407,7 +1456,6 @@
                 });
             }
 
-            // 3. Shockwave Ring Expanding Across Screen
             let shockwaveRadius = 0;
             let shockwaveAlpha = 1;
 
@@ -1415,7 +1463,6 @@
             function animateScene() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw Electric Blue Laser Rays shooting out across screen
                 let activeRays = false;
                 laserRays.forEach(ray => {
                     if (ray.alpha > 0) {
@@ -1439,7 +1486,6 @@
                     }
                 });
 
-                // Draw Expanding Shockwave Ring across whole screen
                 if (shockwaveAlpha > 0) {
                     shockwaveRadius += 16;
                     shockwaveAlpha -= 0.015;
@@ -1455,7 +1501,6 @@
                     ctx.restore();
                 }
 
-                // Draw Fireworks Particles Bursting across screen
                 let activeParticles = false;
                 particles.forEach(p => {
                     if (p.alpha > 0) {
