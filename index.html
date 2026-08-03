@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Micro-Animations) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -59,7 +59,7 @@
             background-repeat: repeat;
         }
 
-        /* Volutions Ambient Radial Blur Lobes */
+        /* Volutions Breathing Ambient Lobes Animations */
         .ambient-lobes {
             position: absolute;
             inset: 0;
@@ -76,6 +76,7 @@
             background: radial-gradient(ellipse at center, var(--emerald-dark) 0%, transparent 65%);
             filter: blur(140px);
             opacity: 0.55;
+            animation: pulseLobeD 14s ease-in-out infinite alternate;
         }
 
         .lobe-a {
@@ -87,6 +88,7 @@
             background: radial-gradient(ellipse at center, var(--emerald-glow) 0%, transparent 65%);
             filter: blur(130px);
             opacity: 0.45;
+            animation: pulseLobeA 18s ease-in-out infinite alternate;
         }
 
         .lobe-c {
@@ -99,6 +101,22 @@
             filter: blur(90px);
             opacity: 0.22;
             mix-blend-mode: screen;
+            animation: floatLobeC 12s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulseLobeD {
+            0% { transform: scale(1) translateY(0); opacity: 0.45; }
+            100% { transform: scale(1.15) translateY(-20px); opacity: 0.65; }
+        }
+
+        @keyframes pulseLobeA {
+            0% { transform: scale(1) translateX(0); opacity: 0.35; }
+            100% { transform: scale(1.1) translateX(30px); opacity: 0.55; }
+        }
+
+        @keyframes floatLobeC {
+            0% { transform: translate(0, 0); opacity: 0.18; }
+            100% { transform: translate(40px, -20px); opacity: 0.32; }
         }
 
         /* Typography Utilities */
@@ -126,6 +144,12 @@
             padding: 4px 14px;
             border-radius: 9999px;
             margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .kicker:hover {
+            border-color: var(--accent-champagne);
+            box-shadow: 0 0 12px rgba(216, 185, 138, 0.2);
         }
 
         /* Layout Container */
@@ -135,9 +159,7 @@
             padding: 0 24px;
         }
 
-        /* ==========================================================================
-           ULTRA-LUXURY FLOATING GLASSMORPHIC NAVIGATION BAR (VOLUTIONS STYLE)
-           ========================================================================== */
+        /* Floating Navigation Header */
         header {
             position: fixed;
             top: 16px;
@@ -146,7 +168,7 @@
             width: calc(100% - 32px);
             max-width: 1150px;
             z-index: 100;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .nav-pill {
@@ -181,6 +203,12 @@
             background: var(--accent-champagne);
             box-shadow: 0 0 10px var(--accent-champagne);
             display: inline-block;
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { transform: scale(1); opacity: 0.8; box-shadow: 0 0 8px var(--accent-champagne); }
+            50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 16px var(--accent-champagne); }
         }
 
         .logo-badge {
@@ -199,7 +227,7 @@
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
             list-style: none;
         }
 
@@ -210,7 +238,7 @@
             font-weight: 500;
             padding: 8px 16px;
             border-radius: 9999px;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             align-items: center;
             gap: 6px;
@@ -218,12 +246,14 @@
 
         .nav-menu a:hover {
             color: var(--text-bone);
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
         }
 
         .nav-menu a.active {
             color: var(--accent-champagne);
-            background: rgba(216, 185, 138, 0.1);
+            background: rgba(216, 185, 138, 0.12);
+            border: 1px solid rgba(216, 185, 138, 0.2);
         }
 
         .nav-actions {
@@ -243,15 +273,15 @@
             padding: 8px 18px;
             border-radius: 9999px;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             border: 1px solid var(--accent-champagne);
             box-shadow: 0 4px 14px rgba(216, 185, 138, 0.25);
         }
 
         .btn-champagne:hover {
-            opacity: 0.92;
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(216, 185, 138, 0.4);
+            opacity: 0.94;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(216, 185, 138, 0.4);
         }
 
         .btn-outline {
@@ -266,16 +296,17 @@
             border-radius: 9999px;
             text-decoration: none;
             border: 1px solid rgba(255, 255, 255, 0.12);
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-outline:hover {
             border-color: var(--accent-champagne);
             color: var(--accent-champagne);
             background: rgba(216, 185, 138, 0.06);
+            transform: translateY(-1px);
         }
 
-        /* Mobile Hamburger Button */
+        /* Mobile Hamburger Toggle */
         .mobile-toggle {
             display: none;
             background: none;
@@ -330,14 +361,13 @@
             background: rgba(216, 185, 138, 0.08);
         }
 
-        /* Responsive Navbar Rules */
         @media (max-width: 990px) {
             .nav-menu { display: none; }
             .mobile-toggle { display: flex; }
             .mobile-overlay.open { display: flex; }
         }
 
-        /* Hero Section Adjustment for Floating Navbar */
+        /* Hero Section */
         .hero {
             position: relative;
             min-height: 92vh;
@@ -365,7 +395,9 @@
             margin-bottom: 40px;
         }
 
-        /* Metrics Bar */
+        /* ==========================================================================
+           INTERACTIVE SPOTLIGHT METRIC CARDS WITH COUNT-UP ANIMATION
+           ========================================================================== */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -374,29 +406,54 @@
         }
 
         .metric-card {
+            position: relative;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 24px;
-            transition: border-color 0.3s ease;
+            border-radius: 18px;
+            padding: 28px 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Mouse Spotlight Glow */
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 18px;
+            background: radial-gradient(400px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(216, 185, 138, 0.22), transparent 40%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .metric-card:hover::before {
+            opacity: 1;
         }
 
         .metric-card:hover {
-            border-color: var(--accent-champagne);
+            border-color: var(--border-highlight);
+            transform: translateY(-4px) scale(1.01);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(216, 185, 138, 0.1);
         }
 
         .metric-val {
             font-family: var(--font-serif);
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: var(--accent-champagne);
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             font-weight: 340;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: baseline;
+            gap: 2px;
         }
 
         .metric-label {
             font-size: 0.875rem;
             color: var(--text-bone-muted);
-            line-height: 1.4;
+            line-height: 1.45;
         }
 
         /* Section Styling */
@@ -435,15 +492,16 @@
             font-family: var(--font-serif);
             font-size: 1.35rem;
             cursor: pointer;
-            padding: 8px 16px;
-            border-radius: 8px;
-            transition: all 0.2s ease;
+            padding: 8px 18px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .tab-btn.active {
             color: var(--accent-champagne);
             background: rgba(216, 185, 138, 0.08);
-            border: 1px solid rgba(216, 185, 138, 0.2);
+            border: 1px solid rgba(216, 185, 138, 0.25);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .grid-cards {
@@ -452,35 +510,35 @@
             gap: 28px;
         }
 
+        /* Feature Card Spotlight Animation */
         .feature-card {
+            position: relative;
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 20px;
             padding: 36px;
-            position: relative;
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            border-color: var(--border-highlight);
-            transform: translateY(-2px);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .feature-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent-champagne), transparent);
+            inset: 0;
+            background: radial-gradient(500px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(15, 118, 110, 0.15), transparent 50%);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
         }
 
         .feature-card:hover::before {
             opacity: 1;
+        }
+
+        .feature-card:hover {
+            border-color: var(--border-highlight);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
         }
 
         .card-tag {
@@ -508,7 +566,6 @@
 
         .card-list {
             list-style: none;
-            space-y: 10px;
         }
 
         .card-list li {
@@ -526,9 +583,10 @@
             height: 6px;
             background: var(--accent-champagne);
             border-radius: 50%;
+            box-shadow: 0 0 6px var(--accent-champagne);
         }
 
-        /* Cyber Shield Box (Volutions Glowing Border) */
+        /* Cyber Shield Box Glowing Animated Border */
         .cyber-box {
             position: relative;
             border-radius: 24px;
@@ -537,6 +595,11 @@
                         linear-gradient(135deg, rgba(216, 185, 138, 0.4), rgba(15, 118, 110, 0.4)) border-box;
             border: 1px solid transparent;
             margin-top: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .cyber-box:hover {
+            box-shadow: 0 20px 50px -10px rgba(15, 118, 110, 0.25);
         }
 
         .cyber-grid {
@@ -551,6 +614,12 @@
             border: 1px solid var(--border-color);
             padding: 24px;
             border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .cyber-item:hover {
+            border-color: var(--accent-champagne);
+            transform: translateY(-2px);
         }
 
         /* Interactive ROI Simulator */
@@ -560,6 +629,11 @@
             border-radius: 24px;
             padding: 40px;
             margin-top: 40px;
+            transition: border-color 0.3s ease;
+        }
+
+        .roi-calculator:hover {
+            border-color: rgba(216, 185, 138, 0.3);
         }
 
         .slider-group {
@@ -580,15 +654,23 @@
             background: var(--border-color);
             outline: none;
             -webkit-appearance: none;
+            transition: background 0.3s ease;
         }
 
         .range-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             border-radius: 50%;
             background: var(--accent-champagne);
             cursor: pointer;
+            box-shadow: 0 0 12px rgba(216, 185, 138, 0.5);
+            transition: all 0.2s ease;
+        }
+
+        .range-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 20px rgba(216, 185, 138, 0.8);
         }
 
         .roi-results-box {
@@ -600,6 +682,7 @@
             border-radius: 16px;
             padding: 28px;
             margin-top: 32px;
+            transition: all 0.3s ease;
         }
 
         /* Timeline Roadmap */
@@ -639,6 +722,15 @@
             justify-content: center;
             font-family: var(--font-serif);
             font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(216, 185, 138, 0.15);
+        }
+
+        .timeline-item:hover .timeline-badge {
+            transform: scale(1.1);
+            background: var(--accent-champagne);
+            color: var(--bg-espresso);
+            box-shadow: 0 0 20px rgba(216, 185, 138, 0.5);
         }
 
         /* Footer */
@@ -656,6 +748,25 @@
             flex-wrap: wrap;
             gap: 20px;
         }
+
+        /* ==========================================================================
+           SCROLL REVEAL ANIMATIONS (STAGGERED FADE-UP)
+           ========================================================================== */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
     </style>
 </head>
 <body>
@@ -715,15 +826,19 @@
         </div>
 
         <div class="container" style="position: relative; z-index: 10;">
-            <span class="kicker">Plan Métropolitain d'IA Sécuritaire & Appliquée (2026-2029)</span>
-            <h1 class="hero-title">
+            <div class="reveal">
+                <span class="kicker">Plan Métropolitain d'IA Sécuritaire & Appliquée (2026-2029)</span>
+            </div>
+            
+            <h1 class="hero-title reveal reveal-delay-1">
                 Toutes les métropoles parlent d'IA. Nice la met en <em class="font-serif italic text-champagne">production.</em>
             </h1>
-            <p class="hero-subtitle">
+            
+            <p class="hero-subtitle reveal reveal-delay-2">
                 Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Sécurité augmentée au CSU, rigueur budgétaire (1,5 M€/an d'économies d'audit), alliance transfrontalière avec Monaco et autofinancement total.
             </p>
 
-            <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <div class="reveal reveal-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap;">
                 <a href="#axes" class="btn-champagne">
                     Découvrir le Plan d'Action
                 </a>
@@ -732,22 +847,25 @@
                 </a>
             </div>
 
-            <!-- Metrics Bar -->
-            <div class="metrics-grid">
-                <div class="metric-card">
-                    <div class="metric-val">4 300+</div>
+            <!-- Spotlight Interactive Metric Cards with Animated Count-Up -->
+            <div class="metrics-grid reveal reveal-delay-4">
+                <div class="metric-card spotlight-card">
+                    <div class="metric-val"><span class="counter" data-target="4300">0</span>+</div>
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-val">1,5 M€</div>
+
+                <div class="metric-card spotlight-card">
+                    <div class="metric-val"><span class="counter-decimal" data-target="1.5">0</span> M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-val">45 000+</div>
+
+                <div class="metric-card spotlight-card">
+                    <div class="metric-val"><span class="counter" data-target="45000">0</span>+</div>
                     <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco</div>
                 </div>
-                <div class="metric-card">
-                    <div class="metric-val">100 %</div>
+
+                <div class="metric-card spotlight-card">
+                    <div class="metric-val"><span class="counter" data-target="100">0</span> %</div>
                     <div class="metric-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
                 </div>
             </div>
@@ -757,22 +875,24 @@
     <!-- Section Axes Strategiques (Ville & Metropole) -->
     <section id="axes">
         <div class="container">
-            <span class="kicker">Double Échelle Institutionnelle</span>
-            <h2 class="section-title">Les 7 Engagements Ville & Métropole</h2>
-            <p class="section-desc">
-                Une articulation claire entre la proximité communale (sécurité, séniors, propreté) et l'échelle métropolitaine (audit budgétaire, cybersécurité, Monaco).
-            </p>
+            <div class="reveal">
+                <span class="kicker">Double Échelle Institutionnelle</span>
+                <h2 class="section-title">Les 7 Engagements Ville & Métropole</h2>
+                <p class="section-desc">
+                    Une articulation claire entre la proximité communale (sécurité, séniors, propreté) et l'échelle métropolitaine (audit budgétaire, cybersécurité, Monaco).
+                </p>
+            </div>
 
             <!-- Tabs Header -->
-            <div class="tabs-header">
+            <div class="tabs-header reveal reveal-delay-1">
                 <button class="tab-btn active" onclick="switchTab('ville')">🏛️ POLE VILLE DE NICE</button>
                 <button class="tab-btn" onclick="switchTab('metropole')">🏢 POLE MÉTROPOLE NCÀ</button>
             </div>
 
             <!-- Tab Content: Ville de Nice -->
-            <div id="tab-ville" class="tab-content">
+            <div id="tab-ville" class="tab-content reveal reveal-delay-2">
                 <div class="grid-cards">
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 1 — Sécurité & CSU</span>
                         <h3 class="card-h3">Vidéoprotection VSA & Police Municipale</h3>
                         <p class="card-p">
@@ -785,7 +905,7 @@
                         </ul>
                     </div>
 
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 2 — Usagers & Électeurs</span>
                         <h3 class="card-h3">« Allo Niçois Séniors IA »</h3>
                         <p class="card-p">
@@ -798,7 +918,7 @@
                         </ul>
                     </div>
 
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 3 — Cadre de Vie</span>
                         <h3 class="card-h3">Propreté Augmentée & Quartiers</h3>
                         <p class="card-p">
@@ -816,7 +936,7 @@
             <!-- Tab Content: Metropole -->
             <div id="tab-metropole" class="tab-content" style="display: none;">
                 <div class="grid-cards">
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 4 — Rigueur Budgétaire</span>
                         <h3 class="card-h3">Audit IA de la Commande Publique</h3>
                         <p class="card-p">
@@ -829,7 +949,7 @@
                         </ul>
                     </div>
 
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 5 — Mobilités Pendulaires</span>
                         <h3 class="card-h3">IA Régulation Trafic Nice-Monaco</h3>
                         <p class="card-p">
@@ -842,7 +962,7 @@
                         </ul>
                     </div>
 
-                    <div class="feature-card">
+                    <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 6 — Souveraineté & Monaco</span>
                         <h3 class="card-h3">Ville Franche IA & Monaco Cloud</h3>
                         <p class="card-p">
@@ -862,13 +982,15 @@
     <!-- Section Cybersécurité (Volutions Glowing Box Style) -->
     <section id="cyber">
         <div class="container">
-            <span class="kicker">Protection & Résilience Numérique</span>
-            <h2 class="section-title">Analyse des Risques Cyber & Bouclier IA</h2>
-            <p class="section-desc">
-                Les mairies sont devenues les cibles privilégiées des ransomwares. Nice déploie une défense souveraine active par l'IA.
-            </p>
+            <div class="reveal">
+                <span class="kicker">Protection & Résilience Numérique</span>
+                <h2 class="section-title">Analyse des Risques Cyber & Bouclier IA</h2>
+                <p class="section-desc">
+                    Les mairies sont devenues les cibles privilégiées des ransomwares. Nice déploie une défense souveraine active par l'IA.
+                </p>
+            </div>
 
-            <div class="cyber-box">
+            <div class="cyber-box reveal reveal-delay-1">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                     <div>
                         <span class="card-tag">Protocole Cyber-Shield 2026</span>
@@ -904,14 +1026,16 @@
     <!-- Section Alliance Monaco -->
     <section id="monaco">
         <div class="container">
-            <span class="kicker">Partenariat Transfrontalier Majeur</span>
-            <h2 class="section-title">L'Alliance Nice - Extended Monaco</h2>
-            <p class="section-desc">
-                Une synergie parfaite entre les fonds et le cloud souverain de la Principauté et l'échelle métropolitaine niçoise.
-            </p>
+            <div class="reveal">
+                <span class="kicker">Partenariat Transfrontalier Majeur</span>
+                <h2 class="section-title">L'Alliance Nice - Extended Monaco</h2>
+                <p class="section-desc">
+                    Une synergie parfaite entre les fonds et le cloud souverain de la Principauté et l'échelle métropolitaine niçoise.
+                </p>
+            </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;">
-                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;" class="reveal reveal-delay-1">
+                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
                     <span class="card-tag">Principauté de Monaco</span>
                     <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;">Capital & Cloud Souverain</h3>
                     <ul class="card-list">
@@ -922,7 +1046,7 @@
                     </ul>
                 </div>
 
-                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;">
+                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
                     <span class="card-tag">Métropole Nice Côte d'Azur</span>
                     <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;">Échelle, CSU & Recherche 3IA</h3>
                     <ul class="card-list">
@@ -939,13 +1063,15 @@
     <!-- Section Interactive ROI Calculator -->
     <section id="roi">
         <div class="container">
-            <span class="kicker">Rigueur & Autofinancement Certifié</span>
-            <h2 class="section-title">Simulateur de Gain Budgétaire</h2>
-            <p class="section-desc">
-                Ajustez le volume des achats de la Métropole pour visualiser l'impact direct de l'audit IA sur le budget public.
-            </p>
+            <div class="reveal">
+                <span class="kicker">Rigueur & Autofinancement Certifié</span>
+                <h2 class="section-title">Simulateur de Gain Budgétaire</h2>
+                <p class="section-desc">
+                    Ajustez le volume des achats de la Métropole pour visualiser l'impact direct de l'audit IA sur le budget public.
+                </p>
+            </div>
 
-            <div class="roi-calculator">
+            <div class="roi-calculator reveal reveal-delay-1">
                 <div class="slider-group">
                     <div class="slider-label">
                         <span>Volume annuel de la Commande Publique Audité :</span>
@@ -983,13 +1109,15 @@
     <!-- Section Timeline Feuille de Route -->
     <section id="feuille-de-route">
         <div class="container">
-            <span class="kicker">Execution Roadmap</span>
-            <h2 class="section-title">La Feuille de Route Commando</h2>
-            <p class="section-desc">
-                Des étapes datées et mesurables pour un déploiement sans délai.
-            </p>
+            <div class="reveal">
+                <span class="kicker">Execution Roadmap</span>
+                <h2 class="section-title">La Feuille de Route Commando</h2>
+                <p class="section-desc">
+                    Des étapes datées et mesurables pour un déploiement sans délai.
+                </p>
+            </div>
 
-            <div class="timeline">
+            <div class="timeline reveal reveal-delay-1">
                 <div class="timeline-item">
                     <div class="timeline-badge">100j</div>
                     <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;">100 Premiers Jours</h3>
@@ -1032,12 +1160,14 @@
         </div>
     </footer>
 
-    <!-- Interactive Scripting -->
+    <!-- Interactive Scripting & Dynamic Animations Engine -->
     <script>
+        // 1. Mobile Menu Toggle
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('open');
         }
 
+        // 2. Tabs Switcher
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
@@ -1051,6 +1181,7 @@
             }
         }
 
+        // 3. Interactive ROI Calculator
         function updateROI() {
             const volume = parseFloat(document.getElementById('volume-slider').value);
             const rate = parseFloat(document.getElementById('rate-slider').value);
@@ -1066,7 +1197,91 @@
             document.getElementById('roi-net').innerText = (net >= 0 ? '+' : '') + net + ' M€ / an';
         }
 
-        // Scroll Spy to highlight active nav link
+        // 4. Mouse Spotlight Tracking on Cards
+        document.querySelectorAll('.spotlight-card, .metric-card, .feature-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty('--mouse-x', `${x}px`);
+                card.style.setProperty('--mouse-y', `${y}px`);
+            });
+        });
+
+        // 5. Scroll Reveal Intersection Observer
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Trigger Animated Number Counter if metric section comes into view
+                    if (entry.target.querySelector('.counter') || entry.target.classList.contains('metrics-grid')) {
+                        startCountUp();
+                    }
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            revealObserver.observe(element);
+        });
+
+        // 6. Interactive Count-Up Animation Engine
+        let animated = false;
+        function startCountUp() {
+            if (animated) return;
+            animated = true;
+
+            // Integer counters
+            document.querySelectorAll('.counter').forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function updateCount(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    // Ease-out quad function
+                    const easeProgress = 1 - (1 - progress) * (1 - progress);
+                    const currentVal = Math.floor(easeProgress * target);
+
+                    // Format numbers with space thousand separator
+                    counter.innerText = currentVal.toLocaleString('fr-FR');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCount);
+                    } else {
+                        counter.innerText = target.toLocaleString('fr-FR');
+                    }
+                }
+                requestAnimationFrame(updateCount);
+            });
+
+            // Decimal counters (e.g. 1.5 M€)
+            document.querySelectorAll('.counter-decimal').forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const duration = 1800;
+                const startTime = performance.now();
+
+                function updateDecimal(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easeProgress = 1 - (1 - progress) * (1 - progress);
+                    const currentVal = (easeProgress * target).toFixed(1);
+
+                    counter.innerText = currentVal.replace('.', ',');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateDecimal);
+                    } else {
+                        counter.innerText = target.toString().replace('.', ',');
+                    }
+                }
+                requestAnimationFrame(updateDecimal);
+            });
+        }
+
+        // 7. Scroll Spy for Floating Header Navigation
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
