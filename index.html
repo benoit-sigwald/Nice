@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + 3D Y-Axis & Laser Fireworks Effects) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Full-Screen Laser Fireworks Effects) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -57,6 +57,22 @@
             opacity: 0.035;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
             background-repeat: repeat;
+        }
+
+        /* Full Screen Laser Fireworks Canvas Overlay */
+        #fullscreen-fireworks-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #fullscreen-fireworks-canvas.active {
+            opacity: 1;
         }
 
         /* Volutions Ambient Radial Blur Lobes */
@@ -456,7 +472,7 @@
         }
 
         /* ==========================================================================
-           SLOW SLOW 3D Y-ROTATION (+0,1 M€/TURN) & SPECTACULAR BLUE LASER FIREWORKS
+           SLOW 3D Y-ROTATION (+0,1 M€/TURN) & FULLSCREEN BLUE LASER FIREWORKS
            ========================================================================== */
         #savings-card {
             cursor: pointer;
@@ -471,18 +487,8 @@
 
         @keyframes laserBurstFlash {
             0% { transform: scale(1) rotateY(0deg); box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
-            20% { transform: scale(1.08) rotateY(0deg); box-shadow: 0 0 80px rgba(0, 240, 255, 0.95), 0 0 120px rgba(216, 185, 138, 0.8); }
+            20% { transform: scale(1.1) rotateY(0deg); box-shadow: 0 0 100px rgba(0, 240, 255, 0.95), 0 0 140px rgba(216, 185, 138, 0.8); }
             100% { transform: scale(1) rotateY(0deg); box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3); }
-        }
-
-        #fireworks-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 50;
-            border-radius: 18px;
         }
 
         .replay-hint {
@@ -811,6 +817,9 @@
     <!-- Ambient Noise Texture -->
     <div class="noise-overlay" aria-hidden="true"></div>
 
+    <!-- Fullscreen Laser Fireworks Canvas Overlay -->
+    <canvas id="fullscreen-fireworks-canvas"></canvas>
+
     <!-- Floating Glassmorphic Header Navigation (Volutions.ai Aesthetics) -->
     <header>
         <div class="nav-pill">
@@ -891,12 +900,11 @@
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
-                <!-- SPECIAL SLOW 3D Y-ROTATION & BLUE LASER FIREWORKS CARD (1,5 M€) -->
+                <!-- SPECIAL 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
-                    <canvas id="fireworks-canvas"></canvas>
                     <div class="metric-val" id="savings-display">0,0 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint">✨ Cliquer pour lancer l'animation</span>
+                    <span class="replay-hint">✨ Cliquer pour lancer la rotation & l'explosion</span>
                 </div>
 
                 <div class="metric-card spotlight-card">
@@ -1296,7 +1304,7 @@
         }
 
         // ==========================================================================
-        // 7. EXCLUSIVE SLOW 3D Y-ROTATION (+0,1 M€ / turn) & SPECTACULAR BLUE LASER FIREWORKS
+        // 7. SLOW 3D Y-ROTATION (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
         // ==========================================================================
         let isSavingsAnimating = false;
 
@@ -1306,19 +1314,11 @@
 
             const card = document.getElementById('savings-card');
             const display = document.getElementById('savings-display');
-            const canvas = document.getElementById('fireworks-canvas');
             
-            // Resize canvas to match card dimensions
-            canvas.width = card.offsetWidth;
-            canvas.height = card.offsetHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
             card.classList.remove('exploding');
 
             const totalSteps = 15; // 0,0 M€ to 1,5 M€
             let currentStep = 0;
-
             const stepDuration = 650; // Slow, majestic rotation (650ms per 360° turn)
 
             function stepAnimation() {
@@ -1338,60 +1338,71 @@
                     card.style.transform = 'rotateY(0deg)';
                     card.classList.add('exploding');
 
-                    // Launch Spectacular Fireworks with Blue Laser Rays!
-                    launchSpectacularLaserFireworks(canvas, ctx);
+                    // Compute Card Center Coordinates relative to Viewport
+                    const cardRect = card.getBoundingClientRect();
+                    const originX = cardRect.left + cardRect.width / 2;
+                    const originY = cardRect.top + cardRect.height / 2;
 
+                    // Launch Fullscreen Blue Laser Fireworks Explosion!
+                    launchFullscreenLaserFireworks(originX, originY);
+
+                    // Reset state after full-screen explosion completes
                     setTimeout(() => {
+                        card.classList.remove('exploding');
                         isSavingsAnimating = false;
-                    }, 2500);
+                    }, 3000);
                 }
             }
 
             stepAnimation();
         }
 
-        // 8. HTML5 Canvas Laser Rays + Fireworks Explosive Particle System
-        function launchSpectacularLaserFireworks(canvas, ctx) {
-            const centerX = canvas.width / 2;
-            const centerY = canvas.height / 2;
+        // 8. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
+        function launchFullscreenLaserFireworks(originX, originY) {
+            const canvas = document.getElementById('fullscreen-fireworks-canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            const ctx = canvas.getContext('2d');
+            
+            canvas.classList.add('active');
 
-            // 1. Fireworks Particles
+            // 1. Fullscreen Fireworks Particles
             const particles = [];
-            const particleCount = 220;
-            const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF'];
+            const particleCount = 450; // Massively increased for full-screen explosion
+            const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF', '#38BDF8'];
 
             for (let i = 0; i < particleCount; i++) {
                 const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 11 + 3;
+                const speed = Math.random() * 22 + 4; // High speed to reach full screen
                 particles.push({
-                    x: centerX,
-                    y: centerY,
+                    x: originX,
+                    y: originY,
                     vx: Math.cos(angle) * speed,
                     vy: Math.sin(angle) * speed,
-                    radius: Math.random() * 3.5 + 1.5,
+                    radius: Math.random() * 4.5 + 1.5,
                     color: particleColors[Math.floor(Math.random() * particleColors.length)],
                     alpha: 1,
-                    decay: Math.random() * 0.018 + 0.008,
-                    gravity: 0.12
+                    decay: Math.random() * 0.012 + 0.005,
+                    gravity: 0.08
                 });
             }
 
-            // 2. Electric Blue Laser Rays
+            // 2. Fullscreen Electric Blue Laser Rays
             const laserRays = [];
-            const rayCount = 18;
+            const rayCount = 32; // 32 laser beams shooting across the screen!
             for (let i = 0; i < rayCount; i++) {
                 laserRays.push({
-                    angle: (i / rayCount) * Math.PI * 2 + (Math.random() * 0.2),
+                    angle: (i / rayCount) * Math.PI * 2 + (Math.random() * 0.15),
                     length: 0,
-                    maxLength: Math.max(canvas.width, canvas.height) * 1.2,
-                    speed: Math.random() * 14 + 10,
-                    width: Math.random() * 4 + 2,
+                    maxLength: Math.max(window.innerWidth, window.innerHeight) * 1.5,
+                    speed: Math.random() * 28 + 18,
+                    width: Math.random() * 6 + 2,
                     alpha: 1,
-                    color: i % 2 === 0 ? '#00F0FF' : '#0066FF'
+                    color: i % 3 === 0 ? '#00F0FF' : (i % 3 === 1 ? '#0066FF' : '#38BDF8')
                 });
             }
 
-            // 3. Shockwave Ring
+            // 3. Shockwave Ring Expanding Across Screen
             let shockwaveRadius = 0;
             let shockwaveAlpha = 1;
 
@@ -1399,47 +1410,47 @@
             function animateScene() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw Electric Blue Laser Rays
+                // Draw Electric Blue Laser Rays shooting out across screen
                 let activeRays = false;
                 laserRays.forEach(ray => {
                     if (ray.alpha > 0) {
                         activeRays = true;
                         ray.length += ray.speed;
-                        ray.alpha -= 0.015;
+                        ray.alpha -= 0.012;
 
                         ctx.save();
                         ctx.globalAlpha = Math.max(0, ray.alpha);
                         ctx.beginPath();
-                        ctx.moveTo(centerX, centerY);
-                        const endX = centerX + Math.cos(ray.angle) * ray.length;
-                        const endY = centerY + Math.sin(ray.angle) * ray.length;
+                        ctx.moveTo(originX, originY);
+                        const endX = originX + Math.cos(ray.angle) * ray.length;
+                        const endY = originY + Math.sin(ray.angle) * ray.length;
                         ctx.lineTo(endX, endY);
                         ctx.strokeStyle = ray.color;
                         ctx.lineWidth = ray.width;
-                        ctx.shadowBlur = 15;
+                        ctx.shadowBlur = 25;
                         ctx.shadowColor = '#00F0FF';
                         ctx.stroke();
                         ctx.restore();
                     }
                 });
 
-                // Draw Expanding Shockwave
+                // Draw Expanding Shockwave Ring across whole screen
                 if (shockwaveAlpha > 0) {
-                    shockwaveRadius += 8;
-                    shockwaveAlpha -= 0.02;
+                    shockwaveRadius += 16;
+                    shockwaveAlpha -= 0.015;
                     ctx.save();
                     ctx.globalAlpha = Math.max(0, shockwaveAlpha);
                     ctx.beginPath();
-                    ctx.arc(centerX, centerY, shockwaveRadius, 0, Math.PI * 2);
+                    ctx.arc(originX, originY, shockwaveRadius, 0, Math.PI * 2);
                     ctx.strokeStyle = '#00F0FF';
-                    ctx.lineWidth = 3;
-                    ctx.shadowBlur = 20;
+                    ctx.lineWidth = 4;
+                    ctx.shadowBlur = 30;
                     ctx.shadowColor = '#00F0FF';
                     ctx.stroke();
                     ctx.restore();
                 }
 
-                // Draw Fireworks Particles
+                // Draw Fireworks Particles Bursting across screen
                 let activeParticles = false;
                 particles.forEach(p => {
                     if (p.alpha > 0) {
@@ -1447,8 +1458,8 @@
                         p.x += p.vx;
                         p.y += p.vy;
                         p.vy += p.gravity;
-                        p.vx *= 0.97;
-                        p.vy *= 0.97;
+                        p.vx *= 0.98;
+                        p.vy *= 0.98;
                         p.alpha -= p.decay;
 
                         ctx.save();
@@ -1456,7 +1467,7 @@
                         ctx.beginPath();
                         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
                         ctx.fillStyle = p.color;
-                        ctx.shadowBlur = 12;
+                        ctx.shadowBlur = 14;
                         ctx.shadowColor = p.color;
                         ctx.fill();
                         ctx.restore();
@@ -1467,6 +1478,7 @@
                     animationFrameId = requestAnimationFrame(animateScene);
                 } else {
                     ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    canvas.classList.remove('active');
                     cancelAnimationFrame(animationFrameId);
                 }
             }
