@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Ultra-Slow 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + 0.25M€ Step 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -472,13 +472,13 @@
         }
 
         /* ==========================================================================
-           ULTRA-SLOW 3D Y-ROTATION (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
+           0,25 M€ STEP 3D Y-ROTATION & FULLSCREEN BLUE LASER FIREWORKS
            ========================================================================== */
         #savings-card {
             cursor: pointer;
             transform-origin: center center;
             transform-style: preserve-3d;
-            transition: transform 1.5s linear, border-color 0.4s ease, box-shadow 0.4s ease;
+            transition: transform 1.2s linear, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         #savings-card.exploding {
@@ -901,11 +901,11 @@
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
-                <!-- SPECIAL ULTRA-SLOW 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
+                <!-- SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
-                    <div class="metric-val" id="savings-display">0,0 M€</div>
+                    <div class="metric-val" id="savings-display">0,00 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint">✨ Cliquer pour lancer la rotation & l'explosion</span>
+                    <span class="replay-hint">✨ Cliquer pour lancer la rotation (+0,25 M€)</span>
                 </div>
 
                 <div class="metric-card spotlight-card">
@@ -1305,7 +1305,7 @@
         }
 
         // ==========================================================================
-        // 7. ULTRA-SLOW MAJESTIC 3D Y-SPINNING (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
+        // 7. 0.25 M€ STEP 3D Y-SPINNING (+0,25 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
         // ==========================================================================
         let isSavingsAnimating = false;
 
@@ -1317,16 +1317,17 @@
             const display = document.getElementById('savings-display');
             
             card.classList.remove('exploding');
-            card.style.transition = 'transform 1.4s linear, border-color 0.4s ease, box-shadow 0.4s ease';
+            card.style.transition = 'transform 1.2s linear, border-color 0.4s ease, box-shadow 0.4s ease';
 
-            const totalSteps = 15; // 0,0 M€ to 1,5 M€
+            const totalSteps = 6; // 0,00 M€ -> 0,25 M€ -> 0,50 M€ -> 0,75 M€ -> 1,00 M€ -> 1,25 M€ -> 1,50 M€
             let currentStep = 0;
-            const stepDuration = 1400; // Very slow, majestic rotation speed (1.4 seconds per 360° turn)
+            const stepDuration = 1200; // Majestic rotation speed (1.2 seconds per 360° turn)
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
-                    const valueInMillions = (currentStep * 0.1).toFixed(1).replace('.', ',');
-                    display.innerText = `${valueInMillions} M€`;
+                    const val = currentStep * 0.25;
+                    const valueInMillions = val === 1.5 ? '1,5 M€' : (val.toFixed(2).replace('.', ',') + ' M€');
+                    display.innerText = valueInMillions;
 
                     // Rotate Card continuously around vertical Y axis slowly
                     const rotationDeg = currentStep * 360;
@@ -1337,7 +1338,7 @@
                 } else {
                     // Final state: 1,5 M€ reached!
                     display.innerText = '1,5 M€';
-                    card.style.transform = `rotateY(${15 * 360}deg)`;
+                    card.style.transform = `rotateY(${6 * 360}deg)`;
                     card.classList.add('exploding');
 
                     // Compute Card Center Coordinates relative to Viewport
