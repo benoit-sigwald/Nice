@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Full-Screen Laser Fireworks Effects) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Smooth 3D Spinning Y-Axis & Fullscreen Laser Fireworks) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -472,12 +472,13 @@
         }
 
         /* ==========================================================================
-           SLOW 3D Y-ROTATION (+0,1 M€/TURN) & FULLSCREEN BLUE LASER FIREWORKS
+           CONTINUOUS SMOOTH 3D Y-ROTATION & FULLSCREEN BLUE LASER FIREWORKS
            ========================================================================== */
         #savings-card {
             cursor: pointer;
-            transition: border-color 0.4s ease, box-shadow 0.4s ease;
             transform-origin: center center;
+            transform-style: preserve-3d;
+            transition: transform 0.65s linear, border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
         #savings-card.exploding {
@@ -900,7 +901,7 @@
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par VSA légale</div>
                 </div>
 
-                <!-- SPECIAL 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
+                <!-- SPECIAL CONTINUOUS 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS CARD (1,5 M€) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="triggerSavingsAnimation()">
                     <div class="metric-val" id="savings-display">0,0 M€</div>
                     <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
@@ -1304,7 +1305,7 @@
         }
 
         // ==========================================================================
-        // 7. SLOW 3D Y-ROTATION (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
+        // 7. SMOOTH CONTINUOUS 3D Y-AXIS SPINNING (+0,1 M€/turn) & FULLSCREEN BLUE LASER FIREWORKS
         // ==========================================================================
         let isSavingsAnimating = false;
 
@@ -1316,17 +1317,18 @@
             const display = document.getElementById('savings-display');
             
             card.classList.remove('exploding');
+            card.style.transition = 'transform 0.65s linear, border-color 0.4s ease, box-shadow 0.4s ease';
 
             const totalSteps = 15; // 0,0 M€ to 1,5 M€
             let currentStep = 0;
-            const stepDuration = 650; // Slow, majestic rotation (650ms per 360° turn)
+            const stepDuration = 650; // Majestic smooth rotation speed (650ms per 360° turn)
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
                     const valueInMillions = (currentStep * 0.1).toFixed(1).replace('.', ',');
                     display.innerText = `${valueInMillions} M€`;
 
-                    // Rotate Card around vertical Y axis slowly
+                    // Rotate Card continuously around vertical Y axis
                     const rotationDeg = currentStep * 360;
                     card.style.transform = `rotateY(${rotationDeg}deg)`;
 
@@ -1335,7 +1337,7 @@
                 } else {
                     // Final state: 1,5 M€ reached!
                     display.innerText = '1,5 M€';
-                    card.style.transform = 'rotateY(0deg)';
+                    card.style.transform = `rotateY(${15 * 360}deg)`;
                     card.classList.add('exploding');
 
                     // Compute Card Center Coordinates relative to Viewport
@@ -1346,11 +1348,13 @@
                     // Launch Fullscreen Blue Laser Fireworks Explosion!
                     launchFullscreenLaserFireworks(originX, originY);
 
-                    // Reset state after full-screen explosion completes
+                    // Smoothly reset transition state back after full-screen explosion completes
                     setTimeout(() => {
+                        card.style.transition = 'none';
+                        card.style.transform = 'rotateY(0deg)';
                         card.classList.remove('exploding');
                         isSavingsAnimating = false;
-                    }, 3000);
+                    }, 3200);
                 }
             }
 
@@ -1368,12 +1372,12 @@
 
             // 1. Fullscreen Fireworks Particles
             const particles = [];
-            const particleCount = 450; // Massively increased for full-screen explosion
+            const particleCount = 450;
             const particleColors = ['#D8B98A', '#F7F4EF', '#00F0FF', '#0077FF', '#10B981', '#FFD700', '#FFFFFF', '#38BDF8'];
 
             for (let i = 0; i < particleCount; i++) {
                 const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 22 + 4; // High speed to reach full screen
+                const speed = Math.random() * 22 + 4;
                 particles.push({
                     x: originX,
                     y: originY,
@@ -1389,7 +1393,7 @@
 
             // 2. Fullscreen Electric Blue Laser Rays
             const laserRays = [];
-            const rayCount = 32; // 32 laser beams shooting across the screen!
+            const rayCount = 32;
             for (let i = 0; i < rayCount; i++) {
                 laserRays.push({
                     angle: (i / rayCount) * Math.PI * 2 + (Math.random() * 0.15),
