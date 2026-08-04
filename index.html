@@ -883,26 +883,40 @@
             margin-bottom: 20px;
         }
 
+        /* ULTRA-CLEAN MONACO ALLIANCE BULLET LIST SYSTEM */
         .card-list {
             list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
         }
 
         .card-list li {
-            font-size: 0.875rem;
-            color: var(--text-bone);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
+            font-size: 0.9rem;
+            color: var(--text-bone-muted);
+            line-height: 1.55;
+            position: relative;
+            padding-left: 20px;
+            display: block;
         }
 
         .card-list li::before {
             content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
             width: 6px;
             height: 6px;
             background: var(--accent-champagne);
             border-radius: 50%;
             box-shadow: 0 0 6px var(--accent-champagne);
+        }
+
+        .card-list li strong {
+            color: var(--accent-champagne);
+            font-weight: 600;
         }
 
         /* Cyber Shield Box Glowing Animated Border */
@@ -1461,37 +1475,51 @@
         </div>
     </section>
 
-    <!-- Section Alliance Monaco -->
+    <!-- Section Alliance Monaco (REDESIGNED ULTRA-CLEAN 3-COLUMN LAYOUT WITH ZONE FRANCHE FRANCE-MONACO) -->
     <section id="monaco">
         <div class="container">
             <div class="reveal">
                 <span class="kicker" id="monaco-kicker">Partenariat Transfrontalier Majeur</span>
                 <h2 class="section-title" id="monaco-title">L'Alliance Nice - Extended Monaco</h2>
                 <p class="section-desc" id="monaco-desc">
-                    Une synergie parfaite entre les fonds et le cloud souverain de la Principauté et l'échelle métropolitaine niçoise.
+                    Une synergie tripartite d'excellence entre les fonds et le cloud de la Principauté, la puissance du CSU niçois et la Zone Franche Transfrontalière.
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;" class="reveal reveal-delay-1">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;" class="reveal reveal-delay-1">
+                <!-- CARD 1: MONACO -->
                 <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
-                    <span class="card-tag" id="monaco-card1-tag">Principauté de Monaco</span>
-                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;" id="monaco-card1-h3">Capital & Cloud Souverain</h3>
-                    <ul class="card-list" id="monaco-card1-list">
-                        <li><strong>Extended Monaco</strong> : Programme stratégique sous l'impulsion du Prince Albert II</li>
-                        <li><strong>Monaco Cloud</strong> : 1er Cloud souverain d'État d'Europe (norme AMSN)</li>
-                        <li><strong>Extended Monaco Entreprises</strong> : Audits <em>AI Opportunity</em> et 5G intégrale</li>
-                        <li>Limitation : Territoire physique contraint (2 km²)</li>
+                    <span class="card-tag" id="monaco-card1-tag">🇲🇨 Principauté de Monaco</span>
+                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 340;" id="monaco-card1-h3">Capital & Cloud Souverain</h3>
+                    <ul class="card-list">
+                        <li><strong id="m1-b1-t">Extended Monaco</strong> : <span id="m1-b1-d">Programme stratégique sous l'impulsion du Prince Albert II.</span></li>
+                        <li><strong id="m1-b2-t">Monaco Cloud</strong> : <span id="m1-b2-d">1er Cloud souverain d'État d’Europe (norme haute sécurité AMSN).</span></li>
+                        <li><strong id="m1-b3-t">Capital Risque & VC</strong> : <span id="m1-b3-d">Financement privé de haut niveau pour les pépites technologiques.</span></li>
+                        <li><strong id="m1-b4-t">Contrainte Spatiale</strong> : <span id="m1-b4-d">Territoire physique de 2 km² nécessitant une extension métropolitaine.</span></li>
                     </ul>
                 </div>
 
+                <!-- CARD 2: NICE METROPOLE -->
                 <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
-                    <span class="card-tag" id="monaco-card2-tag">Métropole Nice Côte d'Azur</span>
-                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;" id="monaco-card2-h3">Échelle, CSU & Recherche 3IA</h3>
-                    <ul class="card-list" id="monaco-card2-list">
-                        <li><strong>Centre de Supervision Urbain</strong> : 4 300+ caméras et Police Municipale</li>
-                        <li><strong>Sophia Antipolis</strong> : 2 700 entreprises, 5 500 chercheurs</li>
-                        <li><strong>Institut 3IA Côte d'Azur</strong> : Recherche de frontière et UniCA</li>
-                        <li>Synergie : Accueil des startups financées par les capitaux monégasques</li>
+                    <span class="card-tag" id="monaco-card2-tag">🇫🇷 Métropole Nice Côte d'Azur</span>
+                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 340;" id="monaco-card2-h3">Échelle, CSU & Recherche 3IA</h3>
+                    <ul class="card-list">
+                        <li><strong id="m2-b1-t">CSU & Sécurité</strong> : <span id="m2-b1-d">4 300+ caméras et Police Municipale augmentée par IA.</span></li>
+                        <li><strong id="m2-b2-t">Sophia Antipolis & 3IA</strong> : <span id="m2-b2-d">Institut 3IA Côte d'Azur, 2 700 entreprises et 5 500 chercheurs.</span></li>
+                        <li><strong id="m2-b3-t">Échelle & Territoire</strong> : <span id="m2-b3-d">Bassin métropolitain de 550 000 habitants et grand parc d'activités.</span></li>
+                        <li><strong id="m2-b4-t">Synergies Métier</strong> : <span id="m2-b4-d">Terrain d'expérimentation pour les innovations financées par Monaco.</span></li>
+                    </ul>
+                </div>
+
+                <!-- CARD 3: ZONE FRANCHE FRANCE-MONACO (NEW FEATURED CARD!) -->
+                <div style="background: linear-gradient(180deg, rgba(216, 185, 138, 0.08) 0%, rgba(22, 19, 15, 0.95) 100%); border: 1px solid rgba(216, 185, 138, 0.4); border-radius: 20px; padding: 32px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" class="spotlight-card">
+                    <span class="card-tag" style="color: var(--accent-champagne); font-weight: 700;" id="monaco-card3-tag">🤝 Zone Franche France - Monaco</span>
+                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 20px; font-weight: 340;" id="monaco-card3-h3">Zone Franche IA & Économie</h3>
+                    <ul class="card-list">
+                        <li><strong id="m3-b1-t">Guichet Binational Unique</strong> : <span id="m3-b1-d">Facilitation fiscale et administrative France - Principauté.</span></li>
+                        <li><strong id="m3-b2-t">Sandbox Réglementaire</strong> : <span id="m3-b2-d">Cadre d'expérimentation d'exception pour l'IA et les mobilités.</span></li>
+                        <li><strong id="m3-b3-t">Passerelle Souveraine</strong> : <span id="m3-b3-d">Lien direct et étanche Nice CSU ➔ Monaco Cloud ➔ Grasse Data.</span></li>
+                        <li><strong id="m3-b4-t">Autofinancement Européen</strong> : <span id="m3-b4-d">Financements directs UE pour projets transfrontaliers.</span></li>
                     </ul>
                 </div>
             </div>
@@ -1661,6 +1689,27 @@
                 tab1card1h3: "Audit IA des Marchés & Factures",
                 tab1card1p: "Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.",
                 tab1card1list: "<li>Détection automatique des surfacturations et doublons de paiement</li><li>Assainissement immédiat des dépenses de fonctionnement</li><li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>",
+                monacoKicker: "Partenariat Transfrontalier Majeur",
+                monacoTitle: "L'Alliance Nice - Extended Monaco",
+                monacoDesc: "Une synergie tripartite d'excellence entre les fonds et le cloud de la Principauté, la puissance du CSU niçois et la Zone Franche Transfrontalière.",
+                monacoCard1Tag: "🇲🇨 Principauté de Monaco",
+                monacoCard1H3: "Capital & Cloud Souverain",
+                m1b1t: "Extended Monaco", m1b1d: "Programme stratégique sous l'impulsion du Prince Albert II.",
+                m1b2t: "Monaco Cloud", m1b2d: "1er Cloud souverain d'État d’Europe (norme haute sécurité AMSN).",
+                m1b3t: "Capital Risque & VC", m1b3d: "Financement privé de haut niveau pour les pépites technologiques.",
+                m1b4t: "Contrainte Spatiale", m1b4d: "Territoire physique de 2 km² nécessitant une extension métropolitaine.",
+                monacoCard2Tag: "🇫🇷 Métropole Nice Côte d'Azur",
+                monacoCard2H3: "Échelle, CSU & Recherche 3IA",
+                m2b1t: "CSU & Sécurité", m2b1d: "4 300+ caméras et Police Municipale augmentée par IA.",
+                m2b2t: "Sophia Antipolis & 3IA", m2b2d: "Institut 3IA Côte d'Azur, 2 700 entreprises et 5 500 chercheurs.",
+                m2b3t: "Échelle & Territoire", m2b3d: "Bassin métropolitain de 550 000 habitants et grand parc d'activités.",
+                m2b4t: "Synergies Métier", m2b4d: "Terrain d'expérimentation pour les innovations financées par Monaco.",
+                monacoCard3Tag: "🤝 Zone Franche France - Monaco",
+                monacoCard3H3: "Zone Franche IA & Économie",
+                m3b1t: "Guichet Binational Unique", m3b1d: "Facilitation fiscale et administrative France - Principauté.",
+                m3b2t: "Sandbox Réglementaire", m3b2d: "Cadre d'expérimentation d'exception pour l'IA et les mobilités.",
+                m3b3t: "Passerelle Souveraine", m3b3d: "Lien direct et étanche Nice CSU ➔ Monaco Cloud ➔ Grasse Data.",
+                m3b4t: "Autofinancement Européen", m3b4d: "Financements directs UE pour projets transfrontaliers.",
                 roiGross: "Économies Brutes Générées :",
                 roiCost: "Coût Commando Métropole :",
                 roiNet: "Bénéfice Net Public :",
@@ -1701,6 +1750,27 @@
                 tab1card1h3: "AI Procurement & Invoice Audit",
                 tab1card1p: "100% automated semantic ingestion and verification of unit price schedules, quotes, and metropolitan invoices.",
                 tab1card1list: "<li>Automatic detection of overbilling and duplicate payments</li><li>Immediate reduction of operating expenditure</li><li><strong>Certified net savings of €2.5M to €3.5M / year</strong></li>",
+                monacoKicker: "Major Cross-Border Partnership",
+                monacoTitle: "Nice - Extended Monaco Alliance",
+                monacoDesc: "A tripartite synergy between Monaco venture capital/sovereign cloud, Nice CSU power, and the French-Monaco Free Zone.",
+                monacoCard1Tag: "🇲🇨 Principality of Monaco",
+                monacoCard1H3: "Venture Capital & Sovereign Cloud",
+                m1b1t: "Extended Monaco", m1b1d: "Strategic digital roadmap led by Prince Albert II.",
+                m1b2t: "Monaco Cloud", m1b2d: "1st Sovereign State Cloud in Europe (AMSN security standard).",
+                m1b3t: "Venture Capital & VC", m1b3d: "High-level private funding for tech scaleups.",
+                m1b4t: "Spatial Constraint", m1b4d: "Constrained 2 km² physical territory requiring metropolitan expansion.",
+                monacoCard2Tag: "🇫🇷 Nice Côte d'Azur Metropolis",
+                monacoCard2H3: "Scale, CSU & 3IA AI Research",
+                m2b1t: "CSU & Security", m2b1d: "4,300+ cameras and AI-augmented Municipal Police.",
+                m2b2t: "Sophia Antipolis & 3IA", m2b2d: "3IA Côte d'Azur Institute, 2,700 companies & 5,500 researchers.",
+                m2b3t: "Scale & Territory", m2b3d: "Metropolitan basin of 550,000 citizens and major business parks.",
+                m2b4t: "Business Synergies", m2b4d: "Real-world testbed for innovations funded by Monaco.",
+                monacoCard3Tag: "🤝 France - Monaco Free AI Zone",
+                monacoCard3H3: "Free AI & Economic Zone",
+                m3b1t: "Single Binational Desk", m3b1d: "Streamlined fiscal & administrative framework France - Principality.",
+                m3b2t: "Regulatory Sandbox", m3b2d: "Exceptional testing environment for AI & mobility.",
+                m3b3t: "Sovereign Gateway", m3b3d: "Direct air-gapped bridge Nice CSU ➔ Monaco Cloud ➔ Grasse Data.",
+                m3b4t: "EU Co-Financing", m3b4d: "Direct EU grants for cross-border binational projects.",
                 roiGross: "Gross Savings Generated:",
                 roiCost: "Metropolitan Commando Cost:",
                 roiNet: "Net Public Benefit:",
@@ -1749,6 +1819,32 @@
             document.getElementById('tab1-card1-h3').innerText = data.tab1card1h3;
             document.getElementById('tab1-card1-p').innerText = data.tab1card1p;
             document.getElementById('tab1-card1-list').innerHTML = data.tab1card1list;
+
+            // MONACO SECTION TRANSLATIONS
+            document.getElementById('monaco-kicker').innerText = data.monacoKicker;
+            document.getElementById('monaco-title').innerText = data.monacoTitle;
+            document.getElementById('monaco-desc').innerText = data.monacoDesc;
+
+            document.getElementById('monaco-card1-tag').innerText = data.monacoCard1Tag;
+            document.getElementById('monaco-card1-h3').innerText = data.monacoCard1H3;
+            document.getElementById('m1-b1-t').innerText = data.m1b1t; document.getElementById('m1-b1-d').innerText = data.m1b1d;
+            document.getElementById('m1-b2-t').innerText = data.m1b2t; document.getElementById('m1-b2-d').innerText = data.m1b2d;
+            document.getElementById('m1-b3-t').innerText = data.m1b3t; document.getElementById('m1-b3-d').innerText = data.m1b3d;
+            document.getElementById('m1-b4-t').innerText = data.m1b4t; document.getElementById('m1-b4-d').innerText = data.m1b4d;
+
+            document.getElementById('monaco-card2-tag').innerText = data.monacoCard2Tag;
+            document.getElementById('monaco-card2-h3').innerText = data.monacoCard2H3;
+            document.getElementById('m2-b1-t').innerText = data.m2b1t; document.getElementById('m2-b1-d').innerText = data.m2b1d;
+            document.getElementById('m2-b2-t').innerText = data.m2b2t; document.getElementById('m2-b2-d').innerText = data.m2b2d;
+            document.getElementById('m2-b3-t').innerText = data.m2b3t; document.getElementById('m2-b3-d').innerText = data.m2b3d;
+            document.getElementById('m2-b4-t').innerText = data.m2b4t; document.getElementById('m2-b4-d').innerText = data.m2b4d;
+
+            document.getElementById('monaco-card3-tag').innerText = data.monacoCard3Tag;
+            document.getElementById('monaco-card3-h3').innerText = data.monacoCard3H3;
+            document.getElementById('m3-b1-t').innerText = data.m3b1t; document.getElementById('m3-b1-d').innerText = data.m3b1d;
+            document.getElementById('m3-b2-t').innerText = data.m3b2t; document.getElementById('m3-b2-d').innerText = data.m3b2d;
+            document.getElementById('m3-b3-t').innerText = data.m3b3t; document.getElementById('m3-b3-d').innerText = data.m3b3d;
+            document.getElementById('m3-b4-t').innerText = data.m3b4t; document.getElementById('m3-b4-d').innerText = data.m3b4d;
 
             document.getElementById('roi-lbl-gross').innerText = data.roiGross;
             document.getElementById('roi-lbl-cost').innerText = data.roiCost;
