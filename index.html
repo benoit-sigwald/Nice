@@ -9,9 +9,9 @@
     <!-- Google Fonts: Fraunces (Serif Volutions Style) + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Giant Card 3 Expansion & Synchronized Red-to-Blue Traffic Animation) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Retro Flip Clock Digital Alarm Counters) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -74,6 +74,73 @@
 
         #fullscreen-fireworks-canvas.active {
             opacity: 1;
+        }
+
+        /* VINTAGE RETRO DIGITAL ALARM FLIP CLOCK STYLING FOR NUMBERS */
+        .flip-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: var(--font-sans);
+            font-weight: 800;
+            vertical-align: middle;
+        }
+
+        .flip-digit {
+            display: inline-block;
+            position: relative;
+            width: 0.78em;
+            height: 1.15em;
+            background: linear-gradient(180deg, #1F1B16 0%, #14100D 49%, #0B0806 50%, #1A1511 100%);
+            border: 1px solid rgba(216, 185, 138, 0.45);
+            border-radius: 8px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            color: var(--accent-champagne);
+            text-shadow: 0 0 14px rgba(216, 185, 138, 0.65);
+            overflow: hidden;
+            perspective: 320px;
+        }
+
+        /* Horizontal Split Line of Retro Flip Clock */
+        .flip-digit::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #000;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+            z-index: 10;
+        }
+
+        .flip-digit-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-size: 0.88em;
+            transform-origin: center center;
+            transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .flip-digit.flip-anim .flip-digit-inner {
+            animation: flipCardDown 0.16s ease-in-out;
+        }
+
+        @keyframes flipCardDown {
+            0% { transform: rotateX(0deg); opacity: 1; }
+            50% { transform: rotateX(-90deg); opacity: 0.3; filter: brightness(1.6); }
+            100% { transform: rotateX(0deg); opacity: 1; }
+        }
+
+        .flip-unit {
+            color: var(--accent-champagne);
+            font-family: var(--font-serif);
+            font-size: 0.9em;
+            margin-left: 2px;
+            opacity: 0.9;
         }
 
         /* FULLCARD 3 EXPANSION MODAL OVERLAY */
@@ -167,13 +234,12 @@
         }
 
         .expanded-metric-val {
-            font-family: var(--font-serif);
-            font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+            font-family: var(--font-sans);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
             color: var(--accent-champagne);
             line-height: 1;
             margin-bottom: 12px;
-            font-weight: 340;
-            letter-spacing: -0.02em;
+            font-weight: 800;
             display: flex;
             align-items: baseline;
             gap: 4px;
@@ -610,11 +676,11 @@
         }
 
         .metric-val {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
+            font-family: var(--font-sans);
+            font-size: 2.2rem;
             color: var(--accent-champagne);
             margin-bottom: 6px;
-            font-weight: 340;
+            font-weight: 800;
             letter-spacing: -0.02em;
             display: flex;
             align-items: baseline;
@@ -625,58 +691,6 @@
             font-size: 0.825rem;
             color: var(--text-bone-muted);
             line-height: 1.45;
-        }
-
-        /* PLAINE DU VAR 3D TRAFFIC REDUCTION SIMULATION WIDGET (CARD 3) */
-        .traffic-mini-visual {
-            position: relative;
-            width: 100%;
-            height: 100px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 12px;
-            border: 1px solid rgba(216, 185, 138, 0.2);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            cursor: pointer;
-        }
-
-        .traffic-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.8) contrast(1.1);
-            transition: filter 0.5s ease;
-        }
-
-        .traffic-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-        }
-
-        .traffic-badge {
-            position: absolute;
-            bottom: 6px;
-            left: 6px;
-            right: 6px;
-            font-size: 10px;
-            font-weight: 600;
-            padding: 4px 8px;
-            border-radius: 6px;
-            background: rgba(22, 19, 15, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(239, 68, 68, 0.4);
-            color: var(--jam-red);
-            transition: all 0.5s ease;
-            text-align: center;
-        }
-
-        .traffic-badge.fluid {
-            border-color: rgba(0, 240, 255, 0.5);
-            color: var(--laser-blue);
-            box-shadow: 0 0 12px rgba(0, 240, 255, 0.3);
         }
 
         /* 3D Savings Card */
@@ -1027,7 +1041,7 @@
     <!-- Fullscreen Laser Fireworks Canvas Overlay -->
     <canvas id="fullscreen-fireworks-canvas"></canvas>
 
-    <!-- FULLCARD 3 EXPANSION MODAL OVERLAY (GIANT BLOWN-UP CARD 3 WITH SYNCHRONIZED RED-TO-BLUE ANIMATION) -->
+    <!-- FULLCARD 3 EXPANSION MODAL OVERLAY (GIANT BLOWN-UP CARD 3 WITH VINTAGE FLIP CLOCK & RED-TO-BLUE TRAFFIC) -->
     <div id="fullscreen-card3-modal" class="card-expand-modal">
         <div class="expanded-card-content">
             <button class="modal-close-btn" onclick="closeCard3Modal()" title="Fermer">✕</button>
@@ -1041,7 +1055,7 @@
 
             <!-- Giant Counter Number & Label -->
             <div class="expanded-metric-val">
-                <span id="expanded-counter-val">0</span>+
+                <span id="expanded-counter-val" class="flip-counter"></span><span class="flip-unit">+</span>
             </div>
             <div class="expanded-metric-label">
                 Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Jumeau Numérique 3D — Axe Plaine du Var / A8)
@@ -1127,7 +1141,7 @@
                 <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
                     <span class="security-tag" id="security-tag">🛡️ IA CSU : Moins de risques, Plus de Sécurité</span>
-                    <div class="metric-val"><span class="counter" id="counter-1" data-target="4300">0</span>+</div>
+                    <div class="metric-val"><span id="counter-1" class="flip-counter"></span><span class="flip-unit">+</span></div>
                     <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par l'IA : <strong>Grâce à la VSA, c'est d'autant moins de risques d'agression et plus de sécurité au quotidien pour les Niçois.</strong></div>
                 </div>
 
@@ -1145,13 +1159,13 @@
                         <canvas id="traffic-canvas" class="traffic-canvas"></canvas>
                         <div class="traffic-badge" id="traffic-status-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
                     </div>
-                    <div class="metric-val"><span class="counter" id="counter-3" data-target="45000">0</span>+</div>
+                    <div class="metric-val"><span id="counter-3" class="flip-counter"></span><span class="flip-unit">+</span></div>
                     <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Cliquer pour agrandir la Carte)</div>
                 </div>
 
                 <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
                 <div class="metric-card spotlight-card" id="metric-card-4">
-                    <div class="metric-val"><span class="counter" id="counter-4" data-target="100">0</span> %</div>
+                    <div class="metric-val"><span id="counter-4" class="flip-counter"></span><span class="flip-unit">%</span></div>
                     <div class="metric-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
                 </div>
             </div>
@@ -1440,7 +1454,7 @@
             </div>
 
             <div style="display: flex; gap: 24px;">
-                <a href="https://github.com/benoit-sigwald/Nice" target="_blank" style="color: var(--text-bone-muted); text-decoration: none;">GitHub Repository</a>
+                <a href="https://arx-consulting.com/nice" style="color: var(--text-bone-muted); text-decoration: none;">Arx Consulting Nice</a>
                 <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne); text-decoration: none;">Note Complète (.MD)</a>
             </div>
         </div>
@@ -1502,7 +1516,7 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
 
-                    if (!sequenceStarted && (entry.target.querySelector('.counter') || entry.target.classList.contains('metrics-grid'))) {
+                    if (!sequenceStarted && (entry.target.querySelector('.flip-counter') || entry.target.classList.contains('metrics-grid'))) {
                         sequenceStarted = true;
                         startMasterSequence();
                     }
@@ -1515,7 +1529,37 @@
         });
 
         // ==========================================================================
-        // 6. MASTER INFINITE SEQUENTIAL ANIMATION ENGINE (CARDS 1 ➔ 2 ➔ 3 ➔ 4 ➔ LOOP)
+        // 6. VINTAGE RETRO DIGITAL ALARM FLIP CLOCK RENDERER
+        // ==========================================================================
+        function renderFlipNumber(containerId, formattedString) {
+            const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
+            if (!container) return;
+
+            const chars = String(formattedString).split('');
+            let html = '';
+
+            chars.forEach((ch, idx) => {
+                if (/\d/.test(ch)) {
+                    html += `<div class="flip-digit" data-idx="${idx}"><div class="flip-digit-inner">${ch}</div></div>`;
+                } else {
+                    html += `<span class="flip-separator">${ch}</span>`;
+                }
+            });
+
+            const prevHtml = container.innerHTML;
+            container.innerHTML = html;
+
+            // Trigger mechanical 3D flip card down animation if value changed
+            if (prevHtml !== html) {
+                container.querySelectorAll('.flip-digit').forEach(digit => {
+                    digit.classList.add('flip-anim');
+                    setTimeout(() => digit.classList.remove('flip-anim'), 160);
+                });
+            }
+        }
+
+        // ==========================================================================
+        // 7. MASTER INFINITE SEQUENTIAL ANIMATION ENGINE (CARDS 1 ➔ 2 ➔ 3 ➔ 4 ➔ LOOP)
         // ==========================================================================
         let isSequenceRunning = false;
 
@@ -1546,7 +1590,7 @@
                 card1.classList.add('active-sequence-card');
                 securityTag.innerText = '🛡️ IA CSU : Moins de Risques (-65%), Plus de Sécurité (+85%)';
                 
-                animateSingleCounter('counter-1', 4300, 1800, () => {
+                animateFlipCounter('counter-1', 4300, 1800, () => {
                     setTimeout(() => runCardSequence(1), 1200);
                 });
             } else if (cardIndex === 1) {
@@ -1556,7 +1600,7 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED TRAFFIC & COUNTER ANIMATION ---
+                // --- CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED FLIP CLOCK & TRAFFIC ANIMATION ---
                 card3.classList.add('active-sequence-card');
                 
                 openCard3Modal(() => {
@@ -1565,16 +1609,15 @@
             } else if (cardIndex === 3) {
                 // --- CARTE 4 : 100 % Autofinancé ---
                 card4.classList.add('active-sequence-card');
-                animateSingleCounter('counter-4', 100, 1500, () => {
+                animateFlipCounter('counter-4', 100, 1500, () => {
                     // LOOP BACK TO CARTE 1 (index 0)!
                     setTimeout(() => runCardSequence(0), 2000);
                 });
             }
         }
 
-        // Helper for Single Counter Animation
-        function animateSingleCounter(elementId, targetValue, duration, onComplete) {
-            const counter = document.getElementById(elementId);
+        // Helper for Single Flip Clock Counter Animation
+        function animateFlipCounter(elementId, targetValue, duration, onComplete) {
             const startTime = performance.now();
 
             function update(currentTime) {
@@ -1583,12 +1626,12 @@
                 const easeProgress = 1 - (1 - progress) * (1 - progress);
                 const currentVal = Math.floor(easeProgress * targetValue);
 
-                counter.innerText = currentVal.toLocaleString('fr-FR');
+                renderFlipNumber(elementId, currentVal.toLocaleString('fr-FR'));
 
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 } else {
-                    counter.innerText = targetValue.toLocaleString('fr-FR');
+                    renderFlipNumber(elementId, targetValue.toLocaleString('fr-FR'));
                     if (onComplete) onComplete();
                 }
             }
@@ -1596,15 +1639,13 @@
         }
 
         // ==========================================================================
-        // 7. CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED DUAL ANIMATION (RED TO BLUE TRAFFIC & 0 TO 45K COUNTER)
+        // 8. CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED FLIP CLOCK & RED-TO-BLUE TRAFFIC ANIMATION
         // ==========================================================================
         let card3AnimFrameId;
 
         function openCard3Modal(onComplete) {
             const modal = document.getElementById('fullscreen-card3-modal');
             const badge = document.getElementById('expanded-traffic-badge');
-            const counterVal = document.getElementById('expanded-counter-val');
-            const mainCounter = document.getElementById('counter-3');
             const canvas = document.getElementById('expanded-traffic-canvas');
             const container = canvas.parentElement;
 
@@ -1616,8 +1657,8 @@
 
             badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
             badge.classList.remove('fluid');
-            counterVal.innerText = '0';
-            mainCounter.innerText = '0';
+            renderFlipNumber('expanded-counter-val', '0');
+            renderFlipNumber('counter-3', '0');
 
             // Generate 65 Jammed Traffic Particles along A8 Highway
             const particles = [];
@@ -1639,10 +1680,11 @@
                 const progress = Math.min(elapsed / totalDuration, 1);
                 const easeProgress = 1 - (1 - progress) * (1 - progress);
 
-                // A. SYNCHRONIZED COUNTER ANIMATION (0 to 45 000+)
+                // A. SYNCHRONIZED RETRO DIGITAL FLIP CLOCK ANIMATION (0 to 45 000+)
                 const currentCount = Math.floor(easeProgress * 45000);
-                counterVal.innerText = currentCount.toLocaleString('fr-FR');
-                mainCounter.innerText = currentCount.toLocaleString('fr-FR');
+                const formattedCount = currentCount.toLocaleString('fr-FR');
+                renderFlipNumber('expanded-counter-val', formattedCount);
+                renderFlipNumber('counter-3', formattedCount);
 
                 // B. SYNCHRONIZED COLOR INTERPOLATION (RED #EF4444 -> ELECTRIC BLUE #00F0FF)
                 // Red: (239, 68, 68) -> Blue: (0, 240, 255)
@@ -1661,7 +1703,6 @@
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 particles.forEach(p => {
-                    // Speed accelerates smoothly from slow jam (0.3px) to fluid stream (4.5px)
                     const speedMultiplier = 1 + easeProgress * 9.0;
                     const speed = p.baseSpeed * speedMultiplier;
 
@@ -1687,8 +1728,8 @@
                     card3AnimFrameId = requestAnimationFrame(syncStep);
                 } else {
                     // Final State
-                    counterVal.innerText = '45 000';
-                    mainCounter.innerText = '45 000';
+                    renderFlipNumber('expanded-counter-val', '45 000');
+                    renderFlipNumber('counter-3', '45 000');
 
                     // Pause 1s, then close modal and notify master sequence
                     setTimeout(() => {
@@ -1708,7 +1749,7 @@
         }
 
         // ==========================================================================
-        // 8. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS
+        // 9. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS
         // ==========================================================================
         function triggerSavingsAnimation(onCompleteCallback) {
             const card = document.getElementById('savings-card');
@@ -1758,7 +1799,7 @@
             stepAnimation();
         }
 
-        // 9. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
+        // 10. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
         function launchFullscreenLaserFireworks(originX, originY) {
             const canvas = document.getElementById('fullscreen-fireworks-canvas');
             canvas.width = window.innerWidth;
@@ -1881,7 +1922,7 @@
             animateScene();
         }
 
-        // 10. Scroll Spy Navigation Highlight
+        // 11. Scroll Spy Navigation Highlight
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
