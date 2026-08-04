@@ -636,18 +636,25 @@
             background: rgba(255, 255, 255, 0.045);
         }
 
-        /* Card 1 Mini Badge */
+        /* CARD 1 HIGH-CONTRAST FEATURED BADGE / ENCART SÉCURITÉ ("MOINS D'ÉCRANS, PLUS DE POLICIERS DANS LA RUE") */
         .security-tag {
-            font-size: 10px;
-            font-weight: 600;
-            padding: 3px 8px;
-            border-radius: 6px;
-            background: rgba(16, 185, 129, 0.1);
+            font-size: 11px;
+            font-weight: 700;
+            padding: 6px 12px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(216, 185, 138, 0.28) 0%, rgba(15, 118, 110, 0.35) 100%);
             color: var(--accent-champagne);
-            border: 1px solid rgba(216, 185, 138, 0.3);
-            margin-bottom: 8px;
+            border: 1px solid var(--accent-champagne);
+            margin-bottom: 12px;
             display: inline-block;
+            box-shadow: 0 0 20px rgba(216, 185, 138, 0.45);
+            letter-spacing: 0.02em;
             transition: all 0.3s ease;
+        }
+
+        .security-tag:hover {
+            box-shadow: 0 0 28px rgba(216, 185, 138, 0.75);
+            transform: translateY(-1px);
         }
 
         /* Mouse Spotlight Glow */
@@ -1218,11 +1225,11 @@
 
             <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
-                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE (LESS SCREENS, MORE POLICE OFFICERS IN THE STREETS) -->
+                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE (HIGH-CONTRAST FEATURED BADGE & RESTORED PUNCHY DESCRIPTION) -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
                     <span class="security-tag" id="security-tag">🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue</span>
                     <div class="metric-val"><span id="counter-1" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label" id="card1-label">Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong></div>
+                    <div class="metric-label" id="card1-label">Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong></div>
                 </div>
 
                 <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN ON SINGLE LINE) -->
@@ -1634,7 +1641,7 @@
                 heroBtnDiscover: "Découvrir le Pôle Réduction de Coûts",
                 heroBtnSimulate: "Simuler les Économies Budgétaires ↓",
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
-                card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong>",
+                card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
                 card2Label: "Économies nettes/an d'audit IA de la commande publique métropolitaine",
                 card2Hint: "✨ Animation séquentielle en boucle (Carte 1 ➔ 4)",
@@ -1660,7 +1667,7 @@
             },
             EN: {
                 navBadgeCapitale: "AI Capital",
-                navAxes: "Pillors & AI Axes",
+                navAxes: "Pillars & AI Axes",
                 navCyber: "Cyber Shield",
                 navMonaco: "Monaco Alliance",
                 navRoi: "ROI Simulator",
@@ -1674,7 +1681,7 @@
                 heroBtnDiscover: "Discover Cost Reduction Pole",
                 heroBtnSimulate: "Simulate Budget Savings ↓",
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
-                card1Label: "CSU Cameras boosted by AI: <strong>Automatic threat detection — fewer officers stuck behind screens and more police officers deployed in the streets.</strong>",
+                card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
                 card2Label: "Net annual savings from AI audit of metropolitan public procurement",
                 card2Hint: "✨ Sequential loop animation (Card 1 ➔ 4)",
@@ -1854,7 +1861,7 @@
             const securityTag = document.getElementById('security-tag');
 
             if (cardIndex === 0) {
-                // --- CARTE 1 : 4 300+ Caméras (LESS SCREENS, MORE POLICE OFFICERS IN THE STREETS) ---
+                // --- CARTE 1 : 4 300+ Caméras ---
                 card1.classList.add('active-sequence-card');
                 securityTag.innerText = currentLang === 'FR' ? "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue" : "🛡️ Augmented CSU: Less Screens, More Police in the Streets";
                 
