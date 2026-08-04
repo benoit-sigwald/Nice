@@ -16,7 +16,7 @@
 | **2. Audit Commande Publique** | Ingestion sémantique 100% des factures/BPU (300 M€) | **+2,50 M€ / an NET** | Filtrage automatisé de 0,5% à 2,0% de doublons/surcoûts (Benchmark DGFiP). |
 | **3. Bouclier Cyber-IA (NIS 2)** | SOC IA 24/7 souverain & étanchéité CSU | **1,8 M€ à 3 M€ / an** | Coûts de crise ransomware évités (Benchmark Marseille/Lille/Caen). |
 | **4. Extended Monaco Cloud** | Monaco Cloud Sovereign Bridge & Zone Franche | **2,0 M€ à 4 M€ / an** | Économies d'infra datacenter évitées + Investissements privés VC attirés. |
-| **5. Autofinancement Intégral** | Subventions directes UE (Digital Europe) + Audit | **100 % Autofinancé** | Bilan budgétaire net positif (+1,35 M€/an) ; **0 € dépendance Région SUD**. |
+| **5. Financements Europe & Cités** | Subventions directes UE (Digital Europe, Horizon) & Cités | **Levier Extérieur Maximisé** | Mobilisation des fonds UE & guichets d'innovation des cités ; **0 € dépendance Région SUD**. |
 
 ---
 
@@ -138,11 +138,11 @@ flowchart TD
 | **TOTAL ANNUEL** | **1 150 k€** | **1 200 k€** | **2 350 k€ / an** | **+1,35 M€ / AN NET** |
 
 > [!IMPORTANT]
-> **Autofinancement Certifié & Indépendance Régionale**
+> **Levier de Financement Extérieur & Indépendance Régionale**
 > - **Coût annuel d'exploitation de l'AMO IA** : 1,15 M€/an.
-> - **Gains nets d'audit immédiatement encaissés** : **> 2,50 M€/an**.
-> - **Bilan budgétaire net pour le contribuable niçois** : **Solde positif de +1,35 M€/an dès l'An 2**.
-> - **Indépendance politique** : Autofinancé à 100 % par l'audit et l'UE (*Digital Europe Programme*), **sans demander 1 € à Renaud Muselier (Région SUD)**.
+> - **Stratégie de financement** : Recherche active et dépôt systématique auprès des guichets de l'Union Européenne (*Digital Europe Programme*, *Horizon Europe*, *FEDER*) et des guichets de développement des cités et quartiers (*Cités Lab*, innovation urbaine).
+> - **Gains d'audit complémentaires** : **> 2,50 M€/an** d'économies nettes réinjectés dans les finances locales.
+> - **Indépendance politique absolue** : Projet financé par les leviers européens, des cités et les économies directes, **sans dépendre de Renaud Muselier ni demander 1 € à la Région SUD**.
 
 ---
 
