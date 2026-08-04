@@ -2153,7 +2153,7 @@
                 c2BudgetTag: "⚡ Metropolitan AI budget: €150k/year <em>(EU co-financed)</em>",
                 c2EconDesc: "• Market Audit: <strong>+2.5 M€/year net</strong> certified<br/>• Cyber ​​Crises avoided: <strong>1.8-3 M€/year</strong> (NIS 2 Directive)",
                 c2EconTitle: "💰 Quantified Savings:",
-                c3BudgetTag: "⚡ IA Monaco ZF budget: €250k/year <em>(EU co-financed)</em>",
+                c3BudgetTag: "⚡ Monaco ZF AI budget: €250k/year <em>(EU co-financed)</em>",
                 c3GainsDesc: "• Infra Cloud Monaco: <strong>1.2 M€/year</strong> avoided + 2-4 M€ VC<br/>• Free Zone: Binational Single Window & Sandbox",
                 c3GainsTitle: "🇲🇨 Cross-border & Infra Gains:",
                 card1Label: "CSU cameras powered by AI: <strong>Instant threat detection &amp; maximum security.</strong>",
@@ -2538,15 +2538,16 @@
 
             renderFlipNumber('counter-3', '0');
 
-            // Generate 65 Jammed Traffic Points along A8 Highway
+            // Generate 80 Traffic Points guided along A8 Highway Bezier curve
             const points = [];
-            const pointCount = 65;
+            const pointCount = 80;
             for (let i = 0; i < pointCount; i++) {
                 points.push({
-                    x: Math.random() * (canvas.width * 0.75) + (canvas.width * 0.1),
-                    y: Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2),
-                    baseSpeed: Math.random() * 0.3 + 0.15,
-                    size: Math.random() * 4 + 3.5
+                    t: Math.random(), // position relative on the curve (0.0 to 1.0)
+                    baseSpeed: Math.random() * 0.002 + 0.001, // speed increment per frame
+                    size: Math.random() * 2.8 + 2.4, // size of particle
+                    offsetX: (Math.random() - 0.5) * 6, // lateral deviation for multi-lane simulation
+                    offsetY: (Math.random() - 0.5) * 6
                 });
             }
 
@@ -2582,45 +2583,37 @@
                 // D. TRAFFIC CANVAS RENDER WITH DYNAMIC SHIFTS
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw Highway A8 transition (Red -> Blue)
-                ctx.save();
-                ctx.beginPath();
-                const startX = canvas.width * 0.12;
-                const startY = canvas.height * 0.88;
-                const cp1x = canvas.width * 0.28;
-                const cp1y = canvas.height * 0.72;
-                const cp2x = canvas.width * 0.45;
-                const cp2y = canvas.height * 0.64;
-                const endX = canvas.width * 0.60;
-                const endY = canvas.height * 0.63;
-
-                ctx.moveTo(startX, startY);
-                ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY);
-                ctx.lineWidth = 5;
-                ctx.lineCap = 'round';
-                ctx.strokeStyle = currentColor;
-                ctx.shadowBlur = 10 + easeProgress * 15;
-                ctx.shadowColor = currentColor;
-                ctx.stroke();
-                ctx.restore();
+                // Bezier points representing the highway A8 from bottom-left to top-right
+                const p0 = { x: canvas.width * 0.08, y: canvas.height * 0.88 };
+                const p1 = { x: canvas.width * 0.30, y: canvas.height * 0.70 };
+                const p2 = { x: canvas.width * 0.58, y: canvas.height * 0.65 };
+                const p3 = { x: canvas.width * 0.86, y: canvas.height * 0.18 };
 
                 points.forEach(p => {
-                    const speedMultiplier = 1 + easeProgress * 9.0;
+                    // Traffic starts slow (dense) and speeds up (fluid)
+                    const speedMultiplier = 1.0 + easeProgress * 4.5;
                     const speed = p.baseSpeed * speedMultiplier;
 
-                    p.x += speed * 1.6;
-                    p.y -= speed * 0.45;
-
-                    if (p.x > canvas.width + 20) {
-                        p.x = -20;
-                        p.y = Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2);
+                    p.t += speed;
+                    if (p.t > 1.0) {
+                        p.t = 0.0;
                     }
+
+                    // Cubic Bezier interpolation
+                    const u = 1.0 - p.t;
+                    const tt = p.t * p.t;
+                    const uu = u * u;
+                    const uuu = uu * u;
+                    const ttt = tt * p.t;
+
+                    const posX = uuu * p0.x + 3 * uu * p.t * p1.x + 3 * u * tt * p2.x + ttt * p3.x + p.offsetX;
+                    const posY = uuu * p0.y + 3 * uu * p.t * p1.y + 3 * u * tt * p2.y + ttt * p3.y + p.offsetY;
 
                     ctx.save();
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.arc(posX, posY, p.size, 0, Math.PI * 2);
                     ctx.fillStyle = currentColor;
-                    ctx.shadowBlur = 6 + easeProgress * 10;
+                    ctx.shadowBlur = 6 + easeProgress * 8;
                     ctx.shadowColor = currentColor;
                     ctx.fill();
                     ctx.restore();
