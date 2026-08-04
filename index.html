@@ -2273,10 +2273,10 @@
                 stratP5Val: "Value: €1.8 million to €3 million/year of crisis avoided",
                 stratTag: "⚡ Executive Summary for Mr. Mayor",
                 stratTitle: "The Nice AI Strategy in 5 quantified pillars",
-                stratTotalBadge: "💰 Overall Value Generated: > €6.3 million to €9.5 million / year",
-                tab1card1h3: "AI Audit of Markets & Invoices",
-                tab1card1list: "<li>Automatic detection of overbilling and duplicate payments (0.5% to 2% errors filtered)</li> <li>Immediate cleaning up of the Metropolis' operating expenses</li> <li><strong>€2.5 million to €3.5 million in certified net savings / year</strong></li>",
-                tab1card1p: "Semantic ingestion and 100% automated control of unit price slips (BPU), metropolitan quotes and invoices.",
+                stratTotalBadge: "💰 Valeur Globale Générée : > 6,3 M€ à 9,5 M€ / an",
+                tab1card1h3: "Audit IA des Marchés & Factures",
+                tab1card1list: "<li>Détection automatique des surfacturations et doublons de paiement (0,5% à 2% d'erreurs filtrées)</li> <li>Assainissement immédiat des dépenses de fonctionnement de la Métropole</li> <li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>",
+                tab1card1p: "Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.",
                 tab1card1tag: "Priority Axis A — Public Order",
                 tabBtn1: "<span class=\"tab-badge\" id=\"badge-priorite-1\">Priority 1</span> 💰 COST REDUCTION CENTER (€2.5M/YEAR)",
                 tabBtn2: "🏛️ SECURITY & COMMON PROXIMITY",
@@ -2741,11 +2741,11 @@
             const card = document.getElementById('savings-card');
             
             card.classList.remove('exploding');
-            card.style.transition = 'transform 1.2s linear, border-color 0.4s ease, box-shadow 0.4s ease';
 
-            const totalSteps = 10; // 0,00 M€ -> 0,25 M€ -> 0,50 M€ -> 0,75 M€ -> 1,00 M€ -> 1,25 M€ -> 1,50 M€ -> 1,75 M€ -> 2,00 M€ -> 2,25 M€ -> 2,50 M€
+            const totalSteps = 10; // 0,00 M€ -> 0,25 M€ -> ... -> 2,50 M€
             let currentStep = 0;
-            const stepDuration = 600; // Fast smooth steps for 2.50 M€
+            // Exponentially decreasing step durations to simulate acceleration
+            const stepDurations = [350, 300, 250, 200, 150, 110, 80, 60, 45, 35, 30];
 
             function stepAnimation() {
                 if (currentStep <= totalSteps) {
@@ -2756,14 +2756,19 @@
                     renderFlipNumber('counter-2', valueStr);
 
                     const rotationDeg = currentStep * 360;
+                    const currentDuration = stepDurations[Math.min(currentStep, stepDurations.length - 1)];
+                    
+                    // Match CSS transition duration to the frame timeout for smooth synchronized acceleration
+                    card.style.transition = `transform ${currentDuration}ms ease-in, border-color 0.4s ease, box-shadow 0.4s ease`;
                     card.style.transform = `rotateY(${rotationDeg}deg)`;
 
                     currentStep++;
-                    setTimeout(stepAnimation, stepDuration);
+                    setTimeout(stepAnimation, currentDuration);
                 } else {
                     // Final state: 2,50 M€ reached!
                     renderFlipNumber('counter-2', '2,50');
-                    card.style.transform = `rotateY(${10 * 360}deg)`;
+                    card.style.transition = 'transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1)';
+                    card.style.transform = `rotateY(${11 * 360}deg)`;
                     card.classList.add('exploding');
 
                     // Compute Card Center Coordinates relative to Viewport
