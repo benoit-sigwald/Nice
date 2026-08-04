@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Compact Pop-up + Single Line 2,50 M€/an Counter) -->
+    <!-- CSS Palette & Styling (Punchy Card 1 Security Description & Compact Modals) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -1242,11 +1242,11 @@
 
             <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
-                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS -->
+                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS (PUNCHY MESSAGE) -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
-                    <span class="security-tag" id="security-tag">🛡️ IA CSU : Moins de risques, Plus de Sécurité</span>
+                    <span class="security-tag" id="security-tag">🛡️ CSU Augmenté : Risques Neutralisés, Sécurité Maximale</span>
                     <div class="metric-val"><span id="counter-1" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label">Caméras au CSU (1er réseau de France) augmentées par l'IA : <strong>Grâce à la VSA, c'est d'autant moins de risques d'agression et plus de sécurité au quotidien pour les Niçois.</strong></div>
+                    <div class="metric-label">Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong></div>
                 </div>
 
                 <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN ON SINGLE LINE) -->
@@ -1740,7 +1740,7 @@
             if (cardIndex === 0) {
                 // --- CARTE 1 : 4 300+ Caméras ---
                 card1.classList.add('active-sequence-card');
-                securityTag.innerText = '🛡️ IA CSU : Moins de Risques (-65%), Plus de Sécurité (+85%)';
+                securityTag.innerText = '🛡️ CSU Augmenté : Risques Neutralisés, Sécurité Maximale';
                 
                 animateFlipCounter('counter-1', 4300, 1800, () => {
                     setTimeout(() => runCardSequence(1), 1200);
