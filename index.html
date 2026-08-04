@@ -219,6 +219,48 @@
             line-height: 1.45;
         }
 
+        /* BENCHMARK GRID STYLING FOR INTERNATIONAL AI MUNICIPAL EXAMPLES */
+        .benchmark-box {
+            margin-top: 32px;
+            background: rgba(15, 118, 110, 0.08);
+            border: 1px solid rgba(15, 118, 110, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .benchmark-title {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            color: var(--accent-champagne);
+            margin-bottom: 16px;
+        }
+
+        .benchmark-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .benchmark-item {
+            background: rgba(22, 19, 15, 0.8);
+            border: 1px solid rgba(216, 185, 138, 0.2);
+            border-radius: 12px;
+            padding: 16px;
+        }
+
+        .benchmark-item strong {
+            color: var(--laser-blue);
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .benchmark-item p {
+            font-size: 0.8rem;
+            color: var(--text-bone-muted);
+            line-height: 1.4;
+        }
+
         /* CARD 3 IN-PLACE TRAFFIC PREVIEW CONTAINER & SAINT-LAURENT HUE OVERLAYS */
         .traffic-preview-container {
             position: relative;
@@ -1452,8 +1494,8 @@
                             Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.
                         </p>
                         <ul class="card-list" id="tab1-card1-list">
-                            <li>Détection automatique des surfacturations et doublons de paiement</li>
-                            <li>Assainissement immédiat des dépenses de fonctionnement</li>
+                            <li>Détection automatique des surfacturations et doublons de paiement (0,5% à 2% d'erreurs filtrées)</li>
+                            <li>Assainissement immédiat des dépenses de fonctionnement de la Métropole</li>
                             <li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>
                         </ul>
                     </div>
@@ -1465,8 +1507,8 @@
                             Régulation prédictive du chauffage, de la climatisation et de l'éclairage public sur les 400+ bâtiments municipaux.
                         </p>
                         <ul class="card-list" id="tab1-card2-list">
-                            <li>-20 % sur la facture énergétique des équipements publics</li>
-                            <li>Supervision en temps réel des fuites et surconsommations</li>
+                            <li><strong>-20% à -35% d'économie d'énergie</strong> (Inspiration smart lighting Barcelone & Singapour)</li>
+                            <li>Supervision en temps réel des fuites et surconsommations avec alerte automatique</li>
                             <li>Optimisation thermique prédictive selon la météo locale</li>
                         </ul>
                     </div>
@@ -1478,10 +1520,33 @@
                             Dispatching intelligent et routage prédictif des véhicules de collecte, de voirie et des patrouilles de la Police Municipale.
                         </p>
                         <ul class="card-list" id="tab1-card3-list">
-                            <li>-15 % d'économie de carburant sur l'ensemble de la flotte</li>
-                            <li>Réduction de l'usure mécanique et des coûts de maintenance</li>
+                            <li><strong>-15% à -30% d'économie carburant & trajets</strong> (Inspiration collecte Séoul/Londres)</li>
+                            <li>Maintenance prédictive réduisant de 50% les pannes et coûts d'urgence</li>
                             <li>Planification dynamique des tournées de propreté</li>
                         </ul>
+                    </div>
+                </div>
+
+                <!-- BENCHMARKS INTERNATIONAUX & NATIONAUX PURE DATA -->
+                <div class="benchmark-box">
+                    <div class="benchmark-title" id="bm-title">🌐 Benchmarks Internationaux & Français d'Économies IA Municipales :</div>
+                    <div class="benchmark-grid">
+                        <div class="benchmark-item">
+                            <strong id="bm-1-t">🛒 Audit Commande Publique (DGFiP / US Cities)</strong>
+                            <p id="bm-1-d">L'analyse sémantique automatique des factures et contrats détecte 0,5 % à 2 % de doublons et surcoûts sur la commande publique.</p>
+                        </div>
+                        <div class="benchmark-item">
+                            <strong id="bm-2-t">💡 Smart Lighting & Bâtiments (Barcelone / Singapour)</strong>
+                            <p id="bm-2-d">L'éclairage adaptatif et la régulation CVC prédictive réduisent la facture énergétique municipale de 20 % à 50 %.</p>
+                        </div>
+                        <div class="benchmark-item">
+                            <strong id="bm-3-t">🚛 Flottes & Déchets (Séoul / Londres Southwark)</strong>
+                            <p id="bm-3-d">Le routage dynamique IA des bennes et véhicules réduit de 37 % les distances et de 30 % les coûts logistiques.</p>
+                        </div>
+                        <div class="benchmark-item">
+                            <strong id="bm-4-t">📞 Guichet Citoyen Vocal (Boston / San Jose)</strong>
+                            <p id="bm-4-d">Les assistants vocaux 24/7 absorbent 40 % des demandes répétitives sans files d'attente téléphoniques.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1842,7 +1907,12 @@
                 tab1card1tag: "Axe Prioritaire A — Commande Publique",
                 tab1card1h3: "Audit IA des Marchés & Factures",
                 tab1card1p: "Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.",
-                tab1card1list: "<li>Détection automatique des surfacturations et doublons de paiement</li><li>Assainissement immédiat des dépenses de fonctionnement</li><li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>",
+                tab1card1list: "<li>Détection automatique des surfacturations et doublons de paiement (0,5% à 2% d'erreurs filtrées)</li><li>Assainissement immédiat des dépenses de fonctionnement de la Métropole</li><li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>",
+                bmTitle: "🌐 Benchmarks Internationaux & Français d'Économies IA Municipales :",
+                bm1t: "🛒 Audit Commande Publique (DGFiP / US Cities)", bm1d: "L'analyse sémantique automatique des factures et contrats détecte 0,5 % à 2 % de doublons et surcoûts sur la commande publique.",
+                bm2t: "💡 Smart Lighting & Bâtiments (Barcelone / Singapour)", bm2d: "L'éclairage adaptatif et la régulation CVC prédictive réduisent la facture énergétique municipale de 20 % à 50 %.",
+                bm3t: "🚛 Flottes & Déchets (Séoul / Londres Southwark)", bm3d: "Le routage dynamique IA des bennes et véhicules réduit de 37 % les distances et de 30 % les coûts logistiques.",
+                bm4t: "📞 Guichet Citoyen Vocal (Boston / San Jose)", bm4d: "Les assistants vocaux 24/7 absorbent 40 % des demandes répétitives sans files d'attente téléphoniques.",
                 monacoKicker: "Partenariat Transfrontalier Majeur",
                 monacoTitle: "L'Alliance Nice - Extended Monaco",
                 monacoDesc: "Une synergie tripartite d'excellence entre les fonds et le cloud de la Principauté, la puissance du CSU niçois et la Zone Franche Transfrontalière.",
@@ -1912,7 +1982,12 @@
                 tab1card1tag: "Priority Axis A — Public Procurement",
                 tab1card1h3: "AI Procurement & Invoice Audit",
                 tab1card1p: "100% automated semantic ingestion and verification of unit price schedules, quotes, and metropolitan invoices.",
-                tab1card1list: "<li>Automatic detection of overbilling and duplicate payments</li><li>Immediate reduction of operating expenditure</li><li><strong>Certified net savings of €2.5M to €3.5M / year</strong></li>",
+                tab1card1list: "<li>Automatic detection of overbilling and duplicate payments (0.5% to 2% errors filtered)</li><li>Immediate reduction of operating expenditure</li><li><strong>Certified net savings of €2.5M to €3.5M / year</strong></li>",
+                bmTitle: "🌐 International & French Municipal AI Savings Benchmarks:",
+                bm1t: "🛒 Procurement Audit (DGFiP / US Cities)", bm1d: "Automatic semantic analysis of invoices and contracts detects 0.5% to 2% duplicate payments and overbilling.",
+                bm2t: "💡 Smart Lighting & Buildings (Barcelona / Singapore)", bm2d: "Adaptive lighting and predictive HVAC regulation cut municipal energy bills by 20% to 50%.",
+                bm3t: "🚛 Fleets & Waste (Seoul / London Southwark)", bm3d: "Dynamic AI routing for waste trucks reduces mileage by 37% and logistics costs by 30%.",
+                bm4t: "📞 Civic Voice Bot (Boston / San Jose)", bm4d: "24/7 voice assistants absorb 40% of repetitive citizen queries without phone queueing.",
                 monacoKicker: "Major Cross-Border Partnership",
                 monacoTitle: "Nice - Extended Monaco Alliance",
                 monacoDesc: "A tripartite synergy between Monaco venture capital/sovereign cloud, Nice CSU power, and the French-Monaco Free Zone.",
@@ -1972,6 +2047,15 @@
             document.getElementById('strat-p3-desc').innerText = data.stratP3Desc;
             document.getElementById('strat-p4-title').innerText = data.stratP4Title;
             document.getElementById('strat-p4-desc').innerText = data.stratP4Desc;
+
+            // BENCHMARK TRANSLATIONS
+            if (document.getElementById('bm-title')) {
+                document.getElementById('bm-title').innerText = data.bmTitle;
+                document.getElementById('bm-1-t').innerText = data.bm1t; document.getElementById('bm-1-d').innerText = data.bm1d;
+                document.getElementById('bm-2-t').innerText = data.bm2t; document.getElementById('bm-2-d').innerText = data.bm2d;
+                document.getElementById('bm-3-t').innerText = data.bm3t; document.getElementById('bm-3-d').innerText = data.bm3d;
+                document.getElementById('bm-4-t').innerText = data.bm4t; document.getElementById('bm-4-d').innerText = data.bm4d;
+            }
 
             document.getElementById('security-tag').innerText = data.securityTag;
             document.getElementById('card1-label').innerHTML = data.card1Label;
