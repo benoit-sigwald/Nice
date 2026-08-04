@@ -129,20 +129,21 @@ flowchart TD
 
 ---
 
-### 4. Répartition Budgétaire & Garantie d'Autofinancement
+### 4. Répartition Budgétaire Commando (500 k€ / an TOTAL)
 
-| Échelle / Axe | Coût Métropole / Ville | Co-financement UE / Monaco | Total Mobilisé / an | Gain Net Généré / an |
-| :--- | :---: | :---: | :---: | :---: |
-| **POLE VILLE DE NICE** (Sécurité CSU & Séniors) | 600 k€ | 600 k€ *(Horizon / DIGITAL)* | 1 200 k€ / an | Incivilités -65 % |
-| **POLE MÉTROPOLE** (Audit IA, Cyber, Monaco) | 550 k€ | 600 k€ *(DIGITAL / Extended)* | 1 150 k€ / an | +2,50 M€ / an net |
-| **TOTAL ANNUEL** | **1 150 k€** | **1 200 k€** | **2 350 k€ / an** | **+1,35 M€ / AN NET** |
+| Échelle / Axe | Budget Commando Annuel | Co-financement / Levier Extérieur | Impact & Gain Généré / an |
+| :--- | :---: | :---: | :--- |
+| **AXE VILLE DE NICE** (CSU VSA & Séniors) | **100 k€ / an** | Co-financement UE / Cités | Incivilités -65 % & Allo Séniors 24/7 |
+| **AXE MÉTROPOLE NCÀ** (Audit IA & Cyber NIS 2) | **150 k€ / an** | Autofinancé dès les 1ers audits | **+2,50 M€ / an** d'économies nettes |
+| **AXE MONACO ZONE FRANCHE** (Mobilités & Cloud) | **250 k€ / an** | Partenariat Monaco & VC | Trafic -45 min & 1,2 M€/an infra |
+| **TOTAL ANNUEL** | **500 k€ / AN** | **Levier Extérieur UE & Cités** | **+2,00 M€ / AN DE BÉNÉFICE NET PUBLIC** |
 
 > [!IMPORTANT]
-> **Levier de Financement Extérieur & Indépendance Régionale**
-> - **Coût annuel d'exploitation de l'AMO IA** : 1,15 M€/an.
-> - **Stratégie de financement** : Recherche active et dépôt systématique auprès des guichets de l'Union Européenne (*Digital Europe Programme*, *Horizon Europe*, *FEDER*) et des guichets de développement des cités et quartiers (*Cités Lab*, innovation urbaine).
-> - **Gains d'audit complémentaires** : **> 2,50 M€/an** d'économies nettes réinjectés dans les finances locales.
-> - **Indépendance politique absolue** : Projet financé par les leviers européens, des cités et les économies directes, **sans dépendre de Renaud Muselier ni demander 1 € à la Région SUD**.
+> **Budget Frugal & Rentrée Budgétaire Nette**
+> - **Coût annuel total de l'implémentation IA** : **Seulement 500 k€/an** (soit 0,16 % des 300 M€ d'achats publics métropolitains).
+> - **Répartition des coûts** : 100 k€ Ville de Nice + 150 k€ Métropole NCÀ + 250 k€ Monaco Zone Franche.
+> - **Gains d'audit immédiatement encaissés** : **+2,50 M€/an** d'économies brutes certifiées.
+> - **Bilan net pour le contribuable niçois** : **+2,00 M€ / an réinjectés directement dans les services publics locaux**.
 
 ---
 
