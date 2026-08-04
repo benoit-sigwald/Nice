@@ -856,17 +856,34 @@
             line-height: 1.4;
         }
 
-        /* 3D Savings Card */
+        /* ENLARGED PROMINENT COUNTERS FOR CARDS 1 & 2 */
+        #metric-card-1 .metric-val,
+        #savings-card .metric-val {
+            font-size: clamp(2.7rem, 3.2vw, 3.6rem) !important;
+            margin-bottom: 10px;
+            text-shadow: 0 0 25px rgba(216, 185, 138, 0.4);
+        }
+
+        #metric-card-1 .flip-digit,
+        #savings-card .flip-digit {
+            width: 0.72em;
+            height: 1.10em;
+            border-radius: 7px;
+            border-width: 1.5px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        #metric-card-1 .flip-unit,
+        #savings-card .flip-unit {
+            font-size: 0.78em;
+            margin-left: 4px;
+        }
+
         #savings-card {
             cursor: pointer;
             transform-origin: center center;
             transform-style: preserve-3d;
             transition: transform 1.2s linear, border-color 0.4s ease, box-shadow 0.4s ease;
-        }
-
-        #savings-card .metric-val {
-            white-space: nowrap;
-            font-size: 2.05rem;
         }
 
         #savings-card.exploding {
