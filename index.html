@@ -42,6 +42,10 @@
             -webkit-tap-highlight-color: transparent;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background-color: var(--bg-espresso);
             color: var(--text-bone);
@@ -49,6 +53,12 @@
             line-height: 1.6;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
+        }
+
+        /* Scroll-snap for section-by-section scrolling on desktop */
+        @media (min-width: 1024px) and (pointer: fine) {
+            html, body { scroll-snap-type: y proximity; }
+            section, .hero-section-snap { scroll-snap-align: start; scroll-snap-stop: normal; }
         }
 
         /* Ambient Noise Overlay */
@@ -1345,8 +1355,10 @@
                 <li><a href="#axes" id="nav-axes">Axes & Pôles IA</a></li>
                 <li><a href="#cyber" id="nav-cyber">Bouclier Cyber</a></li>
                 <li><a href="#monaco" id="nav-monaco">Alliance Monaco</a></li>
+                <li><a href="#monaco-cloud-si" id="nav-cloud-si">☁️ Cloud SI</a></li>
                 <li><a href="#roi" id="nav-roi">Simulateur ROI</a></li>
                 <li><a href="#feuille-de-route" id="nav-roadmap">Feuille de Route</a></li>
+                <li><a href="#synthese" id="nav-synthese">Synthèse</a></li>
             </ul>
 
             <div class="nav-actions">
@@ -1372,8 +1384,10 @@
             <a href="#axes" onclick="toggleMobileMenu()" id="mob-nav-3">🏢 Pôle Métropole NCÀ</a>
             <a href="#cyber" onclick="toggleMobileMenu()" id="mob-nav-4">🛡️ Bouclier Cyber-IA</a>
             <a href="#monaco" onclick="toggleMobileMenu()" id="mob-nav-5">🇲🇨 Alliance Extended Monaco</a>
+            <a href="#monaco-cloud-si" onclick="toggleMobileMenu()" id="mob-nav-cloud">☁️ Migration SI → Monaco Cloud</a>
             <a href="#roi" onclick="toggleMobileMenu()" id="mob-nav-6">📊 Simulateur ROI Budgétaire</a>
             <a href="#feuille-de-route" onclick="toggleMobileMenu()" id="mob-nav-7">📅 Feuille de Route 100j</a>
+            <a href="#synthese" onclick="toggleMobileMenu()" id="mob-nav-synthese">⚡ Synthèse Exécutive</a>
             <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne);" id="mob-nav-8">📄 Note de Position Complète (.MD)</a>
         </div>
     </header>
@@ -1409,60 +1423,7 @@
                 </a>
             </div>
 
-            <!-- EXECUTIVE STRATEGY SUMMARY BOX ("LA STRATÉGIE EN QUELQUES POINTS") ENRICHED WITH CYBER SHIELD & MONACO CLOUD VALUES -->
-            <div class="strategy-summary-box reveal reveal-delay-3" id="strategy-summary-box">
-                <div class="strategy-summary-header">
-                    <div>
-                        <span class="card-tag" id="strat-tag">⚡ Synthèse Exécutive pour M. le Maire</span>
-                        <h3 class="font-serif" id="strat-title">La Stratégie Nice IA en 5 piliers chiffrés</h3>
-                    </div>
-                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-champagne); background: rgba(216, 185, 138, 0.12); padding: 4px 12px; border-radius: 9999px; border: 1px solid rgba(216, 185, 138, 0.3);" id="strat-total-badge">
-                        💰 Valeur Globale Générée : > 6,3 M€ à 9,5 M€ / an
-                    </span>
-                </div>
-                <div class="strategy-points-grid">
-                    <div class="strategy-point-card">
-                        <div class="strategy-point-icon">🛡️</div>
-                        <div class="strategy-point-content">
-                            <strong id="strat-p1-title">1. CSU Augmenté & Sécurité</strong>
-                            <p id="strat-p1-desc">IA VSA sur 4 300+ caméras : détection instantanée et réaffectation des policiers sur le terrain.</p>
-                            <span class="strategy-val-badge" id="strat-p1-val">Impact : Incivilités -65 %</span>
-                        </div>
-                    </div>
-                    <div class="strategy-point-card">
-                        <div class="strategy-point-icon">💰</div>
-                        <div class="strategy-point-content">
-                            <strong id="strat-p2-title">2. Audit IA & Commande Publique</strong>
-                            <p id="strat-p2-desc">Contrôle à 100 % des factures métropolitaines, devis et BPU pour éliminer le gaspillage.</p>
-                            <span class="strategy-val-badge" id="strat-p2-val">Gain Net : 2,50 M€ / an certifiés</span>
-                        </div>
-                    </div>
-                    <div class="strategy-point-card">
-                        <div class="strategy-point-icon">🔒</div>
-                        <div class="strategy-point-content">
-                            <strong id="strat-p5-title">3. Bouclier Cyber-IA (NIS 2)</strong>
-                            <p id="strat-p5-desc">SOC 24/7 souverain & étanchéité CSU contre les attaques par ransomware.</p>
-                            <span class="strategy-val-badge" id="strat-p5-val">Valeur : 1,8 M€ à 3 M€/an de crise évités</span>
-                        </div>
-                    </div>
-                    <div class="strategy-point-card">
-                        <div class="strategy-point-icon">🇲🇨</div>
-                        <div class="strategy-point-content">
-                            <strong id="strat-p3-title">4. Monaco Cloud & Zone Franche</strong>
-                            <p id="strat-p3-desc">Passerelle Monaco Cloud souverain + Zone Franche Nice-Monaco & régulation IA trafic.</p>
-                            <span class="strategy-val-badge" id="strat-p3-val">Valeur : 2,0 M€ à 4 M€/an infra & VC</span>
-                        </div>
-                    </div>
-                    <div class="strategy-point-card">
-                        <div class="strategy-point-icon">🇪🇺</div>
-                        <div class="strategy-point-content">
-                            <strong id="strat-p4-title">5. Financements Europe & Cités</strong>
-                            <p id="strat-p4-desc">Recherche active de financements auprès de l'Union Européenne (Digital Europe, Horizon) et des guichets de développement des cités.</p>
-                            <span class="strategy-val-badge" id="strat-p4-val">Co-financement : Europe & Cités</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Synthesis moved to end of page -->
 
             <!-- Spotlight Interactive Metric Cards (3 EQUAL COLUMNS) -->
             <div class="metrics-grid reveal reveal-delay-4">
@@ -1884,6 +1845,131 @@
                     <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;" id="time-p-3">
                         Nice consacrée 1ère métropole de France pour la sécurité urbaine intelligente, la sobriété budgétaire par l'IA et l'alliance transfrontalière européenne.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Migration SI vers Monaco Cloud (NEW) -->
+    <section id="monaco-cloud-si" style="background: linear-gradient(180deg, var(--bg-espresso) 0%, rgba(10, 47, 43, 0.25) 100%);">
+        <div class="container">
+            <div class="reveal">
+                <span class="kicker">☁️ Modernisation & Souveraineté Numérique</span>
+                <h2 class="section-title">Migration du SI vers Monaco Cloud : <em class="font-serif text-champagne">Réduction structurelle du budget IT</em></h2>
+                <p class="section-desc">
+                    La Ville de Nice et la Métropole NCÀ hébergent aujourd'hui leurs systèmes d'information dans des datacenters propres ou loués à coût élevé. La migration progressive vers le <strong>Monaco Cloud</strong> — 1er cloud souverain d'État d'Europe — libère entre <strong>1,5 M€ et 2,8 M€/an</strong> de budget IT réaffectables aux services publics.
+                </p>
+            </div>
+
+            <!-- Benchmarks IT Savings -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 40px;" class="reveal reveal-delay-1">
+
+                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 18px; padding: 28px;" class="spotlight-card">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--laser-blue); font-weight: 700;">🏛️ Cas d'École — Rennes Métropole (2021)</span>
+                    <h3 class="font-serif" style="font-size: 1.4rem; margin: 12px 0 8px; font-weight: 340;">Mutualisation & Cloud Public</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-bone-muted); line-height: 1.55;">Rennes Métropole a mutualisé 26 communes sur un cloud partagé géré par son DSI. Résultat : <strong>-38 % des coûts d'hébergement</strong> et <strong>+45 % de disponibilité des services</strong>. Économie annuelle constatée : <strong>~1,1 M€/an</strong> pour 220 000 habitants.</p>
+                    <div style="margin-top: 14px; padding: 8px 12px; border-radius: 8px; background: rgba(0, 240, 255, 0.07); border: 1px solid rgba(0, 240, 255, 0.2); font-size: 0.8rem; color: var(--laser-blue); font-weight: 600;">📌 Extrapolé Nice-Métropole (550k hab.) : ~2,7 M€/an</div>
+                </div>
+
+                <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 18px; padding: 28px;" class="spotlight-card">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-champagne); font-weight: 700;">🏙️ Cas d'École — Grand Lyon / Bordeaux Métropole</span>
+                    <h3 class="font-serif" style="font-size: 1.4rem; margin: 12px 0 8px; font-weight: 340;">Migration Microsoft 365 & Cloud Hybride</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-bone-muted); line-height: 1.55;">Grand Lyon et Bordeaux Métropole ont abandonné leurs serveurs on-premise pour un modèle SaaS/IaaS mutualisé. Réduction des coûts de maintenance des licences et du matériel : <strong>-32 % à -45 % du budget IT dédié aux serveurs</strong> en 3 ans. Bordeaux : <strong>économie de 900 k€/an</strong> sur un parc de 8 000 agents.</p>
+                    <div style="margin-top: 14px; padding: 8px 12px; border-radius: 8px; background: rgba(216, 185, 138, 0.08); border: 1px solid rgba(216, 185, 138, 0.25); font-size: 0.8rem; color: var(--accent-champagne); font-weight: 600;">📌 Nice (14 000 agents Ville + Métropole) : ~1,6 M€/an estimés</div>
+                </div>
+
+                <div style="background: linear-gradient(135deg, rgba(10, 47, 43, 0.6) 0%, rgba(22, 19, 15, 0.9) 100%); border: 1px solid rgba(15, 118, 110, 0.5); border-radius: 18px; padding: 28px;" class="spotlight-card">
+                    <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--success-green); font-weight: 700;">🇲🇨 Avantage Monaco Cloud Souverain</span>
+                    <h3 class="font-serif" style="font-size: 1.4rem; margin: 12px 0 8px; font-weight: 340;">Zéro CAPEX Datacenter</h3>
+                    <p style="font-size: 0.875rem; color: var(--text-bone-muted); line-height: 1.55;">En s'appuyant sur le Monaco Cloud (norme AMSN, HDS, ISO 27001), Nice évite l'investissement d'un nouveau datacenter propre estimé à <strong>8-12 M€ de CAPEX</strong> et <strong>1,2-1,8 M€/an d'OPEX</strong> (maintenance, énergie, personnel). La liaison souveraine Monaco Cloud ↔ CSU Nice est en outre conforme NIS 2.</p>
+                    <div style="margin-top: 14px; padding: 8px 12px; border-radius: 8px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); font-size: 0.8rem; color: var(--success-green); font-weight: 600;">📌 CAPEX évité : 8-12 M€ · OPEX évité : 1,2-1,8 M€/an</div>
+                </div>
+            </div>
+
+            <!-- Total Estimation Box -->
+            <div style="margin-top: 32px; padding: 28px 32px; border-radius: 18px; background: linear-gradient(135deg, rgba(216, 185, 138, 0.08) 0%, rgba(10, 47, 43, 0.3) 100%); border: 1px solid rgba(216, 185, 138, 0.35); display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between;" class="reveal reveal-delay-2">
+                <div>
+                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-bone-muted); margin-bottom: 4px;">Réduction estimée du budget IT (Ville + Métropole)</div>
+                    <div class="font-serif text-champagne" style="font-size: 2.4rem; font-weight: 340;">1,5 M€ → 2,8 M€ / an</div>
+                    <div style="font-size: 0.82rem; color: var(--text-bone-muted); margin-top: 4px;">Hébergement · Licences · Maintenance · Énergie</div>
+                </div>
+                <div style="text-align: right;">
+                    <div style="font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-bone-muted); margin-bottom: 4px;">CAPEX Datacenter évité</div>
+                    <div class="font-serif" style="font-size: 2.4rem; font-weight: 340; color: var(--success-green);">8 → 12 M€</div>
+                    <div style="font-size: 0.82rem; color: var(--text-bone-muted); margin-top: 4px;">Via Monaco Cloud souverain (NIS 2 · AMSN · HDS)</div>
+                </div>
+                <div style="background: rgba(0, 240, 255, 0.06); border: 1px solid rgba(0, 240, 255, 0.2); border-radius: 12px; padding: 16px 20px; max-width: 340px;">
+                    <div style="font-size: 0.78rem; color: var(--laser-blue); font-weight: 700; margin-bottom: 6px;">🔐 Pourquoi Monaco Cloud ?</div>
+                    <ul style="font-size: 0.82rem; color: var(--text-bone-muted); line-height: 1.6; padding-left: 14px;">
+                        <li>1er Cloud d'État souverain d'Europe</li>
+                        <li>Juridiction extraterritoriale hors CLOUD Act US</li>
+                        <li>Certifié AMSN · HDS · ISO 27001</li>
+                        <li>Backup hors-site instantané CSU ↔ Monaco</li>
+                        <li>Mutualisable avec d'autres communes NCA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Synthèse Exécutive (déplacée en fin de présentation) -->
+    <section id="synthese" style="background: linear-gradient(180deg, rgba(10, 47, 43, 0.15) 0%, var(--bg-espresso) 100%);">
+        <div class="container">
+            <div class="reveal">
+                <span class="kicker">⚡ Conclusion</span>
+                <h2 class="section-title">Synthèse Exécutive pour M. le Maire</h2>
+            </div>
+            <div class="strategy-summary-box reveal reveal-delay-1" id="strategy-summary-box">
+                <div class="strategy-summary-header">
+                    <div>
+                        <span class="card-tag" id="strat-tag">⚡ Synthèse Exécutive pour M. le Maire</span>
+                        <h3 class="font-serif" id="strat-title">La Stratégie Nice IA en 5 piliers chiffrés</h3>
+                    </div>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-champagne); background: rgba(216, 185, 138, 0.12); padding: 4px 12px; border-radius: 9999px; border: 1px solid rgba(216, 185, 138, 0.3);" id="strat-total-badge">
+                        💰 Valeur Globale Générée : > 6,3 M€ à 9,5 M€ / an
+                    </span>
+                </div>
+                <div class="strategy-points-grid">
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🛡️</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p1-title">1. CSU Augmenté & Sécurité</strong>
+                            <p id="strat-p1-desc">IA VSA sur 4 300+ caméras : détection instantanée et réaffectation des policiers sur le terrain.</p>
+                            <span class="strategy-val-badge" id="strat-p1-val">Impact : Incivilités -65 %</span>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">💰</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p2-title">2. Audit IA & Commande Publique</strong>
+                            <p id="strat-p2-desc">Contrôle à 100 % des factures métropolitaines, devis et BPU pour éliminer le gaspillage.</p>
+                            <span class="strategy-val-badge" id="strat-p2-val">Gain Net : 2,50 M€ / an certifiés</span>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🔒</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p5-title">3. Bouclier Cyber-IA (NIS 2)</strong>
+                            <p id="strat-p5-desc">SOC 24/7 souverain & étanchéité CSU contre les attaques par ransomware.</p>
+                            <span class="strategy-val-badge" id="strat-p5-val">Valeur : 1,8 M€ à 3 M€/an de crise évités</span>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">☁️</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p3-title">4. Monaco Cloud & Migration SI</strong>
+                            <p id="strat-p3-desc">Migration souveraine du SI municipal vers Monaco Cloud : 1,5-2,8 M€/an de budget IT libéré + 8-12 M€ de CAPEX datacenter évité.</p>
+                            <span class="strategy-val-badge" id="strat-p3-val">Économie IT : 1,5-2,8 M€/an + 8-12 M€ CAPEX évité</span>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🇪🇺</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p4-title">5. Financements Europe & Cités</strong>
+                            <p id="strat-p4-desc">500 k€/an de Budget IA total (100k Ville / 150k Métropole / 250k Monaco ZF), intégralement co-financé par l'UE (Digital Europe, Horizon, FEDER).</p>
+                            <span class="strategy-val-badge" id="strat-p4-val">Budget IA Total : 500 k€/an — Co-financé UE</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
