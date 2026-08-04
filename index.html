@@ -2,7 +2,7 @@
 <html lang="fr" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Nice, Capitale de l'IA Sécuritaire & Appliquée | Plan Métropolitain 2026-2029</title>
     <meta name="description" content="Plan métropolitain d'adoption et d'industrialisation de l'intelligence artificielle pour la Ville de Nice et la Métropole Nice Côte d'Azur. Sécurité, rigueur budgétaire et alliance transfrontalière avec Monaco.">
     
@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Card 3 In-Place 3x Scale Animation & Single-Line Flip Clock) -->
+    <!-- CSS Palette & Mobile Optimization & Language Switcher Styling -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -29,6 +29,7 @@
             --laser-blue: #00F0FF;
             --laser-blue-deep: #0066FF;
             --jam-red: #EF4444;
+            --success-green: #10B981;
 
             --font-serif: 'Fraunces', serif;
             --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -38,6 +39,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -148,7 +150,7 @@
         .traffic-preview-container {
             position: relative;
             width: 100%;
-            height: 100px;
+            height: 95px;
             border-radius: 12px;
             overflow: hidden;
             margin-bottom: 12px;
@@ -248,12 +250,6 @@
             box-shadow: 0 0 70px rgba(0, 240, 255, 0.5), 0 30px 80px rgba(0, 0, 0, 0.95) !important;
             background: rgba(22, 19, 15, 0.97) !important;
             backdrop-filter: blur(24px) !important;
-        }
-
-        @media (max-width: 768px) {
-            #metric-card-3.expanded-3x {
-                transform: scale(1.4) translateY(0) !important;
-            }
         }
 
         /* Volutions Ambient Radial Blur Lobes */
@@ -375,7 +371,7 @@
             height: 64px;
             padding: 0 24px;
             border-radius: 9999px;
-            background: rgba(22, 19, 15, 0.75);
+            background: rgba(22, 19, 15, 0.85);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             border: 1px solid rgba(216, 185, 138, 0.22);
@@ -459,6 +455,30 @@
             gap: 10px;
         }
 
+        /* LANGUAGE SWITCHER BUTTON */
+        .lang-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(216, 185, 138, 0.12);
+            border: 1px solid rgba(216, 185, 138, 0.35);
+            color: var(--accent-champagne);
+            font-size: 0.78rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .lang-toggle-btn:hover {
+            background: var(--accent-champagne);
+            color: var(--bg-espresso);
+            box-shadow: 0 0 15px rgba(216, 185, 138, 0.5);
+            transform: translateY(-1px);
+        }
+
         .btn-champagne {
             display: inline-flex;
             align-items: center;
@@ -534,14 +554,15 @@
             top: 76px;
             left: 0;
             right: 0;
-            background: rgba(22, 19, 15, 0.95);
-            backdrop-filter: blur(24px);
-            border: 1px solid rgba(216, 185, 138, 0.25);
+            background: rgba(22, 19, 15, 0.97);
+            backdrop-filter: blur(28px);
+            border: 1px solid rgba(216, 185, 138, 0.3);
             border-radius: 24px;
             padding: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
             flex-direction: column;
             gap: 12px;
+            z-index: 1000;
         }
 
         .mobile-overlay a {
@@ -556,12 +577,6 @@
         .mobile-overlay a:hover {
             color: var(--accent-champagne);
             background: rgba(216, 185, 138, 0.08);
-        }
-
-        @media (max-width: 990px) {
-            .nav-menu { display: none; }
-            .mobile-toggle { display: flex; }
-            .mobile-overlay.open { display: flex; }
         }
 
         /* Hero Section */
@@ -1061,6 +1076,60 @@
         .reveal-delay-2 { transition-delay: 0.2s; }
         .reveal-delay-3 { transition-delay: 0.3s; }
         .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* ADVANCED MOBILE PHONE RESPONSIVENESS OPTIMIZATIONS (< 990px & < 768px & < 480px) */
+        @media (max-width: 990px) {
+            .nav-menu { display: none; }
+            .mobile-toggle { display: flex; }
+            .mobile-overlay.open { display: flex; }
+            header { width: calc(100% - 24px); top: 12px; }
+            .nav-pill { height: 56px; padding: 0 16px; }
+            .logo { font-size: 1.15rem; }
+            .logo-badge { font-size: 8px; padding: 2px 6px; }
+            .hero { padding-top: 125px; padding-bottom: 50px; min-height: auto; }
+            section { padding: 65px 0; }
+            .cyber-box { padding: 28px 20px; }
+            .roi-calculator { padding: 24px 18px; }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 16px; }
+            .hero-title { font-size: 2.3rem; margin-bottom: 16px; }
+            .hero-subtitle { font-size: 0.98rem; line-height: 1.6; margin-bottom: 28px; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+            .metric-card { padding: 16px 12px; border-radius: 14px; }
+            .metric-val { font-size: 1.65rem; }
+            #savings-card .metric-val { font-size: 1.45rem; }
+            .flip-digit { width: 0.65em; height: 1.05em; border-radius: 4px; }
+            .flip-unit { font-size: 0.52em; }
+            .metric-label { font-size: 0.76rem; line-height: 1.35; }
+            
+            /* CARD 3 MOBILE IN-PLACE SCALING OVERFLOW PREVENTION */
+            #metric-card-3.expanded-3x {
+                transform: scale(1.15) translateY(-4px) !important;
+                box-shadow: 0 0 40px rgba(0, 240, 255, 0.6), 0 15px 40px rgba(0, 0, 0, 0.95) !important;
+            }
+
+            #metric-card-3.expanded-3x .traffic-preview-container {
+                height: 125px;
+            }
+
+            .tabs-header { gap: 8px; flex-direction: column; }
+            .tab-btn { font-size: 1rem; width: 100%; text-align: left; padding: 12px 16px; }
+            .grid-cards { grid-template-columns: 1fr; gap: 16px; }
+            .feature-card { padding: 24px 20px; border-radius: 16px; }
+            .cyber-grid { grid-template-columns: 1fr; gap: 16px; }
+            .roi-results-box { grid-template-columns: 1fr; gap: 14px; padding: 20px; }
+            .timeline::before { left: 20px; }
+            .timeline-item { padding-left: 56px; margin-bottom: 36px; }
+            .timeline-badge { width: 42px; height: 42px; font-size: 0.9rem; }
+        }
+
+        @media (max-width: 480px) {
+            .metrics-grid { grid-template-columns: 1fr; }
+            .hero-title { font-size: 1.95rem; }
+            .btn-champagne, .btn-outline { width: 100%; justify-content: center; padding: 12px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -1077,23 +1146,24 @@
             <a href="#" class="logo">
                 <span class="logo-dot"></span>
                 Nice <span class="font-serif italic text-champagne">IA 2026</span>
-                <span class="logo-badge">Capitale IA</span>
+                <span class="logo-badge" id="nav-badge-capitale">Capitale IA</span>
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#axes">Axes & Pôles IA</a></li>
-                <li><a href="#cyber">Bouclier Cyber</a></li>
-                <li><a href="#monaco">Alliance Monaco</a></li>
-                <li><a href="#roi">Simulateur ROI</a></li>
-                <li><a href="#feuille-de-route">Feuille de Route</a></li>
+                <li><a href="#axes" id="nav-axes">Axes & Pôles IA</a></li>
+                <li><a href="#cyber" id="nav-cyber">Bouclier Cyber</a></li>
+                <li><a href="#monaco" id="nav-monaco">Alliance Monaco</a></li>
+                <li><a href="#roi" id="nav-roi">Simulateur ROI</a></li>
+                <li><a href="#feuille-de-route" id="nav-roadmap">Feuille de Route</a></li>
             </ul>
 
             <div class="nav-actions">
-                <a href="https://github.com/benoit-sigwald/Nice" target="_blank" class="btn-outline">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    GitHub
-                </a>
-                <a href="#cadrage" class="btn-champagne">
+                <!-- LANGUAGE SWITCHER TOGGLE BUTTON -->
+                <button class="lang-toggle-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Changer de langue / Switch Language">
+                    <span id="langFlag">🇬🇧</span> <span id="langLabel">EN</span>
+                </button>
+
+                <a href="#cadrage" class="btn-champagne" id="nav-btn-note">
                     Note pour le Maire
                 </a>
                 <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
@@ -1105,14 +1175,14 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-overlay" id="mobileMenu">
-            <a href="#axes" onclick="toggleMobileMenu()">💰 Pôle Réduction de Coûts (2,5 M€/an)</a>
-            <a href="#axes" onclick="toggleMobileMenu()">🏛️ Pôle Ville de Nice</a>
-            <a href="#axes" onclick="toggleMobileMenu()">🏢 Pôle Métropole NCÀ</a>
-            <a href="#cyber" onclick="toggleMobileMenu()">🛡️ Bouclier Cyber-IA</a>
-            <a href="#monaco" onclick="toggleMobileMenu()">🇲🇨 Alliance Extended Monaco</a>
-            <a href="#roi" onclick="toggleMobileMenu()">📊 Simulateur ROI Budgétaire</a>
-            <a href="#feuille-de-route" onclick="toggleMobileMenu()">📅 Feuille de Route 100j</a>
-            <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne);">📄 Note de Position Complète (.MD)</a>
+            <a href="#axes" onclick="toggleMobileMenu()" id="mob-nav-1">💰 Pôle Réduction de Coûts (2,5 M€/an)</a>
+            <a href="#axes" onclick="toggleMobileMenu()" id="mob-nav-2">🏛️ Pôle Ville de Nice</a>
+            <a href="#axes" onclick="toggleMobileMenu()" id="mob-nav-3">🏢 Pôle Métropole NCÀ</a>
+            <a href="#cyber" onclick="toggleMobileMenu()" id="mob-nav-4">🛡️ Bouclier Cyber-IA</a>
+            <a href="#monaco" onclick="toggleMobileMenu()" id="mob-nav-5">🇲🇨 Alliance Extended Monaco</a>
+            <a href="#roi" onclick="toggleMobileMenu()" id="mob-nav-6">📊 Simulateur ROI Budgétaire</a>
+            <a href="#feuille-de-route" onclick="toggleMobileMenu()" id="mob-nav-7">📅 Feuille de Route 100j</a>
+            <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne);" id="mob-nav-8">📄 Note de Position Complète (.MD)</a>
         </div>
     </header>
 
@@ -1126,22 +1196,22 @@
 
         <div class="container" style="position: relative; z-index: 10;">
             <div class="reveal">
-                <span class="kicker">Plan Métropolitain d'IA Sécuritaire & Appliquée (2026-2029)</span>
+                <span class="kicker" id="hero-kicker">Plan Métropolitain d'IA Sécuritaire & Appliquée (2026-2029)</span>
             </div>
             
-            <h1 class="hero-title reveal reveal-delay-1">
+            <h1 class="hero-title reveal reveal-delay-1" id="hero-title">
                 Toutes les métropoles parlent d'IA. Nice la met en <em class="font-serif italic text-champagne">production.</em>
             </h1>
             
-            <p class="hero-subtitle reveal reveal-delay-2">
+            <p class="hero-subtitle reveal reveal-delay-2" id="hero-subtitle">
                 Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Rigueur budgétaire (2,5 M€/an net d'économies d'audit), sécurité augmentée au CSU, alliance transfrontalière avec Monaco et autofinancement total.
             </p>
 
             <div class="reveal reveal-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap;">
-                <a href="#axes" class="btn-champagne">
+                <a href="#axes" class="btn-champagne" id="hero-btn-discover">
                     Découvrir le Pôle Réduction de Coûts
                 </a>
-                <a href="#roi" class="btn-outline">
+                <a href="#roi" class="btn-outline" id="hero-btn-simulate">
                     Simuler les Économies Budgétaires ↓
                 </a>
             </div>
@@ -1152,17 +1222,17 @@
                 <div class="metric-card spotlight-card" id="metric-card-1">
                     <span class="security-tag" id="security-tag">🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue</span>
                     <div class="metric-val"><span id="counter-1" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label">Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong></div>
+                    <div class="metric-label" id="card1-label">Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong></div>
                 </div>
 
                 <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN ON SINGLE LINE) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="runCardSequence(1)">
-                    <div class="metric-val" id="savings-display"><span id="counter-2" class="flip-counter"></span><span class="flip-unit">M€ / an</span></div>
-                    <div class="metric-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
+                    <div class="metric-val" id="savings-display"><span id="counter-2" class="flip-counter"></span><span class="flip-unit" id="unit-card-2">M€ / an</span></div>
+                    <div class="metric-label" id="card2-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
+                    <span class="replay-hint" id="card2-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
                 </div>
 
-                <!-- CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY & FLUID TRAFFIC) -->
+                <!-- CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY) -->
                 <div class="metric-card spotlight-card" id="metric-card-3" onclick="runCardSequence(2)">
                     <div class="traffic-preview-container" id="traffic-preview-container">
                         <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-mini-img">
@@ -1172,13 +1242,13 @@
                         <div class="card3-traffic-badge" id="card3-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
                     </div>
                     <div class="metric-val"><span id="counter-3" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Simulation Plaine du Var / A8)</div>
+                    <div class="metric-label" id="card3-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Simulation Plaine du Var / A8)</div>
                 </div>
 
                 <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
                 <div class="metric-card spotlight-card" id="metric-card-4">
                     <div class="metric-val"><span id="counter-4" class="flip-counter"></span><span class="flip-unit">%</span></div>
-                    <div class="metric-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
+                    <div class="metric-label" id="card4-label">Autofinancé dès l'An 2 (0 € dépendance Région SUD)</div>
                 </div>
             </div>
         </div>
@@ -1188,33 +1258,33 @@
     <section id="axes">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Priorité Budgétaire & Institutions</span>
-                <h2 class="section-title">Les Engagements Structurants Nice IA</h2>
-                <p class="section-desc">
+                <span class="kicker" id="axes-kicker">Priorité Budgétaire & Institutions</span>
+                <h2 class="section-title" id="axes-title">Les Engagements Structurants Nice IA</h2>
+                <p class="section-desc" id="axes-desc">
                     Une doctrine d'austérité intelligente : économies budgétaires certifiées en premier, suivies des compétences Ville et Métropole.
                 </p>
             </div>
 
             <!-- Tabs Header with Pôle Réduction de Coûts FIRST and PROMINENT ("EN AVANT") -->
             <div class="tabs-header reveal reveal-delay-1">
-                <button class="tab-btn active featured-tab" onclick="switchTab('reduction')">
-                    <span class="tab-badge">Priorité 1</span>
+                <button class="tab-btn active featured-tab" onclick="switchTab('reduction')" id="tab-btn-1">
+                    <span class="tab-badge" id="badge-priorite-1">Priorité 1</span>
                     💰 PÔLE RÉDUCTION DE COÛTS (2,5 M€/AN)
                 </button>
-                <button class="tab-btn" onclick="switchTab('ville')">🏛️ POLE VILLE DE NICE</button>
-                <button class="tab-btn" onclick="switchTab('metropole')">🏢 POLE MÉTROPOLE NCÀ</button>
+                <button class="tab-btn" onclick="switchTab('ville')" id="tab-btn-2">🏛️ POLE VILLE DE NICE</button>
+                <button class="tab-btn" onclick="switchTab('metropole')" id="tab-btn-3">🏢 POLE MÉTROPOLE NCÀ</button>
             </div>
 
             <!-- Tab Content 1: Pôle Réduction de Coûts (DEFAULT ACTIVE & HIGHLIGHTED) -->
             <div id="tab-reduction" class="tab-content reveal reveal-delay-2">
                 <div class="grid-cards">
                     <div class="feature-card spotlight-card highlight-cost-card">
-                        <span class="card-tag">Axe Prioritaire A — Commande Publique</span>
-                        <h3 class="card-h3">Audit IA des Marchés & Factures</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab1-card1-tag">Axe Prioritaire A — Commande Publique</span>
+                        <h3 class="card-h3" id="tab1-card1-h3">Audit IA des Marchés & Factures</h3>
+                        <p class="card-p" id="tab1-card1-p">
                             Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab1-card1-list">
                             <li>Détection automatique des surfacturations et doublons de paiement</li>
                             <li>Assainissement immédiat des dépenses de fonctionnement</li>
                             <li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>
@@ -1222,12 +1292,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card highlight-cost-card">
-                        <span class="card-tag">Axe Prioritaire B — Énergie & Bâtiments</span>
-                        <h3 class="card-h3">Sobriété IA des Chantiers & Écoles</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab1-card2-tag">Axe Prioritaire B — Énergie & Bâtiments</span>
+                        <h3 class="card-h3" id="tab1-card2-h3">Sobriété IA des Chantiers & Écoles</h3>
+                        <p class="card-p" id="tab1-card2-p">
                             Régulation prédictive du chauffage, de la climatisation et de l'éclairage public sur les 400+ bâtiments municipaux.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab1-card2-list">
                             <li>-20 % sur la facture énergétique des équipements publics</li>
                             <li>Supervision en temps réel des fuites et surconsommations</li>
                             <li>Optimisation thermique prédictive selon la météo locale</li>
@@ -1235,12 +1305,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card highlight-cost-card">
-                        <span class="card-tag">Axe Prioritaire C — Flottes & Logistique</span>
-                        <h3 class="card-h3">Optimisation des Carburants Municipaux</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab1-card3-tag">Axe Prioritaire C — Flottes & Logistique</span>
+                        <h3 class="card-h3" id="tab1-card3-h3">Optimisation des Carburants Municipaux</h3>
+                        <p class="card-p" id="tab1-card3-p">
                             Dispatching intelligent et routage prédictif des véhicules de collecte, de voirie et des patrouilles de la Police Municipale.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab1-card3-list">
                             <li>-15 % d'économie de carburant sur l'ensemble de la flotte</li>
                             <li>Réduction de l'usure mécanique et des coûts de maintenance</li>
                             <li>Planification dynamique des tournées de propreté</li>
@@ -1253,12 +1323,12 @@
             <div id="tab-ville" class="tab-content" style="display: none;">
                 <div class="grid-cards">
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 1 — Sécurité & CSU</span>
-                        <h3 class="card-h3">Vidéoprotection VSA & Police Municipale</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab2-card1-tag">Axe 1 — Sécurité & CSU</span>
+                        <h3 class="card-h3" id="tab2-card1-h3">Vidéoprotection VSA & Police Municipale</h3>
+                        <p class="card-p" id="tab2-card1-p">
                             Modernisation du CSU par Vidéosurveillance Algorithmique pour la détection d'anomalies (incivilités, dépôts sauvages, contre-sens).
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab2-card1-list">
                             <li>Strict respect de l'AI Act (aucune reconnaissance faciale)</li>
                             <li><strong>Moins d'agents bloqués derrière des écrans ➔ Plus de policiers sur le terrain dans la rue</strong></li>
                             <li>Post-Event IA pour accélérer les enquêtes judiciaires</li>
@@ -1266,12 +1336,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 2 — Usagers & Électeurs</span>
-                        <h3 class="card-h3">« Allo Niçois Séniors IA »</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab2-card2-tag">Axe 2 — Usagers & Électeurs</span>
+                        <h3 class="card-h3" id="tab2-card2-h3">« Allo Niçois Séniors IA »</h3>
+                        <p class="card-p" id="tab2-card2-p">
                             Guichet vocal gratuit 24/7 en langage naturel accessible par simple téléphone pour les 30 %+ de Niçois de plus de 60 ans.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab2-card2-list">
                             <li>Réservation repas à domicile & transports à la demande</li>
                             <li>Rendez-vous prioritaires en mairie</li>
                             <li>Alertes canicule et accompagnement des aidants</li>
@@ -1279,12 +1349,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 3 — Cadre de Vie</span>
-                        <h3 class="card-h3">Propreté Augmentée & Quartiers</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab2-card3-tag">Axe 3 — Cadre de Vie</span>
+                        <h3 class="card-h3" id="tab2-card3-h3">Propreté Augmentée & Quartiers</h3>
+                        <p class="card-p" id="tab2-card3-p">
                             Signalement instantané par photo des dégradations de voirie avec dispatching prédictif des équipes de nettoyage.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab2-card3-list">
                             <li>Résolution des dépôts sauvages sous 6h (vs 48h)</li>
                             <li>Optimisation des tournées (15% d'économie carburant)</li>
                             <li>Écoute citoyenne permanente par quartier</li>
@@ -1297,12 +1367,12 @@
             <div id="tab-metropole" class="tab-content" style="display: none;">
                 <div class="grid-cards">
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 4 — Mobilités Pendulaires</span>
-                        <h3 class="card-h3">IA Régulation Trafic Nice-Monaco</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab3-card1-tag">Axe 4 — Mobilités Pendulaires</span>
+                        <h3 class="card-h3" id="tab3-card1-h3">IA Régulation Trafic Nice-Monaco</h3>
+                        <p class="card-p" id="tab3-card1-p">
                             Jumeau numérique croisant les caméras CSU, les capteurs d'Extended Monaco, Waze et la SNCF pour les 45 000 navetteurs quotidiens.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab3-card1-list">
                             <li>Gestion dynamique des feux sur l'A8 et les corniches</li>
                             <li>Guidage intelligent vers les parkings relais Éze/Cap d'Ail</li>
                             <li>Voies de covoiturage gérées par LAPI IA</li>
@@ -1310,12 +1380,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 5 — Souveraineté & Monaco</span>
-                        <h3 class="card-h3">Ville Franche IA & Monaco Cloud</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab3-card2-tag">Axe 5 — Souveraineté & Monaco</span>
+                        <h3 class="card-h3" id="tab3-card2-h3">Ville Franche IA & Monaco Cloud</h3>
+                        <p class="card-p" id="tab3-card2-p">
                             Partenariat avec la Principauté (programme <em>Extended Monaco</em>) et interconnexion chiffrée avec <em>Monaco Cloud</em>.
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab3-card2-list">
                             <li>Sandbox réglementaire pour attirer les fonds monégasques</li>
                             <li>Passerelle de données souveraines sécurisée</li>
                             <li>Synergie IA industrielle avec Grasse (chimie/arômes)</li>
@@ -1323,12 +1393,12 @@
                     </div>
 
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 6 — Financement & Rigueur</span>
-                        <h3 class="card-h3">Autofinancement & Fonds Européens</h3>
-                        <p class="card-p">
+                        <span class="card-tag" id="tab3-card3-tag">Axe 6 — Financement & Rigueur</span>
+                        <h3 class="card-h3" id="tab3-card3-h3">Autofinancement & Fonds Européens</h3>
+                        <p class="card-p" id="tab3-card3-p">
                             Stratégie d'autofinancement intégral dès l'An 2 sans demander 1 € à la Région SUD (Renaud Muselier).
                         </p>
-                        <ul class="card-list">
+                        <ul class="card-list" id="tab3-card3-list">
                             <li>Financement direct UE (Digital Europe, Horizon Europe)</li>
                             <li>Autofinancement par les économies d'audit générées</li>
                             <li>Indépendance politique et financière garantie</li>
@@ -1343,9 +1413,9 @@
     <section id="cyber">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Protection & Résilience Numérique</span>
-                <h2 class="section-title">Analyse des Risques Cyber & Bouclier IA</h2>
-                <p class="section-desc">
+                <span class="kicker" id="cyber-kicker">Protection & Résilience Numérique</span>
+                <h2 class="section-title" id="cyber-title">Analyse des Risques Cyber & Bouclier IA</h2>
+                <p class="section-desc" id="cyber-desc">
                     Les mairies sont devenues les cibles privilégiées des ransomwares. Nice déploie une défense souveraine active par l'IA.
                 </p>
             </div>
@@ -1353,30 +1423,30 @@
             <div class="cyber-box reveal reveal-delay-1">
                 <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px;">
                     <div>
-                        <span class="card-tag">Protocole Cyber-Shield 2026</span>
-                        <h3 class="font-serif" style="font-size: 2rem; font-weight: 340;">Le Bouclier Métropolitain IA</h3>
+                        <span class="card-tag" id="cyber-box-tag">Protocole Cyber-Shield 2026</span>
+                        <h3 class="font-serif" style="font-size: 2rem; font-weight: 340;" id="cyber-box-h3">Le Bouclier Métropolitain IA</h3>
                     </div>
-                    <span style="background: rgba(16, 185, 129, 0.1); color: var(--success-green); border: 1px solid rgba(10, 185, 129, 0.3); padding: 6px 14px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;">
+                    <span style="background: rgba(16, 185, 129, 0.1); color: var(--success-green); border: 1px solid rgba(10, 185, 129, 0.3); padding: 6px 14px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;" id="cyber-box-nis2">
                         Conforme Directive NIS 2
                     </span>
                 </div>
 
                 <div class="cyber-grid">
                     <div class="cyber-item">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;">1. SOC IA Métropolitain 24/7</h4>
-                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);">Agents IA autonomes détectant en temps réel les tentatives d'intrusion et d'exfiltration de données sur le réseau municipal.</p>
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;" id="cyber-item1-h4">1. SOC IA Métropolitain 24/7</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);" id="cyber-item1-p">Agents IA autonomes détectant en temps réel les tentatives d'intrusion et d'exfiltration de données sur le réseau municipal.</p>
                     </div>
                     <div class="cyber-item">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;">2. Éradication du Shadow AI</h4>
-                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);">Mise à disposition d'un environnement IA souverain local étanche et blocage des IA grand public non sécurisées.</p>
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;" id="cyber-item2-h4">2. Éradication du Shadow AI</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);" id="cyber-item2-p">Mise à disposition d'un environnement IA souverain local étanche et blocage des IA grand public non sécurisées.</p>
                     </div>
                     <div class="cyber-item">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;">3. Air-Gap du CSU</h4>
-                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);">Partitionnement hermétique des flux vidéo du Centre de Supervision Urbain pour empêcher tout piratage à distance.</p>
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;" id="cyber-item3-h4">3. Air-Gap du CSU</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);" id="cyber-item3-p">Partitionnement hermétique des flux vidéo du Centre de Supervision Urbain pour empêcher tout piratage à distance.</p>
                     </div>
                     <div class="cyber-item">
-                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;">4. Monaco Cloud Bridge</h4>
-                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);">Sauvegardes chiffrées hors-site sur le 1er cloud souverain d'État d'Europe sous juridiction monégasque.</p>
+                        <h4 style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--accent-champagne); margin-bottom: 8px;" id="cyber-item4-h4">4. Monaco Cloud Bridge</h4>
+                        <p style="font-size: 0.875rem; color: var(--text-bone-muted);" id="cyber-item4-p">Sauvegardes chiffrées hors-site sur le 1er cloud souverain d'État d'Europe sous juridiction monégasque.</p>
                     </div>
                 </div>
             </div>
@@ -1387,18 +1457,18 @@
     <section id="monaco">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Partenariat Transfrontalier Majeur</span>
-                <h2 class="section-title">L'Alliance Nice - Extended Monaco</h2>
-                <p class="section-desc">
+                <span class="kicker" id="monaco-kicker">Partenariat Transfrontalier Majeur</span>
+                <h2 class="section-title" id="monaco-title">L'Alliance Nice - Extended Monaco</h2>
+                <p class="section-desc" id="monaco-desc">
                     Une synergie parfaite entre les fonds et le cloud souverain de la Principauté et l'échelle métropolitaine niçoise.
                 </p>
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; margin-top: 40px;" class="reveal reveal-delay-1">
                 <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
-                    <span class="card-tag">Principauté de Monaco</span>
-                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;">Capital & Cloud Souverain</h3>
-                    <ul class="card-list">
+                    <span class="card-tag" id="monaco-card1-tag">Principauté de Monaco</span>
+                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;" id="monaco-card1-h3">Capital & Cloud Souverain</h3>
+                    <ul class="card-list" id="monaco-card1-list">
                         <li><strong>Extended Monaco</strong> : Programme stratégique sous l'impulsion du Prince Albert II</li>
                         <li><strong>Monaco Cloud</strong> : 1er Cloud souverain d'État d'Europe (norme AMSN)</li>
                         <li><strong>Extended Monaco Entreprises</strong> : Audits <em>AI Opportunity</em> et 5G intégrale</li>
@@ -1407,9 +1477,9 @@
                 </div>
 
                 <div style="background: var(--bg-charcoal); border: 1px solid var(--border-color); border-radius: 20px; padding: 32px;" class="spotlight-card">
-                    <span class="card-tag">Métropole Nice Côte d'Azur</span>
-                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;">Échelle, CSU & Recherche 3IA</h3>
-                    <ul class="card-list">
+                    <span class="card-tag" id="monaco-card2-tag">Métropole Nice Côte d'Azur</span>
+                    <h3 class="font-serif" style="font-size: 1.6rem; margin-bottom: 16px; font-weight: 340;" id="monaco-card2-h3">Échelle, CSU & Recherche 3IA</h3>
+                    <ul class="card-list" id="monaco-card2-list">
                         <li><strong>Centre de Supervision Urbain</strong> : 4 300+ caméras et Police Municipale</li>
                         <li><strong>Sophia Antipolis</strong> : 2 700 entreprises, 5 500 chercheurs</li>
                         <li><strong>Institut 3IA Côte d'Azur</strong> : Recherche de frontière et UniCA</li>
@@ -1424,9 +1494,9 @@
     <section id="roi">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Rigueur & Autofinancement Certifié</span>
-                <h2 class="section-title">Simulateur de Gain Budgétaire</h2>
-                <p class="section-desc">
+                <span class="kicker" id="roi-kicker">Rigueur & Autofinancement Certifié</span>
+                <h2 class="section-title" id="roi-title">Simulateur de Gain Budgétaire</h2>
+                <p class="section-desc" id="roi-desc">
                     Ajustez le volume des achats de la Métropole pour visualiser l'impact direct de l'audit IA sur le budget public.
                 </p>
             </div>
@@ -1434,7 +1504,7 @@
             <div class="roi-calculator reveal reveal-delay-1">
                 <div class="slider-group">
                     <div class="slider-label">
-                        <span>Volume annuel de la Commande Publique Audité :</span>
+                        <span id="roi-lbl-volume">Volume annuel de la Commande Publique Audité :</span>
                         <strong id="volume-val" class="text-champagne font-serif" style="font-size: 1.2rem;">300 M€</strong>
                     </div>
                     <input type="range" min="100" max="600" value="300" step="25" class="range-slider" id="volume-slider" oninput="updateROI()">
@@ -1442,7 +1512,7 @@
 
                 <div class="slider-group">
                     <div class="slider-label">
-                        <span>Taux moyen d'optimisation / détection de surcoûts :</span>
+                        <span id="roi-lbl-rate">Taux moyen d'optimisation / détection de surcoûts :</span>
                         <strong id="rate-val" class="text-champagne font-serif" style="font-size: 1.2rem;">0.8 %</strong>
                     </div>
                     <input type="range" min="0.3" max="2.0" value="0.8" step="0.1" class="range-slider" id="rate-slider" oninput="updateROI()">
@@ -1450,15 +1520,15 @@
 
                 <div class="roi-results-box">
                     <div>
-                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);">Économies Brutes Générées :</span>
+                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);" id="roi-lbl-gross">Économies Brutes Générées :</span>
                         <div id="roi-savings" class="font-serif text-champagne" style="font-size: 2.2rem; font-weight: 340;">2.40 M€ / an</div>
                     </div>
                     <div>
-                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);">Coût Commando Métropole :</span>
-                        <div class="font-serif text-bone" style="font-size: 2.2rem; font-weight: 340;">1.15 M€ / an</div>
+                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);" id="roi-lbl-cost">Coût Commando Métropole :</span>
+                        <div class="font-serif text-bone" style="font-size: 2.2rem; font-weight: 340;" id="roi-cost-val">1.15 M€ / an</div>
                     </div>
                     <div>
-                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);">Bénéfice Net Public :</span>
+                        <span style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-bone-muted);" id="roi-lbl-net">Bénéfice Net Public :</span>
                         <div id="roi-net" class="font-serif" style="font-size: 2.2rem; font-weight: 340; color: var(--success-green);">+1.25 M€ / an</div>
                     </div>
                 </div>
@@ -1470,34 +1540,34 @@
     <section id="feuille-de-route">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Execution Roadmap</span>
-                <h2 class="section-title">La Feuille de Route Commando</h2>
-                <p class="section-desc">
+                <span class="kicker" id="route-kicker">Execution Roadmap</span>
+                <h2 class="section-title" id="route-title">La Feuille de Route Commando</h2>
+                <p class="section-desc" id="route-desc">
                     Des étapes datées et mesurables pour un déploiement sans délai.
                 </p>
             </div>
 
             <div class="timeline reveal reveal-delay-1">
                 <div class="timeline-item">
-                    <div class="timeline-badge">100j</div>
-                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;">100 Premiers Jours</h3>
-                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;">
+                    <div class="timeline-badge" id="time-badge-1">100j</div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;" id="time-h3-1">100 Premiers Jours</h3>
+                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;" id="time-p-1">
                         Annonce officielle du plan par M. Éric Ciotti. Nomination de l'AMO IA (Benoît Sigwald). Lancement du Bouclier Cyber-IA et des projets pilotes CSU Vidéo VSA + Audit des marchés publics. Dépôt du dossier <em>Digital Europe</em>.
                     </p>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-badge">12m</div>
-                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;">12 Mois</h3>
-                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;">
+                    <div class="timeline-badge" id="time-badge-2">12m</div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;" id="time-h3-2">12 Mois</h3>
+                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;" id="time-p-2">
                         Mise en production des 5 cas d'usage Quick Wins (Allo Séniors IA, Propreté, Audit, Mobilité Monaco, Cyber). Bilan financier certifié démontrant <strong>> 2,5 M€ d'économies réalisées</strong>. Signature du protocole Ville Franche IA avec Monaco.
                     </p>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-badge">36m</div>
-                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;">36 Mois</h3>
-                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;">
+                    <div class="timeline-badge" id="time-badge-3">36m</div>
+                    <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 340; margin-bottom: 8px;" id="time-h3-3">36 Mois</h3>
+                    <p style="color: var(--text-bone-muted); font-size: 0.95rem; line-height: 1.6;" id="time-p-3">
                         Nice consacrée 1ère métropole de France pour la sécurité urbaine intelligente, la sobriété budgétaire par l'IA et l'alliance transfrontalière européenne.
                     </p>
                 </div>
@@ -1510,24 +1580,24 @@
         <div class="container footer-content">
             <div>
                 <span class="font-serif text-champagne" style="font-size: 1.2rem;">Nice IA 2026</span>
-                <p style="margin-top: 4px; font-size: 0.8rem;">Benoît Sigwald — Senior AI Architect & AMO IA Métropolitain</p>
+                <p style="margin-top: 4px; font-size: 0.8rem;" id="footer-author">Benoît Sigwald — Senior AI Architect & AMO IA Métropolitain</p>
             </div>
 
             <div style="display: flex; gap: 24px;">
                 <a href="https://arx-consulting.com/nice" style="color: var(--text-bone-muted); text-decoration: none;">Arx Consulting Nice</a>
-                <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne); text-decoration: none;">Note Complète (.MD)</a>
+                <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne); text-decoration: none;" id="footer-doc-md">Note Complète (.MD)</a>
             </div>
         </div>
     </footer>
 
-    <!-- Interactive Scripting & Dynamic Animations Engine -->
+    <!-- Interactive Scripting & BILINGUAL FR / EN DICTIONARY ENGINE -->
     <script>
         // 1. Mobile Menu Toggle
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('open');
         }
 
-        // 2. Tabs Switcher with Pôle Réduction de Coûts as 1st Default Tab
+        // 2. Tabs Switcher
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
@@ -1544,7 +1614,141 @@
             }
         }
 
-        // 3. Interactive ROI Calculator
+        // 3. BILINGUAL FR / EN TRANSLATION ENGINE
+        let currentLang = 'FR';
+
+        const i18nData = {
+            FR: {
+                navBadgeCapitale: "Capitale IA",
+                navAxes: "Axes & Pôles IA",
+                navCyber: "Bouclier Cyber",
+                navMonaco: "Alliance Monaco",
+                navRoi: "Simulateur ROI",
+                navRoadmap: "Feuille de Route",
+                navBtnNote: "Note pour le Maire",
+                langFlag: "🇬🇧",
+                langLabel: "EN",
+                heroKicker: "Plan Métropolitain d'IA Sécuritaire & Appliquée (2026-2029)",
+                heroTitle: "Toutes les métropoles parlent d'IA. Nice la met en <em class=\"font-serif italic text-champagne\">production.</em>",
+                heroSubtitle: "Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Rigueur budgétaire (2,5 M€/an net d'économies d'audit), sécurité augmentée au CSU, alliance transfrontalière avec Monaco et autofinancement total.",
+                heroBtnDiscover: "Découvrir le Pôle Réduction de Coûts",
+                heroBtnSimulate: "Simuler les Économies Budgétaires ↓",
+                securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
+                card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong>",
+                unitCard2: "M€ / an",
+                card2Label: "Économies nettes/an d'audit IA de la commande publique métropolitaine",
+                card2Hint: "✨ Animation séquentielle en boucle (Carte 1 ➔ 4)",
+                card3Label: "Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Simulation Plaine du Var / A8)",
+                card3BadgeJam: "🚨 Embouteillages Plaine du Var (-45 min)",
+                card3BadgeFluid: "⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)",
+                card4Label: "Autofinancé dès l'An 2 (0 € dépendance Région SUD)",
+                axesKicker: "Priorité Budgétaire & Institutions",
+                axesTitle: "Les Engagements Structurants Nice IA",
+                axesDesc: "Une doctrine d'austérité intelligente : économies budgétaires certifiées en premier, suivies des compétences Ville et Métropole.",
+                badgePriorite1: "Priorité 1",
+                tabBtn1: "💰 PÔLE RÉDUCTION DE COÛTS (2,5 M€/AN)",
+                tabBtn2: "🏛️ POLE VILLE DE NICE",
+                tabBtn3: "🏢 POLE MÉTROPOLE NCÀ",
+                tab1card1tag: "Axe Prioritaire A — Commande Publique",
+                tab1card1h3: "Audit IA des Marchés & Factures",
+                tab1card1p: "Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.",
+                tab1card1list: "<li>Détection automatique des surfacturations et doublons de paiement</li><li>Assainissement immédiat des dépenses de fonctionnement</li><li><strong>2,5 M€ à 3,5 M€ d'économies nettes / an certifiées</strong></li>",
+                roiGross: "Économies Brutes Générées :",
+                roiCost: "Coût Commando Métropole :",
+                roiNet: "Bénéfice Net Public :",
+                roiCostVal: "1.15 M€ / an"
+            },
+            EN: {
+                navBadgeCapitale: "AI Capital",
+                navAxes: "Pillors & AI Axes",
+                navCyber: "Cyber Shield",
+                navMonaco: "Monaco Alliance",
+                navRoi: "ROI Simulator",
+                navRoadmap: "Roadmap",
+                navBtnNote: "Memo for Mayor",
+                langFlag: "🇫🇷",
+                langLabel: "FR",
+                heroKicker: "Metropolitan Secured & Applied AI Plan (2026-2029)",
+                heroTitle: "All metropolises talk about AI. Nice puts it into <em class=\"font-serif italic text-champagne\">production.</em>",
+                heroSubtitle: "A strategic doctrine written for <strong>Mr. Éric Ciotti</strong>: Budgetary rigor (€2.5M/yr net audit savings), augmented CSU security, cross-border alliance with Monaco, and 100% autofinanced.",
+                heroBtnDiscover: "Discover Cost Reduction Pole",
+                heroBtnSimulate: "Simulate Budget Savings ↓",
+                securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
+                card1Label: "CSU Cameras boosted by AI: <strong>Automatic threat detection — fewer officers stuck behind screens and more police officers deployed in the streets.</strong>",
+                unitCard2: "M€ / yr",
+                card2Label: "Net annual savings from AI audit of metropolitan public procurement",
+                card2Hint: "✨ Sequential loop animation (Card 1 ➔ 4)",
+                card3Label: "Daily commuter mobility flows regulated with Monaco (Plaine du Var / A8 3D Simulation)",
+                card3BadgeJam: "🚨 Plaine du Var Traffic Jams (-45 min)",
+                card3BadgeFluid: "⚡ Metropolitan AI Regulation: Traffic Fluidified (-70% jams)",
+                card4Label: "100% Autofinanced from Year 2 (0 € dependency on Région SUD)",
+                axesKicker: "Budgetary Priority & Institutions",
+                axesTitle: "Nice AI Core Commitments",
+                axesDesc: "A smart austerity doctrine: certified budgetary savings first, followed by City and Metropolis domains.",
+                badgePriorite1: "Priority 1",
+                tabBtn1: "💰 COST REDUCTION POLE (€2.5M/YR)",
+                tabBtn2: "🏛️ CITY OF NICE POLE",
+                tabBtn3: "🏢 NCÀ METROPOLIS POLE",
+                tab1card1tag: "Priority Axis A — Public Procurement",
+                tab1card1h3: "AI Procurement & Invoice Audit",
+                tab1card1p: "100% automated semantic ingestion and verification of unit price schedules, quotes, and metropolitan invoices.",
+                tab1card1list: "<li>Automatic detection of overbilling and duplicate payments</li><li>Immediate reduction of operating expenditure</li><li><strong>Certified net savings of €2.5M to €3.5M / year</strong></li>",
+                roiGross: "Gross Savings Generated:",
+                roiCost: "Metropolitan Commando Cost:",
+                roiNet: "Net Public Benefit:",
+                roiCostVal: "1.15 M€ / yr"
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'FR' ? 'EN' : 'FR';
+            const data = i18nData[currentLang];
+
+            document.getElementById('langFlag').innerText = data.langFlag;
+            document.getElementById('langLabel').innerText = data.langLabel;
+            document.getElementById('nav-badge-capitale').innerText = data.navBadgeCapitale;
+            document.getElementById('nav-axes').innerText = data.navAxes;
+            document.getElementById('nav-cyber').innerText = data.navCyber;
+            document.getElementById('nav-monaco').innerText = data.navMonaco;
+            document.getElementById('nav-roi').innerText = data.navRoi;
+            document.getElementById('nav-roadmap').innerText = data.navRoadmap;
+            document.getElementById('nav-btn-note').innerText = data.navBtnNote;
+
+            document.getElementById('hero-kicker').innerText = data.heroKicker;
+            document.getElementById('hero-title').innerHTML = data.heroTitle;
+            document.getElementById('hero-subtitle').innerHTML = data.heroSubtitle;
+            document.getElementById('hero-btn-discover').innerText = data.heroBtnDiscover;
+            document.getElementById('hero-btn-simulate').innerText = data.heroBtnSimulate;
+
+            document.getElementById('security-tag').innerText = data.securityTag;
+            document.getElementById('card1-label').innerHTML = data.card1Label;
+            document.getElementById('unit-card-2').innerText = data.unitCard2;
+            document.getElementById('card2-label').innerText = data.card2Label;
+            document.getElementById('card2-hint').innerText = data.card2Hint;
+            document.getElementById('card3-label').innerText = data.card3Label;
+            document.getElementById('card4-label').innerText = data.card4Label;
+
+            document.getElementById('axes-kicker').innerText = data.axesKicker;
+            document.getElementById('axes-title').innerText = data.axesTitle;
+            document.getElementById('axes-desc').innerText = data.axesDesc;
+
+            document.getElementById('badge-priorite-1').innerText = data.badgePriorite1;
+            document.getElementById('tab-btn-1').childNodes[1].nodeValue = " " + data.tabBtn1;
+            document.getElementById('tab-btn-2').innerText = data.tabBtn2;
+            document.getElementById('tab-btn-3').innerText = data.tabBtn3;
+
+            document.getElementById('tab1-card1-tag').innerText = data.tab1card1tag;
+            document.getElementById('tab1-card1-h3').innerText = data.tab1card1h3;
+            document.getElementById('tab1-card1-p').innerText = data.tab1card1p;
+            document.getElementById('tab1-card1-list').innerHTML = data.tab1card1list;
+
+            document.getElementById('roi-lbl-gross').innerText = data.roiGross;
+            document.getElementById('roi-lbl-cost').innerText = data.roiCost;
+            document.getElementById('roi-lbl-net').innerText = data.roiNet;
+            document.getElementById('roi-cost-val').innerText = data.roiCostVal;
+        }
+
+        // 4. Interactive ROI Calculator
         function updateROI() {
             const volume = parseFloat(document.getElementById('volume-slider').value);
             const rate = parseFloat(document.getElementById('rate-slider').value);
@@ -1556,11 +1760,13 @@
             const cost = 1.15;
             const net = (savings - cost).toFixed(2);
 
-            document.getElementById('roi-savings').innerText = savings + ' M€ / an';
-            document.getElementById('roi-net').innerText = (net >= 0 ? '+' : '') + net + ' M€ / an';
+            const unitStr = currentLang === 'FR' ? 'M€ / an' : 'M€ / yr';
+
+            document.getElementById('roi-savings').innerText = savings + ' ' + unitStr;
+            document.getElementById('roi-net').innerText = (net >= 0 ? '+' : '') + net + ' ' + unitStr;
         }
 
-        // 4. Mouse Spotlight Tracking on Cards
+        // 5. Mouse Spotlight Tracking on Cards
         document.querySelectorAll('.spotlight-card, .metric-card, .feature-card').forEach(card => {
             card.addEventListener('mousemove', e => {
                 const rect = card.getBoundingClientRect();
@@ -1571,7 +1777,7 @@
             });
         });
 
-        // 5. Scroll Reveal Intersection Observer
+        // 6. Scroll Reveal Intersection Observer
         let sequenceStarted = false;
 
         const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -1592,7 +1798,7 @@
         });
 
         // ==========================================================================
-        // 6. VINTAGE RETRO DIGITAL ALARM FLIP CLOCK RENDERER
+        // 7. VINTAGE RETRO DIGITAL ALARM FLIP CLOCK RENDERER
         // ==========================================================================
         function renderFlipNumber(containerId, formattedString) {
             const container = typeof containerId === 'string' ? document.getElementById(containerId) : containerId;
@@ -1621,7 +1827,7 @@
         }
 
         // ==========================================================================
-        // 7. MASTER INFINITE SEQUENTIAL ANIMATION ENGINE (CARDS 1 ➔ 2 ➔ 3 ➔ 4 ➔ LOOP)
+        // 8. MASTER INFINITE SEQUENTIAL ANIMATION ENGINE (CARDS 1 ➔ 2 ➔ 3 ➔ 4 ➔ LOOP)
         // ==========================================================================
         let isSequenceRunning = false;
 
@@ -1650,7 +1856,7 @@
             if (cardIndex === 0) {
                 // --- CARTE 1 : 4 300+ Caméras (LESS SCREENS, MORE POLICE OFFICERS IN THE STREETS) ---
                 card1.classList.add('active-sequence-card');
-                securityTag.innerText = "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue";
+                securityTag.innerText = currentLang === 'FR' ? "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue" : "🛡️ Augmented CSU: Less Screens, More Police in the Streets";
                 
                 animateFlipCounter('counter-1', 4300, 1800, () => {
                     setTimeout(() => runCardSequence(1), 1200);
@@ -1688,12 +1894,12 @@
                 const easeProgress = 1 - (1 - progress) * (1 - progress);
                 const currentVal = Math.floor(easeProgress * targetValue);
 
-                renderFlipNumber(elementId, currentVal.toLocaleString('fr-FR'));
+                renderFlipNumber(elementId, currentVal.toLocaleString(currentLang === 'FR' ? 'fr-FR' : 'en-US'));
 
                 if (progress < 1) {
                     requestAnimationFrame(update);
                 } else {
-                    renderFlipNumber(elementId, targetValue.toLocaleString('fr-FR'));
+                    renderFlipNumber(elementId, targetValue.toLocaleString(currentLang === 'FR' ? 'fr-FR' : 'en-US'));
                     if (onComplete) onComplete();
                 }
             }
@@ -1701,7 +1907,7 @@
         }
 
         // ==========================================================================
-        // 8. CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (CIRCLED SAINT-LAURENT RED ZONE TURNS TO CYAN BLUE)
+        // 9. CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (CIRCLED SAINT-LAURENT RED ZONE TURNS TO CYAN BLUE)
         // ==========================================================================
         let card3AnimFrameId;
 
@@ -1713,14 +1919,14 @@
             const telemetryOverlay = document.getElementById('telemetry-overlay');
             const container = canvas.parentElement;
 
-            // GROWS CARD 3 IN-PLACE BY ~3X (scale 2.4 / 2.8 with 3D elevation and neon blue glow)!
+            // GROWS CARD 3 IN-PLACE BY ~3X (scale 2.4 / 1.15 on mobile with 3D elevation and neon blue glow)!
             card3.classList.add('expanded-3x');
 
             canvas.width = container.offsetWidth;
             canvas.height = container.offsetHeight;
             const ctx = canvas.getContext('2d');
 
-            badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
+            badge.innerText = currentLang === 'FR' ? '🚨 Embouteillages Plaine du Var (-45 min)' : '🚨 Plaine du Var Traffic Jams (-45 min)';
             badge.classList.remove('fluid');
             stLaurentOverlay.style.opacity = '0';
             telemetryOverlay.style.opacity = '0';
@@ -1749,7 +1955,7 @@
 
                 // A. SYNCHRONIZED RETRO DIGITAL FLIP CLOCK ANIMATION (0 to 45 000+)
                 const currentCount = Math.floor(easeProgress * 45000);
-                const formattedCount = currentCount.toLocaleString('fr-FR');
+                const formattedCount = currentCount.toLocaleString(currentLang === 'FR' ? 'fr-FR' : 'en-US');
                 renderFlipNumber('counter-3', formattedCount);
 
                 // B. MAP IMAGE CIRCLED SAINT-LAURENT RED ZONE & TELEMETRY HUE OVERLAY OPACITY (0 to 0.95)
@@ -1764,7 +1970,7 @@
 
                 // Update Status Badge when fluid state takes over (> 35% progress)
                 if (progress >= 0.35 && !badge.classList.contains('fluid')) {
-                    badge.innerText = '⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)';
+                    badge.innerText = currentLang === 'FR' ? '⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)' : '⚡ Metropolitan AI Regulation: Traffic Fluidified (-70% jams)';
                     badge.classList.add('fluid');
                 }
 
@@ -1814,7 +2020,7 @@
         }
 
         // ==========================================================================
-        // 9. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN WITH FLIP CLOCK)
+        // 10. CARTE 2 : 0,25 M€ STEP 3D Y-SPINNING & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN WITH FLIP CLOCK)
         // ==========================================================================
         function triggerSavingsAnimation(onCompleteCallback) {
             const card = document.getElementById('savings-card');
@@ -1865,7 +2071,7 @@
             stepAnimation();
         }
 
-        // 10. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
+        // 11. FULLSCREEN Canvas Laser Rays + Fireworks Explosive Particle System
         function launchFullscreenLaserFireworks(originX, originY) {
             const canvas = document.getElementById('fullscreen-fireworks-canvas');
             canvas.width = window.innerWidth;
@@ -1988,7 +2194,7 @@
             animateScene();
         }
 
-        // 11. Scroll Spy Navigation Highlight
+        // 12. Scroll Spy Navigation Highlight
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section[id]');
             const scrollY = window.pageYOffset;
