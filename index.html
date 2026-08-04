@@ -366,8 +366,8 @@
             box-shadow: 0 0 14px rgba(0, 240, 255, 0.4);
         }
 
-        /* HIGH-VISIBILITY FEATURED ENCART BOXES FOR CARDS 2 & 3 DESCRIPTIONS */
-        .card2-desc-box, .card3-desc-box {
+        /* HIGH-VISIBILITY FEATURED ENCART BOXES FOR CARDS 2, 3 & 4 DESCRIPTIONS */
+        .card2-desc-box, .card3-desc-box, .card4-desc-box {
             margin-top: 10px;
             padding: 10px 12px;
             border-radius: 10px;
@@ -377,12 +377,12 @@
             transition: all 0.3s ease;
         }
 
-        .card2-desc-box:hover, .card3-desc-box:hover {
+        .card2-desc-box:hover, .card3-desc-box:hover, .card4-desc-box:hover {
             border-color: var(--accent-champagne);
             box-shadow: 0 0 16px rgba(216, 185, 138, 0.3);
         }
 
-        .card2-desc-box .metric-label, .card3-desc-box .metric-label {
+        .card2-desc-box .metric-label, .card3-desc-box .metric-label, .card4-desc-box .metric-label {
             font-size: 0.81rem;
             color: var(--text-bone);
             line-height: 1.45;
@@ -1490,10 +1490,28 @@
                     </div>
                 </div>
 
-                <!-- CARTE 4 : LEVIER FINANCEMENTS EUROPE & CITÉS -->
+                <!-- CARTE 4 : LEVIER FINANCEMENTS EUROPE & CITÉS (WITH ENRICHED ECONOMIES & GAINS ENCART) -->
                 <div class="metric-card spotlight-card" id="metric-card-4">
                     <div class="metric-val"><span id="counter-4" class="flip-counter"></span><span class="flip-unit">%</span></div>
                     <div class="metric-label" id="card4-label">Levier Europe & Financements Cités (0 € dépendance Région SUD)</div>
+
+                    <!-- HIGH-VISIBILITY ENCART BOX: ECONOMIES, GAINS VILLE & PETIT BUDGET IMPLEMENTATION -->
+                    <div class="card4-desc-box" id="card4-desc-box">
+                        <div style="font-size: 0.78rem; color: var(--text-bone); line-height: 1.45;">
+                            <div style="margin-bottom: 6px; border-bottom: 1px solid rgba(216, 185, 138, 0.2); padding-bottom: 4px;">
+                                <strong style="color: var(--accent-champagne); display: block;" id="c4-econ-title">💰 Économies Chiffrées :</strong>
+                                <span id="c4-econ-desc">• Audit Marchés : <strong>+2,5 M€/an net</strong><br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong><br>• Infra Cloud Monaco : <strong>1,2 M€/an</strong></span>
+                            </div>
+                            <div style="margin-bottom: 6px; border-bottom: 1px solid rgba(216, 185, 138, 0.2); padding-bottom: 4px;">
+                                <strong style="color: var(--laser-blue); display: block;" id="c4-gains-title">🏛️ Gains Directs pour Nice :</strong>
+                                <span id="c4-gains-desc">• CSU VSA : <strong>Incivilités -65%</strong><br>• Trafic A8/Monaco : <strong>-45 min (-70%)</strong><br>• Services : <strong>Allo Séniors 24/7</strong></span>
+                            </div>
+                            <div>
+                                <strong style="color: var(--success-green); display: block;" id="c4-budget-title">⚡ Petit Budget Implémentation IA :</strong>
+                                <span id="c4-budget-desc">Seulement <strong>1,15 M€/an</strong> d'équipe commando, financé par l'UE & l'audit.</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1937,6 +1955,12 @@
                 stratP4Title: "5. Financements Europe & Cités",
                 stratP4Desc: "Recherche active de financements auprès de l'Union Européenne (Digital Europe, Horizon) et des guichets de développement des cités.",
                 stratP4Val: "Co-financement : Europe & Cités",
+                c4EconTitle: "💰 Économies Chiffrées :",
+                c4EconDesc: "• Audit Marchés : <strong>+2,5 M€/an net</strong><br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong><br>• Infra Cloud Monaco : <strong>1,2 M€/an</strong>",
+                c4GainsTitle: "🏛️ Gains Directs pour Nice :",
+                c4GainsDesc: "• CSU VSA : <strong>Incivilités -65%</strong><br>• Trafic A8/Monaco : <strong>-45 min (-70%)</strong><br>• Services : <strong>Allo Séniors 24/7</strong>",
+                c4BudgetTitle: "⚡ Petit Budget Implémentation IA :",
+                c4BudgetDesc: "Seulement <strong>1,15 M€/an</strong> d'équipe commando, financé par l'UE & l'audit.",
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
                 card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
@@ -2020,6 +2044,12 @@
                 stratP4Title: "5. EU & Cities Co-Funding",
                 stratP4Desc: "Active pursuit of funding from European grants (Digital Europe, Horizon) and urban/cities development funds.",
                 stratP4Val: "Co-Funding: EU & Cities",
+                c4EconTitle: "💰 Quantified Savings:",
+                c4EconDesc: "• Procurement Audit: <strong>+€2.5M/yr net</strong><br>• Cyber Crisis avoided: <strong>€1.8-3M/yr</strong><br>• Monaco Cloud Infra: <strong>€1.2M/yr</strong>",
+                c4GainsTitle: "🏛️ Direct City Benefits:",
+                c4GainsDesc: "• CSU VSA: <strong>Incivilities -65%</strong><br>• Traffic A8/Monaco: <strong>-45 min (-70%)</strong><br>• Citizen Services: <strong>Seniors 24/7</strong>",
+                c4BudgetTitle: "⚡ Frugal AI Implementation Budget:",
+                c4BudgetDesc: "Only <strong>€1.15M/yr</strong> commando team, funded via EU & audit gains.",
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
                 card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
@@ -2115,6 +2145,15 @@
             document.getElementById('strat-p4-title').innerText = data.stratP4Title;
             document.getElementById('strat-p4-desc').innerText = data.stratP4Desc;
             document.getElementById('strat-p4-val').innerText = data.stratP4Val;
+
+            if (document.getElementById('c4-econ-title')) {
+                document.getElementById('c4-econ-title').innerText = data.c4EconTitle;
+                document.getElementById('c4-econ-desc').innerHTML = data.c4EconDesc;
+                document.getElementById('c4-gains-title').innerText = data.c4GainsTitle;
+                document.getElementById('c4-gains-desc').innerHTML = data.c4GainsDesc;
+                document.getElementById('c4-budget-title').innerText = data.c4BudgetTitle;
+                document.getElementById('c4-budget-desc').innerHTML = data.c4BudgetDesc;
+            }
 
             // BENCHMARK TRANSLATIONS
             if (document.getElementById('bm-title')) {
