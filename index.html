@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Original Balanced Card Sizes + Plaine du Var 3D Red-to-Blue Popup) -->
+    <!-- CSS Palette & Styling (Saint-Laurent-du-Var Red-to-Blue Map Overlay) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -199,12 +199,44 @@
             filter: brightness(0.85) contrast(1.15);
         }
 
+        /* SAINT-LAURENT-DU-VAR RED-TO-BLUE HUE SHIFT OVERLAYS */
+        .st-laurent-hue-overlay {
+            position: absolute;
+            left: 14%;
+            top: 48%;
+            width: 52%;
+            height: 38%;
+            background: #00F0FF;
+            mix-blend-mode: color;
+            border-radius: 40%;
+            filter: blur(28px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .telemetry-hue-overlay {
+            position: absolute;
+            left: 3.5%;
+            top: 17%;
+            width: 11.5%;
+            height: 22%;
+            background: #00F0FF;
+            mix-blend-mode: color;
+            border-radius: 12px;
+            filter: blur(8px);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+
         #popup-traffic-canvas {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 3;
         }
 
         .popup-badge {
@@ -222,6 +254,7 @@
             color: var(--jam-red);
             transition: all 0.5s ease;
             text-align: center;
+            z-index: 4;
         }
 
         .popup-badge.fluid {
@@ -263,6 +296,7 @@
             justify-content: center;
             cursor: pointer;
             transition: all 0.3s ease;
+            z-index: 10;
         }
 
         .popup-close-btn:hover {
@@ -1043,9 +1077,11 @@
         <div class="plaine-var-popup-card">
             <button class="popup-close-btn" onclick="closePlaineVarPopup()" title="Fermer">✕</button>
 
-            <!-- Expanded 3D Plaine du Var Visual -->
+            <!-- Expanded 3D Plaine du Var Visual with Dynamic Red-to-Blue Saint-Laurent-du-Var Overlay -->
             <div class="popup-visual-container">
                 <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="popup-visual-img">
+                <div class="st-laurent-hue-overlay" id="st-laurent-overlay"></div>
+                <div class="telemetry-hue-overlay" id="telemetry-overlay"></div>
                 <canvas id="popup-traffic-canvas"></canvas>
                 <div class="popup-badge" id="popup-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
             </div>
@@ -1133,7 +1169,7 @@
                 </a>
             </div>
 
-            <!-- Spotlight Interactive Metric Cards (RESTORED TO ORIGINAL BALANCED SIZE) -->
+            <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
                 <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
@@ -1591,7 +1627,7 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : DEDICATED POPUP FOR PLAINE DU VAR 3D TRAFFIC (RED TO BLUE POINTS) ---
+                // --- CARTE 3 : DEDICATED POPUP FOR PLAINE DU VAR 3D TRAFFIC (SAINT-LAURENT RED-TO-BLUE OVERLAY) ---
                 card3.classList.add('active-sequence-card');
                 
                 openPlaineVarPopup(() => {
@@ -1630,7 +1666,7 @@
         }
 
         // ==========================================================================
-        // 8. CARTE 3 : DEDICATED PLAINE DU VAR POPUP (RED TRAFFIC POINTS TURN TO ELECTRIC BLUE)
+        // 8. CARTE 3 : DEDICATED PLAINE DU VAR POPUP (CIRCLED SAINT-LAURENT RED ZONE TURNS TO CYAN BLUE)
         // ==========================================================================
         let popupAnimFrameId;
 
@@ -1638,6 +1674,8 @@
             const modal = document.getElementById('plaine-var-popup-modal');
             const badge = document.getElementById('popup-traffic-badge');
             const canvas = document.getElementById('popup-traffic-canvas');
+            const stLaurentOverlay = document.getElementById('st-laurent-overlay');
+            const telemetryOverlay = document.getElementById('telemetry-overlay');
             const container = canvas.parentElement;
 
             modal.classList.add('active');
@@ -1648,6 +1686,9 @@
 
             badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
             badge.classList.remove('fluid');
+            stLaurentOverlay.style.opacity = '0';
+            telemetryOverlay.style.opacity = '0';
+
             renderFlipNumber('popup-counter-val', '0');
             renderFlipNumber('counter-3', '0');
 
@@ -1677,8 +1718,11 @@
                 renderFlipNumber('popup-counter-val', formattedCount);
                 renderFlipNumber('counter-3', formattedCount);
 
-                // B. TRAFFIC POINTS COLOR INTERPOLATION (RED #EF4444 -> ELECTRIC BLUE #00F0FF)
-                // Red (239, 68, 68) -> Electric Blue (0, 240, 255)
+                // B. MAP IMAGE CIRCLED SAINT-LAURENT RED ZONE & TELEMETRY HUE OVERLAY OPACITY (0 to 0.95)
+                stLaurentOverlay.style.opacity = (easeProgress * 0.95).toFixed(3);
+                telemetryOverlay.style.opacity = (easeProgress * 0.95).toFixed(3);
+
+                // C. TRAFFIC POINTS COLOR INTERPOLATION (RED #EF4444 -> ELECTRIC BLUE #00F0FF)
                 const r = Math.round(239 + (0 - 239) * easeProgress);
                 const g = Math.round(68 + (240 - 68) * easeProgress);
                 const b = Math.round(68 + (255 - 68) * easeProgress);
@@ -1690,7 +1734,7 @@
                     badge.classList.add('fluid');
                 }
 
-                // C. TRAFFIC CANVAS RENDER WITH COLOR SHIFT FROM RED TO BLUE
+                // D. TRAFFIC CANVAS RENDER WITH DYNAMIC SHIFTS
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 points.forEach(p => {
@@ -1718,15 +1762,17 @@
                 if (progress < 1) {
                     popupAnimFrameId = requestAnimationFrame(syncStep);
                 } else {
-                    // Final State
+                    // Final State: Saint-Laurent red area 100% ELECTRIC BLUE!
+                    stLaurentOverlay.style.opacity = '0.95';
+                    telemetryOverlay.style.opacity = '0.95';
                     renderFlipNumber('popup-counter-val', '45 000');
                     renderFlipNumber('counter-3', '45 000');
 
-                    // Pause 1s, then close popup and notify master sequence
+                    // Pause 1.2s, then close popup and notify master sequence
                     setTimeout(() => {
                         closePlaineVarPopup();
                         if (onComplete) onComplete();
-                    }, 1000);
+                    }, 1200);
                 }
             }
 
