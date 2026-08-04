@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Punchy Card 1 Security Description & Compact Modals) -->
+    <!-- CSS Palette & Styling (Punchy Security & Police Field Presence) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -1242,11 +1242,11 @@
 
             <!-- Spotlight Interactive Metric Cards -->
             <div class="metrics-grid reveal reveal-delay-4">
-                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS (PUNCHY MESSAGE) -->
+                <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE (LESS SCREENS, MORE POLICE OFFICERS IN THE STREETS) -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
-                    <span class="security-tag" id="security-tag">🛡️ CSU Augmenté : Risques Neutralisés, Sécurité Maximale</span>
+                    <span class="security-tag" id="security-tag">🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue</span>
                     <div class="metric-val"><span id="counter-1" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label">Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong></div>
+                    <div class="metric-label">Caméras au CSU boostées par l'IA : <strong>Détection automatique des menaces — c'est moins d'agents bloqués derrière des écrans et plus de policiers sur le terrain dans la rue.</strong></div>
                 </div>
 
                 <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN ON SINGLE LINE) -->
@@ -1350,7 +1350,7 @@
                         </p>
                         <ul class="card-list">
                             <li>Strict respect de l'AI Act (aucune reconnaissance faciale)</li>
-                            <li>Multiplicateur de force pour la Police Municipale</li>
+                            <li><strong>Moins d'agents bloqués derrière des écrans ➔ Plus de policiers sur le terrain dans la rue</strong></li>
                             <li>Post-Event IA pour accélérer les enquêtes judiciaires</li>
                         </ul>
                     </div>
@@ -1738,9 +1738,9 @@
             const securityTag = document.getElementById('security-tag');
 
             if (cardIndex === 0) {
-                // --- CARTE 1 : 4 300+ Caméras ---
+                // --- CARTE 1 : 4 300+ Caméras (LESS SCREENS, MORE POLICE OFFICERS IN THE STREETS) ---
                 card1.classList.add('active-sequence-card');
-                securityTag.innerText = '🛡️ CSU Augmenté : Risques Neutralisés, Sécurité Maximale';
+                securityTag.innerText = "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue";
                 
                 animateFlipCounter('counter-1', 4300, 1800, () => {
                     setTimeout(() => runCardSequence(1), 1200);
