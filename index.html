@@ -2582,6 +2582,28 @@
                 // D. TRAFFIC CANVAS RENDER WITH DYNAMIC SHIFTS
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+                // Draw Highway A8 transition (Red -> Blue)
+                ctx.save();
+                ctx.beginPath();
+                const startX = canvas.width * 0.12;
+                const startY = canvas.height * 0.88;
+                const cp1x = canvas.width * 0.28;
+                const cp1y = canvas.height * 0.72;
+                const cp2x = canvas.width * 0.45;
+                const cp2y = canvas.height * 0.64;
+                const endX = canvas.width * 0.60;
+                const endY = canvas.height * 0.63;
+
+                ctx.moveTo(startX, startY);
+                ctx.bezierCurveTo(cp1x, cp1y, cp2x, cp2y, endX, endY);
+                ctx.lineWidth = 5;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = currentColor;
+                ctx.shadowBlur = 10 + easeProgress * 15;
+                ctx.shadowColor = currentColor;
+                ctx.stroke();
+                ctx.restore();
+
                 points.forEach(p => {
                     const speedMultiplier = 1 + easeProgress * 9.0;
                     const speed = p.baseSpeed * speedMultiplier;
