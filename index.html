@@ -624,28 +624,45 @@
             gap: 10px;
         }
 
-        /* LANGUAGE SWITCHER BUTTON */
-        .lang-toggle-btn {
-            display: inline-flex;
+        /* MINIMALIST LANGUAGE SWITCHER (FR | EN) */
+        .lang-selector-minimal {
+            display: flex;
             align-items: center;
             gap: 6px;
-            background: rgba(216, 185, 138, 0.12);
-            border: 1px solid rgba(216, 185, 138, 0.35);
-            color: var(--accent-champagne);
-            font-size: 0.78rem;
-            font-weight: 700;
-            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(216, 185, 138, 0.15);
+            padding: 3px 10px;
             border-radius: 9999px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+            height: 32px;
         }
 
-        .lang-toggle-btn:hover {
-            background: var(--accent-champagne);
-            color: var(--bg-espresso);
-            box-shadow: 0 0 15px rgba(216, 185, 138, 0.5);
-            transform: translateY(-1px);
+        .lang-btn-min {
+            background: none;
+            border: none;
+            color: var(--text-bone-muted);
+            font-family: var(--font-sans);
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .lang-btn-min.active {
+            color: var(--accent-champagne);
+            text-shadow: 0 0 8px rgba(216, 185, 138, 0.4);
+        }
+
+        .lang-btn-min:hover:not(.active) {
+            color: var(--text-bone);
+        }
+
+        .lang-sep {
+            color: rgba(216, 185, 138, 0.2);
+            font-size: 0.7rem;
+            font-weight: 300;
+            user-select: none;
         }
 
         .btn-champagne {
@@ -1343,24 +1360,21 @@
     <!-- Floating Glassmorphic Header Navigation (simplified) -->
     <header>
         <div class="nav-pill">
-            <a href="https://arx-consulting.com/nice" target="_blank" class="logo" title="Arx Consulting — Nice IA 2026">
+            <a href="https://arx-consulting.com/nice" target="_blank" class="logo" title="Arx Consulting — Nice IA">
                 <span class="logo-dot"></span>
                 <span style="color: var(--accent-champagne); font-weight: 700; font-family: var(--font-sans); letter-spacing: -0.01em;">Arx Consulting</span>
                 <span style="color: var(--text-bone-muted); opacity: 0.4; font-weight: 300;">|</span>
                 <span class="font-serif italic text-champagne">Nice IA</span>
             </a>
 
-            <ul class="nav-menu">
-                <li><a href="#axes" id="nav-axes">Sécurité &amp; Audit</a></li>
-                <li><a href="#monaco" id="nav-monaco">Monaco</a></li>
-                <li><a href="#monaco-cloud-si" id="nav-cloud-si">Cloud SI</a></li>
-                <li><a href="#synthese" id="nav-synthese">Synthèse</a></li>
-            </ul>
+            <!-- Minimalist language switcher directly in the navbar -->
+            <div class="lang-selector-minimal">
+                <button class="lang-btn-min active" id="lang-btn-fr" onclick="setLanguage('FR')" title="Français">FR</button>
+                <span class="lang-sep">|</span>
+                <button class="lang-btn-min" id="lang-btn-en" onclick="setLanguage('EN')" title="English">EN</button>
+            </div>
 
             <div class="nav-actions">
-                <button class="lang-toggle-btn" id="langToggleBtn" onclick="toggleLanguage()" title="Changer de langue / Switch Language">
-                    <span id="langFlag">🇬🇧</span> <span id="langLabel">EN</span>
-                </button>
                 <a href="#cadrage" class="btn-champagne" id="nav-btn-note">
                     Note pour le Maire
                 </a>
@@ -2139,7 +2153,7 @@
                 c2BudgetTag: "⚡ Metropolitan AI budget: €150k/year <em>(EU co-financed)</em>",
                 c2EconDesc: "• Market Audit: <strong>+2.5 M€/year net</strong> certified<br/>• Cyber ​​Crises avoided: <strong>1.8-3 M€/year</strong> (NIS 2 Directive)",
                 c2EconTitle: "💰 Quantified Savings:",
-                c3BudgetTag: "⚡ Monaco ZF AI budget: €250k/year <em>(EU co-financed)</em>",
+                c3BudgetTag: "⚡ IA Monaco ZF budget: €250k/year <em>(EU co-financed)</em>",
                 c3GainsDesc: "• Infra Cloud Monaco: <strong>1.2 M€/year</strong> avoided + 2-4 M€ VC<br/>• Free Zone: Binational Single Window & Sandbox",
                 c3GainsTitle: "🇲🇨 Cross-border & Infra Gains:",
                 card1Label: "CSU cameras powered by AI: <strong>Instant threat detection &amp; maximum security.</strong>",
@@ -2227,16 +2241,19 @@
             }
         };
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'FR' ? 'EN' : 'FR';
+        function setLanguage(lang) {
+            currentLang = lang;
             const data = i18nData[currentLang];
 
-            document.getElementById('langFlag').innerText = data.langFlag;
-            document.getElementById('langLabel').innerText = data.langLabel;
-            document.getElementById('nav-axes').innerText = data.navAxes;
-            document.getElementById('nav-monaco').innerText = data.navMonaco;
-            document.getElementById('nav-cloud-si').innerText = data.navCloudSi;
-            document.getElementById('nav-synthese').innerText = data.navSynthese;
+            // Set active states on buttons
+            if (currentLang === 'FR') {
+                document.getElementById('lang-btn-fr').classList.add('active');
+                document.getElementById('lang-btn-en').classList.remove('active');
+            } else {
+                document.getElementById('lang-btn-fr').classList.remove('active');
+                document.getElementById('lang-btn-en').classList.add('active');
+            }
+
             document.getElementById('nav-btn-note').innerText = data.navBtnNote;
 
             document.getElementById('hero-kicker').innerText = data.heroKicker;
