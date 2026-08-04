@@ -214,7 +214,7 @@
         .card3-traffic-badge {
             position: relative;
             margin-top: 6px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             font-size: 0.74rem;
             font-weight: 600;
             padding: 6px 10px;
@@ -232,6 +232,32 @@
             border-color: rgba(0, 240, 255, 0.6);
             color: var(--laser-blue);
             box-shadow: 0 0 14px rgba(0, 240, 255, 0.4);
+        }
+
+        /* HIGH-VISIBILITY FEATURED ENCART BOX FOR CARD 3 DESCRIPTION ("RIGUEUR BUDGÉTAIRE & ESSOR ÉCONOMIQUE") */
+        .card3-desc-box {
+            margin-top: 10px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(216, 185, 138, 0.12) 0%, rgba(15, 118, 110, 0.15) 100%);
+            border: 1px solid rgba(216, 185, 138, 0.4);
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .card3-desc-box:hover {
+            border-color: var(--accent-champagne);
+            box-shadow: 0 0 16px rgba(216, 185, 138, 0.3);
+        }
+
+        .card3-desc-box .metric-label {
+            font-size: 0.81rem;
+            color: var(--text-bone);
+            line-height: 1.45;
+        }
+
+        .card3-desc-box .metric-label strong {
+            color: var(--accent-champagne);
         }
 
         /* CARD 3 IN-PLACE EXACT 2X EXPANSION SCALE CLASS */
@@ -1255,7 +1281,7 @@
                     <span class="replay-hint" id="card2-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
                 </div>
 
-                <!-- CARTE 3 : IN-PLACE EXACT 2X EXPANSION ANIMATION (TRAFFIC BADGE POSITIONED CLEANLY BELOW THE 3D MAP IMAGE!) -->
+                <!-- CARTE 3 : IN-PLACE EXACT 2X EXPANSION ANIMATION (PROMINENT HIGH-CONTRAST VISIBLE ENCART FOR REFORMULATED DESCRIPTION) -->
                 <div class="metric-card spotlight-card" id="metric-card-3" onclick="runCardSequence(2)">
                     <div class="traffic-preview-container" id="traffic-preview-container">
                         <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-mini-img" onerror="this.onerror=null; this.src='/assets/plaine_var_traffic_3d.jpg'; if(!this.complete||this.naturalWidth===0) this.src='https://arx-consulting.com/assets/plaine_var_traffic_3d.jpg';">
@@ -1263,10 +1289,18 @@
                         <div class="telemetry-hue-overlay" id="telemetry-overlay"></div>
                         <canvas id="card3-traffic-canvas"></canvas>
                     </div>
-                    <!-- BADGE SITUÉ CLAIREMENT EN DESSOUS DE L'IMAGE 3D PLAINE DU VAR ET AU-DESSUS DU COMPTEUR 45 000+ -->
+                    <!-- BADGE DE TRAFIC AU-DESSOUS DE L'IMAGE -->
                     <div class="card3-traffic-badge" id="card3-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
+                    
+                    <!-- FLIP COUNTER -->
                     <div class="metric-val"><span id="counter-3" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label" id="card3-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Simulation Plaine du Var / A8)</div>
+                    
+                    <!-- HIGH-VISIBILITY ENCART BOX WITH REFORMULATED TEXT FOR RIGUEUR BUDGÉTAIRE & ESSOR ÉCONOMIQUE -->
+                    <div class="card3-desc-box" id="card3-desc-box">
+                        <div class="metric-label" id="card3-label">
+                            <strong>Rigueur budgétaire & essor économique :</strong> Régulation IA fluide des 45 000 mobilités pendulaires quotidiennes avec Monaco (Simulation Plaine du Var / A8).
+                        </div>
+                    </div>
                 </div>
 
                 <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
@@ -1676,7 +1710,7 @@
                 unitCard2: "M€ / an",
                 card2Label: "Économies nettes/an d'audit IA de la commande publique métropolitaine",
                 card2Hint: "✨ Animation séquentielle en boucle (Carte 1 ➔ 4)",
-                card3Label: "Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Simulation Plaine du Var / A8)",
+                card3Label: "<strong>Rigueur budgétaire & essor économique :</strong> Régulation IA fluide des 45 000 mobilités pendulaires quotidiennes avec Monaco (Simulation Plaine du Var / A8).",
                 card3BadgeJam: "🚨 Embouteillages Plaine du Var (-45 min)",
                 card3BadgeFluid: "⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)",
                 card4Label: "Autofinancé dès l'An 2 (0 € dépendance Région SUD)",
@@ -1737,7 +1771,7 @@
                 unitCard2: "M€ / yr",
                 card2Label: "Net annual savings from AI audit of metropolitan public procurement",
                 card2Hint: "✨ Sequential loop animation (Card 1 ➔ 4)",
-                card3Label: "Daily commuter mobility flows regulated with Monaco (Plaine du Var / A8 3D Simulation)",
+                card3Label: "<strong>Fiscal rigor & economic growth:</strong> Fluid AI regulation of 45,000 daily commuter mobilities with Monaco (Plaine du Var / A8 simulation).",
                 card3BadgeJam: "🚨 Plaine du Var Traffic Jams (-45 min)",
                 card3BadgeFluid: "⚡ Metropolitan AI Regulation: Traffic Fluidified (-70% jams)",
                 card4Label: "100% Autofinanced from Year 2 (0 € dependency on Région SUD)",
@@ -1805,7 +1839,7 @@
             document.getElementById('unit-card-2').innerText = data.unitCard2;
             document.getElementById('card2-label').innerText = data.card2Label;
             document.getElementById('card2-hint').innerText = data.card2Hint;
-            document.getElementById('card3-label').innerText = data.card3Label;
+            document.getElementById('card3-label').innerHTML = data.card3Label;
             document.getElementById('card4-label').innerText = data.card4Label;
 
             document.getElementById('axes-kicker').innerText = data.axesKicker;
