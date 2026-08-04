@@ -146,6 +146,79 @@
             opacity: 0.9;
         }
 
+        /* STRATÉGIE EN QUELQUES POINTS EXECUTIVE BOX */
+        .strategy-summary-box {
+            margin-top: 36px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, rgba(22, 19, 15, 0.95) 0%, rgba(18, 16, 14, 0.98) 100%);
+            border: 1px solid rgba(216, 185, 138, 0.35);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            transition: all 0.3s ease;
+        }
+
+        .strategy-summary-box:hover {
+            border-color: var(--accent-champagne);
+            box-shadow: 0 0 30px rgba(216, 185, 138, 0.2), 0 15px 40px rgba(0, 0, 0, 0.7);
+        }
+
+        .strategy-summary-header {
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(216, 185, 138, 0.2);
+            padding-bottom: 12px;
+        }
+
+        .strategy-summary-header h3 {
+            font-size: 1.45rem;
+            color: var(--text-bone);
+            font-weight: 340;
+        }
+
+        .strategy-points-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .strategy-point-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .strategy-point-card:hover {
+            background: rgba(216, 185, 138, 0.06);
+            border-color: rgba(216, 185, 138, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .strategy-point-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .strategy-point-content strong {
+            display: block;
+            font-size: 0.92rem;
+            color: var(--accent-champagne);
+            margin-bottom: 4px;
+        }
+
+        .strategy-point-content p {
+            font-size: 0.82rem;
+            color: var(--text-bone-muted);
+            line-height: 1.45;
+        }
+
         /* CARD 3 IN-PLACE TRAFFIC PREVIEW CONTAINER & SAINT-LAURENT HUE OVERLAYS */
         .traffic-preview-container {
             position: relative;
@@ -631,7 +704,7 @@
             color: var(--text-bone-muted);
             max-width: 680px;
             line-height: 1.7;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         /* ORIGINAL BALANCED METRICS GRID & CARDS */
@@ -639,7 +712,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
-            margin-top: 60px;
+            margin-top: 40px;
             perspective: 1200px;
         }
 
@@ -1128,13 +1201,16 @@
             section { padding: 65px 0; }
             .cyber-box { padding: 28px 20px; }
             .roi-calculator { padding: 24px 18px; }
+            .strategy-points-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
             .container { padding: 0 16px; }
             .hero-title { font-size: 2.3rem; margin-bottom: 16px; }
-            .hero-subtitle { font-size: 0.98rem; line-height: 1.6; margin-bottom: 28px; }
-            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 36px; }
+            .hero-subtitle { font-size: 0.98rem; line-height: 1.6; margin-bottom: 24px; }
+            .strategy-points-grid { grid-template-columns: 1fr; gap: 10px; }
+            .strategy-summary-box { padding: 18px 14px; margin-top: 24px; margin-bottom: 28px; }
+            .metrics-grid { grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
             .metric-card { padding: 16px 12px; border-radius: 14px; }
             .metric-val { font-size: 1.65rem; }
             #savings-card .metric-val { font-size: 1.45rem; }
@@ -1253,6 +1329,44 @@
                 <a href="#roi" class="btn-outline" id="hero-btn-simulate">
                     Simuler les Économies Budgétaires ↓
                 </a>
+            </div>
+
+            <!-- EXECUTIVE STRATEGY SUMMARY BOX ("LA STRATÉGIE EN QUELQUES POINTS") -->
+            <div class="strategy-summary-box reveal reveal-delay-3" id="strategy-summary-box">
+                <div class="strategy-summary-header">
+                    <span class="card-tag" id="strat-tag">⚡ Synthèse Exécutive pour M. le Maire</span>
+                    <h3 class="font-serif" id="strat-title">La Stratégie Nice IA en 4 points clés</h3>
+                </div>
+                <div class="strategy-points-grid">
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🛡️</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p1-title">1. CSU Augmenté & Sécurité</strong>
+                            <p id="strat-p1-desc">IA VSA sur 4 300+ caméras : moins d'écrans, plus de Policiers Municipaux sur le terrain.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">💰</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p2-title">2. Rigueur & Fin du Gaspillage</strong>
+                            <p id="strat-p2-desc">Audit IA à 100 % des marchés publics pour <strong>2,5 M€/an d'économies nettes</strong>.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🤝</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p3-title">3. Alliance Monaco & Zone Franche</strong>
+                            <p id="strat-p3-desc">Axe Monaco Nice, Monaco Cloud et régulation IA fluide des mobilités pendulaires.</p>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">⚡</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p4-title">4. Autofinancement Intégral</strong>
+                            <p id="strat-p4-desc">Projet 100 % autofinancé dès l'An 2 par les gains d'audit et l'UE (0 € dépendance Région).</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Spotlight Interactive Metric Cards -->
@@ -1700,6 +1814,16 @@
                 heroSubtitle: "Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Rigueur budgétaire (2,5 M€/an net d'économies d'audit), sécurité augmentée au CSU, alliance transfrontalière avec Monaco et autofinancement total.",
                 heroBtnDiscover: "Découvrir le Pôle Réduction de Coûts",
                 heroBtnSimulate: "Simuler les Économies Budgétaires ↓",
+                stratTag: "⚡ Synthèse Exécutive pour M. le Maire",
+                stratTitle: "La Stratégie Nice IA en 4 points clés",
+                stratP1Title: "1. CSU Augmenté & Sécurité",
+                stratP1Desc: "IA VSA sur 4 300+ caméras : moins d'écrans, plus de Policiers Municipaux sur le terrain.",
+                stratP2Title: "2. Rigueur & Fin du Gaspillage",
+                stratP2Desc: "Audit IA à 100 % des marchés publics pour <strong>2,5 M€/an d'économies nettes</strong>.",
+                stratP3Title: "3. Alliance Monaco & Zone Franche",
+                stratP3Desc: "Axe Monaco Nice, Monaco Cloud et régulation IA fluide des mobilités pendulaires.",
+                stratP4Title: "4. Autofinancement Intégral",
+                stratP4Desc: "Projet 100 % autofinancé dès l'An 2 par les gains d'audit et l'UE (0 € dépendance Région).",
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
                 card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
@@ -1760,6 +1884,16 @@
                 heroSubtitle: "A strategic doctrine written for <strong>Mr. Éric Ciotti</strong>: Budgetary rigor (€2.5M/yr net audit savings), augmented CSU security, cross-border alliance with Monaco, and 100% autofinanced.",
                 heroBtnDiscover: "Discover Cost Reduction Pole",
                 heroBtnSimulate: "Simulate Budget Savings ↓",
+                stratTag: "⚡ Executive Summary for the Mayor",
+                stratTitle: "Nice AI Strategy in 4 Key Points",
+                stratP1Title: "1. Augmented CSU & Security",
+                stratP1Desc: "VSA AI across 4,300+ cameras: less screens, more Municipal Police in the streets.",
+                stratP2Title: "2. Fiscal Rigor & Zero Waste",
+                stratP2Desc: "100% AI procurement audit delivering <strong>€2.5M/yr net savings</strong>.",
+                stratP3Title: "3. Monaco & Free Zone Alliance",
+                stratP3Desc: "Monaco-Nice Axis, Monaco Cloud, and fluid AI regulation of daily commuter flows.",
+                stratP4Title: "4. Full Autofinancing (Yr 2)",
+                stratP4Desc: "100% self-funded project from Year 2 via audit gains & EU grants (0 € Region reliance).",
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
                 card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
@@ -1826,6 +1960,18 @@
             document.getElementById('hero-subtitle').innerHTML = data.heroSubtitle;
             document.getElementById('hero-btn-discover').innerText = data.heroBtnDiscover;
             document.getElementById('hero-btn-simulate').innerText = data.heroBtnSimulate;
+
+            // STRATEGY SUMMARY BOX TRANSLATIONS
+            document.getElementById('strat-tag').innerText = data.stratTag;
+            document.getElementById('strat-title').innerText = data.stratTitle;
+            document.getElementById('strat-p1-title').innerText = data.stratP1Title;
+            document.getElementById('strat-p1-desc').innerText = data.stratP1Desc;
+            document.getElementById('strat-p2-title').innerText = data.stratP2Title;
+            document.getElementById('strat-p2-desc').innerHTML = data.stratP2Desc;
+            document.getElementById('strat-p3-title').innerText = data.stratP3Title;
+            document.getElementById('strat-p3-desc').innerText = data.stratP3Desc;
+            document.getElementById('strat-p4-title').innerText = data.stratP4Title;
+            document.getElementById('strat-p4-desc').innerText = data.stratP4Desc;
 
             document.getElementById('security-tag').innerText = data.securityTag;
             document.getElementById('card1-label').innerHTML = data.card1Label;
@@ -2269,8 +2415,6 @@
                         ctx.lineTo(endX, endY);
                         ctx.strokeStyle = ray.color;
                         ctx.lineWidth = ray.width;
-                        ctx.shadowBlur = 25;
-                        ctx.shadowColor = '#00F0FF';
                         ctx.stroke();
                         ctx.restore();
                     }
