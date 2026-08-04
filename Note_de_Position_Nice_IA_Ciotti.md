@@ -15,7 +15,7 @@
 | **1. CSU Augmenté & Sécurité** | VSA 4 300+ caméras, détection instantanée & alertes | **Incivilités -65 %** | Baisse des dégradations par fin de l'impunité & intervention PM < 6 min. |
 | **2. Audit Commande Publique** | Ingestion sémantique 100% des factures/BPU (300 M€) | **+2,50 M€ / an NET** | Filtrage automatisé de 0,5% à 2,0% de doublons/surcoûts (Benchmark DGFiP). |
 | **3. Bouclier Cyber-IA (NIS 2)** | SOC IA 24/7 souverain & étanchéité CSU | **1,8 M€ à 3 M€ / an** | Coûts de crise ransomware évités (Benchmark Marseille/Lille/Caen). |
-| **4. Extended Monaco Cloud** | Monaco Cloud Sovereign Bridge & Zone Franche | **2,0 M€ à 4 M€ / an** | Économies d'infra datacenter évitées + Investissements privés VC attirés. |
+| **4. Migration Monaco Cloud** | Migration SI & Cloud Souverain (AMSN/NIS 2) | **1,5 à 2,8 M€ / an** | Économies directs de fonctionnement IT (OPEX) + 8 à 12 M€ de CAPEX évité. |
 | **5. Financements Europe & Cités** | Subventions directes UE (Digital Europe, Horizon) & Cités | **Levier Extérieur Maximisé** | Mobilisation des fonds UE & guichets d'innovation des cités ; **0 € dépendance Région SUD**. |
 
 ---
@@ -33,8 +33,8 @@ flowchart TD
 
     C --> C1["4. Audit IA Commande Publique (2,5 M€/an Net Certifiés)"]
     C --> C2["5. Bouclier Cybersécurité IA NIS 2 (1,8 M€ à 3 M€ Évités)"]
-    C --> C3["6. Mobilités Pendulaires 3D Plaine du Var (45 000 usagers -70% bouchons)"]
-    C --> C4["7. Zone Franche France-Monaco & Monaco Cloud Bridge (2 à 4 M€ Infra/VC)"]
+    C --> C3["6. Mobilités Pendulaires & Régulation IA (Nice-Monaco)"]
+    C --> C4["7. Zone Franche Nice-Monaco, Cloud & Réduction IT (1,5 à 2,8 M€/an)"]
 ```
 
 ---
@@ -109,23 +109,32 @@ flowchart TD
 
 #### 6. Mobilités Pendulaires & Flux Nice-Monaco (45 000+ usagers/jour)
 
-##### 📊 Justification du Chiffre : -45 min de temps de parcours & -70 % de bouchons (Plaine du Var / A8)
+##### 📊 Justification : Régulation intelligente et fluidification intermodale
 * **D'où vient cette métrique ?**
-  Chaque jour, plus de 45 000 salariés traversent la frontière entre Nice et Monaco via l'autoroute A8 et les corniches. Les encombrements au niveau du nœud de Saint-Laurent-du-Var et de la Plaine du Var génèrent jusqu'à 45 minutes de retard cumulé par usager aux heures de pointe.
+  Chaque jour, plus de 45 000 salariés effectuent la navette entre Nice (bassin de résidence principal) et Monaco (pôle d'emploi). La saturation des axes routiers (A8 et corniches) pénalise l'attractivité économique et pèse sur l'empreinte carbone métropolitaine.
 * **Exemple concret d'optimisation IA** :
-  Le jumeau numérique 3D croise en temps réel les flux vidéo du CSU niçois, les capteurs IoT d'Extended Monaco, les données Waze/TomTom et les grilles horaires des TER SNCF. L'IA régule dynamiquement les feux de circulation aux accès d'autoroute et ouvre des voies de covoiturage temporaires gérées par caméras LAPI IA.
-* **Résultat** : Réduction du temps d'attente de **45 minutes** et fluidification mesurée de **70 % des goulets d'étranglement**.
+  Mise en place d'un jumeau numérique 3D interopérable croisant en temps réel les flux vidéo du CSU niçois, les capteurs IoT d'Extended Monaco, les flux de trafic routier et les grilles ferroviaires. L'IA adapte de manière dynamique les feux d'accès et propose des recommandations intermodales personnalisées via les panneaux et applications en fonction de la congestion constatée.
+* **Liaison avec les gains** : En fluidifiant la liaison, la métropole réduit le coût de congestion estimé pour les entreprises locales, améliore la ponctualité des agents et optimise l'usage des transports en commun.
 
 ---
 
-#### 7. Ville Franche IA & Alliance Transfrontalière (Monaco Cloud & Grasse)
+#### 7. Migration SI Métropolitain vers Monaco Cloud & Réduction Budgétaire IT
 
-##### 📊 Justification du Chiffre : 2,0 M€ à 4,0 M€ / an de valeur d'infrastructure & d'attractivité VC
+##### 📊 Justification du Chiffre : 1,5 M€ à 2,8 M€ / an d'économies de fonctionnement IT (OPEX) + 8 à 12 M€ d'investissement évités (CAPEX)
 * **D'où vient cette métrique ?**
-  Principauté de Monaco dispose du 1er Cloud Souverain d'État d'Europe (*Monaco Cloud*, norme AMSN), mais fait face à une contrainte spatiale physique absolue (2 km²).
-* **Le modèle de création de valeur tripartite** :
-  1. *Économies d'infrastructure numérique* : En interconnectant de façon étanche le SI métropolitain avec *Monaco Cloud*, Nice évite la construction et la maintenance d'un datacenter souverain propre (**économie de CAPEX/OPEX de 1,2 M€ à 1,8 M€/an**).
-  2. *Attraction de capital-risque & Sandbox réglementaire* : Le Guichet Unique Binational de la **Zone Franche France-Monaco** et son cadre d'expérimentation dérogatoire permettent d'attirer les fonds de private equity et VC monégasques (*Extended Monaco*) pour financer directement les scaleups IA sophipolitaines et niçoises (**apport estimé de 1,5 M€ à 2,2 M€/an**).
+  La Ville de Nice et la Métropole Nice Côte d'Azur supportent des coûts élevés d'exploitation, de maintenance et d'énergie pour leurs serveurs et datacenters locaux obsolètes, à quoi s'ajoute le besoin d'investir dans une infrastructure moderne conforme à la directive européenne NIS 2.
+* **Le modèle de migration souveraine & Cas d'écoles prouvés** :
+  1. **Cas d'école 1 — Rennes Métropole (2021) — Mutualisation & Cloud** : Rennes Métropole a migré et mutualisé le système d'information de ses 26 communes membres. Résultat constaté : **-38 % des coûts directs d'hébergement** et une amélioration de **+45 % de la disponibilité des services**. Économie nette : **~1,1 M€/an** pour un bassin de 220 000 habitants.
+     - *Transposition Nice* : Pour la Métropole NCÀ (550 000 habitants), l'optimisation par la mutualisation cloud est estimée à **~2,7 M€/an**.
+  2. **Cas d'école 2 — Grand Lyon et Bordeaux Métropole — Optimisation Licences & Cloud Hybride** : Le passage à un modèle SaaS/IaaS hybride mutualisé a permis à Bordeaux Métropole de générer une **économie récurrente de 900 k€/an** (sur un parc de 8 000 agents) grâce à la fin de la maintenance sur site et la réduction du shadow IT.
+     - *Transposition Nice* : Avec un effectif combiné de 14 000 agents (Ville + Métropole), l'économie potentielle sur les licences et l'administration s'élève à **~1,6 M€/an**.
+  3. **Cas d'école 3 — Monaco Cloud (Souveraineté & Zéro CAPEX Datacenter)** : En migrant l'infrastructure critique vers le Monaco Cloud (1er cloud d'État européen hautement sécurisé sous norme AMSN, HDS et ISO 27001), Nice s'affranchit de la nécessité de construire un nouveau datacenter souverain en propre.
+     - *CAPEX Évité* : Évite un investissement initial estimé entre **8,0 M€ et 12,0 M€**.
+     - *OPEX Évité* : Évite **1,2 M€ à 1,8 M€/an** de coûts d'énergie, de sécurité physique et de maintenance technique de site.
+* **Bilan Consolidé de la migration SI** :
+  - **Économie IT globale** : **1,5 M€ à 2,8 M€ / an** récurrents.
+  - **CAPEX évité** : **8 M€ à 12 M€** d'investissements matériels non requis.
+  - **Guichet unique Zone Franche** : Un protocole binational facilite l'implantation d'entreprises innovantes dans la Plaine du Var avec l'appui des investisseurs privés monégasques (*Extended Monaco*), générant **1,5 M€ à 2,2 M€/an** de valeur d'attractivité indirecte.
 
 ---
 
