@@ -159,7 +159,7 @@
         }
 
         #metric-card-3.expanded-3x .traffic-preview-container {
-            height: 175px;
+            height: 160px;
         }
 
         .traffic-mini-img {
@@ -167,6 +167,7 @@
             height: 100%;
             object-fit: cover;
             filter: brightness(0.85) contrast(1.15);
+            display: block;
         }
 
         /* SAINT-LAURENT-DU-VAR RED-TO-BLUE HUE SHIFT OVERLAYS */
@@ -233,7 +234,7 @@
             box-shadow: 0 0 14px rgba(0, 240, 255, 0.4);
         }
 
-        /* CARD 3 IN-PLACE 3X SCALE EXPANSION CLASS */
+        /* CARD 3 IN-PLACE EXACT 2X EXPANSION SCALE CLASS */
         #metric-card-3 {
             position: relative;
             transform-origin: center center;
@@ -245,9 +246,9 @@
 
         #metric-card-3.expanded-3x {
             z-index: 9999 !important;
-            transform: scale(2.4) translateY(-10px) !important;
+            transform: scale(2.0) translateY(-5px) !important;
             border-color: var(--laser-blue) !important;
-            box-shadow: 0 0 70px rgba(0, 240, 255, 0.5), 0 30px 80px rgba(0, 0, 0, 0.95) !important;
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.55), 0 25px 70px rgba(0, 0, 0, 0.95) !important;
             background: rgba(22, 19, 15, 0.97) !important;
             backdrop-filter: blur(24px) !important;
         }
@@ -1111,14 +1112,14 @@
             .flip-unit { font-size: 0.52em; }
             .metric-label { font-size: 0.76rem; line-height: 1.35; }
             
-            /* CARD 3 MOBILE IN-PLACE SCALING OVERFLOW PREVENTION */
+            /* CARD 3 MOBILE IN-PLACE 2X EXPANSION OVERFLOW PREVENTION */
             #metric-card-3.expanded-3x {
-                transform: scale(1.15) translateY(-4px) !important;
+                transform: scale(1.35) translateY(-4px) !important;
                 box-shadow: 0 0 40px rgba(0, 240, 255, 0.6), 0 15px 40px rgba(0, 0, 0, 0.95) !important;
             }
 
             #metric-card-3.expanded-3x .traffic-preview-container {
-                height: 125px;
+                height: 135px;
             }
 
             .tabs-header { gap: 8px; flex-direction: column; }
@@ -1239,10 +1240,10 @@
                     <span class="replay-hint" id="card2-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
                 </div>
 
-                <!-- CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY) -->
+                <!-- CARTE 3 : IN-PLACE EXACT 2X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY & FAIL-SAFE IMAGE FALLBACKS) -->
                 <div class="metric-card spotlight-card" id="metric-card-3" onclick="runCardSequence(2)">
                     <div class="traffic-preview-container" id="traffic-preview-container">
-                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-mini-img">
+                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-mini-img" onerror="this.onerror=null; this.src='/assets/plaine_var_traffic_3d.jpg'; if(!this.complete||this.naturalWidth===0) this.src='https://arx-consulting.com/assets/plaine_var_traffic_3d.jpg';">
                         <div class="st-laurent-hue-overlay" id="st-laurent-overlay"></div>
                         <div class="telemetry-hue-overlay" id="telemetry-overlay"></div>
                         <canvas id="card3-traffic-canvas"></canvas>
@@ -1875,7 +1876,7 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY) ---
+                // --- CARTE 3 : IN-PLACE EXACT 2X EXPANSION ANIMATION (RED TO BLUE SAINT-LAURENT OVERLAY) ---
                 card3.classList.add('active-sequence-card');
                 
                 triggerCard3InPlaceAnimation(() => {
@@ -1914,7 +1915,7 @@
         }
 
         // ==========================================================================
-        // 9. CARTE 3 : IN-PLACE 3X EXPANSION ANIMATION (CIRCLED SAINT-LAURENT RED ZONE TURNS TO CYAN BLUE)
+        // 9. CARTE 3 : IN-PLACE EXACT 2X EXPANSION ANIMATION (CIRCLED SAINT-LAURENT RED ZONE TURNS TO CYAN BLUE)
         // ==========================================================================
         let card3AnimFrameId;
 
@@ -1926,7 +1927,7 @@
             const telemetryOverlay = document.getElementById('telemetry-overlay');
             const container = canvas.parentElement;
 
-            // GROWS CARD 3 IN-PLACE BY ~3X (scale 2.4 / 1.15 on mobile with 3D elevation and neon blue glow)!
+            // GROWS CARD 3 IN-PLACE BY EXACTLY 2X (scale 2.0 / 1.35 on mobile with 3D elevation and neon blue glow)!
             card3.classList.add('expanded-3x');
 
             canvas.width = container.offsetWidth;
