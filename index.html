@@ -234,8 +234,8 @@
             box-shadow: 0 0 14px rgba(0, 240, 255, 0.4);
         }
 
-        /* HIGH-VISIBILITY FEATURED ENCART BOX FOR CARD 3 DESCRIPTION ("RIGUEUR BUDGÉTAIRE & ESSOR ÉCONOMIQUE") */
-        .card3-desc-box {
+        /* HIGH-VISIBILITY FEATURED ENCART BOXES FOR CARDS 2 & 3 DESCRIPTIONS */
+        .card2-desc-box, .card3-desc-box {
             margin-top: 10px;
             padding: 10px 12px;
             border-radius: 10px;
@@ -245,18 +245,18 @@
             transition: all 0.3s ease;
         }
 
-        .card3-desc-box:hover {
+        .card2-desc-box:hover, .card3-desc-box:hover {
             border-color: var(--accent-champagne);
             box-shadow: 0 0 16px rgba(216, 185, 138, 0.3);
         }
 
-        .card3-desc-box .metric-label {
+        .card2-desc-box .metric-label, .card3-desc-box .metric-label {
             font-size: 0.81rem;
             color: var(--text-bone);
             line-height: 1.45;
         }
 
-        .card3-desc-box .metric-label strong {
+        .card2-desc-box .metric-label strong, .card3-desc-box .metric-label strong {
             color: var(--accent-champagne);
         }
 
@@ -746,16 +746,6 @@
             0% { transform: scale(1) rotateY(0deg); box-shadow: 0 0 0 rgba(0, 240, 255, 0); }
             20% { transform: scale(1.1) rotateY(0deg); box-shadow: 0 0 100px rgba(0, 240, 255, 0.95), 0 0 140px rgba(216, 185, 138, 0.8); }
             100% { transform: scale(1) rotateY(0deg); box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3); }
-        }
-
-        .replay-hint {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent-champagne);
-            opacity: 0.75;
-            margin-top: 6px;
-            display: inline-block;
         }
 
         /* Section Styling */
@@ -1274,17 +1264,22 @@
                     <div class="metric-label" id="card1-label">Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong></div>
                 </div>
 
-                <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (2,50 M€ / AN ON SINGLE LINE) -->
+                <!-- CARTE 2 : SPECIAL 0,25 M€ STEP 3D ROTATION & FULLSCREEN BLUE LASER FIREWORKS (CIOTTI BUDGETARY RIGOR SLOGAN IN VISIBLE ENCART) -->
                 <div class="metric-card spotlight-card" id="savings-card" onclick="runCardSequence(1)">
                     <div class="metric-val" id="savings-display"><span id="counter-2" class="flip-counter"></span><span class="flip-unit" id="unit-card-2">M€ / an</span></div>
-                    <div class="metric-label" id="card2-label">Économies nettes/an d'audit IA de la commande publique métropolitaine</div>
-                    <span class="replay-hint" id="card2-hint">✨ Animation séquentielle en boucle (Carte 1 ➔ 4)</span>
+                    
+                    <!-- HIGH-VISIBILITY ENCART BOX WITH REFORMULATED CIOTTI BUDGETARY SLOGAN -->
+                    <div class="card2-desc-box" id="card2-desc-box">
+                        <div class="metric-label" id="card2-label">
+                            <strong>Rigueur budgétaire & fin du gaspillage :</strong> Économies nettes certifiées par l'audit IA systématique de la commande publique métropolitaine.
+                        </div>
+                    </div>
                 </div>
 
                 <!-- CARTE 3 : IN-PLACE MODERATED EXPANSION ANIMATION (PROMINENT HIGH-CONTRAST VISIBLE ENCART FOR REFORMULATED DESCRIPTION) -->
                 <div class="metric-card spotlight-card" id="metric-card-3" onclick="runCardSequence(2)">
                     <div class="traffic-preview-container" id="traffic-preview-container">
-                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-mini-img" onerror="this.onerror=null; this.src='/assets/plaine_var_traffic_3d.jpg'; if(!this.complete||this.naturalWidth===0) this.src='https://arx-consulting.com/assets/plaine_var_traffic_3d.jpg';">
+                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Traffic Plaine du Var" class="traffic-mini-img" onerror="this.onerror=null; this.src='/assets/plaine_var_traffic_3d.jpg'; if(!this.complete||this.naturalWidth===0) this.src='https://arx-consulting.com/assets/plaine_var_traffic_3d.jpg';">
                         <div class="st-laurent-hue-overlay" id="st-laurent-overlay"></div>
                         <div class="telemetry-hue-overlay" id="telemetry-overlay"></div>
                         <canvas id="card3-traffic-canvas"></canvas>
@@ -1708,8 +1703,7 @@
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
                 card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
-                card2Label: "Économies nettes/an d'audit IA de la commande publique métropolitaine",
-                card2Hint: "✨ Animation séquentielle en boucle (Carte 1 ➔ 4)",
+                card2Label: "<strong>Rigueur budgétaire & fin du gaspillage :</strong> Économies nettes certifiées par l'audit IA systématique de la commande publique métropolitaine.",
                 card3Label: "<strong>Rigueur budgétaire & essor économique :</strong> Régulation IA fluide des 45 000 mobilités pendulaires quotidiennes avec Monaco (Simulation Plaine du Var / A8).",
                 card3BadgeJam: "🚨 Embouteillages Plaine du Var (-45 min)",
                 card3BadgeFluid: "⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)",
@@ -1769,8 +1763,7 @@
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
                 card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
-                card2Label: "Net annual savings from AI audit of metropolitan public procurement",
-                card2Hint: "✨ Sequential loop animation (Card 1 ➔ 4)",
+                card2Label: "<strong>Fiscal rigor & zero public waste:</strong> Certified net savings through systematic AI auditing of metropolitan procurement.",
                 card3Label: "<strong>Fiscal rigor & economic growth:</strong> Fluid AI regulation of 45,000 daily commuter mobilities with Monaco (Plaine du Var / A8 simulation).",
                 card3BadgeJam: "🚨 Plaine du Var Traffic Jams (-45 min)",
                 card3BadgeFluid: "⚡ Metropolitan AI Regulation: Traffic Fluidified (-70% jams)",
@@ -1837,8 +1830,7 @@
             document.getElementById('security-tag').innerText = data.securityTag;
             document.getElementById('card1-label').innerHTML = data.card1Label;
             document.getElementById('unit-card-2').innerText = data.unitCard2;
-            document.getElementById('card2-label').innerText = data.card2Label;
-            document.getElementById('card2-hint').innerText = data.card2Hint;
+            document.getElementById('card2-label').innerHTML = data.card2Label;
             document.getElementById('card3-label').innerHTML = data.card3Label;
             document.getElementById('card4-label').innerText = data.card4Label;
 
