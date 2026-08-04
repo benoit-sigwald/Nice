@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Retro Flip Clock Digital Alarm Counters) -->
+    <!-- CSS Palette & Styling (Original Balanced Card Sizes + Plaine du Var 3D Red-to-Blue Popup) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -80,28 +80,27 @@
         .flip-counter {
             display: inline-flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             font-family: var(--font-sans);
-            font-weight: 800;
+            font-weight: 700;
             vertical-align: middle;
         }
 
         .flip-digit {
             display: inline-block;
             position: relative;
-            width: 0.78em;
-            height: 1.15em;
+            width: 0.72em;
+            height: 1.12em;
             background: linear-gradient(180deg, #1F1B16 0%, #14100D 49%, #0B0806 50%, #1A1511 100%);
-            border: 1px solid rgba(216, 185, 138, 0.45);
-            border-radius: 8px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(216, 185, 138, 0.4);
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.15);
             color: var(--accent-champagne);
-            text-shadow: 0 0 14px rgba(216, 185, 138, 0.65);
+            text-shadow: 0 0 10px rgba(216, 185, 138, 0.5);
             overflow: hidden;
-            perspective: 320px;
+            perspective: 300px;
         }
 
-        /* Horizontal Split Line of Retro Flip Clock */
         .flip-digit::after {
             content: '';
             position: absolute;
@@ -110,7 +109,7 @@
             right: 0;
             height: 1px;
             background: #000;
-            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
             z-index: 10;
         }
 
@@ -120,7 +119,7 @@
             justify-content: center;
             width: 100%;
             height: 100%;
-            font-size: 0.88em;
+            font-size: 0.86em;
             transform-origin: center center;
             transition: transform 0.12s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -131,78 +130,76 @@
 
         @keyframes flipCardDown {
             0% { transform: rotateX(0deg); opacity: 1; }
-            50% { transform: rotateX(-90deg); opacity: 0.3; filter: brightness(1.6); }
+            50% { transform: rotateX(-90deg); opacity: 0.3; filter: brightness(1.5); }
             100% { transform: rotateX(0deg); opacity: 1; }
         }
 
         .flip-unit {
             color: var(--accent-champagne);
             font-family: var(--font-serif);
-            font-size: 0.9em;
+            font-size: 0.85em;
             margin-left: 2px;
             opacity: 0.9;
         }
 
-        /* FULLCARD 3 EXPANSION MODAL OVERLAY */
-        .card-expand-modal {
+        /* DEDICATED POPUP MODAL FOR CARD 3 (PLAINE DU VAR 3D RED TO BLUE TRAFFIC) */
+        .plaine-var-popup-modal {
             position: fixed;
             inset: 0;
             width: 100vw;
             height: 100vh;
-            background: rgba(18, 16, 14, 0.92);
-            backdrop-filter: blur(28px) saturate(180%);
-            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            background: rgba(18, 16, 14, 0.9);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
             z-index: 99999;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .card-expand-modal.active {
+        .plaine-var-popup-modal.active {
             opacity: 1;
             pointer-events: auto;
         }
 
-        /* GIANT BLOWN-UP CARD 3 STYLING */
-        .expanded-card-content {
+        .plaine-var-popup-card {
             width: 88vw;
-            max-width: 920px;
+            max-width: 880px;
             background: var(--bg-charcoal);
             border: 1px solid var(--accent-champagne);
-            border-radius: 28px;
+            border-radius: 24px;
             padding: 32px;
-            box-shadow: 0 0 60px rgba(0, 240, 255, 0.25), 0 30px 70px rgba(0, 0, 0, 0.95);
-            transform: scale(0.85) translateY(20px);
-            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.25), 0 25px 60px rgba(0, 0, 0, 0.9);
+            transform: scale(0.9) translateY(15px);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
 
-        .card-expand-modal.active .expanded-card-content {
+        .plaine-var-popup-modal.active .plaine-var-popup-card {
             transform: scale(1) translateY(0);
         }
 
-        .expanded-visual-container {
+        .popup-visual-container {
             position: relative;
             width: 100%;
             height: 380px;
-            border-radius: 18px;
+            border-radius: 16px;
             overflow: hidden;
             border: 1px solid rgba(216, 185, 138, 0.3);
             margin-bottom: 24px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
 
-        .expanded-visual-img {
+        .popup-visual-img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(0.85) contrast(1.15);
         }
 
-        #expanded-traffic-canvas {
+        #popup-traffic-canvas {
             position: absolute;
             inset: 0;
             width: 100%;
@@ -210,7 +207,7 @@
             pointer-events: none;
         }
 
-        .expanded-badge {
+        .popup-badge {
             position: absolute;
             bottom: 14px;
             left: 14px;
@@ -227,34 +224,34 @@
             text-align: center;
         }
 
-        .expanded-badge.fluid {
+        .popup-badge.fluid {
             border-color: rgba(0, 240, 255, 0.6);
             color: var(--laser-blue);
             box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
         }
 
-        .expanded-metric-val {
-            font-family: var(--font-sans);
-            font-size: clamp(2.8rem, 5vw, 4.2rem);
+        .popup-metric-val {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
             color: var(--accent-champagne);
             line-height: 1;
             margin-bottom: 12px;
-            font-weight: 800;
+            font-weight: 340;
             display: flex;
             align-items: baseline;
             gap: 4px;
         }
 
-        .expanded-metric-label {
-            font-size: 1.1rem;
+        .popup-metric-label {
+            font-size: 1.05rem;
             color: var(--text-bone-muted);
             line-height: 1.5;
         }
 
-        .modal-close-btn {
+        .popup-close-btn {
             position: absolute;
-            top: 24px;
-            right: 24px;
+            top: 20px;
+            right: 20px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.15);
             color: var(--text-bone);
@@ -268,7 +265,7 @@
             transition: all 0.3s ease;
         }
 
-        .modal-close-btn:hover {
+        .popup-close-btn:hover {
             background: rgba(216, 185, 138, 0.2);
             border-color: var(--accent-champagne);
             color: var(--accent-champagne);
@@ -580,7 +577,7 @@
             .nav-menu { display: none; }
             .mobile-toggle { display: flex; }
             .mobile-overlay.open { display: flex; }
-            .expanded-visual-container { height: 260px; }
+            .popup-visual-container { height: 260px; }
         }
 
         /* Hero Section */
@@ -611,7 +608,7 @@
             margin-bottom: 40px;
         }
 
-        /* Metrics Bar */
+        /* ORIGINAL BALANCED METRICS GRID & CARDS */
         .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -625,7 +622,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 18px;
-            padding: 24px 20px;
+            padding: 28px 24px;
             overflow: hidden;
             backdrop-filter: blur(10px);
             transform-style: preserve-3d;
@@ -676,11 +673,11 @@
         }
 
         .metric-val {
-            font-family: var(--font-sans);
-            font-size: 2.2rem;
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
             color: var(--accent-champagne);
-            margin-bottom: 6px;
-            font-weight: 800;
+            margin-bottom: 8px;
+            font-weight: 340;
             letter-spacing: -0.02em;
             display: flex;
             align-items: baseline;
@@ -688,7 +685,7 @@
         }
 
         .metric-label {
-            font-size: 0.825rem;
+            font-size: 0.875rem;
             color: var(--text-bone-muted);
             line-height: 1.45;
         }
@@ -1041,23 +1038,23 @@
     <!-- Fullscreen Laser Fireworks Canvas Overlay -->
     <canvas id="fullscreen-fireworks-canvas"></canvas>
 
-    <!-- FULLCARD 3 EXPANSION MODAL OVERLAY (GIANT BLOWN-UP CARD 3 WITH VINTAGE FLIP CLOCK & RED-TO-BLUE TRAFFIC) -->
-    <div id="fullscreen-card3-modal" class="card-expand-modal">
-        <div class="expanded-card-content">
-            <button class="modal-close-btn" onclick="closeCard3Modal()" title="Fermer">✕</button>
+    <!-- DEDICATED POPUP MODAL FOR CARD 3 (PLAINE DU VAR 3D RED TO BLUE TRAFFIC) -->
+    <div id="plaine-var-popup-modal" class="plaine-var-popup-modal">
+        <div class="plaine-var-popup-card">
+            <button class="popup-close-btn" onclick="closePlaineVarPopup()" title="Fermer">✕</button>
 
             <!-- Expanded 3D Plaine du Var Visual -->
-            <div class="expanded-visual-container">
-                <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="expanded-visual-img">
-                <canvas id="expanded-traffic-canvas"></canvas>
-                <div class="expanded-badge" id="expanded-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
+            <div class="popup-visual-container">
+                <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="popup-visual-img">
+                <canvas id="popup-traffic-canvas"></canvas>
+                <div class="popup-badge" id="popup-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
             </div>
 
-            <!-- Giant Counter Number & Label -->
-            <div class="expanded-metric-val">
-                <span id="expanded-counter-val" class="flip-counter"></span><span class="flip-unit">+</span>
+            <!-- Popup Metric Counter & Label -->
+            <div class="popup-metric-val">
+                <span id="popup-counter-val" class="flip-counter"></span><span class="flip-unit">+</span>
             </div>
-            <div class="expanded-metric-label">
+            <div class="popup-metric-label">
                 Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Jumeau Numérique 3D — Axe Plaine du Var / A8)
             </div>
         </div>
@@ -1136,7 +1133,7 @@
                 </a>
             </div>
 
-            <!-- Spotlight Interactive Metric Cards -->
+            <!-- Spotlight Interactive Metric Cards (RESTORED TO ORIGINAL BALANCED SIZE) -->
             <div class="metrics-grid reveal reveal-delay-4">
                 <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE ET RISQUES MINIMISÉS -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
@@ -1153,14 +1150,9 @@
                 </div>
 
                 <!-- CARTE 3 : PLAINE DU VAR 3D TRAFFIC CONGESTION REDUCTION SIMULATION -->
-                <div class="metric-card spotlight-card" id="metric-card-3" onclick="openCard3Modal()">
-                    <div class="traffic-mini-visual">
-                        <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-img" id="traffic-img">
-                        <canvas id="traffic-canvas" class="traffic-canvas"></canvas>
-                        <div class="traffic-badge" id="traffic-status-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
-                    </div>
+                <div class="metric-card spotlight-card" id="metric-card-3" onclick="openPlaineVarPopup()">
                     <div class="metric-val"><span id="counter-3" class="flip-counter"></span><span class="flip-unit">+</span></div>
-                    <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Cliquer pour agrandir la Carte)</div>
+                    <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Cliquer pour voir la simulation Plaine du Var)</div>
                 </div>
 
                 <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
@@ -1542,14 +1534,13 @@
                 if (/\d/.test(ch)) {
                     html += `<div class="flip-digit" data-idx="${idx}"><div class="flip-digit-inner">${ch}</div></div>`;
                 } else {
-                    html += `<span class="flip-separator">${ch}</span>`;
+                    html += `<span class="flip-unit">${ch}</span>`;
                 }
             });
 
             const prevHtml = container.innerHTML;
             container.innerHTML = html;
 
-            // Trigger mechanical 3D flip card down animation if value changed
             if (prevHtml !== html) {
                 container.querySelectorAll('.flip-digit').forEach(digit => {
                     digit.classList.add('flip-anim');
@@ -1600,10 +1591,10 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED FLIP CLOCK & TRAFFIC ANIMATION ---
+                // --- CARTE 3 : DEDICATED POPUP FOR PLAINE DU VAR 3D TRAFFIC (RED TO BLUE POINTS) ---
                 card3.classList.add('active-sequence-card');
                 
-                openCard3Modal(() => {
+                openPlaineVarPopup(() => {
                     setTimeout(() => runCardSequence(3), 1200);
                 });
             } else if (cardIndex === 3) {
@@ -1639,14 +1630,14 @@
         }
 
         // ==========================================================================
-        // 8. CARTE 3 : GIANT CARD EXPANSION + SYNCHRONIZED FLIP CLOCK & RED-TO-BLUE TRAFFIC ANIMATION
+        // 8. CARTE 3 : DEDICATED PLAINE DU VAR POPUP (RED TRAFFIC POINTS TURN TO ELECTRIC BLUE)
         // ==========================================================================
-        let card3AnimFrameId;
+        let popupAnimFrameId;
 
-        function openCard3Modal(onComplete) {
-            const modal = document.getElementById('fullscreen-card3-modal');
-            const badge = document.getElementById('expanded-traffic-badge');
-            const canvas = document.getElementById('expanded-traffic-canvas');
+        function openPlaineVarPopup(onComplete) {
+            const modal = document.getElementById('plaine-var-popup-modal');
+            const badge = document.getElementById('popup-traffic-badge');
+            const canvas = document.getElementById('popup-traffic-canvas');
             const container = canvas.parentElement;
 
             modal.classList.add('active');
@@ -1657,14 +1648,14 @@
 
             badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
             badge.classList.remove('fluid');
-            renderFlipNumber('expanded-counter-val', '0');
+            renderFlipNumber('popup-counter-val', '0');
             renderFlipNumber('counter-3', '0');
 
-            // Generate 65 Jammed Traffic Particles along A8 Highway
-            const particles = [];
-            const particleCount = 65;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push({
+            // Generate 65 Jammed Traffic Points along A8 Highway
+            const points = [];
+            const pointCount = 65;
+            for (let i = 0; i < pointCount; i++) {
+                points.push({
                     x: Math.random() * (canvas.width * 0.75) + (canvas.width * 0.1),
                     y: Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2),
                     baseSpeed: Math.random() * 0.3 + 0.15,
@@ -1672,7 +1663,7 @@
                 });
             }
 
-            const totalDuration = 3200; // 3.2 seconds total synchronized animation
+            const totalDuration = 3200; // 3.2 seconds total animation
             const startTime = performance.now();
 
             function syncStep(currentTime) {
@@ -1683,11 +1674,11 @@
                 // A. SYNCHRONIZED RETRO DIGITAL FLIP CLOCK ANIMATION (0 to 45 000+)
                 const currentCount = Math.floor(easeProgress * 45000);
                 const formattedCount = currentCount.toLocaleString('fr-FR');
-                renderFlipNumber('expanded-counter-val', formattedCount);
+                renderFlipNumber('popup-counter-val', formattedCount);
                 renderFlipNumber('counter-3', formattedCount);
 
-                // B. SYNCHRONIZED COLOR INTERPOLATION (RED #EF4444 -> ELECTRIC BLUE #00F0FF)
-                // Red: (239, 68, 68) -> Blue: (0, 240, 255)
+                // B. TRAFFIC POINTS COLOR INTERPOLATION (RED #EF4444 -> ELECTRIC BLUE #00F0FF)
+                // Red (239, 68, 68) -> Electric Blue (0, 240, 255)
                 const r = Math.round(239 + (0 - 239) * easeProgress);
                 const g = Math.round(68 + (240 - 68) * easeProgress);
                 const b = Math.round(68 + (255 - 68) * easeProgress);
@@ -1699,10 +1690,10 @@
                     badge.classList.add('fluid');
                 }
 
-                // C. SYNCHRONIZED TRAFFIC CANVAS RENDER
+                // C. TRAFFIC CANVAS RENDER WITH COLOR SHIFT FROM RED TO BLUE
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-                particles.forEach(p => {
+                points.forEach(p => {
                     const speedMultiplier = 1 + easeProgress * 9.0;
                     const speed = p.baseSpeed * speedMultiplier;
 
@@ -1725,15 +1716,15 @@
                 });
 
                 if (progress < 1) {
-                    card3AnimFrameId = requestAnimationFrame(syncStep);
+                    popupAnimFrameId = requestAnimationFrame(syncStep);
                 } else {
                     // Final State
-                    renderFlipNumber('expanded-counter-val', '45 000');
+                    renderFlipNumber('popup-counter-val', '45 000');
                     renderFlipNumber('counter-3', '45 000');
 
-                    // Pause 1s, then close modal and notify master sequence
+                    // Pause 1s, then close popup and notify master sequence
                     setTimeout(() => {
-                        closeCard3Modal();
+                        closePlaineVarPopup();
                         if (onComplete) onComplete();
                     }, 1000);
                 }
@@ -1742,10 +1733,10 @@
             requestAnimationFrame(syncStep);
         }
 
-        function closeCard3Modal() {
-            const modal = document.getElementById('fullscreen-card3-modal');
+        function closePlaineVarPopup() {
+            const modal = document.getElementById('plaine-var-popup-modal');
             modal.classList.remove('active');
-            if (card3AnimFrameId) cancelAnimationFrame(card3AnimFrameId);
+            if (popupAnimFrameId) cancelAnimationFrame(popupAnimFrameId);
         }
 
         // ==========================================================================
