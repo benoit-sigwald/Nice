@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Enhanced Security & Plaine du Var 3D Simulations) -->
+    <!-- CSS Palette & Styling (Volutions.ai aesthetics + Fullscreen Plaine du Var 3D Simulation) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -74,6 +74,104 @@
 
         #fullscreen-fireworks-canvas.active {
             opacity: 1;
+        }
+
+        /* FULLSCREEN PLAINE DU VAR 3D TRAFFIC MODAL OVERLAY */
+        .plaine-var-modal {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(18, 16, 14, 0.88);
+            backdrop-filter: blur(24px) saturate(180%);
+            -webkit-backdrop-filter: blur(24px) saturate(180%);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .plaine-var-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .plaine-var-modal-content {
+            width: 90vw;
+            max-width: 1050px;
+            background: var(--bg-charcoal);
+            border: 1px solid var(--border-highlight);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.9), 0 0 40px rgba(216, 185, 138, 0.2);
+            transform: scale(0.92);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .plaine-var-modal.active .plaine-var-modal-content {
+            transform: scale(1);
+        }
+
+        .plaine-var-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .plaine-var-badge {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: 9999px;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            color: var(--jam-red);
+            transition: all 0.5s ease;
+        }
+
+        .plaine-var-badge.fluid {
+            background: rgba(0, 240, 255, 0.12);
+            border-color: rgba(0, 240, 255, 0.5);
+            color: var(--laser-blue);
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+        }
+
+        .plaine-var-canvas-container {
+            position: relative;
+            width: 100%;
+            height: 480px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .plaine-var-full-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #fullscreen-traffic-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .plaine-var-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         /* Volutions Ambient Radial Blur Lobes */
@@ -382,6 +480,7 @@
             .nav-menu { display: none; }
             .mobile-toggle { display: flex; }
             .mobile-overlay.open { display: flex; }
+            .plaine-var-canvas-container { height: 320px; }
         }
 
         /* Hero Section */
@@ -504,6 +603,7 @@
             margin-bottom: 12px;
             border: 1px solid rgba(216, 185, 138, 0.2);
             box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            cursor: pointer;
         }
 
         .traffic-img {
@@ -893,6 +993,27 @@
     <!-- Fullscreen Laser Fireworks Canvas Overlay -->
     <canvas id="fullscreen-fireworks-canvas"></canvas>
 
+    <!-- FULLSCREEN PLAINE DU VAR 3D DIGITAL TWIN TRAFFIC MODAL OVERLAY -->
+    <div id="fullscreen-plaine-var-modal" class="plaine-var-modal">
+        <div class="plaine-var-modal-content">
+            <div class="plaine-var-header">
+                <div>
+                    <span class="kicker">Jumeau Numérique 3D — Axe Nice-Monaco</span>
+                    <h3 class="font-serif text-champagne" style="font-size: 1.8rem;">Plaine du Var & Corridor Métropolitain A8</h3>
+                </div>
+                <span class="plaine-var-badge" id="fullscreen-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</span>
+            </div>
+            <div class="plaine-var-canvas-container">
+                <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="plaine-var-full-img">
+                <canvas id="fullscreen-traffic-canvas"></canvas>
+            </div>
+            <div class="plaine-var-footer">
+                <span style="font-size: 0.9rem; color: var(--text-bone-muted);">Régulation dynamique par l'IA des 45 000+ mobilités pendulaires quotidiennes entre Nice et Monaco</span>
+                <button onclick="closePlaineVarModal()" class="btn-outline" style="padding: 6px 16px; font-size: 0.825rem;">Masquer la Vue Grand Écran ✕</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Floating Glassmorphic Header Navigation (Volutions.ai Aesthetics) -->
     <header>
         <div class="nav-pill">
@@ -983,14 +1104,14 @@
                 </div>
 
                 <!-- CARTE 3 : PLAINE DU VAR 3D TRAFFIC CONGESTION REDUCTION SIMULATION -->
-                <div class="metric-card spotlight-card" id="metric-card-3">
+                <div class="metric-card spotlight-card" id="metric-card-3" onclick="openPlaineVarModal()">
                     <div class="traffic-mini-visual">
                         <img src="assets/plaine_var_traffic_3d.jpg" alt="Vue 3D Plaine du Var" class="traffic-img" id="traffic-img">
                         <canvas id="traffic-canvas" class="traffic-canvas"></canvas>
                         <div class="traffic-badge" id="traffic-status-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
                     </div>
                     <div class="metric-val"><span class="counter" id="counter-3" data-target="45000">0</span>+</div>
-                    <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco</div>
+                    <div class="metric-label">Flux de mobilités pendulaires quotidiennes régulés avec Monaco (Cliquer pour voir en Grand)</div>
                 </div>
 
                 <!-- CARTE 4 : AUTOFINANCEMENT TOTAL -->
@@ -1400,9 +1521,11 @@
                     setTimeout(() => runCardSequence(2), 1200);
                 });
             } else if (cardIndex === 2) {
-                // --- CARTE 3 : 45 000+ Flux Monaco + SIMULATION 3D EMBOUTEILLAGES PLAINE DU VAR ---
+                // --- CARTE 3 : 45 000+ Flux Monaco + FULLSCREEN 3D SIMULATION PLAINE DU VAR ---
                 card3.classList.add('active-sequence-card');
-                runPlaineVarTrafficSimulation(() => {
+                
+                // POP UP FULLSCREEN PLAINE DU VAR 3D SIMULATION!
+                openPlaineVarModal(() => {
                     animateSingleCounter('counter-3', 45000, 2000, () => {
                         setTimeout(() => runCardSequence(3), 1200);
                     });
@@ -1441,78 +1564,92 @@
         }
 
         // ==========================================================================
-        // 7. CARTE 3 : ANIMATION 3D EMBOUTEILLAGES PLAINE DU VAR ➔ FLUIDIFICATION IA
+        // 7. CARTE 3 : FULLSCREEN 3D DIGITAL TWIN PLAINE DU VAR MODAL & ANIMATION
         // ==========================================================================
-        function runPlaineVarTrafficSimulation(onComplete) {
-            const badge = document.getElementById('traffic-status-badge');
-            const canvas = document.getElementById('traffic-canvas');
-            const miniVisual = canvas.parentElement;
-            
-            canvas.width = miniVisual.offsetWidth;
-            canvas.height = miniVisual.offsetHeight;
+        let fullscreenAnimId;
+
+        function openPlaineVarModal(onComplete) {
+            const modal = document.getElementById('fullscreen-plaine-var-modal');
+            const badge = document.getElementById('fullscreen-traffic-badge');
+            const canvas = document.getElementById('fullscreen-traffic-canvas');
+            const container = canvas.parentElement;
+
+            modal.classList.add('active');
+
+            canvas.width = container.offsetWidth;
+            canvas.height = container.offsetHeight;
             const ctx = canvas.getContext('2d');
 
             badge.innerText = '🚨 Embouteillages Plaine du Var (-45 min)';
             badge.classList.remove('fluid');
 
             const particles = [];
-            const count = 35;
+            const count = 55;
 
+            // Jammed Red Traffic Particles along A8 Highway in Fullscreen View
             for (let i = 0; i < count; i++) {
                 particles.push({
-                    x: Math.random() * (canvas.width * 0.7) + (canvas.width * 0.15),
-                    y: Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25),
-                    speed: Math.random() * 0.3 + 0.1,
+                    x: Math.random() * (canvas.width * 0.75) + (canvas.width * 0.1),
+                    y: Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2),
+                    speed: Math.random() * 0.4 + 0.1,
                     color: '#EF4444',
-                    size: Math.random() * 3 + 2.5
+                    size: Math.random() * 4 + 3
                 });
             }
 
             let frame = 0;
-            let animId;
 
-            function animateTraffic() {
+            function renderFullscreenScene() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 frame++;
 
-                if (frame === 60) {
-                    badge.innerText = '⚡ Régulation IA : Trafic Fluidifié (-70% bouchons)';
+                if (frame === 70) {
+                    badge.innerText = '⚡ Régulation IA Métropolitaine : Trafic Fluidifié (-70% bouchons)';
                     badge.classList.add('fluid');
                 }
 
                 particles.forEach(p => {
-                    if (frame >= 60) {
+                    if (frame >= 70) {
                         p.color = '#00F0FF';
-                        p.speed = Math.min(p.speed + 0.12, 3.5);
+                        p.speed = Math.min(p.speed + 0.15, 4.5);
                     }
 
-                    p.x += p.speed * 1.5;
-                    p.y -= p.speed * 0.4;
+                    p.x += p.speed * 1.8;
+                    p.y -= p.speed * 0.45;
 
-                    if (p.x > canvas.width + 10) {
-                        p.x = -10;
-                        p.y = Math.random() * (canvas.height * 0.5) + (canvas.height * 0.25);
+                    if (p.x > canvas.width + 20) {
+                        p.x = -20;
+                        p.y = Math.random() * (canvas.height * 0.6) + (canvas.height * 0.2);
                     }
 
                     ctx.save();
                     ctx.beginPath();
                     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
                     ctx.fillStyle = p.color;
-                    ctx.shadowBlur = frame >= 60 ? 10 : 4;
+                    ctx.shadowBlur = frame >= 70 ? 14 : 5;
                     ctx.shadowColor = p.color;
                     ctx.fill();
                     ctx.restore();
                 });
 
-                if (frame < 140) {
-                    animId = requestAnimationFrame(animateTraffic);
+                if (frame < 170) {
+                    fullscreenAnimId = requestAnimationFrame(renderFullscreenScene);
                 } else {
-                    cancelAnimationFrame(animId);
-                    if (onComplete) onComplete();
+                    // Smoothly auto-close after demonstration
+                    setTimeout(() => {
+                        closePlaineVarModal();
+                        if (onComplete) onComplete();
+                    }, 800);
                 }
             }
 
-            animateTraffic();
+            renderFullscreenScene();
+        }
+
+        function closePlaineVarModal() {
+            const modal = document.getElementById('fullscreen-plaine-var-modal');
+            modal.classList.remove('active');
+            if (fullscreenAnimId) cancelAnimationFrame(fullscreenAnimId);
         }
 
         // ==========================================================================
