@@ -146,7 +146,7 @@
             opacity: 0.9;
         }
 
-        /* STRATÉGIE EN QUELQUES POINTS EXECUTIVE BOX */
+        /* STRATÉGIE EN QUELQUES POINTS EXECUTIVE BOX (ENRICHED WITH CYBER SHIELD & MONACO CLOUD VALUE) */
         .strategy-summary-box {
             margin-top: 36px;
             margin-bottom: 40px;
@@ -168,6 +168,11 @@
             margin-bottom: 20px;
             border-bottom: 1px solid rgba(216, 185, 138, 0.2);
             padding-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
         }
 
         .strategy-summary-header h3 {
@@ -178,7 +183,7 @@
 
         .strategy-points-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
             gap: 16px;
         }
 
@@ -189,7 +194,7 @@
             padding: 16px;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 12px;
             transition: all 0.3s ease;
         }
 
@@ -208,15 +213,27 @@
 
         .strategy-point-content strong {
             display: block;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: var(--accent-champagne);
             margin-bottom: 4px;
         }
 
         .strategy-point-content p {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
             color: var(--text-bone-muted);
             line-height: 1.45;
+        }
+
+        .strategy-val-badge {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--laser-blue);
+            background: rgba(0, 240, 255, 0.1);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            padding: 2px 8px;
+            border-radius: 6px;
         }
 
         /* BENCHMARK GRID STYLING FOR INTERNATIONAL AI MUNICIPAL EXAMPLES */
@@ -1373,39 +1390,56 @@
                 </a>
             </div>
 
-            <!-- EXECUTIVE STRATEGY SUMMARY BOX ("LA STRATÉGIE EN QUELQUES POINTS") -->
+            <!-- EXECUTIVE STRATEGY SUMMARY BOX ("LA STRATÉGIE EN QUELQUES POINTS") ENRICHED WITH CYBER SHIELD & MONACO CLOUD VALUES -->
             <div class="strategy-summary-box reveal reveal-delay-3" id="strategy-summary-box">
                 <div class="strategy-summary-header">
-                    <span class="card-tag" id="strat-tag">⚡ Synthèse Exécutive pour M. le Maire</span>
-                    <h3 class="font-serif" id="strat-title">La Stratégie Nice IA en 4 points clés</h3>
+                    <div>
+                        <span class="card-tag" id="strat-tag">⚡ Synthèse Exécutive pour M. le Maire</span>
+                        <h3 class="font-serif" id="strat-title">La Stratégie Nice IA en 5 piliers chiffrés</h3>
+                    </div>
+                    <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-champagne); background: rgba(216, 185, 138, 0.12); padding: 4px 12px; border-radius: 9999px; border: 1px solid rgba(216, 185, 138, 0.3);" id="strat-total-badge">
+                        💰 Valeur Globale Générée : > 6,3 M€ à 9,5 M€ / an
+                    </span>
                 </div>
                 <div class="strategy-points-grid">
                     <div class="strategy-point-card">
                         <div class="strategy-point-icon">🛡️</div>
                         <div class="strategy-point-content">
                             <strong id="strat-p1-title">1. CSU Augmenté & Sécurité</strong>
-                            <p id="strat-p1-desc">IA VSA sur 4 300+ caméras : moins d'écrans, plus de Policiers Municipaux sur le terrain.</p>
+                            <p id="strat-p1-desc">IA VSA sur 4 300+ caméras : détection instantanée et réaffectation des policiers sur le terrain.</p>
+                            <span class="strategy-val-badge" id="strat-p1-val">Impact : Incivilités -65 %</span>
                         </div>
                     </div>
                     <div class="strategy-point-card">
                         <div class="strategy-point-icon">💰</div>
                         <div class="strategy-point-content">
-                            <strong id="strat-p2-title">2. Rigueur & Fin du Gaspillage</strong>
-                            <p id="strat-p2-desc">Audit IA à 100 % des marchés publics pour <strong>2,5 M€/an d'économies nettes</strong>.</p>
+                            <strong id="strat-p2-title">2. Audit IA & Commande Publique</strong>
+                            <p id="strat-p2-desc">Contrôle à 100 % des factures métropolitaines, devis et BPU pour éliminer le gaspillage.</p>
+                            <span class="strategy-val-badge" id="strat-p2-val">Gain Net : 2,50 M€ / an certifiés</span>
                         </div>
                     </div>
                     <div class="strategy-point-card">
-                        <div class="strategy-point-icon">🤝</div>
+                        <div class="strategy-point-icon">🔒</div>
                         <div class="strategy-point-content">
-                            <strong id="strat-p3-title">3. Alliance Monaco & Zone Franche</strong>
-                            <p id="strat-p3-desc">Axe Monaco Nice, Monaco Cloud et régulation IA fluide des mobilités pendulaires.</p>
+                            <strong id="strat-p5-title">3. Bouclier Cyber-IA (NIS 2)</strong>
+                            <p id="strat-p5-desc">SOC 24/7 souverain & étanchéité CSU contre les attaques par ransomware.</p>
+                            <span class="strategy-val-badge" id="strat-p5-val">Valeur : 1,8 M€ à 3 M€/an de crise évités</span>
+                        </div>
+                    </div>
+                    <div class="strategy-point-card">
+                        <div class="strategy-point-icon">🇲🇨</div>
+                        <div class="strategy-point-content">
+                            <strong id="strat-p3-title">4. Monaco Cloud & Zone Franche</strong>
+                            <p id="strat-p3-desc">Passerelle Monaco Cloud souverain + Zone Franche Nice-Monaco & régulation IA trafic.</p>
+                            <span class="strategy-val-badge" id="strat-p3-val">Valeur : 2,0 M€ à 4 M€/an infra & VC</span>
                         </div>
                     </div>
                     <div class="strategy-point-card">
                         <div class="strategy-point-icon">⚡</div>
                         <div class="strategy-point-content">
-                            <strong id="strat-p4-title">4. Autofinancement Intégral</strong>
-                            <p id="strat-p4-desc">Projet 100 % autofinancé dès l'An 2 par les gains d'audit et l'UE (0 € dépendance Région).</p>
+                            <strong id="strat-p4-title">5. Autofinancement Intégral</strong>
+                            <p id="strat-p4-desc">Projet 100 % autofinancé dès l'An 2 par les gains d'audit et fonds UE Digital Europe.</p>
+                            <span class="strategy-val-badge" id="strat-p4-val">Région SUD : 0 € dépendance</span>
                         </div>
                     </div>
                 </div>
@@ -1659,7 +1693,7 @@
                         <h3 class="font-serif" style="font-size: 2rem; font-weight: 340;" id="cyber-box-h3">Le Bouclier Métropolitain IA</h3>
                     </div>
                     <span style="background: rgba(16, 185, 129, 0.1); color: var(--success-green); border: 1px solid rgba(10, 185, 129, 0.3); padding: 6px 14px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;" id="cyber-box-nis2">
-                        Conforme Directive NIS 2
+                        Conforme Directive NIS 2 — 1,8 M€ à 3 M€/an d'attaques évitées
                     </span>
                 </div>
 
@@ -1729,7 +1763,7 @@
                         <li><strong id="m3-b1-t">Guichet Binational Unique</strong> : <span id="m3-b1-d">Facilitation fiscale et administrative France - Principauté.</span></li>
                         <li><strong id="m3-b2-t">Sandbox Réglementaire</strong> : <span id="m3-b2-d">Cadre d'expérimentation d'exception pour l'IA et les mobilités.</span></li>
                         <li><strong id="m3-b3-t">Passerelle Souveraine</strong> : <span id="m3-b3-d">Lien direct et étanche Nice CSU ➔ Monaco Cloud ➔ Grasse Data.</span></li>
-                        <li><strong id="m3-b4-t">Autofinancement Européen</strong> : <span id="m3-b4-d">Financements directs UE pour projets transfrontaliers.</span></li>
+                        <li><strong id="m3-b4-t">Valeur Infra & VC</strong> : <span id="m3-b4-d"><strong>2,0 M€ à 4,0 M€/an</strong> d'économies d'infrastructures cloud et investissements.</span></li>
                     </ul>
                 </div>
             </div>
@@ -1880,15 +1914,23 @@
                 heroBtnDiscover: "Découvrir le Pôle Réduction de Coûts",
                 heroBtnSimulate: "Simuler les Économies Budgétaires ↓",
                 stratTag: "⚡ Synthèse Exécutive pour M. le Maire",
-                stratTitle: "La Stratégie Nice IA en 4 points clés",
+                stratTitle: "La Stratégie Nice IA en 5 piliers chiffrés",
+                stratTotalBadge: "💰 Valeur Globale Générée : > 6,3 M€ à 9,5 M€ / an",
                 stratP1Title: "1. CSU Augmenté & Sécurité",
-                stratP1Desc: "IA VSA sur 4 300+ caméras : moins d'écrans, plus de Policiers Municipaux sur le terrain.",
-                stratP2Title: "2. Rigueur & Fin du Gaspillage",
-                stratP2Desc: "Audit IA à 100 % des marchés publics pour <strong>2,5 M€/an d'économies nettes</strong>.",
-                stratP3Title: "3. Alliance Monaco & Zone Franche",
-                stratP3Desc: "Axe Monaco Nice, Monaco Cloud et régulation IA fluide des mobilités pendulaires.",
-                stratP4Title: "4. Autofinancement Intégral",
-                stratP4Desc: "Projet 100 % autofinancé dès l'An 2 par les gains d'audit et l'UE (0 € dépendance Région).",
+                stratP1Desc: "IA VSA sur 4 300+ caméras : détection instantanée et réaffectation des policiers sur le terrain.",
+                stratP1Val: "Impact : Incivilités -65 %",
+                stratP2Title: "2. Audit IA & Commande Publique",
+                stratP2Desc: "Contrôle à 100 % des factures métropolitaines, devis et BPU pour éliminer le gaspillage.",
+                stratP2Val: "Gain Net : 2,50 M€ / an certifiés",
+                stratP5Title: "3. Bouclier Cyber-IA (NIS 2)",
+                stratP5Desc: "SOC 24/7 souverain & étanchéité CSU contre les attaques par ransomware.",
+                stratP5Val: "Valeur : 1,8 M€ à 3 M€/an de crise évités",
+                stratP3Title: "4. Monaco Cloud & Zone Franche",
+                stratP3Desc: "Passerelle Monaco Cloud souverain + Zone Franche Nice-Monaco & régulation IA trafic.",
+                stratP3Val: "Valeur : 2,0 M€ à 4 M€/an infra & VC",
+                stratP4Title: "5. Autofinancement Intégral",
+                stratP4Desc: "Projet 100 % autofinancé dès l'An 2 par les gains d'audit et fonds UE Digital Europe.",
+                stratP4Val: "Région SUD : 0 € dépendance",
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
                 card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
@@ -1933,7 +1975,7 @@
                 m3b1t: "Guichet Binational Unique", m3b1d: "Facilitation fiscale et administrative France - Principauté.",
                 m3b2t: "Sandbox Réglementaire", m3b2d: "Cadre d'expérimentation d'exception pour l'IA et les mobilités.",
                 m3b3t: "Passerelle Souveraine", m3b3d: "Lien direct et étanche Nice CSU ➔ Monaco Cloud ➔ Grasse Data.",
-                m3b4t: "Autofinancement Européen", m3b4d: "Financements directs UE pour projets transfrontaliers.",
+                m3b4t: "Valeur Infra & VC", m3b4d: "2,0 M€ à 4,0 M€/an d'économies d'infrastructures cloud et investissements.",
                 roiGross: "Économies Brutes Générées :",
                 roiCost: "Coût Commando Métropole :",
                 roiNet: "Bénéfice Net Public :",
@@ -1955,15 +1997,23 @@
                 heroBtnDiscover: "Discover Cost Reduction Pole",
                 heroBtnSimulate: "Simulate Budget Savings ↓",
                 stratTag: "⚡ Executive Summary for the Mayor",
-                stratTitle: "Nice AI Strategy in 4 Key Points",
+                stratTitle: "Nice AI Strategy in 5 Quantified Pillars",
+                stratTotalBadge: "💰 Total Value Generated: > €6.3M to €9.5M / yr",
                 stratP1Title: "1. Augmented CSU & Security",
-                stratP1Desc: "VSA AI across 4,300+ cameras: less screens, more Municipal Police in the streets.",
-                stratP2Title: "2. Fiscal Rigor & Zero Waste",
-                stratP2Desc: "100% AI procurement audit delivering <strong>€2.5M/yr net savings</strong>.",
-                stratP3Title: "3. Monaco & Free Zone Alliance",
-                stratP3Desc: "Monaco-Nice Axis, Monaco Cloud, and fluid AI regulation of daily commuter flows.",
-                stratP4Title: "4. Full Autofinancing (Yr 2)",
-                stratP4Desc: "100% self-funded project from Year 2 via audit gains & EU grants (0 € Region reliance).",
+                stratP1Desc: "VSA AI across 4,300+ cameras: instant detection and redeployment of officers to the streets.",
+                stratP1Val: "Impact: Incivilities -65%",
+                stratP2Title: "2. AI Audit & Procurement",
+                stratP2Desc: "100% control of metropolitan invoices, quotes, and unit prices to eliminate waste.",
+                stratP2Val: "Net Gain: €2.50M / yr certified",
+                stratP5Title: "3. Cyber-AI Shield (NIS 2)",
+                stratP5Desc: "Sovereign 24/7 SOC & CSU air-gapping against ransomware cyberattacks.",
+                stratP5Val: "Value: €1.8M to €3M/yr crisis cost avoided",
+                stratP3Title: "4. Monaco Cloud & Free Zone",
+                stratP3Desc: "Sovereign Monaco Cloud bridge + Nice-Monaco Free Zone & AI traffic regulation.",
+                stratP3Val: "Value: €2.0M to €4M/yr infra & VC",
+                stratP4Title: "5. Full Autofinancing (Yr 2)",
+                stratP4Desc: "100% self-funded project from Year 2 via audit gains & EU Digital Europe grants.",
+                stratP4Val: "Région SUD: 0 € dependency",
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
                 card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
@@ -2008,7 +2058,7 @@
                 m3b1t: "Single Binational Desk", m3b1d: "Streamlined fiscal & administrative framework France - Principality.",
                 m3b2t: "Regulatory Sandbox", m3b2d: "Exceptional testing environment for AI & mobility.",
                 m3b3t: "Sovereign Gateway", m3b3d: "Direct air-gapped bridge Nice CSU ➔ Monaco Cloud ➔ Grasse Data.",
-                m3b4t: "EU Co-Financing", m3b4d: "Direct EU grants for cross-border binational projects.",
+                m3b4t: "Infra Value & VC", m3b4d: "€2.0M to €4.0M/yr in cloud infrastructure savings & VC investment.",
                 roiGross: "Gross Savings Generated:",
                 roiCost: "Metropolitan Commando Cost:",
                 roiNet: "Net Public Benefit:",
@@ -2036,17 +2086,29 @@
             document.getElementById('hero-btn-discover').innerText = data.heroBtnDiscover;
             document.getElementById('hero-btn-simulate').innerText = data.heroBtnSimulate;
 
-            // STRATEGY SUMMARY BOX TRANSLATIONS
+            // STRATEGY SUMMARY BOX TRANSLATIONS (ENRICHED)
             document.getElementById('strat-tag').innerText = data.stratTag;
             document.getElementById('strat-title').innerText = data.stratTitle;
+            document.getElementById('strat-total-badge').innerText = data.stratTotalBadge;
             document.getElementById('strat-p1-title').innerText = data.stratP1Title;
             document.getElementById('strat-p1-desc').innerText = data.stratP1Desc;
+            document.getElementById('strat-p1-val').innerText = data.stratP1Val;
+
             document.getElementById('strat-p2-title').innerText = data.stratP2Title;
-            document.getElementById('strat-p2-desc').innerHTML = data.stratP2Desc;
+            document.getElementById('strat-p2-desc').innerText = data.stratP2Desc;
+            document.getElementById('strat-p2-val').innerText = data.stratP2Val;
+
+            document.getElementById('strat-p5-title').innerText = data.stratP5Title;
+            document.getElementById('strat-p5-desc').innerText = data.stratP5Desc;
+            document.getElementById('strat-p5-val').innerText = data.stratP5Val;
+
             document.getElementById('strat-p3-title').innerText = data.stratP3Title;
             document.getElementById('strat-p3-desc').innerText = data.stratP3Desc;
+            document.getElementById('strat-p3-val').innerText = data.stratP3Val;
+
             document.getElementById('strat-p4-title').innerText = data.stratP4Title;
             document.getElementById('strat-p4-desc').innerText = data.stratP4Desc;
+            document.getElementById('strat-p4-val').innerText = data.stratP4Val;
 
             // BENCHMARK TRANSLATIONS
             if (document.getElementById('bm-title')) {
