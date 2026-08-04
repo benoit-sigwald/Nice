@@ -2538,16 +2538,19 @@
 
             renderFlipNumber('counter-3', '0');
 
-            // Generate 80 Traffic Points guided along A8 Highway Bezier curve
+            // Generate 80 Traffic Points guided along A8 Highway Bezier curve in BOTH directions
             const points = [];
             const pointCount = 80;
             for (let i = 0; i < pointCount; i++) {
+                const direction = Math.random() > 0.5 ? 1 : -1;
                 points.push({
                     t: Math.random(), // position relative on the curve (0.0 to 1.0)
-                    baseSpeed: Math.random() * 0.002 + 0.001, // speed increment per frame
-                    size: Math.random() * 2.8 + 2.4, // size of particle
-                    offsetX: (Math.random() - 0.5) * 6, // lateral deviation for multi-lane simulation
-                    offsetY: (Math.random() - 0.5) * 6
+                    direction: direction, // 1 for forward, -1 for backward
+                    baseSpeed: Math.random() * 0.0016 + 0.001, // speed increment per frame
+                    size: Math.random() * 1.8 + 1.8, // size of particle (slightly smaller for double lane definition)
+                    // Offset based on direction to simulate right-hand driving lanes
+                    // direction = 1: shifted to one side; direction = -1: shifted to the other side
+                    laneOffset: direction * (Math.random() * 1.5 + 2.5)
                 });
             }
 
@@ -2594,20 +2597,44 @@
                     const speedMultiplier = 1.0 + easeProgress * 4.5;
                     const speed = p.baseSpeed * speedMultiplier;
 
-                    p.t += speed;
+                    p.t += speed * p.direction;
                     if (p.t > 1.0) {
                         p.t = 0.0;
+                    } else if (p.t < 0.0) {
+                        p.t = 1.0;
                     }
 
-                    // Cubic Bezier interpolation
+                    // Cubic Bezier interpolation at t
                     const u = 1.0 - p.t;
                     const tt = p.t * p.t;
                     const uu = u * u;
                     const uuu = uu * u;
                     const ttt = tt * p.t;
 
-                    const posX = uuu * p0.x + 3 * uu * p.t * p1.x + 3 * u * tt * p2.x + ttt * p3.x + p.offsetX;
-                    const posY = uuu * p0.y + 3 * uu * p.t * p1.y + 3 * u * tt * p2.y + ttt * p3.y + p.offsetY;
+                    let posX = uuu * p0.x + 3 * uu * p.t * p1.x + 3 * u * tt * p2.x + ttt * p3.x;
+                    let posY = uuu * p0.y + 3 * uu * p.t * p1.y + 3 * u * tt * p2.y + ttt * p3.y;
+
+                    // Calculate tangent vector at t to apply a precise perpendicular offset
+                    const tNext = Math.min(Math.max(p.t + 0.01 * p.direction, 0.0), 1.0);
+                    const uN = 1.0 - tNext;
+                    const ttN = tNext * tNext;
+                    const uuN = uN * uN;
+                    const uuuN = uuN * uN;
+                    const tttN = ttN * tNext;
+                    const nextX = uuuN * p0.x + 3 * uuN * tNext * p1.x + 3 * uN * ttN * p2.x + tttN * p3.x;
+                    const nextY = uuuN * p0.y + 3 * uuN * tNext * p1.y + 3 * uN * ttN * p2.y + tttN * p3.y;
+
+                    const dx = nextX - posX;
+                    const dy = nextY - posY;
+                    const len = Math.sqrt(dx * dx + dy * dy);
+                    if (len > 0) {
+                        // Perpendicular normal vector unit
+                        const nx = -dy / len;
+                        const ny = dx / len;
+                        // Apply directional lane offset
+                        posX += nx * p.laneOffset;
+                        posY += ny * p.laneOffset;
+                    }
 
                     ctx.save();
                     ctx.beginPath();
