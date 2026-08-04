@@ -1447,7 +1447,7 @@
                 </div>
             </div>
 
-            <!-- Spotlight Interactive Metric Cards -->
+            <!-- Spotlight Interactive Metric Cards (3 EQUAL COLUMNS) -->
             <div class="metrics-grid reveal reveal-delay-4">
                 <!-- CARTE 1 : SÉCURITÉ AUGMENTÉE & GAINS VILLE -->
                 <div class="metric-card spotlight-card" id="metric-card-1">
@@ -1458,7 +1458,10 @@
                     <div class="card1-desc-box" id="card1-desc-box" style="margin-top: 10px; padding: 10px 12px; border-radius: 10px; background: linear-gradient(135deg, rgba(216, 185, 138, 0.12) 0%, rgba(15, 118, 110, 0.15) 100%); border: 1px solid rgba(216, 185, 138, 0.4);">
                         <div style="font-size: 0.78rem; color: var(--text-bone); line-height: 1.45;">
                             <strong style="color: var(--laser-blue); display: block;" id="c1-gains-title">🏛️ Gains Sécurité & Cadre de Vie :</strong>
-                            <span id="c1-gains-desc">• CSU VSA : <strong>Incivilités -65 %</strong> (Intervention PM < 6 min)<br>• Services : <strong>Allo Séniors 24/7</strong> & Propreté sous 6h<br>• Budget Frugal Ville : <strong>100 k€/an</strong> (co-financé UE)</span>
+                            <span id="c1-gains-desc">• CSU VSA : <strong>Incivilités -65 %</strong> (Intervention PM < 6 min)<br>• Services : <strong>Allo Séniors 24/7</strong> & Propreté sous 6h</span>
+                            <div style="margin-top: 6px; border-top: 1px solid rgba(216, 185, 138, 0.2); padding-top: 4px;">
+                                <strong style="color: var(--success-green); font-size: 0.76rem;" id="c1-budget-tag">⚡ Budget IA Ville : 100 k€/an <em>(Co-financé UE)</em></strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1473,7 +1476,10 @@
                         </div>
                         <div style="font-size: 0.78rem; color: var(--text-bone); line-height: 1.45; border-top: 1px solid rgba(216, 185, 138, 0.2); padding-top: 6px;">
                             <strong style="color: var(--accent-champagne); display: block;" id="c2-econ-title">💰 Économies Chiffrées :</strong>
-                            <span id="c2-econ-desc">• Audit Marchés : <strong>+2,5 M€/an net</strong> certifiés<br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong> (Directive NIS 2)<br>• Budget Frugal Métropole : <strong>150 k€/an</strong> (autofinancé)</span>
+                            <span id="c2-econ-desc">• Audit Marchés : <strong>+2,5 M€/an net</strong> certifiés<br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong> (Directive NIS 2)</span>
+                            <div style="margin-top: 6px; border-top: 1px solid rgba(216, 185, 138, 0.2); padding-top: 4px;">
+                                <strong style="color: var(--success-green); font-size: 0.76rem;" id="c2-budget-tag">⚡ Budget IA Métropole : 150 k€/an <em>(Co-financé UE)</em></strong>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1486,7 +1492,7 @@
                         <div class="telemetry-hue-overlay" id="telemetry-overlay"></div>
                         <canvas id="card3-traffic-canvas"></canvas>
                     </div>
-                    <div class="card3-traffic-badge" id="card3-traffic-badge">🚨 Embouteillages Plaine du Var (-45 min)</div>
+                    <div class="card3-traffic-badge" id="card3-traffic-badge">⚡ Régulation IA Métropolitaine & Mobilités</div>
                     
                     <div class="metric-val"><span id="counter-3" class="flip-counter"></span><span class="flip-unit">+</span></div>
                     
@@ -1496,23 +1502,14 @@
                         </div>
                         <div style="font-size: 0.78rem; color: var(--text-bone); line-height: 1.45; border-top: 1px solid rgba(216, 185, 138, 0.2); padding-top: 6px;">
                             <strong style="color: var(--laser-blue); display: block;" id="c3-gains-title">🇲🇨 Gains Transfrontaliers & Infra :</strong>
-                            <span id="c3-gains-desc">• Trafic A8/Monaco : <strong>-45 min (-70 % bouchons)</strong><br>• Infra Cloud Monaco : <strong>1,2 M€/an</strong> évitées + 2-4 M€ VC<br>• Budget Monaco Zone Franche : <strong>250 k€/an</strong></span>
+                            <span id="c3-gains-desc">• Infra Cloud Monaco : <strong>1,2 M€/an</strong> évitées + 2-4 M€ VC<br>• Zone Franche : Guichet Unique Binational & Sandbox</span>
+                            <div style="margin-top: 6px; border-top: 1px solid rgba(216, 185, 138, 0.2); padding-top: 4px;">
+                                <strong style="color: var(--success-green); font-size: 0.76rem;" id="c3-budget-tag">⚡ Budget IA Monaco ZF : 250 k€/an <em>(Co-financé UE)</em></strong>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- CARTE 4 : LEVIER FINANCEMENTS EUROPE/CITÉS & SYNTHÈSE BUDGET FRUGAL -->
-                <div class="metric-card spotlight-card" id="metric-card-4">
-                    <div class="metric-val"><span id="counter-4" class="flip-counter"></span><span class="flip-unit">%</span></div>
-                    <div class="metric-label" id="card4-label">Levier Europe & Financements Cités (0 € dépendance Région SUD)</div>
-
-                    <div class="card4-desc-box" id="card4-desc-box">
-                        <div style="font-size: 0.78rem; color: var(--text-bone); line-height: 1.45;">
-                            <strong style="color: var(--success-green); display: block;" id="c4-budget-title">⚡ Petit Budget Commando IA :</strong>
-                            <span id="c4-budget-desc">Seulement <strong>500 k€/an TOTAL</strong> (100k Ville / 150k Métropole / 250k Monaco ZF)<br>• <strong>Bilan Net Public</strong> : <strong>+2,00 M€ / an</strong> réinjectés aux Niçois.</span>
-                        </div>
-                    </div>
-                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -1956,13 +1953,14 @@
                 stratP4Desc: "Recherche active de financements auprès de l'Union Européenne (Digital Europe, Horizon) et des guichets de développement des cités.",
                 stratP4Val: "Co-financement : Europe & Cités",
                 c1GainsTitle: "🏛️ Gains Sécurité & Cadre de Vie :",
-                c1GainsDesc: "• CSU VSA : <strong>Incivilités -65 %</strong> (Intervention PM < 6 min)<br>• Services : <strong>Allo Séniors 24/7</strong> & Propreté sous 6h<br>• Budget Frugal Ville : <strong>600 k€/an</strong> (co-financé UE)",
+                c1GainsDesc: "• CSU VSA : <strong>Incivilités -65 %</strong> (Intervention PM < 6 min)<br>• Services : <strong>Allo Séniors 24/7</strong> & Propreté sous 6h",
+                c1BudgetTag: "⚡ Budget IA Ville : 100 k€/an <em>(Co-financé UE)</em>",
                 c2EconTitle: "💰 Économies Chiffrées :",
-                c2EconDesc: "• Audit Marchés : <strong>+2,5 M€/an net</strong> certifiés<br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong> (Directive NIS 2)<br>• Budget Frugal Métropole : <strong>550 k€/an</strong> (autofinancé)",
+                c2EconDesc: "• Audit Marchés : <strong>+2,5 M€/an net</strong> certifiés<br>• Crises Cyber évitées : <strong>1,8-3 M€/an</strong> (Directive NIS 2)",
+                c2BudgetTag: "⚡ Budget IA Métropole : 150 k€/an <em>(Co-financé UE)</em>",
                 c3GainsTitle: "🇲🇨 Gains Transfrontaliers & Infra :",
-                c3GainsDesc: "• Trafic A8/Monaco : <strong>-45 min (-70 % bouchons)</strong><br>• Infra Cloud Monaco : <strong>1,2 M€/an</strong> évitées + 2-4 M€ VC<br>• Zone Franche : Guichet Unique & Sandbox",
-                c4BudgetTitle: "⚡ Petit Budget Commando IA :",
-                c4BudgetDesc: "Seulement <strong>1,15 M€/an</strong> mobilisés (0,38% du budget), financés par l'UE & l'audit.<br>• <strong>Bilan Net Public</strong> : <strong>+1,35 M€ à +2,5 M€ / an</strong> réinjectés aux Niçois.",
+                c3GainsDesc: "• Infra Cloud Monaco : <strong>1,2 M€/an</strong> évitées + 2-4 M€ VC<br>• Zone Franche : Guichet Unique Binational & Sandbox",
+                c3BudgetTag: "⚡ Budget IA Monaco ZF : 250 k€/an <em>(Co-financé UE)</em>",
                 securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
                 card1Label: "Caméras au CSU boostées par l'IA : <strong>Détection instantanée des menaces, intervention immédiate de la Police et sécurité maximale pour les Niçois.</strong>",
                 unitCard2: "M€ / an",
@@ -2047,13 +2045,14 @@
                 stratP4Desc: "Active pursuit of funding from European grants (Digital Europe, Horizon) and urban/cities development funds.",
                 stratP4Val: "Co-Funding: EU & Cities",
                 c1GainsTitle: "🏛️ Safety & Quality of Life Gains:",
-                c1GainsDesc: "• CSU VSA: <strong>Incivilities -65%</strong> (Police response < 6 min)<br>• Services: <strong>Seniors 24/7</strong> & Cleanup under 6h<br>• City Frugal Budget: <strong>€600k/yr</strong> (EU co-funded)",
+                c1GainsDesc: "• CSU VSA: <strong>Incivilities -65%</strong> (Police response < 6 min)<br>• Services: <strong>Seniors 24/7</strong> & Cleanup under 6h",
+                c1BudgetTag: "⚡ AI City Budget: €100k/yr <em>(EU Co-funded)</em>",
                 c2EconTitle: "💰 Quantified Savings:",
-                c2EconDesc: "• Procurement Audit: <strong>+€2.5M/yr net</strong> certified<br>• Cyber Crisis avoided: <strong>€1.8-3M/yr</strong> (NIS 2 Directive)<br>• Metropolis Frugal Budget: <strong>€550k/yr</strong> (self-funded)",
+                c2EconDesc: "• Procurement Audit: <strong>+€2.5M/yr net</strong> certified<br>• Cyber Crisis avoided: <strong>€1.8-3M/yr</strong> (NIS 2 Directive)",
+                c2BudgetTag: "⚡ AI Metropolis Budget: €150k/yr <em>(EU Co-funded)</em>",
                 c3GainsTitle: "🇲🇨 Cross-Border & Infra Gains:",
-                c3GainsDesc: "• Traffic A8/Monaco: <strong>-45 min (-70% jams)</strong><br>• Monaco Cloud Infra: <strong>€1.2M/yr</strong> avoided + €2-4M VC<br>• Free Zone: Single Desk & Sandbox",
-                c4BudgetTitle: "⚡ Frugal AI Commando Budget:",
-                c4BudgetDesc: "Only <strong>€1.15M/yr</strong> (0.38% budget), funded via EU & audit.<br>• <strong>Net Public Benefit</strong>: <strong>+€1.35M to +€2.5M / yr</strong> returned to citizens.",
+                c3GainsDesc: "• Monaco Cloud Infra: <strong>€1.2M/yr</strong> avoided + €2-4M VC<br>• Free Zone: Binational Single Desk & Sandbox",
+                c3BudgetTag: "⚡ AI Monaco Free Zone Budget: €250k/yr <em>(EU Co-funded)</em>",
                 securityTag: "🛡️ Augmented CSU: Less Screens, More Police in the Streets",
                 card1Label: "CSU Cameras boosted by AI: <strong>Instant threat detection, immediate Police intervention, and maximum security for citizens.</strong>",
                 unitCard2: "M€ / yr",
@@ -2153,12 +2152,13 @@
             if (document.getElementById('c1-gains-title')) {
                 document.getElementById('c1-gains-title').innerText = data.c1GainsTitle;
                 document.getElementById('c1-gains-desc').innerHTML = data.c1GainsDesc;
+                if (document.getElementById('c1-budget-tag')) document.getElementById('c1-budget-tag').innerHTML = data.c1BudgetTag;
                 document.getElementById('c2-econ-title').innerText = data.c2EconTitle;
                 document.getElementById('c2-econ-desc').innerHTML = data.c2EconDesc;
+                if (document.getElementById('c2-budget-tag')) document.getElementById('c2-budget-tag').innerHTML = data.c2BudgetTag;
                 document.getElementById('c3-gains-title').innerText = data.c3GainsTitle;
                 document.getElementById('c3-gains-desc').innerHTML = data.c3GainsDesc;
-                document.getElementById('c4-budget-title').innerText = data.c4BudgetTitle;
-                document.getElementById('c4-budget-desc').innerHTML = data.c4BudgetDesc;
+                if (document.getElementById('c3-budget-tag')) document.getElementById('c3-budget-tag').innerHTML = data.c3BudgetTag;
             }
 
             // BENCHMARK TRANSLATIONS
@@ -2175,7 +2175,6 @@
             document.getElementById('unit-card-2').innerText = data.unitCard2;
             document.getElementById('card2-label').innerHTML = data.card2Label;
             document.getElementById('card3-label').innerHTML = data.card3Label;
-            document.getElementById('card4-label').innerText = data.card4Label;
 
             document.getElementById('axes-kicker').innerText = data.axesKicker;
             document.getElementById('axes-title').innerText = data.axesTitle;
@@ -2347,14 +2346,8 @@
                 card3.classList.add('active-sequence-card');
                 
                 triggerCard3InPlaceAnimation(() => {
-                    setTimeout(() => runCardSequence(3), 1200);
-                });
-            } else if (cardIndex === 3) {
-                // --- CARTE 4 : 100 % Autofinancé ---
-                card4.classList.add('active-sequence-card');
-                animateFlipCounter('counter-4', 100, 1500, () => {
                     // LOOP BACK TO CARTE 1 (index 0)!
-                    setTimeout(() => runCardSequence(0), 2000);
+                    setTimeout(() => runCardSequence(0), 1500);
                 });
             }
         }

@@ -131,17 +131,17 @@ flowchart TD
 
 ### 4. Répartition Budgétaire Commando (500 k€ / an TOTAL)
 
-| Échelle / Axe | Budget Commando Annuel | Co-financement / Levier Extérieur | Impact & Gain Généré / an |
+| Échelle / Axe | Budget IA Annuel | Co-financement Européen | Impact & Gain Généré / an |
 | :--- | :---: | :---: | :--- |
-| **AXE VILLE DE NICE** (CSU VSA & Séniors) | **100 k€ / an** | Co-financement UE / Cités | Incivilités -65 % & Allo Séniors 24/7 |
-| **AXE MÉTROPOLE NCÀ** (Audit IA & Cyber NIS 2) | **150 k€ / an** | Autofinancé dès les 1ers audits | **+2,50 M€ / an** d'économies nettes |
-| **AXE MONACO ZONE FRANCHE** (Mobilités & Cloud) | **250 k€ / an** | Partenariat Monaco & VC | Trafic -45 min & 1,2 M€/an infra |
-| **TOTAL ANNUEL** | **500 k€ / AN** | **Levier Extérieur UE & Cités** | **+2,00 M€ / AN DE BÉNÉFICE NET PUBLIC** |
+| **AXE VILLE DE NICE** (CSU VSA & Séniors) | **100 k€ / an** | Co-financé par l'UE *(Digital Europe)* | Incivilités -65 % & Allo Séniors 24/7 |
+| **AXE MÉTROPOLE NCÀ** (Audit IA & Cyber NIS 2) | **150 k€ / an** | Co-financé par l'UE *(Horizon Europe)* | **+2,50 M€ / an** d'économies nettes |
+| **AXE MONACO ZONE FRANCHE** (Mobilités & Cloud) | **250 k€ / an** | Co-financé par l'UE & Monaco | 1,2 M€/an d'infra évitée & Sandbox VC |
+| **TOTAL ANNUEL** | **500 k€ / AN** | **Co-financé par l'UE** | **+2,00 M€ / AN DE BÉNÉFICE NET PUBLIC** |
 
 > [!IMPORTANT]
-> **Budget Frugal & Rentrée Budgétaire Nette**
-> - **Coût annuel total de l'implémentation IA** : **Seulement 500 k€/an** (soit 0,16 % des 300 M€ d'achats publics métropolitains).
-> - **Répartition des coûts** : 100 k€ Ville de Nice + 150 k€ Métropole NCÀ + 250 k€ Monaco Zone Franche.
+> **Budget IA Frugal & Co-financement Européen**
+> - **Coût annuel total du Budget IA** : **Seulement 500 k€/an** (soit 0,16 % des 300 M€ d'achats publics métropolitains).
+> - **Répartition des Budgets IA** : 100 k€ Ville de Nice + 150 k€ Métropole NCÀ + 250 k€ Monaco Zone Franche. Tous ces budgets bénéficient de co-financements européens (*Digital Europe*, *Horizon Europe*, *FEDER*).
 > - **Gains d'audit immédiatement encaissés** : **+2,50 M€/an** d'économies brutes certifiées.
 > - **Bilan net pour le contribuable niçois** : **+2,00 M€ / an réinjectés directement dans les services publics locaux**.
 
