@@ -9,8 +9,8 @@
 **La thèse.** La course aux modèles de frontière (supercalculateurs de 700 Md$) se joue à l’échelle des superpuissances. Pour un territoire comme Nice, la vraie bataille stratégique réside dans **l'usage concret, la sécurité publique, la souveraineté et la cybersécurité opérationnelle**. Aucune collectivité française n'a encore préempté le positionnement de la **« Capitale de l'IA de sécurité et d'efficience budgétaire »**. Nice doit et peut être la première.
 
 **La double échelle d'action.** Pour une efficacité maximale et une clarté institutionnelle irréprochable, le plan se structure autour de deux leviers distincts :
-1. **L'Axe VILLE DE NICE (Proximité & Sécurité)** : Action directe sur le terrain municipal — Vidéoprotection VSA du Centre de Supervision Urbain (CSU), Police Municipale augmentée, guichet vocal séniors et propreté des quartiers.
-2. **L'Axe MÉTROPOLE NICE CÔTE D'AZUR (Économie, Cyber, Mobilités & Alliances)** : Action structurante — Audit IA de la commande publique métropolitaine (1,5 M€/an d'économies), Bouclier Cybersécurité & Protection IA en mairie, régulation des flux pendulaires Nice-Monaco, et Ville Franche IA (*AI-Ready Zone*) avec Monaco/Grasse.
+1. **L'Axe VILLE DE NICE (Proximité & Sécurité)** : Action directe sur le terrain municipal — Vidéoprotection VSA du Centre de Supervision Urbain (CSU), Police Municipale augmentée (moins de risques, plus de sécurité), guichet vocal séniors et propreté des quartiers.
+2. **L'Axe MÉTROPOLE NICE CÔTE D'AZUR (Économie, Cyber, Mobilités & Alliances)** : Action structurante — Audit IA de la commande publique métropolitaine (1,5 M€/an d'économies nettes certifiées), Bouclier Cybersécurité & Protection IA en mairie, régulation des 45 000+ flux pendulaires Nice-Monaco (avec jumeau numérique 3D de la Plaine du Var), et Ville Franche IA (*AI-Ready Zone*) avec Monaco/Grasse.
 
 **Budget & Autonomie.** Un budget commando de **1,15 M€/an** (effet levier européen ×2 soit **2,35 M€/an mobilisés** via le *Digital Europe Programme* et *Horizon Europe*), évitant toute dépendance vis-à-vis de la Région SUD, et intégralement autofinancé dès l'année 2.
 
@@ -20,17 +20,17 @@
 
 ```mermaid
 flowchart TD
-    A[DOCTRINE IA NICE 2026] --> B[POLE 1 : AXE VILLE DE NICE\n(Proximité, Sécurité & Cadre de Vie)]
-    A --> C[POLE 2 : AXE MÉTROPOLE NICE CÔTE D'AZUR\n(Budget, Cyber, Mobilités & Monaco)]
+    A["DOCTRINE IA NICE 2026"] --> B["POLE 1 : AXE VILLE DE NICE<br/>(Proximité, Sécurité & Cadre de Vie)"]
+    A --> C["POLE 2 : AXE MÉTROPOLE NICE CÔTE D'AZUR<br/>(Budget, Cyber, Mobilités & Monaco)"]
 
-    B --> B1[1. Vidéoprotection CSU & PM Augmentée]
-    B --> B2[2. Allo Niçois Séniors IA - Guichet Vocal]
-    B --> B3[3. Propreté Augmentée & Signalement Quartiers]
+    B --> B1["1. Vidéoprotection CSU & PM Augmentée (Moins de Risques)"]
+    B --> B2["2. Allo Niçois Séniors IA - Guichet Vocal"]
+    B --> B3["3. Propreté Augmentée & Signalement Quartiers"]
 
-    C --> C1[4. Audit IA Commande Publique & Factures]
-    C --> C2[5. Analyse & Bouclier Cybersécurité IA]
-    C --> C3[6. Mobilités Pendulaires Nice-Monaco]
-    C --> C4[7. Ville Franche IA Monaco-Grasse]
+    C --> C1["4. Audit IA Commande Publique (1,5 M€/an Économies)"]
+    C --> C2["5. Analyse & Bouclier Cybersécurité IA"]
+    C --> C3["6. Mobilités Pendulaires 3D Plaine du Var (45 000+ usagers)"]
+    C --> C4["7. Ville Franche IA Monaco-Grasse"]
 ```
 
 ---
@@ -40,6 +40,7 @@ flowchart TD
 
 #### 1. Vidéoprotection CSU & Police Municipale Augmentée
 * **Modernisation du Centre de Supervision Urbain (CSU)** : Exploitation du réseau des 4 300+ caméras niçoises par Vidéosurveillance Algorithmique (VSA) basée sur l'analyse de formes et de comportements anormaux (objets abandonnés, dépôts sauvages, contre-sens, regroupements suspects).
+* **Moins de risques, plus de sécurité** : L'IA agit comme un multiplicateur de force permettant de détecter les menaces en temps réel avant qu'elles ne dégénèrent, réduisant les risques d'agression (-65%) et démultipliant la réactivité de la Police Municipale (+85%).
 * **Conformité juridique blindée** : Respect strict du RGPD et de l'AI Act européen (Règlement UE 2024/1689) — **aucune reconnaissance faciale biométrique**.
 * **Post-Event IA** : Outil d'analyse vidéo a posteriori pour accélérer la résolution d'enquêtes par la Police Municipale sous l'autorité du Parquet (art. 230-20 du CPP).
 
@@ -73,15 +74,15 @@ Les collectivités françaises sont devenues la cible privilégiée des réseaux
 
 ```mermaid
 flowchart LR
-    Threat[MENACES CYBER EN MAIRIE] --> T1[1. Ransomware & Paralysie Services]
-    Threat --> T2[2. Shadow AI & Fuite Données]
-    Threat --> T3[3. Deepfakes & Fraud au Président]
-    Threat --> T4[4. Attaques sur CSU & Caméras]
+    Threat["MENACES CYBER EN MAIRIE"] --> T1["1. Ransomware & Paralysie Services"]
+    Threat --> T2["2. Shadow AI & Fuite Données"]
+    Threat --> T3["3. Deepfakes & Fraude au Maire"]
+    Threat --> T4["4. Attaques sur CSU & Caméras"]
 
-    Shield[BOUCLIER CYBER-IA NICE] --> S1[SOC IA Métropolitain 24/7]
-    Shield --> S2[Environnement IA Souverain & Étanche]
-    Shield --> S3[Isolation Réseau CSU & Auth Forte]
-    Shield --> S4[Chiffrement local sur Monaco Cloud]
+    Shield["BOUCLIER CYBER-IA NICE"] --> S1["SOC IA Métropolitain 24/7"]
+    Shield --> S2["Environnement IA Souverain & Étanche"]
+    Shield --> S3["Isolation Réseau CSU & Auth Forte"]
+    Shield --> S4["Chiffrement local sur Monaco Cloud"]
 
     Threat ==> Shield
 ```
@@ -109,8 +110,8 @@ Pour contrer ces menaces, la Métropole déploie un dispositif de sécurité act
 ---
 
 #### 6. Mobilités Pendulaires & Flux Nice-Monaco (45 000+ usagers/jour)
-* **Jumeau numérique des mobilités** : Croisement en temps réel des données caméras de la Métropole, des capteurs du programme *Extended Monaco*, de Waze et des TER SNCF.
-* **Régulation du trafic** : Gestion intelligente des feux sur l'A8 et les corniches, guidage prédictif vers les parkings relais (Éze, Cap d'Ail) et voies réservées au covoiturage LAPI IA.
+* **Jumeau numérique 3D de la Plaine du Var & Corridor A8** : Simulation visuelle interactive de la résorption des embouteillages (passage dynamique des bouchons rouges de -45 min à la fluidification IA cyan/émeraude -70%).
+* **Régulation du trafic en temps réel** : Croisement des données caméras CSU, des capteurs d'Extended Monaco, Waze et des TER SNCF pour réguler la circulation sur l'A8 et les corniches.
 
 #### 7. Ville Franche IA & Alliance Transfrontalière (Monaco - Grasse)
 * **Coopération avec Monaco (*Extended Monaco*)** : Attractivité des fonds d'investissement monégasques vers les startups et infrastructures IA niçoises dans un cadre réglementaire privilégié (*sandbox*).
@@ -120,22 +121,16 @@ Pour contrer ces menaces, la Métropole déploie un dispositif de sécurité act
 
 ### 4. Répartition Budgétaire Ville & Métropole
 
-```
-+-----------------------------------------------------------------------------------+
-| Échelle / Axe                             | Métropole/Ville | Co-financement UE/Monaco |
-+-----------------------------------------------------------------------------------+
-| POLE VILLE DE NICE (Sécurité & Séniors)   |     600 k€      |    600 k€ (Horizon/DIGITAL)|
-| POLE MÉTROPOLE (Audit, Cyber, Monaco)     |     550 k€      |    600 k€ (DIGITAL/Extended)|
-+-----------------------------------------------------------------------------------+
-| TOTAL ANNUEL                              |   1 150 k€      |  1 200 k€                |
-| TOTAL MOBILISÉ                            |                 |  2 350 k€ / an           |
-+-----------------------------------------------------------------------------------+
-```
+| Échelle / Axe | Coût Métropole / Ville | Co-financement UE / Monaco | Total Mobilisé / an |
+| :--- | :---: | :---: | :---: |
+| **POLE VILLE DE NICE** (Sécurité CSU & Séniors) | 600 k€ | 600 k€ *(Horizon / DIGITAL)* | 1 200 k€ / an |
+| **POLE MÉTROPOLE** (Audit IA, Cyber, Monaco) | 550 k€ | 600 k€ *(DIGITAL / Extended)* | 1 150 k€ / an |
+| **TOTAL ANNUEL** | **1 150 k€** | **1 200 k€** | **2 350 k€ / an** |
 
 > [!NOTE]
 > **Rentabilité et Autofinancement**
 > - **Coût net cumulé Ville + Métropole** : 1,15 M€/an.
-> - **Gains nets annuels par audit IA (Axe Métropole)** : **> 1,50 M€ à 2,50 M€/an**.
+> - **Gains nets annuels par audit IA (Axe Métropole)** : **> 1,50 M€ à 2,50 M€/an** (par paliers de 0,25 M€).
 > - **Bilan budgétaire net** : **Gain positif de +350 k€ à +1,35 M€/an** pour les finances publiques azuréennes.
 
 ---
@@ -149,7 +144,7 @@ Pour contrer ces menaces, la Métropole déploie un dispositif de sécurité act
   - Lancement du Bouclier Cyber-IA Métropolitain et des pilotes VSA au CSU.
   - Dépôt du dossier de subvention direct *Digital Europe*.
 - **12 Mois** :
-  - Déploiement des cas d'usage Ville (Allo Séniors IA, Propreté) et Métropole (Audit, Cyber-SOC, Mobilité Monaco).
+  - Déploiement des cas d'usage Ville (Allo Séniors IA, Propreté) et Métropole (Audit, Cyber-SOC, Mobilité Monaco 3D Plaine du Var).
   - Bilan financier certifié démontrant les **1,5 M€ d'économies réalisés**.
   - Signature du protocole Ville Franche IA avec le Gouvernement Princier de Monaco.
 - **36 Mois** :
