@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- CSS Palette & Styling (Saint-Laurent-du-Var Red-to-Blue Map Overlay) -->
+    <!-- CSS Palette & Styling (Pôle Réduction de Coûts Priority Tab) -->
     <style>
         :root {
             --bg-espresso: #12100E;
@@ -773,32 +773,69 @@
             margin-bottom: 50px;
         }
 
-        /* Tabs Component (Ville vs Métropole) */
+        /* Tabs Component (Pôle Réduction de Coûts Priority Featured Tab) */
         .tabs-header {
             display: flex;
             gap: 16px;
             margin-bottom: 40px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 16px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
             background: none;
-            border: none;
+            border: 1px solid transparent;
             color: var(--text-bone-muted);
             font-family: var(--font-serif);
-            font-size: 1.35rem;
+            font-size: 1.25rem;
             cursor: pointer;
-            padding: 8px 18px;
-            border-radius: 12px;
+            padding: 10px 22px;
+            border-radius: 14px;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-bone);
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .tab-btn.active {
             color: var(--accent-champagne);
-            background: rgba(216, 185, 138, 0.08);
-            border: 1px solid rgba(216, 185, 138, 0.25);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background: rgba(216, 185, 138, 0.1);
+            border-color: rgba(216, 185, 138, 0.35);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* PROMINENT FEATURED TAB STYLING ("EN AVANT") */
+        .tab-btn.featured-tab {
+            border: 1px solid var(--accent-champagne) !important;
+            background: linear-gradient(135deg, rgba(216, 185, 138, 0.18) 0%, rgba(15, 118, 110, 0.18) 100%) !important;
+            box-shadow: 0 0 25px rgba(216, 185, 138, 0.3), 0 4px 15px rgba(0, 0, 0, 0.6) !important;
+            color: var(--text-bone) !important;
+            font-weight: 600;
+        }
+
+        .tab-btn.featured-tab.active {
+            background: linear-gradient(135deg, rgba(216, 185, 138, 0.3) 0%, rgba(15, 118, 110, 0.3) 100%) !important;
+            box-shadow: 0 0 35px rgba(216, 185, 138, 0.5), 0 8px 25px rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .tab-btn.featured-tab .tab-badge {
+            position: absolute;
+            top: -12px;
+            right: 12px;
+            font-family: var(--font-sans);
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            background: var(--accent-champagne);
+            color: var(--bg-espresso);
+            padding: 2px 8px;
+            border-radius: 9999px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
 
         .grid-cards {
@@ -816,6 +853,12 @@
             padding: 36px;
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .feature-card.highlight-cost-card {
+            border-color: rgba(216, 185, 138, 0.4);
+            background: linear-gradient(180deg, rgba(216, 185, 138, 0.05) 0%, rgba(22, 19, 15, 0.8) 100%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         .feature-card::before {
@@ -1106,7 +1149,7 @@
             </a>
 
             <ul class="nav-menu">
-                <li><a href="#axes">Axes Ville & Métropole</a></li>
+                <li><a href="#axes">Axes & Pôles IA</a></li>
                 <li><a href="#cyber">Bouclier Cyber</a></li>
                 <li><a href="#monaco">Alliance Monaco</a></li>
                 <li><a href="#roi">Simulateur ROI</a></li>
@@ -1130,7 +1173,9 @@
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-overlay" id="mobileMenu">
-            <a href="#axes" onclick="toggleMobileMenu()">🏛️ Axes Ville & Métropole</a>
+            <a href="#axes" onclick="toggleMobileMenu()">💰 Pôle Réduction de Coûts</a>
+            <a href="#axes" onclick="toggleMobileMenu()">🏛️ Pôle Ville de Nice</a>
+            <a href="#axes" onclick="toggleMobileMenu()">🏢 Pôle Métropole NCÀ</a>
             <a href="#cyber" onclick="toggleMobileMenu()">🛡️ Bouclier Cyber-IA</a>
             <a href="#monaco" onclick="toggleMobileMenu()">🇲🇨 Alliance Extended Monaco</a>
             <a href="#roi" onclick="toggleMobileMenu()">📊 Simulateur ROI Budgétaire</a>
@@ -1157,12 +1202,12 @@
             </h1>
             
             <p class="hero-subtitle reveal reveal-delay-2">
-                Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Sécurité augmentée au CSU, rigueur budgétaire (1,5 M€/an d'économies d'audit), alliance transfrontalière avec Monaco et autofinancement total.
+                Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Rigueur budgétaire (1,5 M€/an net d'économies d'audit), sécurité augmentée au CSU, alliance transfrontalière avec Monaco et autofinancement total.
             </p>
 
             <div class="reveal reveal-delay-3" style="display: flex; gap: 16px; flex-wrap: wrap;">
                 <a href="#axes" class="btn-champagne">
-                    Découvrir le Plan d'Action
+                    Découvrir le Pôle Réduction de Coûts
                 </a>
                 <a href="#roi" class="btn-outline">
                     Simuler les Économies Budgétaires ↓
@@ -1200,25 +1245,73 @@
         </div>
     </section>
 
-    <!-- Section Axes Strategiques (Ville & Metropole) -->
+    <!-- Section Axes Strategiques (PÔLE RÉDUCTION DE COÛTS EN PREMIER ET EN AVANT) -->
     <section id="axes">
         <div class="container">
             <div class="reveal">
-                <span class="kicker">Double Échelle Institutionnelle</span>
-                <h2 class="section-title">Les 7 Engagements Ville & Métropole</h2>
+                <span class="kicker">Priorité Budgétaire & Institutions</span>
+                <h2 class="section-title">Les Engagements Structurants Nice IA</h2>
                 <p class="section-desc">
-                    Une articulation claire entre la proximité communale (sécurité, séniors, propreté) et l'échelle métropolitaine (audit budgétaire, cybersécurité, Monaco).
+                    Une doctrine d'austérité intelligente : économies budgétaires certifiées en premier, suivies des compétences Ville et Métropole.
                 </p>
             </div>
 
-            <!-- Tabs Header -->
+            <!-- Tabs Header with Pôle Réduction de Coûts FIRST and PROMINENT ("EN AVANT") -->
             <div class="tabs-header reveal reveal-delay-1">
-                <button class="tab-btn active" onclick="switchTab('ville')">🏛️ POLE VILLE DE NICE</button>
+                <button class="tab-btn active featured-tab" onclick="switchTab('reduction')">
+                    <span class="tab-badge">Priorité 1</span>
+                    💰 PÔLE RÉDUCTION DE COÛTS (1,5 M€/AN)
+                </button>
+                <button class="tab-btn" onclick="switchTab('ville')">🏛️ POLE VILLE DE NICE</button>
                 <button class="tab-btn" onclick="switchTab('metropole')">🏢 POLE MÉTROPOLE NCÀ</button>
             </div>
 
-            <!-- Tab Content: Ville de Nice -->
-            <div id="tab-ville" class="tab-content reveal reveal-delay-2">
+            <!-- Tab Content 1: Pôle Réduction de Coûts (DEFAULT ACTIVE & HIGHLIGHTED) -->
+            <div id="tab-reduction" class="tab-content reveal reveal-delay-2">
+                <div class="grid-cards">
+                    <div class="feature-card spotlight-card highlight-cost-card">
+                        <span class="card-tag">Axe Prioritaire A — Commande Publique</span>
+                        <h3 class="card-h3">Audit IA des Marchés & Factures</h3>
+                        <p class="card-p">
+                            Ingestion sémantique et contrôle automatisé à 100 % des bordereaux de prix unitaires (BPU), devis et factures métropolitains.
+                        </p>
+                        <ul class="card-list">
+                            <li>Détection automatique des surfacturations et doublons de paiement</li>
+                            <li>Assainissement immédiat des dépenses de fonctionnement</li>
+                            <li><strong>1,5 M€ à 2,5 M€ d'économies nettes / an certifiées</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card spotlight-card highlight-cost-card">
+                        <span class="card-tag">Axe Prioritaire B — Énergie & Bâtiments</span>
+                        <h3 class="card-h3">Sobriété IA des Chantiers & Écoles</h3>
+                        <p class="card-p">
+                            Régulation prédictive du chauffage, de la climatisation et de l'éclairage public sur les 400+ bâtiments municipaux.
+                        </p>
+                        <ul class="card-list">
+                            <li>-20 % sur la facture énergétique des équipements publics</li>
+                            <li>Supervision en temps réel des fuites et surconsommations</li>
+                            <li>Optimisation thermique prédictive selon la météo locale</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card spotlight-card highlight-cost-card">
+                        <span class="card-tag">Axe Prioritaire C — Flottes & Logistique</span>
+                        <h3 class="card-h3">Optimisation des Carburants Municipaux</h3>
+                        <p class="card-p">
+                            Dispatching intelligent et routage prédictif des véhicules de collecte, de voirie et des patrouilles de la Police Municipale.
+                        </p>
+                        <ul class="card-list">
+                            <li>-15 % d'économie de carburant sur l'ensemble de la flotte</li>
+                            <li>Réduction de l'usure mécanique et des coûts de maintenance</li>
+                            <li>Planification dynamique des tournées de propreté</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: Ville de Nice -->
+            <div id="tab-ville" class="tab-content" style="display: none;">
                 <div class="grid-cards">
                     <div class="feature-card spotlight-card">
                         <span class="card-tag">Axe 1 — Sécurité & CSU</span>
@@ -1261,24 +1354,11 @@
                 </div>
             </div>
 
-            <!-- Tab Content: Metropole -->
+            <!-- Tab Content 3: Metropole -->
             <div id="tab-metropole" class="tab-content" style="display: none;">
                 <div class="grid-cards">
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 4 — Rigueur Budgétaire</span>
-                        <h3 class="card-h3">Audit IA de la Commande Publique</h3>
-                        <p class="card-p">
-                            Ingestion sémantique et contrôle 100 % automatisé des bordereaux de prix unitaires (BPU), devis et factures métropolitains.
-                        </p>
-                        <ul class="card-list">
-                            <li>Détection des surfacturations et doublons de paiement</li>
-                            <li>Assainissement des dépenses de fonctionnement</li>
-                            <li><strong>1,5 M€ à 2,5 M€ d'économies nettes / an</strong></li>
-                        </ul>
-                    </div>
-
-                    <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 5 — Mobilités Pendulaires</span>
+                        <span class="card-tag">Axe 4 — Mobilités Pendulaires</span>
                         <h3 class="card-h3">IA Régulation Trafic Nice-Monaco</h3>
                         <p class="card-p">
                             Jumeau numérique croisant les caméras CSU, les capteurs d'Extended Monaco, Waze et la SNCF pour les 45 000 navetteurs quotidiens.
@@ -1291,7 +1371,7 @@
                     </div>
 
                     <div class="feature-card spotlight-card">
-                        <span class="card-tag">Axe 6 — Souveraineté & Monaco</span>
+                        <span class="card-tag">Axe 5 — Souveraineté & Monaco</span>
                         <h3 class="card-h3">Ville Franche IA & Monaco Cloud</h3>
                         <p class="card-p">
                             Partenariat avec la Principauté (programme <em>Extended Monaco</em>) et interconnexion chiffrée avec <em>Monaco Cloud</em>.
@@ -1300,6 +1380,19 @@
                             <li>Sandbox réglementaire pour attirer les fonds monégasques</li>
                             <li>Passerelle de données souveraines sécurisée</li>
                             <li>Synergie IA industrielle avec Grasse (chimie/arômes)</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-card spotlight-card">
+                        <span class="card-tag">Axe 6 — Financement & Rigueur</span>
+                        <h3 class="card-h3">Autofinancement & Fonds Européens</h3>
+                        <p class="card-p">
+                            Stratégie d'autofinancement intégral dès l'An 2 sans demander 1 € à la Région SUD (Renaud Muselier).
+                        </p>
+                        <ul class="card-list">
+                            <li>Financement direct UE (Digital Europe, Horizon Europe)</li>
+                            <li>Autofinancement par les économies d'audit générées</li>
+                            <li>Indépendance politique et financière garantie</li>
                         </ul>
                     </div>
                 </div>
@@ -1495,16 +1588,19 @@
             document.getElementById('mobileMenu').classList.toggle('open');
         }
 
-        // 2. Tabs Switcher
+        // 2. Tabs Switcher with Pôle Réduction de Coûts as 1st Default Tab
         function switchTab(tabName) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-content').forEach(content => content.style.display = 'none');
 
-            if (tabName === 'ville') {
+            if (tabName === 'reduction') {
                 document.querySelectorAll('.tab-btn')[0].classList.add('active');
+                document.getElementById('tab-reduction').style.display = 'block';
+            } else if (tabName === 'ville') {
+                document.querySelectorAll('.tab-btn')[1].classList.add('active');
                 document.getElementById('tab-ville').style.display = 'block';
             } else {
-                document.querySelectorAll('.tab-btn')[1].classList.add('active');
+                document.querySelectorAll('.tab-btn')[2].classList.add('active');
                 document.getElementById('tab-metropole').style.display = 'block';
             }
         }
