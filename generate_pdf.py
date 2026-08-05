@@ -160,34 +160,36 @@ full_html = f"""<!DOCTYPE html>
         <div style="font-size: 8pt; color: #64748B; margin-top: 4px;">Rédigé pour M. Éric Ciotti par Benoît SIGWALD — Directeur du Projet Pacte Nice IA & Senior AI Architect — Août 2026</div>
     </div>
     
-    <h1>SOMMAIRE & INDEX DU DOCUMENT</h1>
+    <h1>Index</h1>
     <table class="toc-table">
         <tbody>
-            <tr><td><strong>Résumé Exécutif & Chiffrage Consolidé pour M. le Maire</strong></td><td style="text-align: right; color: #64748B;"><em>Page 2</em></td></tr>
-            <tr><td><strong>1. Diagnostic Territorial & Opportunités Européennes</strong></td><td style="text-align: right; color: #64748B;"><em>Page 3</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.1 Alignement Institutionnel & Leadership Métropolitain</td><td style="text-align: right; color: #64748B;"><em>Page 3</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse, Cannes & Poids National</td><td style="text-align: right; color: #64748B;"><em>Page 3</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.3 Atouts Monaco, Flux Transfrontaliers & Extension Business</td><td style="text-align: right; color: #64748B;"><em>Page 4</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.4 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories</td><td style="text-align: right; color: #64748B;"><em>Page 4</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.5 Structuration Opérationnelle & Capture des Subventions</td><td style="text-align: right; color: #64748B;"><em>Page 5</em></td></tr>
-            <tr><td><strong>2. Pôle 1 : Axe Ville de Nice (Proximité, Sécurité & Cadre de Vie)</strong></td><td style="text-align: right; color: #64748B;"><em>Page 5</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.1 CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue</td><td style="text-align: right; color: #64748B;"><em>Page 5</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.2 Guichet Vocal Allo Niçois 24/7 : Demandes d'Aide & Sécurité</td><td style="text-align: right; color: #64748B;"><em>Page 6</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.3 Propreté Augmentée & Routage Intelligent de la Voie Publique</td><td style="text-align: right; color: #64748B;"><em>Page 6</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.4 Consultation Directe par Quartier via l'IA Einstein</td><td style="text-align: right; color: #64748B;"><em>Page 6</em></td></tr>
-            <tr><td><strong>3. Pôle 2 : Axe Métropole Nice Côte d'Azur (Budget, Cyber & Monaco)</strong></td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.1 Audit IA de la Commande Publique Métropolitaine (+2,5 M€ / an Net)</td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.2 Bouclier Cybersécurité IA NIS 2 (1,8 M€ à 3 M€ Évités)</td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.3 Alliance Monaco Cloud & Data Center Souverain (1,5 M€ à 2,8 M€ / an)</td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td><strong>4. Alliance Binationale Nice-Monaco & Hub Réglementaire</strong></td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.1 Levier Binational : Clé de Voûte des Financements Européens</td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.2 Nice, Centre d'Expertise AI Act de Référence pour la France</td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.3 Pôle d'Excellence PME/PMI & Bibliothèque de Cas d'Usage Souverains</td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
-            <tr><td><strong>5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel</strong></td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.2 Échéancier Précis & Jalons par Date (Septembre 2026-2029)</td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.3 Résumé Consolidé du Coût par Année Budgétaire</td><td style="text-align: right; color: #64748B;"><em>Page 11</em></td></tr>
-            <tr><td><strong>6. Annexe : Validation Juridique, Statistique et Références Documentaires Complètes</strong></td><td style="text-align: right; color: #64748B;"><em>Page 12</em></td></tr>
+            <tr><td><strong>Index</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">1</td></tr>
+            <tr><td><strong>Résumé Exécutif & Chiffrage Consolidé pour M. le Maire</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">1</td></tr>
+            <tr><td><strong>1. Diagnostic Territorial & Opportunités Européennes</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">2</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.1 Alignement Institutionnel & Leadership</td><td style="text-align: right; color: #0F172A; font-weight: bold;">2</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse, Cannes & Poids National</td><td style="text-align: right; color: #0F172A; font-weight: bold;">2</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.3 Atouts Monaco, Flux Transfrontaliers & Extension Business</td><td style="text-align: right; color: #0F172A; font-weight: bold;">3</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.4 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories</td><td style="text-align: right; color: #0F172A; font-weight: bold;">4</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.5 Structuration Opérationnelle & Capture des Subventions</td><td style="text-align: right; color: #0F172A; font-weight: bold;">4</td></tr>
+            <tr><td><strong>2. Pôle 1 : Axe Ville de Nice (Sécurité & Cadre de Vie)</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">5</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.1 CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue</td><td style="text-align: right; color: #0F172A; font-weight: bold;">5</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.2 Guichet Vocal Allo Niçois 24/7 : Demandes d'Aide & Sécurité</td><td style="text-align: right; color: #0F172A; font-weight: bold;">5</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.3 Propreté Augmentée & Routage Intelligent de la Voie Publique</td><td style="text-align: right; color: #0F172A; font-weight: bold;">5</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.4 Consultation Directe par Quartier via l'IA Einstein</td><td style="text-align: right; color: #0F172A; font-weight: bold;">5</td></tr>
+            <tr><td><strong>3. Pôle 2 : Axe Métropole Nice Côte d'Azur (Budget, Cyber & Monaco)</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">7</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.1 Audit IA Commande Publique (+2,5 M€ / an Net)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">7</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.2 Bouclier Cyber-IA NIS 2 (1,8 M€ à 3 M€ Évités)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">7</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.3 Monaco Cloud & Redondance IT (1,5 M€ à 2,8 M€ / an)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">7</td></tr>
+            <tr><td><strong>4. Alliance Binationale Nice-Monaco & Hub Réglementaire</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">8</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.1 Levier Binational : Clé de Voûte des Financements Européens</td><td style="text-align: right; color: #0F172A; font-weight: bold;">8</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.2 Nice, Centre d'Expertise AI Act de Référence pour la France</td><td style="text-align: right; color: #0F172A; font-weight: bold;">8</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.3 Pôle d'Excellence PME/PMI & Bibliothèque de Cas d'Usage Souverains</td><td style="text-align: right; color: #0F172A; font-weight: bold;">8</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;4.4 Pôle d'Excellence pour les Niçoises et les Niçois</td><td style="text-align: right; color: #0F172A; font-weight: bold;">9</td></tr>
+            <tr><td><strong>5. Feuille de Route Précise (Sept 2026-2029) & Résumé Annuel</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">9</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">9</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.2 Échéancier Précis et Jalons par Date (Démarche 1er Septembre 2026)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">9</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.3 Résumé Consolidé du Coût par Axe Institutionnel (Mairie, Métropole, Monaco)</td><td style="text-align: right; color: #0F172A; font-weight: bold;">10</td></tr>
+            <tr><td><strong>6. Annexe : Justifications des Gains & Sources Documentaires</strong></td><td style="text-align: right; color: #0F172A; font-weight: bold;">11</td></tr>
         </tbody>
     </table>
     
@@ -196,7 +198,7 @@ full_html = f"""<!DOCTYPE html>
     <h1>Résumé Exécutif & Chiffrage Consolidé pour M. le Maire</h1>
     <ul>
         <li><strong>La Thèse Stratégique</strong> : La course aux modèles de frontière se joue à l’échelle des superpuissances. Pour Nice, la vraie bataille stratégique réside dans <strong>l'usage concret, la sécurité publique, la souveraineté et la rigueur budgétaire</strong>, en <strong>maximisant nos atouts phares comme Sophia Antipolis</strong> et en <strong>resserrant les liens industriels et souverains avec Monaco</strong>.</li>
-        <li><strong>La Vision Politique</strong> : Aucune collectivité n'a encore préempté le positionnement de <strong>« Capitale de l'IA de sécurité et d'efficience publique »</strong>. Nice doit être la première sous la conduite de M. Éric Ciotti.</li>
+        <li><strong>La Vision Politique</strong> : Aucune collectivité n'a encore préempté la position de <strong>« Capitale de l'IA de sécurité et d'efficience publique »</strong>. Nice doit être la première sous la conduite de M. Éric Ciotti.</li>
     </ul>
     
     <table>
@@ -205,7 +207,7 @@ full_html = f"""<!DOCTYPE html>
                 <th>Pilier Stratégique</th>
                 <th>Levier IA Appliqué</th>
                 <th>Chiffre Clé & Impact</th>
-                <th>Source / Justification</th>
+                <th>Justification / Source</th>
             </tr>
         </thead>
         <tbody>
@@ -217,40 +219,13 @@ full_html = f"""<!DOCTYPE html>
         </tbody>
     </table>
     
-    <h2>Ventilation du Coût Budgétaire IA par Allocation (435 k€ / an)</h2>
-    <ul>
-        <li><strong>Découpage des Dépenses</strong> : L'investissement annuel brut est optimisé à <strong>435 k€ / an</strong> (grâce à l'engagement en temps partagé 2,5j/sem de la Direction de Projet à 65 k€). Avec le co-financement UE (<em>Digital Europe</em> à 50 %), le reste à charge net métropolitain descend à seulement <strong>~217 k€ / an</strong>.</li>
-    </ul>
-    
-    <table>
-        <thead>
-            <tr>
-                <th>Poste d'Allocation Budgétaire</th>
-                <th>Montant Annuel</th>
-                <th>Part (%)</th>
-                <th>Destination Opérationnelle</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td><strong>1. Licences Algorithmiques & Modèles Souverains</strong></td><td><strong>150 k€</strong></td><td>34,5 %</td><td>Inférence VSA CSU, modèles locaux et API sécurisées.</td></tr>
-            <tr><td><strong>2. Cloud Souverain & Fibre Monaco Cloud</strong></td><td><strong>120 k€</strong></td><td>27,6 %</td><td>Instances GPU certifiées AMSN et liaison fibre dédiée.</td></tr>
-            <tr><td><strong>3. Direction de Projet (Benoît SIGWALD - 2,5j/sem)</strong></td><td><strong>65 k€</strong></td><td>14,9 %</td><td>Direction de projet (2,5j/semaine), suivi des marchés.</td></tr>
-            <tr><td><strong>4. Audit AI Act, Cybersécurité NIS 2 & Éthique</strong></td><td><strong>60 k€</strong></td><td>13,8 %</td><td>Audits de conformité, pentests et secrétariat éthique.</td></tr>
-            <tr><td><strong>5. Concertation & IA Einstein par Quartier</strong></td><td><strong>40 k€</strong></td><td>9,2 %</td><td>Plateforme de démocratie participative augmentée.</td></tr>
-        </tbody>
-    </table>
-    
-    <div class="chart-box">
-        <img src="file:///{chart2_png.replace('\\', '/')}" alt="Bilan Financier ROI">
-    </div>
-    
     <div class="page-break"></div>
     
     <h1>1. Diagnostic Territorial & Opportunités Européennes</h1>
     
-    <h2>1.1 Alignement Institutionnel & Leadership Métropolitain</h2>
+    <h2>1.1 Alignement Institutionnel & Leadership</h2>
     <ul>
-        <li><strong>Échelle nationale</strong> : La note <em>« Opération Prométhée »</em> (juillet 2026, Le Grand Continent) fixe le cadre : un plan de <strong>700 Md$ sur 3 ans</strong> (12 GW, 1 700 chercheurs). L'IA est désormais une ressource stratégique souveraine identique à l'énergie.</li>
+        <li><strong>Échelle nationale</strong> : La note <em>« Opération Prométhée »</em> (juillet 2026, Le Grand Continent) fixe le cadre : un plan de <strong>700 Md$ sur 3 ans</strong> (12 GW, 1 700 chercheurs). L'IA est devenue une ressource stratégique souveraine identique à l'énergie.</li>
         <li><strong>Échelle régionale</strong> : La Région Sud affiche un <em>Plan SUD IA</em> (70 M€ sur 5 ans), la Métropole lance des appels à projets isolés et le Département anime la Maison de l'IA (MIA) à Sophia Antipolis.</li>
         <li><strong>Une gouvernance à unifier (Constat constructif)</strong> : <strong>Les frictions institutionnelles et les complexités d'arbitrage au sein de la Région PACA peuvent ralentir l'accès optimal aux subventions</strong>. Un alignement direct et unifié est indispensable pour accélérer les financements.</li>
         <li><strong>La solution</strong> : Seul un <strong>leadership métropolitain incontestable porté au plus haut niveau par M. Éric Ciotti</strong> permettra d'outrepasser ces frictions institutionnelles et d'aller capturer directement les subventions auprès de l'État et des guichets européens.</li>
@@ -259,6 +234,9 @@ full_html = f"""<!DOCTYPE html>
     <h2>1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse, Cannes & Poids National</h2>
     <ul>
         <li><strong>Sophia Antipolis (1ère technopole d’Europe)</strong> : ~2 700 entreprises, ~46 000 emplois, ~5 500 chercheurs. Un réservoir mondial d'ingénierie et de recherche d'élite.</li>
+        <li><strong>Sophia c’est ~25,6 % de tous les emplois technopolitains de France.</strong></li>
+        <li><strong>Sophia c’est ~19,3 % du total des entreprises implantées dans ces structures.</strong></li>
+        <li><strong>Le terreau azuréen représente seulement 1,66 % de la population Française.</strong></li>
         <li><strong>Institut 3IA Côte d’Azur & UCA</strong> : L'un des 4 instituts nationaux d'IA (spécialisé en santé numérique) avec Inria, Eurecom et le CNRS (représentant <strong>25 % du réseau national des 4 Instituts 3IA</strong>).</li>
         <li><strong>Synergie Grasse (Arômes & Parfums)</strong> : Modélisation olfactive, chimie fine et IA sensorielle pour l'industrie aromatique et la santé.</li>
         <li><strong>Synergie Cannes (Thales Alenia Space)</strong> : Traitement d'imagerie satellite par IA, observation de la Terre et défense spatiale (représentant avec Amadeus <strong>6 % de la dépense privée R&D logicielle/spatiale française</strong>).</li>
@@ -273,16 +251,17 @@ full_html = f"""<!DOCTYPE html>
     <h2>1.3 Atouts Monaco, Flux Transfrontaliers & Extension Business</h2>
     <ul>
         <li><strong>Monaco Cloud & Data Center Souverain d'État</strong> : Premier Cloud d'État souverain d'Europe (certifié AMSN), garantissant une étanchéité totale contre le Cloud Act américain, connecté en fibre noire dédiée à Nice.</li>
-        <li><strong>Besoin d'extension de la Principauté pour le business</strong> : Monaco dispose d'un capital et d'un tissu d'entreprises majeurs mais souffre d'une contrainte foncière extrême. L'alliance avec la Métropole Nice Côte d'Azur offre le terrain d'extension économique et technologique indispensable.</li>
-        <li><strong>45 000 salariés transfrontaliers quotidiens</strong> : Plus de 45 000 salariés traversent chaque jour Nice pour travailler à Monaco (sources INSEE/SCT), constituant un bassin d'emploi unique à irriguer par l'IA.</li>
+        <li><strong>Besoin d'extension de la Principauté pour le business</strong> : Monaco dispose d'un capital et d'un tissu d'entreprises majeurs mais souffre d'une contrainte foncière extrême. L'alliance avec la Métropole Nice Côte d'Azur offrirait le terrain d'extension économique et technologique indispensable.</li>
+        <li><strong>45 000 salariés transfrontaliers quotidiens</strong> : Plus de 45 000 salariés traversent chaque jour Nice pour travailler à Monaco (sources INSEE/SCT), constituant un bassin d'emploi unique à irriguer par l'IA. Réduire ces déplacements au quotidien permettra une amélioration de la qualité de vie et une maîtrise des émissions de CO2.</li>
         <li><strong>Une filière IA spécialisée en plein essor à décupler</strong> : ~86 établissements pionniers et ~800 emplois directs IA dans le 06 (étude CCI). Un socle solide qui ne demande qu'à être amplifié et structuré pour passer à l'échelle métropolitaine.</li>
-        <li><strong>Le verrou électrique & contrainte foncière</strong> : Extrémité d'une « presqu'île électrique » vulnérable (coupure de 2009 ; RTE 2025 saturé), imposant la doctrine de l'IA frugale par nécessité.</li>
+        <li><strong>Le verrou électrique & contrainte foncière</strong> : Extrémité d'une « presqu'île électrique » vulnérable (coupure de 2009 ; RTE 2025 saturé), imposant la doctrine de l'IA frugale par nécessité (un data center nécessiterait des investissements RTE très importants).</li>
     </ul>
     
     <h2>1.4 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories</h2>
     <ul>
         <li><strong>L'Appel d'Offres Européen</strong> : Le <strong>30 juillet 2026</strong>, la Commission Européenne a lancé un appel d'offres historique de <strong>30 milliards d'euros</strong> pour bâtir <strong>7 AI Gigafactories</strong> en Europe.</li>
-        <li><strong>Lot 1 — Subvention directe UE de 500 M€</strong> par site pour co-financer un supercalculateur d'IA souverain.</li>
+        <li><strong>Lot 1 — Subvention directe UE de 500 M€</strong> par site pour co-financer le développement de l'IA souverain.</li>
+        <li><strong>Monaco Cloud est l’opportunité pour développer l’existant.</strong></li>
         <li><strong>Le levier Nice-Monaco</strong> : Candidature binationale transfrontalière unique associant Nice (Plaine du Var / 3IA), Monaco (fonds souverains / Monaco Cloud) et Sophia Antipolis.</li>
         <li><strong>Montage mixte à 1,5 Md€</strong> : 500 M€ subvention UE + 300 M€ fonds publics + 700 M€ investisseurs privés.</li>
         <li><strong>Calendrier couperet</strong> : Dépôt du dossier de candidature avant le <strong>12 novembre 2026</strong>.</li>
@@ -290,11 +269,11 @@ full_html = f"""<!DOCTYPE html>
     
     <h2>1.5 Structuration Opérationnelle & Capture des Subventions</h2>
     <ul>
-        <li><strong>Méthodologie d'Action</strong> : Pour transformer cette ambition en victoires financières, l'approche est structurée immédiatement selon 4 actions de frappe.</li>
+        <li><strong>Méthodologie d'Action</strong> : Pour transformer cette ambition en victoires financières, l'approche est structurée immédiatement selon 4 actions de frappe :</li>
         <li><strong>1. Bureau de Candidature Binationale</strong> : Création d'une Task-Force dédiée Nice-Monaco-Sophia pour verrouiller le dossier Gigafactory avant le 12 novembre 2026.</li>
         <li><strong>2. Capture des guichets de subvention directes</strong> : Dépôt de dossiers sur Digital Europe (subventions à 50%-70% pour la cyber/IA) et Horizon Europe Cluster 3 (100% pour la sécurité urbaine).</li>
         <li><strong>3. Renoncement à l'hyperscale, affirmation de l’IA frugale</strong> : Sobriété énergétique, sécurité maximale et cas d'usage utiles conforme AI Act.</li>
-        <li><strong>4. La Ville client n°1</strong> : Industrialiser 5 cas d'usage municipaux en 24 mois pour faire la preuve de la valeur et ancrer le récit politique de début de mandat.</li>
+        <li><strong>4. La Ville de Nice et la Métropole client n°1</strong> : Industrialiser 5 cas d'usage municipaux en 24 mois pour faire la preuve de la valeur et ancrer le récit politique de début de mandat.</li>
     </ul>
     
     <div class="page-break"></div>
@@ -307,14 +286,14 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Moins d'agents scotchés devant les écrans</strong> : L'IA effectue le filtrage automatique des flux et ne remonte que les anomalies qualifiées (dépôts sauvages, intrusions, incivilités).</li>
         <li><strong>Plus de Policiers Municipaux sur le terrain et dans la rue</strong> : Libération du temps des opérateurs pour réaffecter les effectifs en patrouilles de proximité physiques.</li>
         <li><strong>Géolocalisation & Dispatching Intelligent</strong> : Grâce à la géolocalisation en temps réel des patrouilles et équipages de la Police Municipale, le dispatching vers les Niçoises et Niçois dans le besoin se fait de manière ultra-rapide, ciblée et efficace au plus près des appels d'urgence.</li>
-        <li><strong>Résultat certifié</strong> : Baisse de <strong>65 % des incivilités et dégradations</strong> par la fin de l'impunité et la réduction du délai d'intervention de la PM à <strong>moins de 6 minutes</strong>.</li>
+        <li><strong>Résultat attendu</strong> : Baisse de <strong>65 % des incivilités et dégradations</strong> par la fin de l'impunité et la réduction du délai d'intervention de la PM à <strong>moins de 6 minutes</strong>.</li>
     </ul>
     
     <h2>2.2 Guichet Vocal Allo Niçois 24/7 : Demandes d'Aide & Sécurité</h2>
     <ul>
         <li><strong>L'Agent Vocal Souverain</strong> : Mise en place d'un agent vocal souverain basé sur un modèle de langage local dédié aux citoyens niçois et aux aînés.</li>
         <li><strong>Disponibilité 24h/24 et 7j/7</strong> : Prise en charge immédiate des <strong>demandes d'aide d'urgence sociale</strong>, des <strong>signalements de sécurité et de proximité</strong> et des démarches administratives.</li>
-        <li><strong>Zéro file d'attente</strong> : Traitement instantané de 40 % des appels récurrents, libérant les agents humains pour l'accompagnement social personnalisé et les urgences graves.</li>
+        <li><strong>Zéro file d'attente</strong> : Traitement instantané de 40 % des appels récurrents, libérant les agents humains pour l'accompagnement personnalisé et les urgences graves.</li>
     </ul>
     
     <h2>2.3 Propreté Augmentée & Routage Intelligent de la Voie Publique</h2>
@@ -324,9 +303,9 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Circuit prédictif</strong> : Routage optimisé des bennes réduisant la consommation de carburant de 18 % et garantissant la résorption des anomalies sous 6 heures.</li>
     </ul>
     
-    <h2>2.4 Consultation Directe par Quartier via l'IA Einstein</h2>
+    <h2>2.4 Consultation Directe par Quartier via l'IA</h2>
     <ul>
-        <li><strong>Démocratie Participative Augmentée</strong> : Déploiement de la plateforme de démocratie participative augmentée par l'<strong>IA Einstein</strong> pour consulter les Niçois quartier par quartier.</li>
+        <li><strong>Démocratie Participative Augmentée</strong> : Déploiement de la plateforme de démocratie participative augmentée par <strong>l'IA</strong> pour consulter les Niçois quartier par quartier.</li>
         <li><strong>Ingestion des avis citoyens par quartier</strong> : Analyse sémantique continue des attentes des habitants (Vieux-Nice, Ariane, Moulins, Cimiez, Riquier, etc.).</li>
         <li><strong>Cas d'école n°1 — Concertation Réaménagement de Quartier</strong> : Ingestion de 5 000 contributions citoyennes en 48 heures pour dégager les consensus sur la piétonnisation et la sécurité.</li>
         <li><strong>Cas d'école n°2 — Restitution Transparente</strong> : Restitution instantanée et cartographiée des priorités d'investissement par quartier, sans filtre bureaucratique.</li>
@@ -334,7 +313,7 @@ full_html = f"""<!DOCTYPE html>
     
     <div class="page-break"></div>
     
-    <h1>3. Pôle 2 : Axe Métropole Nice Côte d'Azur (Budget, Cyber & Monaco)</h1>
+    <h1>3. Pôle 2 : Axe Métropole Nice Côte d'Azur (Budget, DSI & Monaco)</h1>
     
     <h2>3.1 Audit IA Commande Publique (+2,5 M€ / an Net)</h2>
     <ul>
@@ -345,13 +324,13 @@ full_html = f"""<!DOCTYPE html>
     <h2>3.2 Bouclier Cyber-IA NIS 2 (1,8 M€ à 3 M€ Évités)</h2>
     <ul>
         <li><strong>Protection Inviolable du CSU</strong> : SOC métropolitain 24/7 armé d'agents IA autonomes et isolation étanche (Air-Gap) du CSU.</li>
-        <li><strong>Formule du gain certifié</strong> : Évitement des coûts directs et indirects d'une crise de ransomware (interruption des services, reconstruction du SI, audits d'urgence). Benchmark des villes touchées (Marseille, Lille, Caen) : <strong>1,8 M€ à 3,0 M€ de sinistre moyen évité par an</strong>.</li>
+        <li><strong>Formule du gain certifié</strong> : Évitement des coûts directs et indirects d'une crise de ransomware (interruption des services, reconstruction du SI, audits d'urgence). Benchmark des villes touchées (Marseille, Lille, Caen) : <strong>1,8 M€ à 3,0 M€ de cout moyen évité par an</strong>.</li>
     </ul>
     
     <h2>3.3 Monaco Cloud & Redondance IT (1,5 M€ à 2,8 M€ / an)</h2>
     <ul>
         <li><strong>Partenariat d'Hébergement Souverain</strong> : Migration souveraine vers Monaco Cloud (1er Cloud d'État UE certifié AMSN).</li>
-        <li><strong>Formule du gain certifié</strong> : Réduction directe des coûts de fonctionnement IT (OPEX) de 1,5 M€ à 2,8 M€ / an + <strong>8 M€ à 12 M€ d'investissement en capital (CAPEX) évité</strong> par non-construction d’un datacenter propre.</li>
+        <li><strong>Formule du gain certifié</strong> : Réduction directe des coûts de fonctionnement IT (OPEX) de 1,5 M€ à 2,8 M€ / an + <strong>8 M€ à 12 M€ d'investissement en capital (CAPEX) évité</strong> par non-construction d’un datacenter métropolitain propre.</li>
     </ul>
     
     <div class="page-break"></div>
@@ -380,14 +359,22 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Accompagnement Financement UE (EDIH)</strong> : Prise en charge jusqu'à 70 % des coûts de diagnostic et de migration IA via le guichet européen <em>Digital Europe</em> / EDIH Côte d'Azur.</li>
     </ul>
     
+    <h2>4.4 Pôle d'Excellence pour les Niçoises et les Niçois</h2>
+    <ul>
+        <li><strong>Acculturation & Formations Gratuites dans les AnimaNice</strong> : Déploiement d'ateliers hebdomadaires d'initiation et de maîtrise de l'IA pour les séniors, les familles et les jeunes au sein de l'ensemble du réseau des centres AnimaNice (Vieux-Nice, Ariane, Cimiez, Fabron, Riquier, etc.).</li>
+        <li><strong>Charte d'Éthique & Protection Absolue des Données Personnelles</strong> : Sanctification de la vie privée des Niçois. Aucune donnée citoyenne ou image vidéo n'est commercialisée ni stockée hors des serveurs souverains sous souveraineté exclusive (Monaco Cloud AMSN / Air-Gap Métropolitain).</li>
+        <li><strong>Pass IA Jeunesse & Accompagnement Éducatif</strong> : Partenariat avec l'Université Côte d'Azur pour mettre à disposition des étudiants, lycéens et collégiens niçois des accès souverains gratuits aux outils de recherche et d'ingénierie IA.</li>
+        <li><strong>Transparence & Gouvernance Citoyenne</strong> : Publication annuelle d'un bilan d'impact éthique et financier de l'IA municipale, freely accessible à tous les citoyens niçois.</li>
+    </ul>
+    
     <div class="page-break"></div>
     
-    <h1>5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel</h1>
+    <h1>5. Feuille de Route Précise (Sept 2026-2029) & Résumé Annuel</h1>
     
-    <h2>5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</h2>
+    <h2>5.1 Présidence Éric Ciotti</h2>
     <ul>
         <li><strong>Présidence du Comité de Pilotage Métropolitain</strong> : <strong>M. Éric Ciotti</strong>, assurant l'arbitrage politique au plus haut niveau et le leadership face aux instances régionales et européennes.</li>
-        <li><strong>Direction de Projet AMO IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect. Engagement à <strong>2,5 jours par semaine</strong>, réduisant la ligne AMO à <strong>65 k€ / an</strong> et amenant le budget global à <strong>435 k€ / an</strong> (reste à charge net métropolitain : <strong>~217 k€ / an</strong>).</li>
+        <li><strong>Direction de Projet AMO IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect. Engagement à <strong>2,5 jours par semaine</strong>.</li>
     </ul>
     
     <h2>5.2 Échéancier Précis et Jalons par Date (Démarche 1er Septembre 2026)</h2>
@@ -414,7 +401,7 @@ full_html = f"""<!DOCTYPE html>
             <tr><td>15 Mai 2027</td><td>L3.3 IA Einstein Concertation (1ers Quartiers)</td><td>15,00 k€</td><td>Restitution citoyenne augmentée.</td></tr>
             <tr><td>15 Juin 2027</td><td>L4.1 Généralisation Audit Commande Publique</td><td>45,00 k€</td><td>Rentrée de +2,5 M€/an certifiés.</td></tr>
             <tr><td>15 Juillet 2027</td><td>L4.2 Recette Sécurité Monaco Cloud AMSN</td><td>23,75 k€</td><td>Certification Cloud Souverain.</td></tr>
-            <tr><td>31 Août 2027</td><td>L4.3 Bilan Année 1 & Arbitrages Citoyens</td><td>20,00 k€</td><td>+2,5 M€ d'économies & bilan VSA.</td></tr>
+            <tr><td>31 Août 2027</td><td>L4.3 Bilan Année 1 & Pôle Citoyens AnimaNice</td><td>20,00 k€</td><td>+2,5 M€ d'économies & bilan VSA.</td></tr>
             <tr><td>Sept 2027 — Fév 2028</td><td>L5.1 Guichet Vocal Allo Niçois Séniors 24/7</td><td>85,00 k€</td><td>Assistance 24/7 & d'urgence.</td></tr>
             <tr><td>Sept 2027 — Fév 2028</td><td>L5.2 VSA Propreté & Routage Bennes</td><td>65,00 k€</td><td>Rues propres & -18% carburant.</td></tr>
             <tr><td>Mars 2028 — Août 2028</td><td>L6.1 Pôle Excellence PME/PMI & Bibliothèque Cas Usage</td><td>85,00 k€</td><td>Migration IA de 200 PME/PMI.</td></tr>
@@ -424,28 +411,27 @@ full_html = f"""<!DOCTYPE html>
         </tbody>
     </table>
     
-    <h2>5.3 Résumé Consolidé du Coût par Année Budgétaire</h2>
+    <h2>5.3 Résumé Consolidé du Coût par Axe Institutionnel (Mairie, Métropole, Monaco)</h2>
     <ul>
-        <li><strong>Rendement Budgétaire Net</strong> : Pour chaque année d'exécution, la dépense brute de <strong>435 000 €</strong> est co-financée à 50 % par l'UE, ne laissant que <strong>217 500 € net</strong> à la Métropole, face à <strong>+2 500 000 € d'économies certifiées</strong>, dégageant un bénéfice net réinjecté dans le service public de <strong>+2 282 500 € par an</strong>.</li>
+        <li><strong>Structure Budgétaire Simplifiée par Entité</strong> : Le budget annuel brut de <strong>435 000 € / an</strong> est réparti de manière transparente entre les 3 piliers d'action (Ville de Nice, Métropole Nice Côte d'Azur et Extension Monaco). Grâce au co-financement de 50 % de l'UE (<em>Digital Europe</em>), le reste à charge métropolitain est de seulement <strong>217 500 € / an</strong>, immédiatement compensé par <strong>+2 500 000 € d'économies nettes certifiées</strong>.</li>
     </ul>
     
     <table>
         <thead>
             <tr>
-                <th>Année Budgétaire</th>
-                <th>Période Précise de Réalisation</th>
-                <th>Budget Brut</th>
+                <th>Pôle Institutionnel / Domaine</th>
+                <th>Actions & Projets Clefs</th>
+                <th>Budget Brut Annuel</th>
                 <th>Co-financement UE (50%)</th>
                 <th>Reste à Charge Net</th>
-                <th>Gains Certifiés</th>
-                <th>Bénéfice Net</th>
+                <th>Gains Certifiés Net</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>ANNÉE 1</td><td>Septembre 2026 — Août 2027</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
-            <tr><td>ANNÉE 2</td><td>Septembre 2027 — Août 2028</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
-            <tr><td>ANNÉE 3</td><td>Septembre 2028 — Août 2029</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
-            <tr style="background: #0F172A; color: #FFFFFF; font-weight: bold;"><td>TOTAL 3 ANS</td><td>1er Sept 2026 — 31 Août 2029</td><td>1 305 000 €</td><td>652 500 €</td><td>652 500 €</td><td>+7 500 000 €</td><td>+6 847 500 €</td></tr>
+            <tr><td><strong>1. AXE MAIRIE (Ville de Nice)</strong></td><td>CSU VSA, Allo Niçois 24/7, Propreté, Consultation Einstein, Pôle Citoyens</td><td>155 000 €</td><td>77 500 €</td><td>77 500 €</td><td>Incivilités -65%, Interventions &lt;6min</td></tr>
+            <tr><td><strong>2. AXE MÉTROPOLE (Nice Côte d'Azur)</strong></td><td>Audit Commande Publique (300M€), SOC Cyber NIS 2, Pôle PME/PMI & AMO (2,5j/sem)</td><td>160 000 €</td><td>80 000 €</td><td>80 000 €</td><td>+2 500 000 € / an Net (Marchés)</td></tr>
+            <tr><td><strong>3. AXE MONACO (Alliance & Extension)</strong></td><td>Fibre Monaco Cloud (AMSN), Zone Franche Numérique, Task-Force Gigafactory 500M€</td><td>120 000 €</td><td>60 000 €</td><td>60 000 €</td><td>1,5M€ à 2,8M€ IT + 8-12M€ CAPEX</td></tr>
+            <tr style="background: #0F172A; color: #FFFFFF; font-weight: bold;"><td>TOTAL ANNUEL CONSOLIDÉ</td><td>Ensemble des 3 Piliers Institutionnels (2026-2029)</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 € / an (Bénéfice +2,28 M€)</td></tr>
         </tbody>
     </table>
     
@@ -487,4 +473,4 @@ cmd = [
 ]
 
 subprocess.run(cmd, check=True)
-print(f"PDF avec section 4.3 PME/PMI et bibliothèque de cas d'usage généré avec succès : {pdf_path}")
+print(f"PDF au format exact de référence généré avec succès : {pdf_path}")
