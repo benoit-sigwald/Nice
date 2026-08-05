@@ -16,9 +16,6 @@ if sys.platform.startswith('win'):
 HTML_SOURCE = r"g:\My Drive\Dev\Einstein\index.html"
 HTML_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\nice.html"
 HTML_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\index.html"
-NOTE_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.md"
-NOTE_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.md"
-NOTE_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.md"
 PDF_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.pdf"
 PDF_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.pdf"
 PDF_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.pdf"
@@ -191,8 +188,6 @@ def process_file():
         print(f"  [Syncing] Copying updated files to arxWeb production...")
         shutil.copy2(HTML_SOURCE, HTML_DEST)
         shutil.copy2(HTML_SOURCE, HTML_DEST_SUB)
-        shutil.copy2(NOTE_SOURCE, NOTE_DEST)
-        shutil.copy2(NOTE_SOURCE, NOTE_DEST_SUB)
         if os.path.exists(PDF_SOURCE):
             try:
                 shutil.copy2(PDF_SOURCE, PDF_DEST)
