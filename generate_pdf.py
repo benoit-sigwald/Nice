@@ -181,10 +181,10 @@ full_html = f"""<!DOCTYPE html>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.2 Bouclier Cybersécurité IA NIS 2 (1,8 M€ à 3 M€ Évités)</td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.3 Alliance Monaco Cloud & Data Center Souverain (1,5 M€ à 2,8 M€ / an)</td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
             <tr><td><strong>4. Alliance Binationale Nice-Monaco & Hub Réglementaire</strong></td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td><strong>5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre</strong></td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
+            <tr><td><strong>5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel</strong></td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.2 Feuille de Route Détaillée & Budget par Éléments (36 Mois)</td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
-            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.3 Tableau de Synthèse Budgétaire Trimestriel (Q1 à Q12)</td><td style="text-align: right; color: #64748B;"><em>Page 11</em></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.2 Échéancier Précis & Jalons par Date (Septembre 2026-2029)</td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.3 Résumé Consolidé du Coût par Année Budgétaire</td><td style="text-align: right; color: #64748B;"><em>Page 11</em></td></tr>
             <tr><td><strong>6. Annexe : Validation Juridique, Statistique et Références Documentaires Complètes</strong></td><td style="text-align: right; color: #64748B;"><em>Page 12</em></td></tr>
         </tbody>
     </table>
@@ -378,7 +378,7 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Hub Incertitude Zéro</strong> : Garantie de sécurité juridique totale pour les PME innovantes.</li>
     </ul>
     
-    <h1>5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre</h1>
+    <h1>5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel</h1>
     
     <h2>5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</h2>
     <ul>
@@ -386,68 +386,62 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Direction de Projet AMO IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect. Engagement à <strong>2,5 jours par semaine</strong>, réduisant la ligne AMO à <strong>65 k€ / an</strong> et amenant le budget global à <strong>435 k€ / an</strong> (reste à charge net métropolitain : <strong>~217 k€ / an</strong>).</li>
     </ul>
     
-    <h2>5.2 Feuille de Route Détaillée Élément par Élément (36 Mois)</h2>
+    <h2>5.2 Échéancier Précis et Jalons par Date (Démarche 1er Septembre 2026)</h2>
     <table>
         <thead>
             <tr>
-                <th>Phase / Période</th>
+                <th>Période & Date Précise</th>
                 <th>Chantier / Livrable Stratégique</th>
                 <th>Budget Dédié</th>
                 <th>Impact & Résultat Attendus</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>Année 1 - Q1</td><td>L1.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Cadrage opérationnel & gouvernance.</td></tr>
-            <tr><td>Année 1 - Q1</td><td>L1.2 Bureau Candidature Binationale Gigafactory</td><td>35,00 k€</td><td>Dossier 500 M€ UE co-rédigé Monaco.</td></tr>
-            <tr><td>Année 1 - Q1</td><td>L1.3 Délibération Métropolitaine & AI Act</td><td>20,00 k€</td><td>Vote cadre juridique & éthique.</td></tr>
-            <tr><td>Année 1 - Q1</td><td>L1.4 Audit CSU & Fibre Monaco Cloud</td><td>38,75 k€</td><td>Cahier des charges interconnexion.</td></tr>
-            <tr><td>Année 1 - Q2</td><td>L2.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Gestion des appels d'offres VSA.</td></tr>
-            <tr><td>Année 1 - Q2</td><td>L2.2 Dépôt Dossier Gigafactory UE (12 Nov)</td><td>10,00 k€</td><td>Candidature officielle 500 M€.</td></tr>
-            <tr><td>Année 1 - Q2</td><td>L2.3 Filtrage VSA CSU (4 300 caméras)</td><td>55,00 k€</td><td>Alertes incivilités en temps réel.</td></tr>
-            <tr><td>Année 1 - Q2</td><td>L2.4 Géolocalisation & Dispatching PM</td><td>33,75 k€</td><td>Patrouilles physiques < 6 min.</td></tr>
-            <tr><td>Année 1 - Q3</td><td>L3.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Suivi ingénierie & recettes.</td></tr>
-            <tr><td>Année 1 - Q3</td><td>L3.2 Audit Commande Publique (Factures 300M€)</td><td>45,00 k€</td><td>Filtrage erreurs & doublons BPU.</td></tr>
-            <tr><td>Année 1 - Q3</td><td>L3.3 SOC Cyber NIS 2 Autonome Air-Gap</td><td>28,75 k€</td><td>Protection inviolable du CSU.</td></tr>
-            <tr><td>Année 1 - Q3</td><td>L3.4 IA Einstein Concertation (1er Quartier)</td><td>15,00 k€</td><td>Restitution citoyenne augmentée.</td></tr>
-            <tr><td>Année 1 - Q4</td><td>L4.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Revue annuelle & bilans.</td></tr>
-            <tr><td>Année 1 - Q4</td><td>L4.2 Généralisation Audit Commande Publique</td><td>45,00 k€</td><td>Rentrée de +2,5 M€/an certifiés.</td></tr>
-            <tr><td>Année 1 - Q4</td><td>L4.3 Recette Sécurité Monaco Cloud AMSN</td><td>23,75 k€</td><td>Certification Cloud Souverain.</td></tr>
-            <tr><td>Année 1 - Q4</td><td>L4.4 Restitution Publique Einstein Quartiers</td><td>20,00 k€</td><td>Arbitrages budgétaires citoyens.</td></tr>
-            <tr><td>Année 2 - S1</td><td>L5.1 Guichet Vocal Allo Niçois Séniors 24/7</td><td>85,00 k€</td><td>Assistance 24/7 & d'urgence.</td></tr>
-            <tr><td>Année 2 - S1</td><td>L5.2 VSA Propreté & Routage Bennes</td><td>65,00 k€</td><td>Rues propres & -18% carburant.</td></tr>
-            <tr><td>Année 2 - S2</td><td>L6.1 Extension Zone Franche Numérique</td><td>85,00 k€</td><td>Attraction PME & Data Center.</td></tr>
-            <tr><td>Année 2 - S2</td><td>L6.2 Concertation Einstein Récurrente</td><td>60,00 k€</td><td>Ingestion avis par quartier.</td></tr>
-            <tr><td>Année 3</td><td>L7.1 Supercalculateur AI Gigafactory</td><td>160,00 k€</td><td>Mise en service opérationnelle.</td></tr>
-            <tr><td>Année 3</td><td>L7.2 Industrialisation IA Frugale & Cyber</td><td>170,00 k€</td><td>Pérennisation & Hub AI Act.</td></tr>
+            <tr><td>1er Septembre 2026</td><td>L1.1 Lancement Pacte & Direction Projet (2.5j/sem)</td><td>16,25 k€</td><td>Cadrage opérationnel & gouvernance.</td></tr>
+            <tr><td>15 Septembre 2026</td><td>L1.2 Bureau Candidature Binationale Gigafactory</td><td>35,00 k€</td><td>Dossier 500 M€ UE co-rédigé Monaco.</td></tr>
+            <tr><td>1er Octobre 2026</td><td>L1.3 Délibération Métropolitaine & AI Act</td><td>20,00 k€</td><td>Vote cadre juridique & éthique.</td></tr>
+            <tr><td>15 Octobre 2026</td><td>L1.4 Audit CSU & Fibre Monaco Cloud</td><td>38,75 k€</td><td>Cahier des charges interconnexion.</td></tr>
+            <tr><td>12 Novembre 2026</td><td>L2.1 Dépôt Dossier Gigafactory UE (COUPERET)</td><td>10,00 k€</td><td>Candidature officielle 500 M€ UE.</td></tr>
+            <tr><td>15 Décembre 2026</td><td>L2.2 Filtrage VSA CSU (4 300 caméras)</td><td>55,00 k€</td><td>Alertes incivilités en temps réel.</td></tr>
+            <tr><td>15 Janvier 2027</td><td>L2.3 Géolocalisation & Dispatching PM</td><td>33,75 k€</td><td>Patrouilles physiques < 6 min.</td></tr>
+            <tr><td>1er Février 2027</td><td>L2.4 Ingestion Marchés Publics (Pilote 50M€)</td><td>16,25 k€</td><td>Ingénierie & recettes sémantiques.</td></tr>
+            <tr><td>15 Mars 2027</td><td>L3.1 Audit Commande Publique Généralisé (300M€)</td><td>45,00 k€</td><td>Filtrage erreurs & doublons BPU.</td></tr>
+            <tr><td>1er Avril 2027</td><td>L3.2 SOC Cyber NIS 2 Autonome Air-Gap</td><td>28,75 k€</td><td>Protection inviolable du CSU.</td></tr>
+            <tr><td>15 Mai 2027</td><td>L3.3 IA Einstein Concertation (1ers Quartiers)</td><td>15,00 k€</td><td>Restitution citoyenne augmentée.</td></tr>
+            <tr><td>15 Juin 2027</td><td>L4.1 Généralisation Audit Commande Publique</td><td>45,00 k€</td><td>Rentrée de +2,5 M€/an certifiés.</td></tr>
+            <tr><td>15 Juillet 2027</td><td>L4.2 Recette Sécurité Monaco Cloud AMSN</td><td>23,75 k€</td><td>Certification Cloud Souverain.</td></tr>
+            <tr><td>31 Août 2027</td><td>L4.3 Bilan Année 1 & Arbitrages Citoyens</td><td>20,00 k€</td><td>+2,5 M€ d'économies & bilan VSA.</td></tr>
+            <tr><td>Sept 2027 — Fév 2028</td><td>L5.1 Guichet Vocal Allo Niçois Séniors 24/7</td><td>85,00 k€</td><td>Assistance 24/7 & d'urgence.</td></tr>
+            <tr><td>Sept 2027 — Fév 2028</td><td>L5.2 VSA Propreté & Routage Bennes</td><td>65,00 k€</td><td>Rues propres & -18% carburant.</td></tr>
+            <tr><td>Mars 2028 — Août 2028</td><td>L6.1 Extension Zone Franche Numérique</td><td>85,00 k€</td><td>Attraction PME & Data Center.</td></tr>
+            <tr><td>Mars 2028 — Août 2028</td><td>L6.2 Concertation Einstein Récurrente</td><td>60,00 k€</td><td>Ingestion avis par quartier.</td></tr>
+            <tr><td>1er Janvier 2029</td><td>L7.1 Supercalculateur AI Gigafactory</td><td>160,00 k€</td><td>Mise en service opérationnelle.</td></tr>
+            <tr><td>Sept 2028 — Août 2029</td><td>L7.2 Industrialisation IA Frugale & Cyber</td><td>170,00 k€</td><td>Pérennisation & Hub AI Act.</td></tr>
         </tbody>
     </table>
     
-    <h2>5.3 Tableau de Synthèse Budgétaire Trimestriel (435 k€ / an)</h2>
+    <h2>5.3 Résumé Consolidé du Coût par Année Budgétaire</h2>
     <ul>
-        <li><strong>Étalement de la Trésorerie</strong> : Les dépenses sont lissées de manière équilibrée à raison de <strong>~108,75 k€ par trimestre</strong> (soit <strong>~72,5 k€ par bimestre</strong>), parfaitement maîtrisables au sein du budget métropolitain.</li>
+        <li><strong>Rendement Budgétaire Net</strong> : Pour chaque année d'exécution, la dépense brute de <strong>435 000 €</strong> est co-financée à 50 % par l'UE, ne laissant que <strong>217 500 € net</strong> à la Métropole, face à <strong>+2 500 000 € d'économies certifiées</strong>, dégageant un bénéfice net réinjecté dans le service public de <strong>+2 282 500 € par an</strong>.</li>
     </ul>
     
     <table>
         <thead>
             <tr>
-                <th>Trimestre</th>
-                <th>Période Chronologique</th>
+                <th>Année Budgétaire</th>
+                <th>Période Précise de Réalisation</th>
                 <th>Budget Brut</th>
                 <th>Co-financement UE (50%)</th>
                 <th>Reste à Charge Net</th>
+                <th>Gains Certifiés</th>
+                <th>Bénéfice Net</th>
             </tr>
         </thead>
         <tbody>
-            <tr><td>Année 1 - Q1</td><td>Août — Octobre 2026</td><td>110,00 k€</td><td>55,00 k€</td><td>55,00 k€</td></tr>
-            <tr><td>Année 1 - Q2</td><td>Novembre 2026 — Janvier 2027</td><td>115,00 k€</td><td>57,50 k€</td><td>57,50 k€</td></tr>
-            <tr><td>Année 1 - Q3</td><td>Février — Avril 2027</td><td>105,00 k€</td><td>52,50 k€</td><td>52,50 k€</td></tr>
-            <tr><td>Année 1 - Q4</td><td>Mai — Juillet 2027</td><td>105,00 k€</td><td>52,50 k€</td><td>52,50 k€</td></tr>
-            <tr style="background: #E2E8F0; font-weight: bold;"><td>Sous-Total Année 1</td><td>Août 2026 — Juillet 2027</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
-            <tr><td>Année 2 - Q5-Q6</td><td>Août 2027 — Janvier 2028</td><td>217,50 k€</td><td>108,75 k€</td><td>108,75 k€</td></tr>
-            <tr><td>Année 2 - Q7-Q8</td><td>Février — Juillet 2028</td><td>217,50 k€</td><td>108,75 k€</td><td>108,75 k€</td></tr>
-            <tr style="background: #E2E8F0; font-weight: bold;"><td>Sous-Total Année 2</td><td>Août 2027 — Juillet 2028</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
-            <tr><td>Année 3 - Q9-Q12</td><td>Août 2028 — Juillet 2029</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
-            <tr style="background: #0F172A; color: #FFFFFF; font-weight: bold;"><td>TOTAL CUMULÉ 36M</td><td>Août 2026 — Juillet 2029</td><td>1 305,00 k€</td><td>652,50 k€</td><td>652,50 k€</td></tr>
+            <tr><td>ANNÉE 1</td><td>Septembre 2026 — Août 2027</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
+            <tr><td>ANNÉE 2</td><td>Septembre 2027 — Août 2028</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
+            <tr><td>ANNÉE 3</td><td>Septembre 2028 — Août 2029</td><td>435 000 €</td><td>217 500 €</td><td>217 500 €</td><td>+2 500 000 €</td><td>+2 282 500 €</td></tr>
+            <tr style="background: #0F172A; color: #FFFFFF; font-weight: bold;"><td>TOTAL 3 ANS</td><td>1er Sept 2026 — 31 Août 2029</td><td>1 305 000 €</td><td>652 500 €</td><td>652 500 €</td><td>+7 500 000 €</td><td>+6 847 500 €</td></tr>
         </tbody>
     </table>
     
@@ -489,4 +483,4 @@ cmd = [
 ]
 
 subprocess.run(cmd, check=True)
-print(f"PDF enrichi avec roadmap détaillée et budget trimestriel généré avec succès : {pdf_path}")
+print(f"PDF enrichi avec démarrage Septembre 2026 et résumé des coûts par an généré avec succès : {pdf_path}")
