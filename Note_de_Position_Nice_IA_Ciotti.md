@@ -16,7 +16,7 @@
 | **2. Audit Commande Publique** | Ingestion sémantique 100% des factures/BPU (300 M€) | **+2,50 M€ / an NET** | Filtrage automatisé de 0,5% à 2,0% de doublons/surcoûts (Benchmark DGFiP). |
 | **3. Bouclier Cyber-IA (NIS 2)** | SOC IA 24/7 souverain & étanchéité CSU | **1,8 M€ à 3 M€ / an** | Coûts de crise ransomware évités (Benchmark Marseille/Lille/Caen). |
 | **4. Migration Monaco Cloud** | Migration SI & Cloud Souverain (AMSN/NIS 2) | **1,5 à 2,8 M€ / an** | Économies directs de fonctionnement IT (OPEX) + 8 à 12 M€ de CAPEX évité. |
-| **5. Financements Europe & Cités** | Subventions directes UE (Digital Europe, Horizon) & Cités | **Levier Extérieur Maximisé** | Mobilisation des fonds UE & guichets d'innovation des cités ; **0 € dépendance Région SUD**. |
+| **5. Financements Europe & AI Gigafactory** | Subventions directes UE (EuroHPC, Digital Europe) & Monaco | **500 M€ de subvention visés** | Candidature binational Nice-Monaco pour l'appel d'offres historique de 30 Md€ (Lot 1). |
 
 ---
 
@@ -35,6 +35,7 @@ flowchart TD
     C --> C2["5. Bouclier Cybersécurité IA NIS 2 (1,8 M€ à 3 M€ Évités)"]
     C --> C3["6. Mobilités Pendulaires & Régulation IA (Nice-Monaco)"]
     C --> C4["7. Zone Franche Nice-Monaco, Cloud & Réduction IT (1,5 à 2,8 M€/an)"]
+    C --> C5["8. AI Gigafactory Transfrontalière (500 M€ subvention visés)"]
 ```
 
 ---
@@ -138,6 +139,21 @@ flowchart TD
 
 ---
 
+#### 8. L'Opportunité Majeure : L'Appel d'Offres Européen "AI Gigafactories" (Plan de 30 Md€)
+
+##### 📊 Justification du Chiffre : 500 M€ de subvention de l'UE visés
+* **D'où vient cette métrique ?**
+  Le 30 juillet 2026, la Commission européenne a ouvert l'appel d'offres EuroHPC pour créer jusqu'à 7 "AI Gigafactories" sur le continent. Le **Lot 1** de cet appel d'offres finance chaque projet retenu à hauteur de **500 M€**.
+* **Le modèle de co-financement transfrontalier (Consortium Nice-Monaco-3IA)** :
+  L'UE exigeant un montage mixte (fonds publics + au moins 20 Md€ de fonds privés), le partenariat avec Monaco prend ici toute sa valeur :
+  - **500 M€** de subvention européenne (Lot 1),
+  - **300 M€** de fonds publics complémentaires (apportés par la Principauté de Monaco via son fonds souverain, et par des engagements d'achat de capacités de calcul par la Métropole),
+  - **700 M€** d'investissements du secteur privé (grands groupes technologiques de Sophia Antipolis, constructeurs de semi-conducteurs comme Nvidia/AMD/Qualcomm, et Venture Capital monégasques).
+* **Bénéfice territorial direct** :
+  Nice implanterait sur la Plaine du Var (Eco-Vallée) un supercalculateur d'IA souverain de **100 000 accélérateurs**, offrant une puissance de calcul de pointe aux start-ups de Sophia Antipolis et aux services publics (CSU, hôpitaux, administrations), faisant de Nice la **capitale européenne de l'IA appliquée**.
+
+---
+
 ### 4. Répartition Budgétaire Commando (500 k€ / an TOTAL)
 
 | Échelle / Axe | Budget IA Annuel | Co-financement Européen | Impact & Gain Généré / an |
@@ -163,6 +179,7 @@ flowchart TD
   - Annonce conjointe par M. Éric Ciotti du *Plan Nice IA Sécurité & Rigueur Budgétaire*.
   - Désignation de l'AMO IA (**Benoît Sigwald**) et installation de l'équipe commando.
   - Lancement du Bouclier Cyber-IA Métropolitain et des pilotes VSA au CSU.
+  - Constitution du consortium Nice-Monaco-3IA pour l'appel d'offres européen des *AI Gigafactories* (dépôt du dossier final le 12 novembre 2026).
   - Dépôt du dossier de subvention direct auprès de la Commission Européenne (*Digital Europe*).
 - **12 Mois** :
   - Déploiement des cas d'usage Ville (Allo Séniors IA, Propreté) et Métropole (Audit, Cyber-SOC, Mobilité Monaco 3D Plaine du Var).
@@ -192,9 +209,10 @@ flowchart TD
 4. **Schéma de Coopération Transfrontalière (SCT 2020-2030)** de la Métropole Nice Côte d'Azur ([espaces-transfrontaliers.org](https://www.espaces-transfrontaliers.org)).
 
 #### C. Guichets Européens de Financement Direct (Indépendance Région SUD)
-1. **Digital Europe Programme (DIGITAL) — Règlement (UE) 2021/694** : Subventions directes (50%-70%) pour la cybersécurité et l'IA ([ec.europa.eu](https://ec.europa.eu)).
-2. **Horizon Europe — Cluster 3 (« Civil Security for Society »)** : Subventions à 100% pour la cybersécurité urbaine et la protection des infrastructures.
-3. **Interreg ALCOTRA / MARITTIMO** : Co-financement transfrontalier France-Italie-Monaco.
+1. **EuroHPC Joint Undertaking (EuroHPC JU) — AI Gigafactories (Lot 1)** : Financement direct de 500 M€ de l'UE pour le supercalculateur d'IA régional ([eurohpc-ju.europa.eu](https://eurohpc-ju.europa.eu)).
+2. **Digital Europe Programme (DIGITAL) — Règlement (UE) 2021/694** : Subventions directes (50%-70%) pour la cybersécurité et l'IA ([ec.europa.eu](https://ec.europa.eu)).
+3. **Horizon Europe — Cluster 3 (« Civil Security for Society »)** : Subventions à 100% pour la cybersécurité urbaine et la protection des infrastructures.
+4. **Interreg ALCOTRA / MARITTIMO** : Co-financement transfrontalier France-Italie-Monaco.
 
 #### D. Statistiques & Données Territoriales Vérifiées
 1. **Centre de Supervision Urbain (CSU) de Nice** : > 4 300 caméras raccordées (1er CSU de France).
