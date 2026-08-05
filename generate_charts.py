@@ -14,58 +14,58 @@ html1_content = """<!DOCTYPE html>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body {
         margin: 0;
-        padding: 20px;
+        padding: 30px;
         background: #FFFFFF;
         color: #0F172A;
         font-family: 'Inter', sans-serif;
-        width: 750px;
+        width: 1400px;
         box-sizing: border-box;
-        border: 1px solid #E2E8F0;
-        border-radius: 6px;
+        border: 2px solid #E2E8F0;
+        border-radius: 8px;
     }
     .title {
-        font-size: 16px;
+        font-size: 26px;
         font-weight: 700;
         color: #0F172A;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
     }
     .subtitle {
-        font-size: 12px;
+        font-size: 18px;
         color: #64748B;
-        margin-bottom: 18px;
+        margin-bottom: 28px;
     }
     .bar-container {
-        margin-bottom: 14px;
+        margin-bottom: 22px;
     }
     .bar-header {
         display: flex;
         justify-content: space-between;
-        font-size: 13px;
+        font-size: 20px;
         font-weight: 600;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
     }
     .bar-label { color: #334155; }
     .bar-val { color: #1E3A8A; font-weight: 700; }
     .bar-bg {
         background: #F1F5F9;
-        border-radius: 4px;
-        height: 18px;
+        border-radius: 6px;
+        height: 28px;
         overflow: hidden;
     }
     .bar-fill {
         height: 100%;
-        border-radius: 4px;
+        border-radius: 6px;
         background: #1E3A8A;
     }
 </style>
 </head>
 <body>
-    <div class="title">Poids du Pôle Nice - Sophia Antipolis - Monaco</div>
+    <div class="title">Poids du Pôle Nice - Sophia Antipolis - Monaco vs Total National Français</div>
     <div class="subtitle">Part relative dans les capacités nationales de Recherche & IA en France (Sources INSEE / 3IA 2026)</div>
     
     <div class="bar-container">
         <div class="bar-header">
-            <span class="bar-label">Recherche Académique IA d'Élite (Réseau National 3IA)</span>
+            <span class="bar-label">Recherche Académique IA d'Élite (Réseau National des 4 Instituts 3IA)</span>
             <span class="bar-val">25 % de la France</span>
         </div>
         <div class="bar-bg"><div class="bar-fill" style="width: 25%;"></div></div>
@@ -81,7 +81,7 @@ html1_content = """<!DOCTYPE html>
     
     <div class="bar-container">
         <div class="bar-header">
-            <span class="bar-label">Dépense de R&D Privée Logicielle / Spatiale (Amadeus & Thales)</span>
+            <span class="bar-label">Dépense de R&D Privée Logicielle / Spatiale (Amadeus & Thales Alenia Space)</span>
             <span class="bar-val">6 % du total France</span>
         </div>
         <div class="bar-bg"><div class="bar-fill" style="width: 6%;"></div></div>
@@ -98,61 +98,61 @@ html2_content = """<!DOCTYPE html>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body {
         margin: 0;
-        padding: 20px;
+        padding: 30px;
         background: #FFFFFF;
         color: #0F172A;
         font-family: 'Inter', sans-serif;
-        width: 750px;
+        width: 1400px;
         box-sizing: border-box;
-        border: 1px solid #E2E8F0;
-        border-radius: 6px;
+        border: 2px solid #E2E8F0;
+        border-radius: 8px;
     }
     .title {
-        font-size: 16px;
+        font-size: 26px;
         font-weight: 700;
         color: #0F172A;
-        margin-bottom: 2px;
+        margin-bottom: 4px;
     }
     .subtitle {
-        font-size: 12px;
+        font-size: 18px;
         color: #64748B;
-        margin-bottom: 18px;
+        margin-bottom: 28px;
     }
     .grid {
         display: flex;
-        gap: 16px;
+        gap: 24px;
     }
     .card {
         flex: 1;
         background: #F8FAFC;
-        border: 1px solid #CBD5E1;
-        border-radius: 6px;
-        padding: 14px;
+        border: 1.5px solid #CBD5E1;
+        border-radius: 8px;
+        padding: 22px;
         text-align: center;
     }
     .card-title {
-        font-size: 12px;
+        font-size: 16px;
         color: #475569;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 0.5px;
     }
     .card-val {
-        font-size: 22px;
+        font-size: 36px;
         font-weight: 700;
         color: #0F172A;
-        margin-top: 6px;
+        margin-top: 10px;
     }
     .card-label {
-        font-size: 11px;
+        font-size: 15px;
         color: #64748B;
-        margin-top: 4px;
+        margin-top: 6px;
     }
 </style>
 </head>
 <body>
     <div class="title">Bilan Financier & Impact Métropolitain</div>
-    <div class="subtitle">Modèle d'IA Frugale & Rigueur Budgétaire Certifiée (Données Annuelles)</div>
+    <div class="subtitle">Modèle d'IA Frugale & Rigueur Budgétaire Certifiée (Données Annuelles Nettes)</div>
     
     <div class="grid">
         <div class="card">
@@ -183,7 +183,18 @@ with open(chart2_html, 'w', encoding='utf-8') as f:
 
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=770,240", f"--screenshot={chart1_png}", chart1_html], check=True)
-subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=770,180", f"--screenshot={chart2_png}", chart2_html], check=True)
+subprocess.run([
+    chrome_path, "--headless", "--disable-gpu", 
+    "--force-device-scale-factor=2",
+    "--window-size=1440,460", 
+    f"--screenshot={chart1_png}", chart1_html
+], check=True)
 
-print("Graphiques sobres sur fond blanc générés avec succès !")
+subprocess.run([
+    chrome_path, "--headless", "--disable-gpu", 
+    "--force-device-scale-factor=2",
+    "--window-size=1440,360", 
+    f"--screenshot={chart2_png}", chart2_html
+], check=True)
+
+print("Graphiques Ultra-Nets 4K (High-DPI) générés avec succès !")
