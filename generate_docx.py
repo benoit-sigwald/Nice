@@ -140,7 +140,7 @@ table_data = [
     ["1. CSU Augmenté & Sécurité", "VSA 4 300+ caméras & alertes", "Incivilités -65 %", "Intervention PM < 6 min."],
     ["2. Audit Commande Publique", "Ingestion sémantique factures (300 M€)", "+2,50 M€ / an NET", "Erreurs & doublons filtrés."],
     ["3. Bouclier Cyber-IA (NIS 2)", "SOC IA 24/7 souverain & Air-Gap", "1,8 à 3 M€ / an", "Crises ransomware évitées."],
-    ["4. Migration Monaco Cloud", "Cloud Souverain d'État (AMSN)", "1,5 à 2,8 M€ / an", "OPEX IT réduits + 8-12M€ CAPEX évité."],
+    ["4. Monaco Cloud & Zone Franche", "Data Center Souverain (AMSN) & Zone Franche", "1,5 à 2,8 M€ / an", "Économies IT + 8-12M€ CAPEX évité + attraction PME."],
     ["5. Financements Europe & Gigafactory", "Subventions UE (EuroHPC, DIGITAL)", "500 M€ visés", "Candidature binationale Nice-Monaco."]
 ]
 
@@ -188,6 +188,8 @@ add_styled_heading("1.2 Le terreau niçois : Un actif exceptionnel en France", 2
 add_bullet("**Sophia Antipolis (1ère technopole d’Europe)** : ~2 700 entreprises, ~46 000 emplois, ~5 500 chercheurs.")
 add_bullet("**Institut 3IA Côte d’Azur** : L'un des 4 instituts nationaux d'IA (spécialisé en santé numérique).")
 add_bullet("**Pipeline académique complet** : Université Côte d'Azur (UCA), Inria, Eurecom, CNRS (du Master au Doctorat).")
+add_bullet("**Monaco Cloud & Data Center Souverain d'État** : Premier Cloud d'État souverain d'Europe (certifié AMSN), garantissant une étanchéité totale contre le Cloud Act américain, connecté en fibre noire dédiée à Nice.")
+add_bullet("**Le levier Zone Franche Numérique Nice-Monaco** : Création d'une zone d'expérimentation fiscale et réglementaire transfrontalière privilégiée pour attirer et retenir les PME, startups et licornes de l'IA.")
 add_bullet("**Grands industriels ancres riches en données** : **Amadeus** (1er centre de R&D privé de transport en Europe), **Thales Alenia Space** Cannes (spatial & observation satellite), santé, arômes-parfums (Grasse), maritime.")
 add_bullet("**Attractivité & 2e aéroport de France** : La « carte Riviera » permet de capter et retenir les chercheurs d'élite que Paris peine à conserver.")
 

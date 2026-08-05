@@ -3234,31 +3234,48 @@
             const modal = document.getElementById('note-modal');
             modal.style.display = 'flex';
             
-            if (!isNoteLoaded) {
-                const container = document.getElementById('note-md-container');
-                container.innerHTML = '<div style="text-align:center; padding: 50px; color: var(--accent-champagne); font-size: 1.2rem;">⚡ Chargement du Pacte Nice IA...</div>';
-                
-                fetch('Le_Pacte_Nice_IA.md')
-                    .then(response => {
-                        if (!response.ok) throw new Error('Network response error');
-                        return response.text();
-                    })
-                    .then(mdText => {
-                        container.innerHTML = renderMarkdown(mdText);
-                        isNoteLoaded = true;
-                    })
-                    .catch(err => {
-                        console.error('Error loading Markdown note:', err);
-                        container.innerHTML = `
-                            <div style="text-align:center; padding: 40px; color: #CBD5E1;">
-                                <h3 style="color: var(--accent-champagne); margin-bottom: 12px;">📄 Le Pacte Nice IA est disponible en accès direct</h3>
-                                <p style="margin-bottom: 20px;">Le document officiel est téléchargeable directement ci-dessous.</p>
-                                <a href="Le_Pacte_Nice_IA.md" download class="btn-note-action btn-note-download" style="font-size: 1rem; padding: 10px 20px;">
-                                    📥 Télécharger le document complet (.MD)
-                                </a>
-                            </div>`;
-                    });
-            }
+            const container = document.getElementById('note-md-container');
+            container.innerHTML = `
+                <div class="md-content" style="padding: 10px;">
+                    <div style="background: rgba(15,23,42,0.8); border: 1px solid rgba(216,185,138,0.3); border-radius: 12px; padding: 24px; margin-bottom: 24px;">
+                        <h2 style="color: var(--accent-champagne); font-family: 'Georgia', serif; margin-top: 0;">🤝 Le Pacte Nice IA (2026-2029)</h2>
+                        <p style="color: #E2E8F0; font-size: 1.05rem; line-height: 1.6;">
+                            <strong>La thèse :</strong> La course aux modèles de frontière se joue à l’échelle des superpuissances. Pour Nice, la vraie bataille stratégique réside dans <strong>l'usage concret, la sécurité publique, la souveraineté et la rigueur budgétaire</strong>. Aucune collectivité n'a encore préempté la position de <strong>« Capitale de l'IA de sécurité et d'efficience publique »</strong>. Nice doit être la première sous la conduite de M. Éric Ciotti.
+                        </p>
+                        
+                        <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap;">
+                            <a href="Le_Pacte_Nice_IA.docx" download class="btn-note-action btn-note-download" style="font-size: 1rem; padding: 12px 24px;">
+                                📄 Google Docs / Word (.DOCX)
+                            </a>
+                            <a href="Le_Pacte_Nice_IA.pdf" target="_blank" class="btn-note-action btn-note-direct" style="font-size: 1rem; padding: 12px 24px;">
+                                📥 Télécharger le PDF (.PDF)
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <h3 style="color: var(--accent-champagne); margin-top: 24px;">📊 Synthèse des 5 Piliers Stratégiques & Impact Financier</h3>
+                    <table class="md-table" style="width: 100%; border-collapse: collapse; margin: 16px 0;">
+                        <thead>
+                            <tr style="background: #0F172A; color: var(--accent-champagne);">
+                                <th style="padding: 10px; text-align: left;">Pilier Stratégique</th>
+                                <th style="padding: 10px; text-align: left;">Levier IA Appliqué</th>
+                                <th style="padding: 10px; text-align: center;">Chiffre Clé & Impact</th>
+                                <th style="padding: 10px; text-align: left;">Justification / Source</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>1. CSU Augmenté & Sécurité</strong></td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">VSA 4 300+ caméras & alertes</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center; color: #34D399; font-weight: 700;">Incivilités -65 %</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Intervention PM < 6 min.</td></tr>
+                            <tr style="background: rgba(255,255,255,0.03);"><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>2. Audit Commande Publique</strong></td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Ingestion sémantique factures (300 M€)</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center; color: #34D399; font-weight: 700;">+2,50 M€ / an NET</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Erreurs & doublons filtrés.</td></tr>
+                            <tr><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>3. Bouclier Cyber-IA (NIS 2)</strong></td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">SOC IA 24/7 souverain & Air-Gap</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center; color: #38BDF8; font-weight: 700;">1,8 à 3 M€ / an</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Crises ransomware évitées.</td></tr>
+                            <tr style="background: rgba(255,255,255,0.03);"><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>4. Monaco Cloud & Zone Franche</strong></td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Data Center Souverain (AMSN) & Zone Franche</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center; color: #38BDF8; font-weight: 700;">1,5 à 2,8 M€ / an</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Économies IT + 8-12M€ CAPEX évité + attraction PME.</td></tr>
+                            <tr><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);"><strong>5. Financements Europe & Gigafactory</strong></td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Subventions UE (EuroHPC, DIGITAL)</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--accent-champagne); font-weight: 700;">500 M€ visés</td><td style="padding: 10px; border-bottom: 1px solid rgba(255,255,255,0.1);">Candidature binationale Nice-Monaco.</td></tr>
+                        </tbody>
+                    </table>
+                    
+                    <div style="text-align: center; margin-top: 24px;">
+                        <img src="chart2_roi_gains.png" alt="Graphique Bilan Financier ROI" style="max-width: 100%; border-radius: 12px; border: 1px solid rgba(216,185,138,0.3);">
+                    </div>
+                </div>`;
 
             setTimeout(() => {
                 modal.classList.add('active');
