@@ -12,7 +12,7 @@ docx_path = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.docx"
 chart1_png = r"g:\My Drive\Dev\Einstein\chart1_poids_national.png"
 chart2_png = r"g:\My Drive\Dev\Einstein\chart2_roi_gains.png"
 
-# Ensure charts are generated
+# Ensure sober charts are generated
 subprocess.run(["python", r"g:\My Drive\Dev\Einstein\generate_charts.py"], check=True)
 
 doc = Document()
@@ -24,11 +24,12 @@ for section in doc.sections:
     section.left_margin = Inches(0.8)
     section.right_margin = Inches(0.8)
 
-# Palette
-NAVY = RGBColor(15, 23, 42)
-CHAMPAGNE = RGBColor(184, 151, 98)
-SKY = RGBColor(2, 132, 199)
-DARK = RGBColor(30, 41, 59)
+# Sober Color Palette (Classic Executive / Institutional)
+NAVY_PRIMARY = RGBColor(15, 23, 42)    # #0F172A
+NAVY_SECONDARY = RGBColor(30, 58, 138)  # #1E3A8A
+SLATE_DARK = RGBColor(51, 65, 85)      # #334155
+BODY_BLACK = RGBColor(30, 41, 59)      # #1E293B
+MUTED_GREY = RGBColor(100, 116, 139)   # #64748B
 
 def set_cell_background(cell, fill_color):
     tcPr = cell._element.get_or_add_tcPr()
@@ -42,25 +43,25 @@ def add_header_banner():
     r1.font.name = 'Arial'
     r1.font.size = Pt(8.5)
     r1.font.bold = True
-    r1.font.color.rgb = CHAMPAGNE
+    r1.font.color.rgb = SLATE_DARK
     
-    r2 = p.add_run("🤝 LE PACTE NICE IA\n")
+    r2 = p.add_run("LE PACTE NICE IA\n")
     r2.font.name = 'Georgia'
-    r2.font.size = Pt(24)
+    r2.font.size = Pt(22)
     r2.font.bold = True
-    r2.font.color.rgb = NAVY
+    r2.font.color.rgb = NAVY_PRIMARY
     
     r3 = p.add_run("Doctrine Stratégique, Rigueur Budgétaire & Alliance Transfrontalière (2026-2029)")
     r3.font.name = 'Arial'
-    r3.font.size = Pt(11)
-    r3.font.color.rgb = SKY
+    r3.font.size = Pt(10.5)
+    r3.font.color.rgb = NAVY_SECONDARY
     
     p_meta = doc.add_paragraph()
-    p_meta.paragraph_format.space_after = Pt(18)
-    r_meta = p_meta.add_run("Document rédigé pour M. Éric Ciotti par Benoît Sigwald — Senior AI Architect & AMO IA Métropolitain — Août 2026")
-    r_meta.font.size = Pt(9)
+    p_meta.paragraph_format.space_after = Pt(16)
+    r_meta = p_meta.add_run("Rédigé pour M. Éric Ciotti par Benoît Sigwald — Senior AI Architect & AMO IA Métropolitain — Août 2026")
+    r_meta.font.size = Pt(8.5)
     r_meta.font.italic = True
-    r_meta.font.color.rgb = RGBColor(100, 116, 139)
+    r_meta.font.color.rgb = MUTED_GREY
 
 def add_styled_heading(text, level):
     p = doc.add_paragraph()
@@ -68,31 +69,31 @@ def add_styled_heading(text, level):
     r = p.add_run(text)
     
     if level == 1:
-        p.paragraph_format.space_before = Pt(18)
-        p.paragraph_format.space_after = Pt(8)
-        r.font.name = 'Georgia'
-        r.font.size = Pt(16)
-        r.font.bold = True
-        r.font.color.rgb = NAVY
-    elif level == 2:
-        p.paragraph_format.space_before = Pt(14)
+        p.paragraph_format.space_before = Pt(16)
         p.paragraph_format.space_after = Pt(6)
         r.font.name = 'Georgia'
-        r.font.size = Pt(13)
+        r.font.size = Pt(15)
         r.font.bold = True
-        r.font.color.rgb = SKY
-    elif level == 3:
-        p.paragraph_format.space_before = Pt(10)
+        r.font.color.rgb = NAVY_PRIMARY
+    elif level == 2:
+        p.paragraph_format.space_before = Pt(12)
         p.paragraph_format.space_after = Pt(4)
-        r.font.name = 'Arial'
-        r.font.size = Pt(11)
+        r.font.name = 'Georgia'
+        r.font.size = Pt(12.5)
         r.font.bold = True
-        r.font.color.rgb = CHAMPAGNE
+        r.font.color.rgb = NAVY_SECONDARY
+    elif level == 3:
+        p.paragraph_format.space_before = Pt(8)
+        p.paragraph_format.space_after = Pt(3)
+        r.font.name = 'Arial'
+        r.font.size = Pt(10.5)
+        r.font.bold = True
+        r.font.color.rgb = SLATE_DARK
 
 def add_p(text):
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(2)
-    p.paragraph_format.space_after = Pt(6)
+    p.paragraph_format.space_after = Pt(5)
     p.paragraph_format.line_spacing = 1.15
     
     parts = re.split(r'(\*\*.*?\*\*|\*.*?\*)', text)
@@ -100,14 +101,14 @@ def add_p(text):
         if part.startswith('**') and part.endswith('**'):
             r = p.add_run(part[2:-2])
             r.font.bold = True
-            r.font.color.rgb = NAVY
+            r.font.color.rgb = NAVY_PRIMARY
         elif part.startswith('*') and part.endswith('*'):
             r = p.add_run(part[1:-1])
             r.font.italic = True
         else:
             if part:
                 r = p.add_run(part)
-                r.font.color.rgb = DARK
+                r.font.color.rgb = BODY_BLACK
 
 def add_bullet(text):
     p = doc.add_paragraph(style='List Bullet')
@@ -118,14 +119,14 @@ def add_bullet(text):
         if part.startswith('**') and part.endswith('**'):
             r = p.add_run(part[2:-2])
             r.font.bold = True
-            r.font.color.rgb = NAVY
+            r.font.color.rgb = NAVY_PRIMARY
         elif part.startswith('*') and part.endswith('*'):
             r = p.add_run(part[1:-1])
             r.font.italic = True
         else:
             if part:
                 r = p.add_run(part)
-                r.font.color.rgb = DARK
+                r.font.color.rgb = BODY_BLACK
 
 # Build Document
 add_header_banner()
@@ -134,13 +135,13 @@ add_header_banner()
 add_styled_heading("Résumé Exécutif & Chiffrage Consolidé pour M. le Maire", 1)
 add_p("**La thèse.** La course aux modèles de frontière se joue à l’échelle des superpuissances. Pour Nice, la vraie bataille stratégique réside dans **l'usage concret, la sécurité publique, la souveraineté et la rigueur budgétaire**. Aucune collectivité n'a encore préempté la position de **« Capitale de l'IA de sécurité et d'efficience publique »**. Nice doit être la première sous la conduite de M. Éric Ciotti.")
 
-# Summary Table
+# Sober Summary Table
 table_data = [
     ["Pilier Stratégique", "Levier IA Appliqué", "Chiffre Clé & Impact", "Justification / Source"],
     ["1. CSU Augmenté & Sécurité", "VSA 4 300+ caméras & alertes", "Incivilités -65 %", "Intervention PM < 6 min."],
     ["2. Audit Commande Publique", "Ingestion sémantique factures (300 M€)", "+2,50 M€ / an NET", "Erreurs & doublons filtrés."],
     ["3. Bouclier Cyber-IA (NIS 2)", "SOC IA 24/7 souverain & Air-Gap", "1,8 à 3 M€ / an", "Crises ransomware évitées."],
-    ["4. Monaco Cloud & Zone Franche", "Data Center Souverain (AMSN) & Zone Franche", "1,5 à 2,8 M€ / an", "Économies IT + 8-12M€ CAPEX évité + attraction PME."],
+    ["4. Monaco Cloud & Zone Franche", "Data Center Souverain (AMSN) & Zone Franche", "1,5 à 2,8 M€ / an", "Économies IT + 8-12M€ CAPEX évité."],
     ["5. Financements Europe & Gigafactory", "Subventions UE (EuroHPC, DIGITAL)", "500 M€ visés", "Candidature binationale Nice-Monaco."]
 ]
 
@@ -153,27 +154,27 @@ for r_idx, row in enumerate(table_data):
         p.paragraph_format.space_before = Pt(3)
         p.paragraph_format.space_after = Pt(3)
         if r_idx == 0:
-            set_cell_background(cell, "0F172A")
+            set_cell_background(cell, "1E293B")
             r = p.add_run(val)
             r.font.bold = True
-            r.font.color.rgb = CHAMPAGNE
+            r.font.color.rgb = RGBColor(255, 255, 255)
             r.font.size = Pt(9)
         else:
             set_cell_background(cell, "F8FAFC" if r_idx % 2 == 1 else "FFFFFF")
             r = p.add_run(val)
             r.font.size = Pt(8.5)
-            r.font.color.rgb = DARK
+            r.font.color.rgb = BODY_BLACK
 
-doc.add_paragraph().paragraph_format.space_after = Pt(6)
+doc.add_paragraph().paragraph_format.space_after = Pt(4)
 
-# Insert Graph 2 (ROI Financials)
+# Insert Sober Graph 2 (ROI Financials)
 if os.path.exists(chart2_png):
     p_img = doc.add_paragraph()
     p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_img.paragraph_format.space_before = Pt(8)
-    p_img.paragraph_format.space_after = Pt(14)
+    p_img.paragraph_format.space_before = Pt(6)
+    p_img.paragraph_format.space_after = Pt(10)
     run_img = p_img.add_run()
-    run_img.add_picture(chart2_png, width=Inches(6.2))
+    run_img.add_picture(chart2_png, width=Inches(6.0))
 
 # Section 1
 add_styled_heading("1. Où en sommes-nous ? État des lieux & Diagnostic Territorial", 1)
@@ -193,14 +194,14 @@ add_bullet("**Le levier Zone Franche Numérique Nice-Monaco** : Création d'une 
 add_bullet("**Grands industriels ancres riches en données** : **Amadeus** (1er centre de R&D privé de transport en Europe), **Thales Alenia Space** Cannes (spatial & observation satellite), santé, arômes-parfums (Grasse), maritime.")
 add_bullet("**Attractivité & 2e aéroport de France** : La « carte Riviera » permet de capter et retenir les chercheurs d'élite que Paris peine à conserver.")
 
-# Insert Graph 1 (National Weight Comparison)
+# Insert Sober Graph 1 (National Weight Comparison)
 if os.path.exists(chart1_png):
     p_img = doc.add_paragraph()
     p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    p_img.paragraph_format.space_before = Pt(10)
-    p_img.paragraph_format.space_after = Pt(12)
+    p_img.paragraph_format.space_before = Pt(8)
+    p_img.paragraph_format.space_after = Pt(10)
     run_img = p_img.add_run()
-    run_img.add_picture(chart1_png, width=Inches(6.2))
+    run_img.add_picture(chart1_png, width=Inches(6.0))
 
 add_styled_heading("1.3 Évaluation du Pôle Nice - Sophia Antipolis - Monaco vs Total National Français", 2)
 add_p("Afin d'emporter l'adhésion de l'État et de la Commission Européenne, le territoire fait valoir son **poids relatif massif à l'échelle de la France** :")
@@ -262,4 +263,4 @@ add_bullet("**9. Programme Extended Monaco & Monaco Cloud (gouv.mc / monacocloud
 add_bullet("**10. Audit RTE / CNDP (2025)** : Analyse de la presqu'île électrique des Alpes-Maritimes et contraintes de charge.")
 
 doc.save(docx_path)
-print(f"Document Word/Google Docs modernisé avec graphiques généré avec succès : {docx_path}")
+print(f"Document Word/Google Docs sobre généré avec succès : {docx_path}")

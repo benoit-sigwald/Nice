@@ -11,56 +11,57 @@ html1_content = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body {
         margin: 0;
-        padding: 24px;
-        background: #0F172A;
-        color: #F8FAFC;
+        padding: 20px;
+        background: #FFFFFF;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
         width: 750px;
         box-sizing: border-box;
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
     }
     .title {
-        font-family: 'Playfair Display', serif;
-        font-size: 20px;
-        color: #D8B98A;
-        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0F172A;
+        margin-bottom: 2px;
     }
     .subtitle {
-        font-size: 13px;
-        color: #94A3B8;
-        margin-bottom: 24px;
+        font-size: 12px;
+        color: #64748B;
+        margin-bottom: 18px;
     }
     .bar-container {
-        margin-bottom: 18px;
+        margin-bottom: 14px;
     }
     .bar-header {
         display: flex;
         justify-content: space-between;
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 600;
-        margin-bottom: 6px;
+        margin-bottom: 4px;
     }
-    .bar-label { color: #E2E8F0; }
-    .bar-val { color: #38BDF8; font-weight: 700; }
+    .bar-label { color: #334155; }
+    .bar-val { color: #1E3A8A; font-weight: 700; }
     .bar-bg {
-        background: rgba(255, 255, 255, 0.08);
-        border-radius: 8px;
-        height: 22px;
+        background: #F1F5F9;
+        border-radius: 4px;
+        height: 18px;
         overflow: hidden;
-        position: relative;
     }
     .bar-fill {
         height: 100%;
-        border-radius: 8px;
-        background: linear-gradient(90deg, #0284C7 0%, #D8B98A 100%);
+        border-radius: 4px;
+        background: #1E3A8A;
     }
 </style>
 </head>
 <body>
     <div class="title">Poids du Pôle Nice - Sophia Antipolis - Monaco</div>
-    <div class="subtitle">Part relative dans les capacités nationales de Recherche & IA en France</div>
+    <div class="subtitle">Part relative dans les capacités nationales de Recherche & IA en France (Sources INSEE / 3IA 2026)</div>
     
     <div class="bar-container">
         <div class="bar-header">
@@ -72,7 +73,7 @@ html1_content = """<!DOCTYPE html>
     
     <div class="bar-container">
         <div class="bar-header">
-            <span class="bar-label">Chercheurs & Ingénieurs R&D Numérique (hors Paris)</span>
+            <span class="bar-label">Chercheurs & Ingénieurs R&D Numérique (hors Île-de-France)</span>
             <span class="bar-val">12 % du hors-IDF</span>
         </div>
         <div class="bar-bg"><div class="bar-fill" style="width: 12%;"></div></div>
@@ -80,7 +81,7 @@ html1_content = """<!DOCTYPE html>
     
     <div class="bar-container">
         <div class="bar-header">
-            <span class="bar-label">Dépense de R&D Privée Logicielle/Spatiale (Amadeus/Thales)</span>
+            <span class="bar-label">Dépense de R&D Privée Logicielle / Spatiale (Amadeus & Thales)</span>
             <span class="bar-val">6 % du total France</span>
         </div>
         <div class="bar-bg"><div class="bar-fill" style="width: 6%;"></div></div>
@@ -94,26 +95,28 @@ html2_content = """<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
     body {
         margin: 0;
-        padding: 24px;
-        background: #0F172A;
-        color: #F8FAFC;
+        padding: 20px;
+        background: #FFFFFF;
+        color: #0F172A;
         font-family: 'Inter', sans-serif;
         width: 750px;
         box-sizing: border-box;
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
     }
     .title {
-        font-family: 'Playfair Display', serif;
-        font-size: 20px;
-        color: #D8B98A;
-        margin-bottom: 4px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #0F172A;
+        margin-bottom: 2px;
     }
     .subtitle {
-        font-size: 13px;
-        color: #94A3B8;
-        margin-bottom: 24px;
+        font-size: 12px;
+        color: #64748B;
+        margin-bottom: 18px;
     }
     .grid {
         display: flex;
@@ -121,44 +124,51 @@ html2_content = """<!DOCTYPE html>
     }
     .card {
         flex: 1;
-        background: rgba(30, 41, 59, 0.8);
-        border: 1px solid rgba(216, 185, 138, 0.3);
-        border-radius: 12px;
-        padding: 16px;
+        background: #F8FAFC;
+        border: 1px solid #CBD5E1;
+        border-radius: 6px;
+        padding: 14px;
         text-align: center;
     }
+    .card-title {
+        font-size: 12px;
+        color: #475569;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
     .card-val {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
-        color: #34D399;
-        margin-top: 8px;
+        color: #0F172A;
+        margin-top: 6px;
     }
     .card-label {
-        font-size: 12px;
-        color: #CBD5E1;
+        font-size: 11px;
+        color: #64748B;
         margin-top: 4px;
     }
 </style>
 </head>
 <body>
     <div class="title">Bilan Financier & Impact Métropolitain</div>
-    <div class="subtitle">Modèle d'IA Frugale & Rigueur Budgétaire Certifiée (Chiffres Annuels)</div>
+    <div class="subtitle">Modèle d'IA Frugale & Rigueur Budgétaire Certifiée (Données Annuelles)</div>
     
     <div class="grid">
         <div class="card">
-            <div style="font-size: 13px; color: #D8B98A; font-weight: 600;">Audit Commande Publique</div>
-            <div class="card-val">+2,50 M€</div>
+            <div class="card-title">Audit Commande Publique</div>
+            <div class="card-val" style="color: #059669;">+2,50 M€</div>
             <div class="card-label">Économies nettes / an certifiées</div>
         </div>
         <div class="card">
-            <div style="font-size: 13px; color: #38BDF8; font-weight: 600;">Coût Budget IA Total</div>
-            <div class="card-val" style="color: #F43F5E;">0,50 M€</div>
+            <div class="card-title">Coût Budget IA Total</div>
+            <div class="card-val" style="color: #DC2626;">0,50 M€</div>
             <div class="card-label">Co-financé par l'UE</div>
         </div>
         <div class="card">
-            <div style="font-size: 13px; color: #34D399; font-weight: 600;">Bénéfice Net Public</div>
-            <div class="card-val">+2,00 M€</div>
-            <div class="card-label">Réinjectés dans les services</div>
+            <div class="card-title">Bénéfice Net Public</div>
+            <div class="card-val" style="color: #1E3A8A;">+2,00 M€</div>
+            <div class="card-label">Réinjectés dans le service public</div>
         </div>
     </div>
 </body>
@@ -173,7 +183,7 @@ with open(chart2_html, 'w', encoding='utf-8') as f:
 
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 
-subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=800,260", f"--screenshot={chart1_png}", chart1_html], check=True)
-subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=800,200", f"--screenshot={chart2_png}", chart2_html], check=True)
+subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=770,240", f"--screenshot={chart1_png}", chart1_html], check=True)
+subprocess.run([chrome_path, "--headless", "--disable-gpu", "--window-size=770,180", f"--screenshot={chart2_png}", chart2_html], check=True)
 
-print("Graphiques haute définition générés avec succès : chart1_poids_national.png et chart2_roi_gains.png")
+print("Graphiques sobres sur fond blanc générés avec succès !")
