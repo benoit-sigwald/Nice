@@ -23,6 +23,8 @@ PDF_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.pdf"
 PDF_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.pdf"
 PDF_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.pdf"
 
+ENABLE_AUTO_TRANSLATE = False  # Set to True when requested by user
+
 # Translators and mapping cache
 translator = GoogleTranslator(source='fr', target='en')
 translation_cache = {}
@@ -127,21 +129,24 @@ def process_file():
                     
         # 3. Check for any changed/new keys in FR and translate them to EN (GB)
         translations_count = 0
-        for key in list(fr_pairs.keys()):
-            fr_val = fr_pairs[key]
-            # If key is missing from EN, or if FR value has changed relative to what was translated
-            if key not in en_pairs or fr_val != translation_cache.get(key, None):
-                # Save to cache
-                translation_cache[key] = fr_val
-                
-                # Perform translation
-                print(f"  [Translating] '{key}': '{fr_val[:40]}...'")
-                en_val = translate_text(fr_val)
-                en_pairs[key] = en_val
-                translations_count += 1
-            else:
-                # Keep cache in sync for existing entries
-                translation_cache[key] = fr_val
+        if ENABLE_AUTO_TRANSLATE:
+            for key in list(fr_pairs.keys()):
+                fr_val = fr_pairs[key]
+                # If key is missing from EN, or if FR value has changed relative to what was translated
+                if key not in en_pairs or fr_val != translation_cache.get(key, None):
+                    # Save to cache
+                    translation_cache[key] = fr_val
+                    
+                    # Perform translation
+                    print(f"  [Translating] '{key}': '{fr_val[:40]}...'")
+                    en_val = translate_text(fr_val)
+                    en_pairs[key] = en_val
+                    translations_count += 1
+                else:
+                    # Keep cache in sync for existing entries
+                    translation_cache[key] = fr_val
+        else:
+            print("  [Translate OFF] Translation is currently disabled. Focus on French version.")
 
         out_fr_pairs = fr_pairs
         out_en_pairs = en_pairs
@@ -186,8 +191,11 @@ def process_file():
         shutil.copy2(NOTE_SOURCE, NOTE_DEST)
         shutil.copy2(NOTE_SOURCE, NOTE_DEST_SUB)
         if os.path.exists(PDF_SOURCE):
-            shutil.copy2(PDF_SOURCE, PDF_DEST)
-            shutil.copy2(PDF_SOURCE, PDF_DEST_SUB)
+            try:
+                shutil.copy2(PDF_SOURCE, PDF_DEST)
+                shutil.copy2(PDF_SOURCE, PDF_DEST_SUB)
+            except Exception as pdf_err:
+                print(f"  [Warning PDF] Could not copy PDF (file locked): {pdf_err}")
         print("  [Sync OK] Files successfully copied to OCI.")
         return True
         
