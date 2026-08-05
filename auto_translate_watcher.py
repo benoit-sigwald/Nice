@@ -22,6 +22,9 @@ NOTE_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.md"
 PDF_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.pdf"
 PDF_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.pdf"
 PDF_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.pdf"
+DOCX_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.docx"
+DOCX_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.docx"
+DOCX_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.docx"
 
 ENABLE_AUTO_TRANSLATE = False  # Set to True when requested by user
 
@@ -196,6 +199,12 @@ def process_file():
                 shutil.copy2(PDF_SOURCE, PDF_DEST_SUB)
             except Exception as pdf_err:
                 print(f"  [Warning PDF] Could not copy PDF (file locked): {pdf_err}")
+        if os.path.exists(DOCX_SOURCE):
+            try:
+                shutil.copy2(DOCX_SOURCE, DOCX_DEST)
+                shutil.copy2(DOCX_SOURCE, DOCX_DEST_SUB)
+            except Exception as docx_err:
+                print(f"  [Warning DOCX] Could not copy DOCX: {docx_err}")
         print("  [Sync OK] Files successfully copied to OCI.")
         return True
         
