@@ -20,7 +20,60 @@
 
 ---
 
-### 1. Structure du Plan : Double Échelle Ville et Métropole
+### 1. Où en sommes-nous ? État des lieux & Diagnostic Territorial
+
+#### 1.1 Un contexte national et régional en mouvement : L'urgence de fédérer les efforts éparpillés
+
+En **juillet 2026**, la publication de la note stratégique *« Opération Prométhée »* (Le Grand Continent) a posé le cadre du débat national : un plan de **700 Md$ sur trois ans** pour doter la France d'un laboratoire d'IA de frontière (12 GW de puissance de calcul, 1 700 chercheurs d'élite rémunérés au niveau international). Quelle que soit l'issue de ce grand débat national, une certitude s'impose : **l'IA est devenue une ressource stratégique souveraine comparable à l'énergie**. Les territoires qui ne se positionnent pas dès aujourd'hui subiront les décisions prises ailleurs.
+
+À l'échelle régionale, la Région Sud a voté le **Plan SUD IA (70 M€ sur 5 ans, 22 mesures)** pour positionner la région en terre d'IA. La Métropole Nice Côte d'Azur a lancé un appel à projets IA-santé / silver économie, tandis que le Département des Alpes-Maritimes anime la Maison de l'Intelligence Artificielle (MIA) à Sophia Antipolis. 
+
+**Le constat politique :** De précieuses briques existent sur notre territoire — mais les efforts restent éparpillés sans vision unifiée. Sans une **stratégie métropolitaine intégrée, portée au plus haut niveau politique par M. Éric Ciotti**, le risque est fort de voir ces initiatives diluées dans des disputes institutionnelles stériles au lieu de constituer une force de frappe cohérente.
+
+---
+
+#### 1.2 Le terreau niçois : Un actif exceptionnel et rare en France
+
+La Métropole Nice Côte d'Azur et son bassin disposent d'un écosystème d'innovation parmi les plus denses d'Europe :
+
+* **Sophia Antipolis, 1ère technopole d’Europe** : Plus de **2 700 entreprises**, **46 000 emplois qualifiés** et **5 500 chercheurs**. Une concentration unique de compétences technologiques.
+* **Institut 3IA Côte d’Azur** : L'un des 4 instituts interdisciplinaires d'IA labellisés par l'État en France (aux côtés de Paris, Grenoble et Toulouse), pôle d'excellence en IA santé et biologie numérique.
+* **Pipeline académique d'élite complet** : Université Côte d'Azur (UCA), Inria, Eurecom, CNRS — assurant une chaîne de formation continue du Master au Doctorat.
+* **Ancrage de grands industriels leaders et riches en données** :
+  - **Amadeus** : L'un des plus grands centres de R&D privés d'Europe, géant mondial de la donnée de voyage et de transport.
+  - **Thales Alenia Space** (Cannes) : Leader mondial du spatial, de l'imagerie satellite et de l'observation de la Terre.
+  - **Filières d'excellence métier** : Santé & Silver Économie, Arômes et Parfums à Grasse (chimie fine & données olfactives), et la filière Maritime & Portuaire.
+* **Attractivité internationale et qualité de vie** : Grâce au 2e aéroport international de France (Nice Côte d'Azur) et à la « carte Riviera », le territoire possède un pouvoir d'attraction et de rétention des talents scientifiques que Paris peine aujourd'hui à conserver.
+
+---
+
+#### 1.3 Les faiblesses et contraintes lucidement posées
+
+Un plan stratégique crédible doit observer le territoire sans complaisance :
+
+1. **Une filière IA pure sous-dimensionnée** : Les Alpes-Maritimes ne comptent qu'environ **86 établissements et ~800 emplois directs en IA** (étude CCI) — soit moins que l'effectif d'un seul laboratoire mondial de frontière.
+2. **Le verrou électrique azuréen** : Les Alpes-Maritimes constituent l'extrémité d'une **« presqu'île électrique »** particulièrement vulnérable et dépendante des lignes d'importation à haute tension (souvenir de la coupure majeure de ~2 millions d'habitants en PACA en décembre 2009 ; besoins régionaux supérieurs à la capacité disponible selon les travaux RTE/CNDP 2025).
+3. **Un foncier hautement contraint** : Enclavé entre mer et montagne, avec des zones naturelles protégées et des coûts immobiliers élevés, le territoire niçois est techniquement inadapté à l'implantation de campus de calcul hyperscale gourmands en hectares et en gigawatts.
+4. **Le « cimetière des POC »** : À l'instar d'autres collectivités, la quasi-totalité des expérimentations IA locales (Proof of Concept) restent au stade de prototype et ne passent jamais en production réelle, faute de compétences en industrialisation (sécurité, conformité réglementaire, maîtrise des coûts d'exploitation).
+
+---
+
+#### 1.4 La Doctrine Stratégique Nice IA : 3 Choix Clairs
+
+Face à ces constatations, Nice ne doit pas imiter aveuglément les géants de la Tech, mais inventer sa propre voie :
+
+* **Choix stratégique n°1 : Renoncer explicitement à la course au calcul hyperscale.**
+  La part proportionnelle de Nice sur un plan type Prométhée représenterait environ 100 MW de calcul, une quinzaine de personnes et moins d'un chercheur d'élite — soit une échelle non compétitive face aux giga-datacenters. L'IA de frontière exige des gigawatts et des centaines de milliards. Le réseau électrique azuréen ne le supporterait pas. Prétendre le contraire conduirait à un échec coûteux. Nice assume une **IA frugale par nécessité et en fait sa marque de fabrique** : sobriété énergétique, sécurité, cas d'usage utiles et mise en production réelle. C'est exactement l'orientation de l'AI Act européen.
+* **Choix stratégique n°2 : Occuper les 2 vides que personne ne comble.**
+  Les dispositifs actuels (Plan SUD IA, France 2030) financent la recherche fondamentale et les start-ups, mais laissent deux espaces vacants :
+  1. *L'adoption par les PME ordinaires* (commerces, tourisme, artisanat, santé, immobilier) qui manquent de temps et d'expertise pour saisir l'IA générative.
+  2. *L'industrialisation (LLMOps, Cybersécurité, conformité AI Act, maîtrise des coûts d'inférence)*. C'est la compétence clé pour transformer les prototypes en valeur économique durable.
+* **Choix stratégique n°3 : La Ville et la Métropole montrent l'exemple.**
+  Faire de la Ville et de la Métropole le **client de référence n°1** avec 5 cas d'usage municipaux et métropolitains hautement industrialisés sous 24 mois. Cela crée un triple effet : amélioration mesurable du service public, preuve de valeur par l'exemple pour nos entreprises locales, et récit politique fort dès le début de mandat.
+
+---
+
+### 2. Structure du Plan : Double Échelle Ville et Métropole
 
 ```mermaid
 flowchart TD
@@ -40,7 +93,7 @@ flowchart TD
 
 ---
 
-### 2. POLE 1 : AXE VILLE DE NICE (COMPÉTENCES MUNICIPALES & PROXIMITÉ)
+### 3. POLE 1 : AXE VILLE DE NICE (COMPÉTENCES MUNICIPALES & PROXIMITÉ)
 *« L’IA au service de la sécurité des Niçois, du cadre de vie et du soutien à nos séniors »*
 
 #### 1. Vidéoprotection CSU & Police Municipale Augmentée
@@ -68,7 +121,7 @@ flowchart TD
 
 ---
 
-### 3. POLE 2 : AXE MÉTROPOLE NICE CÔTE D'AZUR (COMPÉTENCES MÉTROPOLITAINES & STRUCTURANTES)
+### 4. POLE 2 : AXE MÉTROPOLE NICE CÔTE D'AZUR (COMPÉTENCES MÉTROPOLITAINES & STRUCTURANTES)
 
 #### 4. Audit IA de la Commande Publique Métropolitaine (*Procurement Analytics*)
 
@@ -154,7 +207,7 @@ flowchart TD
 
 ---
 
-### 4. Répartition Budgétaire Commando (500 k€ / an TOTAL)
+### 5. Répartition Budgétaire Commando (500 k€ / an TOTAL)
 
 | Échelle / Axe | Budget IA Annuel | Co-financement Européen | Impact & Gain Généré / an |
 | :--- | :---: | :---: | :--- |
@@ -172,7 +225,7 @@ flowchart TD
 
 ---
 
-### 5. Feuille de Route Opérationnelle (100 Jours - 12 Mois - 36 Mois)
+### 6. Feuille de Route Opérationnelle (100 Jours - 12 Mois - 36 Mois)
 
 #### Échéances clés
 - **100 Jours** : 
@@ -190,7 +243,7 @@ flowchart TD
 
 ---
 
-### 6. ANNEXE : VALIDATION JURIDIQUE, STATISTIQUE ET SOURCES OFFICIELLES
+### 7. ANNEXE : VALIDATION JURIDIQUE, STATISTIQUE ET SOURCES OFFICIELLES
 
 #### A. Cadre Juridique Stricte & Vidéoprotection IA (VSA)
 1. **Règlement Européen sur l'IA (AI Act) — Règlement (UE) 2024/1689 du 13 juin 2024** :
