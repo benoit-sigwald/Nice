@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nissai — Le Pacte IA Nice & Métropole</title>
     
-    <!-- Google Fonts: Outfit (modern sans) & Fraunces (elegant serif with gorgeous italics) -->
+    <!-- Google Fonts: Outfit (modern sans) & Fraunces (serif with gorgeous italics) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
@@ -286,7 +286,7 @@
         /* HERO SECTION (LEFT COLUMN) */
         .hero {
             position: relative;
-            background: linear-gradient(rgba(7, 15, 43, 0.5), rgba(7, 15, 43, 0.2)), url('assets/nice_sunset_promenade.jpg') no-repeat center center;
+            background: linear-gradient(rgba(7, 15, 43, 0.4), rgba(7, 15, 43, 0.15)), url('/nissai/assets/nice_sunset_promenade.jpg') no-repeat center center;
             background-size: cover;
             height: calc(90vh - var(--header-height));
             min-height: 480px;
@@ -505,7 +505,7 @@
 
         /* VISION & IMPACT SECTION (LEFT COLUMN) */
         .vision-impact {
-            background: linear-gradient(rgba(7, 15, 43, 0.75), rgba(7, 15, 43, 0.75)), url('assets/nice_cathedral_night.jpg') no-repeat center center;
+            background: linear-gradient(rgba(7, 15, 43, 0.75), rgba(7, 15, 43, 0.75)), url('/nissai/assets/nice_cathedral_night.jpg') no-repeat center center;
             background-size: cover;
             color: var(--text-light);
             border-bottom: 1px solid var(--border-color);
@@ -636,7 +636,7 @@
 
         /* LET'S BUILD CTA SECTION (RIGHT COLUMN) */
         .cta-section {
-            background: linear-gradient(rgba(7, 15, 43, 0.75), rgba(7, 15, 43, 0.75)), url('assets/nice_palm_sunset.jpg') no-repeat center center;
+            background: linear-gradient(rgba(7, 15, 43, 0.75), rgba(7, 15, 43, 0.75)), url('/nissai/assets/nice_palm_sunset.jpg') no-repeat center center;
             background-size: cover;
             color: var(--text-light);
             display: flex;
@@ -825,11 +825,16 @@
             border-top: 1px solid rgba(248, 250, 252, 0.1);
             position: relative;
             overflow: hidden;
+            background-image: url('/nissai/assets/nice_digital_map.jpg');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 35%;
         }
 
         @media (max-width: 768px) {
             footer {
                 padding: 60px 24px 30px;
+                background-image: none; /* Hide map on small screens to avoid overlap */
             }
         }
 
@@ -1207,7 +1212,7 @@
                     </div>
                 </div>
                 
-                <img src="assets/nice_coastline_view.jpg" alt="Nice Coastline" class="vertical-image reveal">
+                <img src="/nissai/assets/nice_coastline_view.jpg" alt="Nice Coastline" class="vertical-image reveal">
             </section>
             
             <!-- Monaco Partnership Section -->
@@ -1250,7 +1255,7 @@
                 
                 <a href="#purpose" class="btn btn-primary" style="margin-bottom: 40px;" id="mon-btn">Discover the partnership &rarr;</a>
                 
-                <img src="assets/monaco_port_sunset.jpg" alt="Monaco Port" class="vertical-image reveal">
+                <img src="/nissai/assets/monaco_port_sunset.jpg" alt="Monaco Port" class="vertical-image reveal">
             </section>
             
             <!-- Roadmap Section -->
@@ -1662,7 +1667,7 @@
                 { id: "A20", source: "European Directive NIS 2 (Cybersecurity Act)", stat: "Financial penalties and SOC obligation" },
                 { id: "A21", source: "Evaluation report of the AnimaNice training platform", stat: "85% satisfaction rate among trained seniors" },
                 { id: "A22", source: "European Regional Development Fund (ERDF) - Direct subvention rate", stat: "50% co-financing guaranteed" },
-                { id: "A23", source: "Plaine du Var traffic study (Metropolis NCA, 2025)", stat: "Targeted 45-minute travel time reduction" },
+                { id: "A23", source: "Plaine du Var traffic study (Metropole NCA, 2025)", stat: "Targeted 45-minute travel time reduction" },
                 { id: "A24", source: "DSI Nice financial assessment - Software license savings", stat: "€300k/year saved through pooling" },
                 { id: "A25", source: "DGFiP report on metropolitan public procurement", stat: "€300M annual purchasing volume" },
                 { id: "A26", source: "Usage statistics for Allo Mairie Nice (2025)", stat: "350,000 annual calls" },
