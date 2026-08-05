@@ -139,7 +139,7 @@ def add_bullet(text, level=1):
 add_header_banner()
 
 # ---------------------------------------------------------
-# SOMMAIRE ET INDEX PARLANT (MIS À JOUR SAN 1.3 REDONDANT)
+# SOMMAIRE ET INDEX PARLANT
 # ---------------------------------------------------------
 add_native_heading("SOMMAIRE & INDEX DU DOCUMENT", 1)
 
@@ -163,8 +163,9 @@ toc_data = [
     ("4. Alliance Binationale Nice-Monaco & Hub Réglementaire", "Page 8"),
     ("   4.1 Levier Binational : Clé de Voûte des Financements Européens", "Page 8"),
     ("   4.2 Nice, Centre d'Expertise AI Act de Référence pour la France", "Page 9"),
-    ("5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel", "Page 9"),
-    ("   5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)", "Page 9"),
+    ("   4.3 Pôle d'Excellence PME/PMI & Bibliothèque de Cas d'Usage Souverains", "Page 9"),
+    ("5. Feuille de Route Précise (Septembre 2026-2029) & Résumé Annuel", "Page 10"),
+    ("   5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)", "Page 10"),
     ("   5.2 Échéancier Précis & Jalons par Date (Septembre 2026-2029)", "Page 10"),
     ("   5.3 Résumé Consolidé du Coût par Année Budgétaire", "Page 11"),
     ("6. Annexe : Justifications des Gains & Sources Documentaires", "Page 12")
@@ -381,7 +382,7 @@ add_bullet("**Partenariat d'Hébergement Souverain** : Migration souveraine vers
 add_bullet("**Formule du gain certifié** : Réduction directe des coûts de fonctionnement IT (OPEX) de 1,5 M€ à 2,8 M€ / an + **8 M€ à 12 M€ d'investissement en capital (CAPEX) évité** par non-construction d’un datacenter métropolitain propre.")
 
 # ---------------------------------------------------------
-# SECTION 4 : ALLIANCE BINATIONALE
+# SECTION 4 : ALLIANCE BINATIONALE & PME/PMI
 # ---------------------------------------------------------
 add_native_heading("4. Alliance Binationale Nice-Monaco & Hub Réglementaire", 1, page_break=True)
 
@@ -395,6 +396,12 @@ add_bullet("**L'Expertise Réglementaire Nationale** : Nice s'impose comme le **
 add_bullet("**Audit et certification pour la France** : Accompagnement des entreprises et collectivités nationales pour valider leurs algorithmes selon le Règlement (UE) 2024/1689.")
 add_bullet("**Hub Incertitude Zéro** : Garantie de sécurité juridique totale pour les PME innovantes.")
 
+add_native_heading("4.3 Pôle d'Excellence PME/PMI & Bibliothèque de Cas d'Usage Souverains", 2)
+add_bullet("**Guichet Unique PME/PMI** : Création du Pôle d'Excellence Métropolitain pour accompagner la transformation numérique des 200 PME/PMI clés des Alpes-Maritimes et de Monaco.")
+add_bullet("**Bibliothèque de Cas d'Usage Réutilisables** : Mise à disposition d'un catalogue de briques d'IA souveraines pré-packagées (analyse sémantique de contrats, contrôle qualité vidéo pour la chimie/arômes à Grasse, maintenance prédictive spatiale pour Cannes).")
+add_bullet("**Accélération de la Migration IA** : Réduction par 3 des coûts et des délais d'intégration grâce au réemploi des briques logicielles souveraines développées par la Métropole.")
+add_bullet("**Accompagnement Financement UE (EDIH)** : Prise en charge jusqu'à 70 % des coûts de diagnostic et de migration IA via le guichet européen *Digital Europe* / EDIH Côte d'Azur.")
+
 # ---------------------------------------------------------
 # SECTION 5 : GOUVERNANCE, ROADMAP & BUDGET ANNUEL
 # ---------------------------------------------------------
@@ -406,7 +413,6 @@ add_bullet("**Direction de Projet AMO IA (Temps Partagé)** : **M. Benoît SIGWA
 
 add_native_heading("5.2 Échéancier Précis et Jalons par Date (Démarche 1er Septembre 2026)", 2)
 
-# Detailed roadmap table element by element with Sept 2026 start date
 rm_data = [
     ["Période & Date Précise", "Chantier / Livrable Stratégique", "Budget Dédié", "Impact & Résultat Attendus"],
     ["1er Septembre 2026", "L1.1 Lancement Pacte & Direction Projet (2.5j/sem)", "16,25 k€", "Cadrage opérationnel & gouvernance."],
@@ -425,7 +431,7 @@ rm_data = [
     ["31 Août 2027", "L4.3 Bilan Année 1 & Arbitrages Citoyens", "20,00 k€", "+2,5 M€ d'économies & bilan VSA."],
     ["Sept 2027 — Fév 2028", "L5.1 Guichet Vocal Allo Niçois Séniors 24/7", "85,00 k€", "Assistance 24/7 & d'urgence."],
     ["Sept 2027 — Fév 2028", "L5.2 VSA Propreté & Routage Bennes", "65,00 k€", "Rues propres & -18% carburant."],
-    ["Mars 2028 — Août 2028", "L6.1 Extension Zone Franche Numérique", "85,00 k€", "Attraction PME & Data Center."],
+    ["Mars 2028 — Août 2028", "L6.1 Pôle Excellence PME/PMI & Bibliothèque Cas Usage", "85,00 k€", "Migration IA de 200 PME/PMI."],
     ["Mars 2028 — Août 2028", "L6.2 Concertation Einstein Récurrente", "60,00 k€", "Ingestion avis par quartier."],
     ["1er Janvier 2029", "L7.1 Supercalculateur AI Gigafactory", "160,00 k€", "Mise en service opérationnelle."],
     ["Sept 2028 — Août 2029", "L7.2 Industrialisation IA Frugale & Cyber", "170,00 k€", "Pérennisation & Hub AI Act."]
@@ -513,4 +519,4 @@ add_bullet("**10. Technopole Sophia Antipolis & Invest in Côte d'Azur (2025/202
 add_bullet("**11. Programme Extended Monaco & Monaco Cloud (gouv.mc / monacocloud.mc)** : Data Center Souverain d'État certifié AMSN.")
 
 doc.save(docx_path)
-print(f"Document Word/Google Docs allégé de la section 1.3 redondante généré avec succès : {docx_path}")
+print(f"Document Word/Google Docs enrichi avec le Pôle d'Excellence PME/PMI et la Bibliothèque de Cas d'Usage généré avec succès : {docx_path}")
