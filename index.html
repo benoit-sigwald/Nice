@@ -1387,17 +1387,58 @@
         }
         .note-modal-header {
             padding: 16px 24px;
-            background: rgba(30, 41, 59, 0.5);
-            border-bottom: 1px solid rgba(216, 185, 138, 0.2);
+            background: rgba(15, 23, 42, 0.98);
+            border-bottom: 1px solid rgba(216, 185, 138, 0.3);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
         }
         .note-modal-header h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: var(--accent-champagne);
             margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .note-header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .btn-note-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-note-download {
+            background: linear-gradient(135deg, var(--accent-champagne) 0%, #b89762 100%);
+            color: #0F172A;
+            box-shadow: 0 4px 12px rgba(216, 185, 138, 0.25);
+        }
+        .btn-note-download:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(216, 185, 138, 0.4);
+            color: #000;
+        }
+        .btn-note-direct {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-light);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-note-direct:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border-color: var(--accent-champagne);
         }
         .note-modal-close {
             background: transparent;
@@ -1407,22 +1448,122 @@
             cursor: pointer;
             transition: color 0.2s;
             line-height: 1;
+            padding: 0 4px;
         }
         .note-modal-close:hover {
             color: var(--accent-champagne);
         }
         .note-modal-body {
             flex: 1;
-            padding: 0;
+            padding: 30px;
             margin: 0;
-            background: #ffffff; /* White background for document reading comfort */
+            background: #0B1120;
             position: relative;
+            overflow-y: auto;
+            color: #E2E8F0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
         }
-        .note-modal-body iframe {
-            width: 100%;
-            height: 100%;
+        
+        /* Markdown Renderer Custom Styling */
+        .md-content h1 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-champagne);
+            font-size: 1.8rem;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            border-bottom: 2px solid rgba(216, 185, 138, 0.3);
+            padding-bottom: 8px;
+        }
+        .md-content h2 {
+            font-family: 'Playfair Display', serif;
+            color: #38BDF8;
+            font-size: 1.4rem;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .md-content h3 {
+            color: var(--accent-champagne);
+            font-size: 1.2rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .md-content h4 {
+            color: #34D399;
+            font-size: 1.05rem;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+        .md-content p {
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+            color: #CBD5E1;
+        }
+        .md-content strong {
+            color: #F8FAFC;
+            font-weight: 600;
+        }
+        .md-content em {
+            color: var(--accent-champagne);
+        }
+        .md-content hr {
             border: none;
-            display: block;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 24px 0;
+        }
+        .md-content ul {
+            margin: 12px 0 16px 20px;
+            padding: 0;
+        }
+        .md-content li {
+            margin-bottom: 6px;
+            color: #E2E8F0;
+        }
+        .md-content blockquote {
+            background: rgba(30, 41, 59, 0.6);
+            border-left: 4px solid var(--accent-champagne);
+            padding: 12px 18px;
+            margin: 16px 0;
+            border-radius: 0 8px 8px 0;
+            color: #F1F5F9;
+        }
+        .md-content blockquote.md-alert-important {
+            border-left-color: #38BDF8;
+            background: rgba(14, 165, 233, 0.1);
+        }
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 10px;
+            border: 1px solid rgba(216, 185, 138, 0.2);
+        }
+        .md-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+        .md-table th {
+            background: rgba(30, 41, 59, 0.9);
+            color: var(--accent-champagne);
+            padding: 12px 14px;
+            border-bottom: 1px solid rgba(216, 185, 138, 0.3);
+            font-weight: 600;
+        }
+        .md-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            color: #CBD5E1;
+        }
+        .md-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .md-link {
+            color: #38BDF8;
+            text-decoration: underline;
+        }
+        .md-link:hover {
+            color: var(--accent-champagne);
         }
     </style>
 </head>
@@ -3021,14 +3162,107 @@
             });
         });
 
-        // 13. Note Modal Controller (Iframe GitHub)
+        // 13. Note Modal Controller & Custom Markdown Reader
+        let isNoteLoaded = false;
+
+        function renderMarkdown(md) {
+            let html = md;
+            
+            // Replace markdown titles
+            html = html.replace(/^##### (.*$)/gim, '<h5>$1</h5>');
+            html = html.replace(/^#### (.*$)/gim, '<h4>$1</h4>');
+            html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            
+            // Text formatting
+            html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+            html = html.replace(/\*(.*?)\*/gim, '<em>$1</em>');
+            html = html.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank" class="md-link">$1</a>');
+            html = html.replace(/^---$/gim, '<hr class="md-hr">');
+            
+            // Alerts and blockquotes
+            html = html.replace(/^> \[\!IMPORTANT\]\n> (.*$)/gim, '<blockquote class="md-alert md-alert-important">⚡ $1</blockquote>');
+            html = html.replace(/^> (.*$)/gim, '<blockquote class="md-quote">$1</blockquote>');
+            
+            // Lines & Tables parsing
+            const lines = html.split('\n');
+            let inTable = false;
+            let tableHtml = '';
+            let newLines = [];
+            
+            for (let i = 0; i < lines.length; i++) {
+                let line = lines[i].trim();
+                if (line.startsWith('|') && line.endsWith('|')) {
+                    if (line.includes('---')) continue;
+                    const cells = line.split('|').slice(1, -1).map(c => c.trim());
+                    if (!inTable) {
+                        inTable = true;
+                        tableHtml = '<div class="table-responsive"><table class="md-table"><thead><tr>';
+                        cells.forEach(cell => { tableHtml += `<th>${cell}</th>`; });
+                        tableHtml += '</tr></thead><tbody>';
+                    } else {
+                        tableHtml += '<tr>';
+                        cells.forEach(cell => { tableHtml += `<td>${cell}</td>`; });
+                        tableHtml += '</tr>';
+                    }
+                } else {
+                    if (inTable) {
+                        inTable = false;
+                        tableHtml += '</tbody></table></div>';
+                        newLines.push(tableHtml);
+                        tableHtml = '';
+                    }
+                    if (line.startsWith('* ') || line.startsWith('- ')) {
+                        line = `<li class="md-list-item">${line.substring(2)}</li>`;
+                    }
+                    newLines.push(line);
+                }
+            }
+            if (inTable) {
+                tableHtml += '</tbody></table></div>';
+                newLines.push(tableHtml);
+            }
+            
+            html = newLines.join('\n');
+            html = html.replace(/\n\n/g, '</p><p class="md-p">');
+            return `<div class="md-content"><p class="md-p">${html}</p></div>`;
+        }
+
         function openNoteModal() {
             const modal = document.getElementById('note-modal');
             modal.style.display = 'flex';
+            
+            if (!isNoteLoaded) {
+                const container = document.getElementById('note-md-container');
+                container.innerHTML = '<div style="text-align:center; padding: 50px; color: var(--accent-champagne); font-size: 1.2rem;">⚡ Chargement du Pacte Nice IA...</div>';
+                
+                fetch('Note_de_Position_Nice_IA_Ciotti.md')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response error');
+                        return response.text();
+                    })
+                    .then(mdText => {
+                        container.innerHTML = renderMarkdown(mdText);
+                        isNoteLoaded = true;
+                    })
+                    .catch(err => {
+                        console.error('Error loading Markdown note:', err);
+                        container.innerHTML = `
+                            <div style="text-align:center; padding: 40px; color: #CBD5E1;">
+                                <h3 style="color: var(--accent-champagne); margin-bottom: 12px;">📄 Le Pacte Nice IA est disponible en accès direct</h3>
+                                <p style="margin-bottom: 20px;">Le document officiel est téléchargeable directement ci-dessous.</p>
+                                <a href="Note_de_Position_Nice_IA_Ciotti.md" download class="btn-note-action btn-note-download" style="font-size: 1rem; padding: 10px 20px;">
+                                    📥 Télécharger le document complet (.MD)
+                                </a>
+                            </div>`;
+                    });
+            }
+
             setTimeout(() => {
                 modal.classList.add('active');
             }, 10);
-            document.body.style.overflow = 'hidden'; // Prevents background scroll
+            document.body.style.overflow = 'hidden';
         }
 
         function closeNoteModal() {
@@ -3037,14 +3271,20 @@
             setTimeout(() => {
                 modal.style.display = 'none';
             }, 300);
-            document.body.style.overflow = ''; // Restores scroll
+            document.body.style.overflow = '';
         }
 
-        // Close modal when clicking outside content
         window.addEventListener('click', function(e) {
             const modal = document.getElementById('note-modal');
             if (e.target === modal) {
                 closeNoteModal();
+            }
+        });
+
+        // Trigger modal automatically if URL hash is #cadrage or #note
+        window.addEventListener('DOMContentLoaded', () => {
+            if (window.location.hash === '#cadrage' || window.location.hash === '#note') {
+                openNoteModal();
             }
         });
     </script>
@@ -3054,10 +3294,18 @@
         <div class="note-modal-content">
             <div class="note-modal-header">
                 <h3 id="note-modal-title">🤝 Le Pacte Nice IA</h3>
-                <button class="note-modal-close" onclick="closeNoteModal()" aria-label="Fermer">&times;</button>
+                <div class="note-header-actions">
+                    <a href="Note_de_Position_Nice_IA_Ciotti.md" download="Note_de_Position_Nice_IA_Ciotti.md" class="btn-note-action btn-note-download" id="btn-download-note" title="Télécharger le fichier .MD">
+                        📥 Télécharger (.MD)
+                    </a>
+                    <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" class="btn-note-action btn-note-direct" id="btn-view-note" title="Ouvrir dans un nouvel onglet">
+                        🔗 Accès Direct
+                    </a>
+                    <button class="note-modal-close" onclick="closeNoteModal()" aria-label="Fermer">&times;</button>
+                </div>
             </div>
-            <div class="note-modal-body">
-                <iframe id="note-iframe" src="https://github.com/benoit-sigwald/Nice/blob/master/Note_de_Position_Nice_IA_Ciotti.md" title="Note de Position Nice IA"></iframe>
+            <div class="note-modal-body" id="note-md-container">
+                <!-- Dynamically loaded Markdown content -->
             </div>
         </div>
     </div>
