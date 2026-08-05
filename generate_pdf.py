@@ -211,6 +211,25 @@ full_html = f"""<!DOCTYPE html>
             <tr><td><strong>4. Monaco Cloud & Zone Franche</strong></td><td>Data Center Souverain (AMSN) & Zone Franche</td><td><strong>1,5 à 2,8 M€ / an</strong></td><td>Économies IT + 8-12M€ CAPEX évité.</td></tr>
             <tr><td><strong>5. Financements Europe & Gigafactory</strong></td><td>Subventions UE (EuroHPC, DIGITAL)</td><td><strong>500 M€ visés</strong></td><td>Candidature binationale Nice-Monaco.</td></tr>
         </tbody>
+    <h2>Ventilation du Coût Budgétaire IA par Allocation (500 k€ / an)</h2>
+    <p><strong>Découpage des Dépenses.</strong> L'investissement annuel brut de 500 k€ / an est découpé par postes d'allocation stratégiques. Grâce au co-financement de l'UE (<em>Digital Europe</em> à 50 %), le reste à charge net pour la Métropole est de seulement <strong>250 k€ / an</strong>.</p>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Poste d'Allocation Budgétaire</th>
+                <th>Montant Annuel</th>
+                <th>Part (%)</th>
+                <th>Destination Opérationnelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td><strong>1. Licences Algorithmiques & Modèles Souverains</strong></td><td><strong>150 k€</strong></td><td>30 %</td><td>Inférence VSA CSU, modèles locaux et API sécurisées.</td></tr>
+            <tr><td><strong>2. Cloud Souverain & Fibre Monaco Cloud</strong></td><td><strong>120 k€</strong></td><td>24 %</td><td>Instances GPU certifiées AMSN et liaison fibre dédiée.</td></tr>
+            <tr><td><strong>3. Direction de Projet (AMO IA) & Ingénierie</strong></td><td><strong>130 k€</strong></td><td>26 %</td><td>Direction de projet (Benoît SIGWALD), suivi des marchés.</td></tr>
+            <tr><td><strong>4. Audit AI Act, Cybersécurité NIS 2 & Éthique</strong></td><td><strong>60 k€</strong></td><td>12 %</td><td>Audits de conformité, pentests et secrétariat éthique.</td></tr>
+            <tr><td><strong>5. Concertation & IA Einstein par Quartier</strong></td><td><strong>40 k€</strong></td><td>8 %</td><td>Plateforme de démocratie participative augmentée.</td></tr>
+        </tbody>
     </table>
     
     <div class="chart-box">

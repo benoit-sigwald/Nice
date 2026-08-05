@@ -233,6 +233,41 @@ for r_idx, row in enumerate(table_data):
 
 doc.add_paragraph().paragraph_format.space_after = Pt(8)
 
+# Budget Allocation Table
+add_styled_heading("Ventilation du Coût Budgétaire IA par Allocation (500 k€ / an)", 2)
+add_p("**Découpage des Dépenses.** L'investissement annuel brut de 500 k€ / an est découpé par postes d'allocation stratégiques. Grâce au co-financement de l'UE (*Digital Europe* à 50 %), le reste à charge net pour la Métropole est de seulement **250 k€ / an**.")
+
+alloc_table_data = [
+    ["Poste d'Allocation Budgétaire", "Montant Annuel", "Part (%)", "Destination Opérationnelle"],
+    ["1. Licences Algorithmiques & Modèles Souverains", "150 k€", "30 %", "Inférence VSA CSU, modèles locaux et API sécurisées."],
+    ["2. Cloud Souverain & Fibre Monaco Cloud", "120 k€", "24 %", "Instances GPU certifiées AMSN et liaison fibre dédiée."],
+    ["3. Direction de Projet (AMO IA) & Ingénierie", "130 k€", "26 %", "Direction de projet (Benoît SIGWALD), suivi des marchés."],
+    ["4. Audit AI Act, Cybersécurité NIS 2 & Éthique", "60 k€", "12 %", "Audits de conformité, pentests et secrétariat éthique."],
+    ["5. Concertation & IA Einstein par Quartier", "40 k€", "8 %", "Plateforme de démocratie participative augmentée."]
+]
+
+table_alloc = doc.add_table(rows=len(alloc_table_data), cols=4)
+table_alloc.alignment = WD_TABLE_ALIGNMENT.CENTER
+for r_idx, row in enumerate(alloc_table_data):
+    for c_idx, val in enumerate(row):
+        cell = table_alloc.cell(r_idx, c_idx)
+        p = cell.paragraphs[0]
+        p.paragraph_format.space_before = Pt(3)
+        p.paragraph_format.space_after = Pt(3)
+        if r_idx == 0:
+            set_cell_background(cell, "1E293B")
+            r = p.add_run(val)
+            r.font.bold = True
+            r.font.color.rgb = RGBColor(255, 255, 255)
+            r.font.size = Pt(8.5)
+        else:
+            set_cell_background(cell, "F8FAFC" if r_idx % 2 == 1 else "FFFFFF")
+            r = p.add_run(val)
+            r.font.size = Pt(8)
+            r.font.color.rgb = BODY_BLACK
+
+doc.add_paragraph().paragraph_format.space_after = Pt(8)
+
 if os.path.exists(chart2_png):
     p_img = doc.add_paragraph()
     p_img.alignment = WD_ALIGN_PARAGRAPH.CENTER

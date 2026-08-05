@@ -116,61 +116,133 @@ html2_content = """<!DOCTYPE html>
     .subtitle {
         font-size: 18px;
         color: #64748B;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
     }
     .grid {
         display: flex;
-        gap: 24px;
+        gap: 20px;
+        margin-bottom: 24px;
     }
     .card {
         flex: 1;
         background: #F8FAFC;
         border: 1.5px solid #CBD5E1;
         border-radius: 8px;
-        padding: 22px;
+        padding: 18px;
         text-align: center;
     }
     .card-title {
-        font-size: 16px;
+        font-size: 15px;
         color: #475569;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
     .card-val {
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 700;
         color: #0F172A;
-        margin-top: 10px;
+        margin-top: 8px;
     }
     .card-label {
-        font-size: 15px;
+        font-size: 14px;
         color: #64748B;
-        margin-top: 6px;
+        margin-top: 4px;
+    }
+    
+    .alloc-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1E3A8A;
+        margin-bottom: 12px;
+        border-bottom: 2px solid #E2E8F0;
+        padding-bottom: 6px;
+    }
+    
+    .alloc-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 15px;
+    }
+    .alloc-table th {
+        background: #1E293B;
+        color: #FFFFFF;
+        text-align: left;
+        padding: 8px 12px;
+    }
+    .alloc-table td {
+        padding: 8px 12px;
+        border-bottom: 1px solid #E2E8F0;
+    }
+    .alloc-table tr:nth-child(even) td {
+        background: #F8FAFC;
     }
 </style>
 </head>
 <body>
-    <div class="title">Bilan Financier & Impact Métropolitain</div>
-    <div class="subtitle">Modèle d'IA Frugale & Rigueur Budgétaire Certifiée (Données Annuelles Nettes)</div>
+    <div class="title">Bilan Financier & Ventilation Budgétaire Métropolitaine</div>
+    <div class="subtitle">Découpage de l'Allocation des Dépenses (0,50 M€ / an) & Rentrée Nette Certifiée</div>
     
     <div class="grid">
         <div class="card">
             <div class="card-title">Audit Commande Publique</div>
-            <div class="card-val" style="color: #059669;">+2,50 M€</div>
-            <div class="card-label">Économies nettes / an certifiées</div>
+            <div class="card-val" style="color: #059669;">+2,50 M€ / an</div>
+            <div class="card-label">Économies nettes certifiées</div>
         </div>
         <div class="card">
             <div class="card-title">Coût Budget IA Total</div>
-            <div class="card-val" style="color: #DC2626;">0,50 M€</div>
-            <div class="card-label">Co-financé par l'UE</div>
+            <div class="card-val" style="color: #DC2626;">0,50 M€ / an</div>
+            <div class="card-label">Reste à charge Métropole: 250 k€ (50% UE)</div>
         </div>
         <div class="card">
             <div class="card-title">Bénéfice Net Public</div>
-            <div class="card-val" style="color: #1E3A8A;">+2,00 M€</div>
+            <div class="card-val" style="color: #1E3A8A;">+2,00 M€ / an</div>
             <div class="card-label">Réinjectés dans le service public</div>
         </div>
     </div>
+    
+    <div class="alloc-title">Détail de l'Allocation du Budget IA (500 k€ / an)</div>
+    <table class="alloc-table">
+        <thead>
+            <tr>
+                <th>Poste d'Allocation Budgétaire</th>
+                <th>Montant Annuel</th>
+                <th>Part (%)</th>
+                <th>Description / Destination Opérationnelle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Licences Algorithmiques & Modèles IA Souverains</strong></td>
+                <td><strong>150 k€</strong></td>
+                <td>30 %</td>
+                <td>Inférence VSA CSU, modèles locaux et API sécurisées sans fuite de données.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Cloud Souverain & Interconnexion Monaco Cloud</strong></td>
+                <td><strong>120 k€</strong></td>
+                <td>24 %</td>
+                <td>Instances GPU d'inférence certifiées AMSN et liaison fibre noire dédiée.</td>
+            </tr>
+            <tr>
+                <td><strong>3. Direction de Projet (AMO IA) & Ingénierie</strong></td>
+                <td><strong>130 k€</strong></td>
+                <td>26 %</td>
+                <td>Direction de projet (Benoît SIGWALD), suivi des marchés et recettes.</td>
+            </tr>
+            <tr>
+                <td><strong>4. Audit AI Act, Cybersécurité NIS 2 & Éthique</strong></td>
+                <td><strong>60 k€</strong></td>
+                <td>12 %</td>
+                <td>Tests d'intrusion, audits de conformité AI Act et secrétariat du Comité d'Éthique.</td>
+            </tr>
+            <tr>
+                <td><strong>5. Démocratie Participative & IA Einstein par Quartier</strong></td>
+                <td><strong>40 k€</strong></td>
+                <td>8 %</td>
+                <td>Plateforme de concertation citoyenne augmentée et restitution par quartier.</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>
 """
@@ -193,8 +265,8 @@ subprocess.run([
 subprocess.run([
     chrome_path, "--headless", "--disable-gpu", 
     "--force-device-scale-factor=2",
-    "--window-size=1440,360", 
+    "--window-size=1440,650", 
     f"--screenshot={chart2_png}", chart2_html
 ], check=True)
 
-print("Graphiques Ultra-Nets 4K (High-DPI) générés avec succès !")
+print("Graphique de bilan financier avec découpage budgétaire généré avec succès !")
