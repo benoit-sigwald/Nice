@@ -212,9 +212,9 @@ full_html = f"""<!DOCTYPE html>
         </tbody>
     </table>
     
-    <h2>Ventilation du Coût Budgétaire IA par Allocation (500 k€ / an)</h2>
+    <h2>Ventilation du Coût Budgétaire IA par Allocation (435 k€ / an)</h2>
     <ul>
-        <li><strong>Découpage des Dépenses</strong> : L'investissement annuel brut de 500 k€ / an est découpé par postes d'allocation stratégiques. Grâce au co-financement de l'UE (<em>Digital Europe</em> à 50 %), le reste à charge net pour la Métropole est de seulement <strong>250 k€ / an</strong>.</li>
+        <li><strong>Découpage des Dépenses</strong> : L'investissement annuel brut est optimisé à <strong>435 k€ / an</strong> (grâce à l'engagement en temps partagé 2,5j/sem de la Direction de Projet à 65 k€). Avec le co-financement UE (<em>Digital Europe</em> à 50 %), le reste à charge net métropolitain descend à seulement <strong>~217 k€ / an</strong>.</li>
     </ul>
     
     <table>
@@ -227,11 +227,11 @@ full_html = f"""<!DOCTYPE html>
             </tr>
         </thead>
         <tbody>
-            <tr><td><strong>1. Licences Algorithmiques & Modèles Souverains</strong></td><td><strong>150 k€</strong></td><td>30 %</td><td>Inférence VSA CSU, modèles locaux et API sécurisées.</td></tr>
-            <tr><td><strong>2. Cloud Souverain & Fibre Monaco Cloud</strong></td><td><strong>120 k€</strong></td><td>24 %</td><td>Instances GPU certifiées AMSN et liaison fibre dédiée.</td></tr>
-            <tr><td><strong>3. Direction de Projet (AMO IA) & Ingénierie</strong></td><td><strong>130 k€</strong></td><td>26 %</td><td>Direction de projet (Benoît SIGWALD), suivi des marchés.</td></tr>
-            <tr><td><strong>4. Audit AI Act, Cybersécurité NIS 2 & Éthique</strong></td><td><strong>60 k€</strong></td><td>12 %</td><td>Audits de conformité, pentests et secrétariat éthique.</td></tr>
-            <tr><td><strong>5. Concertation & IA Einstein par Quartier</strong></td><td><strong>40 k€</strong></td><td>8 %</td><td>Plateforme de démocratie participative augmentée.</td></tr>
+            <tr><td><strong>1. Licences Algorithmiques & Modèles Souverains</strong></td><td><strong>150 k€</strong></td><td>34,5 %</td><td>Inférence VSA CSU, modèles locaux et API sécurisées.</td></tr>
+            <tr><td><strong>2. Cloud Souverain & Fibre Monaco Cloud</strong></td><td><strong>120 k€</strong></td><td>27,6 %</td><td>Instances GPU certifiées AMSN et liaison fibre dédiée.</td></tr>
+            <tr><td><strong>3. Direction de Projet (Benoît SIGWALD - 2,5j/sem)</strong></td><td><strong>65 k€</strong></td><td>14,9 %</td><td>Direction de projet (2,5j/semaine), suivi des marchés.</td></tr>
+            <tr><td><strong>4. Audit AI Act, Cybersécurité NIS 2 & Éthique</strong></td><td><strong>60 k€</strong></td><td>13,8 %</td><td>Audits de conformité, pentests et secrétariat éthique.</td></tr>
+            <tr><td><strong>5. Concertation & IA Einstein par Quartier</strong></td><td><strong>40 k€</strong></td><td>9,2 %</td><td>Plateforme de démocratie participative augmentée.</td></tr>
         </tbody>
     </table>
     
@@ -380,15 +380,15 @@ full_html = f"""<!DOCTYPE html>
     <h2>5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD</h2>
     <ul>
         <li><strong>Présidence du Comité de Pilotage Métropolitain</strong> : <strong>M. Éric Ciotti</strong>, assurant l'arbitrage politique au plus haut niveau et le leadership face aux instances régionales et européennes.</li>
-        <li><strong>Nomination du Directeur du Projet Pacte Nice IA</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect & AMO IA Métropolitain, chargé du pilotage opérationnel, du déploiement technique et de la gestion des candidatures européennes.</li>
+        <li><strong>Direction du Projet Pacte Nice IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect & AMO IA Métropolitain. Engagement optimisé à <strong>2 à 3 jours par semaine</strong>, réduisant l'honoraires de direction de projet à seulement <strong>65 k€ / an</strong> (au lieu de 130 k€), ramenant le budget total annuel brut à <strong>435 k€ / an</strong> (~217 k€ / an net après co-financement UE).</li>
     </ul>
     
-    <h2>5.2 Feuille de Route Réaliste Synchronisée AI Gigafactory</h2>
+    <h2>5.2 Feuille de Route 36 Mois & Allocations Budgétaires Annuelles</h2>
     <ul>
-        <li><strong>Échéance Couperet (12 Novembre 2026)</strong> : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).</li>
-        <li><strong>Phase 1 (100 Jours - Fin 2026)</strong> : Vote de la délibération cadre métropolitaine, constitution du bureau de candidature binationale et marché VSA CSU.</li>
-        <li><strong>Phase 2 (12 Mois - Mid 2027)</strong> : Déploiement d'Allo Niçois Séniors, audit IA des 300 M€ de marchés publics et labellisation du premier lot d'IA métropolitaines.</li>
-        <li><strong>Phase 3 (36 Mois - 2029)</strong> : Bilan certifié des <strong>+2,5 M€/an d'économies</strong>, opérationnalité de la AI Gigafactory Nice-Monaco et consécration de Nice comme Capitale de l'IA de Sécurité.</li>
+        <li><strong>Échéance Imminente (12 Novembre 2026)</strong> : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).</li>
+        <li><strong>Phase 1 — Amorçage & CSU (Année 1 : 2026-2027 / 435 k€ brut)</strong> : Direction 65 k€ | VSA CSU 130 k€ | Ingestion Cloud/Fibre Monaco 110 k€ | Audit NIS 2/AI Act 80 k€ | Démocratie Einstein 50 k€. Action 100 jours : Vote de la délibération cadre & Bureau de Candidature. Action 6 mois : VSA CSU & PM géolocalisée. Action 12 mois : Audit commande publique (300 M€).</li>
+        <li><strong>Phase 2 — Échelle & Allo Niçois 24/7 (Année 2 : 2027-2028 / 435 k€ brut)</strong> : Direction 65 k€ | Licences Vocal & Propreté 160 k€ | Cloud Monaco 125 k€ | Maintien Cyber NIS 2 50 k€ | Concertation Quartiers 35 k€. Lancement Allo Niçois 24/7 & premiers <strong>+2,50 M€/an d'économies nettes certifiées</strong>.</li>
+        <li><strong>Phase 3 — Consécration & Gigafactory (Année 3 : 2028-2029 / 435 k€ brut)</strong> : Direction 65 k€ | Maintenance IA Frugale 160 k€ | Supercalculateur Monaco 125 k€ | Audit NIS 2 50 k€ | Concertation Récurrente 35 k€. Mise en service de la AI Gigafactory Nice-Monaco & consécration de Nice comme Capitale de l'IA de Sécurité.</li>
     </ul>
     
     <div class="page-break"></div>

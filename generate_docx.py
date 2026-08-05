@@ -215,16 +215,16 @@ for r_idx, row in enumerate(table_data):
 doc.add_paragraph().paragraph_format.space_after = Pt(6)
 
 # Budget Allocation Table
-add_styled_heading("Ventilation du Coût Budgétaire IA par Allocation (500 k€ / an)", 2)
-add_bullet("**Découpage des Dépenses** : L'investissement annuel brut de 500 k€ / an est découpé par postes d'allocation stratégiques. Grâce au co-financement de l'UE (*Digital Europe* à 50 %), le reste à charge net pour la Métropole est de seulement **250 k€ / an**.")
+add_styled_heading("Ventilation du Coût Budgétaire IA par Allocation (435 k€ / an)", 2)
+add_bullet("**Découpage des Dépenses** : L'investissement annuel brut est optimisé à **435 k€ / an** (grâce à l'engagement en temps partagé 2,5j/sem de la Direction de Projet à 65 k€). Avec le co-financement UE (*Digital Europe* à 50 %), le reste à charge net métropolitain descend à seulement **~217 k€ / an**.")
 
 alloc_table_data = [
     ["Poste d'Allocation Budgétaire", "Montant Annuel", "Part (%)", "Destination Opérationnelle"],
-    ["1. Licences Algorithmiques & Modèles Souverains", "150 k€", "30 %", "Inférence VSA CSU, modèles locaux et API sécurisées."],
-    ["2. Cloud Souverain & Fibre Monaco Cloud", "120 k€", "24 %", "Instances GPU certifiées AMSN et liaison fibre dédiée."],
-    ["3. Direction de Projet (AMO IA) & Ingénierie", "130 k€", "26 %", "Direction de projet (Benoît SIGWALD), suivi des marchés."],
-    ["4. Audit AI Act, Cybersécurité NIS 2 & Éthique", "60 k€", "12 %", "Audits de conformité, pentests et secrétariat éthique."],
-    ["5. Concertation & IA Einstein par Quartier", "40 k€", "8 %", "Plateforme de démocratie participative augmentée."]
+    ["1. Licences Algorithmiques & Modèles Souverains", "150 k€", "34,5 %", "Inférence VSA CSU, modèles locaux et API sécurisées."],
+    ["2. Cloud Souverain & Fibre Monaco Cloud", "120 k€", "27,6 %", "Instances GPU certifiées AMSN et liaison fibre dédiée."],
+    ["3. Direction de Projet (Benoît SIGWALD - 2,5j/sem)", "65 k€", "14,9 %", "Direction de projet (2,5j/semaine), suivi des marchés."],
+    ["4. Audit AI Act, Cybersécurité NIS 2 & Éthique", "60 k€", "13,8 %", "Audits de conformité, pentests et secrétariat éthique."],
+    ["5. Concertation & IA Einstein par Quartier", "40 k€", "9,2 %", "Plateforme de démocratie participative augmentée."]
 ]
 
 table_alloc = doc.add_table(rows=len(alloc_table_data), cols=4)
@@ -379,13 +379,27 @@ add_styled_heading("5. Gouvernance, Direction de Projet & Jalons Gigafactory", 1
 
 add_styled_heading("5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD", 2)
 add_bullet("**Présidence du Comité de Pilotage Métropolitain** : **M. Éric Ciotti**, assurant l'arbitrage politique au plus haut niveau et le leadership face aux instances régionales et européennes.")
-add_bullet("**Nomination du Directeur du Projet Pacte Nice IA** : **M. Benoît SIGWALD**, Senior AI Architect & AMO IA Métropolitain, chargé du pilotage opérationnel, du déploiement technique et de la gestion des candidatures européennes.")
+add_bullet("**Direction du Projet Pacte Nice IA (Temps Partagé)** : **M. Benoît SIGWALD**, Senior AI Architect & AMO IA Métropolitain. Engagement optimisé à **2 à 3 jours par semaine**, réduisant l'honoraires de direction de projet à seulement **65 k€ / an** (au lieu de 130 k€), ramenant le budget total annuel brut à **435 k€ / an** (~217 k€ / an net après co-financement UE).")
 
-add_styled_heading("5.2 Feuille de Route Réaliste Synchronisée AI Gigafactory", 2)
-add_bullet("**Échéance Couperet (12 Novembre 2026)** : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).")
-add_bullet("**Phase 1 (100 Jours - Fin 2026)** : Vote de la délibération cadre métropolitaine, constitution du bureau de candidature binationale et marché VSA CSU.")
-add_bullet("**Phase 2 (12 Mois - Mid 2027)** : Déploiement d'Allo Niçois Séniors, audit IA des 300 M€ de marchés publics et labellisation du premier lot d'IA métropolitaines.")
-add_bullet("**Phase 3 (36 Mois - 2029)** : Bilan certifié des **+2,5 M€/an d'économies**, opérationnalité de la AI Gigafactory Nice-Monaco et consécration de Nice comme Capitale de l'IA de Sécurité.")
+add_styled_heading("5.2 Feuille de Route 36 Mois & Allocations Budgétaires Annuelles", 2)
+add_bullet("**Échéance Imminente (12 Novembre 2026)** : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).")
+
+add_styled_heading("Phase 1 — Amorçage, Candidature Gigafactory & CSU (Année 1 : 2026-2027 / 435 k€ brut)", 3)
+add_bullet("**Bilan Budgétaire Année 1** : Direction de projet 65 k€ | Licences VSA CSU 130 k€ | Ingestion Cloud/Fibre Monaco 110 k€ | Audit AI Act & Cyber NIS 2 80 k€ | Démocratie Participative Einstein 50 k€.")
+add_bullet("**Action 100 Jours** : Vote de la délibération cadre métropolitaine & création du Bureau de Candidature Binationale Nice-Monaco-Sophia.")
+add_bullet("**Action 6 Mois** : Déploiement du filtrage VSA sur le CSU (4 300 caméras) + géolocalisation et dispatching des patrouilles PM.")
+add_bullet("**Action 12 Mois** : Ingestion sémantique du premier lot de factures de la commande publique métropolitaine (300 M€).")
+
+add_styled_heading("Phase 2 — Échelle, Allo Niçois 24/7 & Audit Commande Publique (Année 2 : 2027-2028 / 435 k€ brut)", 3)
+add_bullet("**Bilan Budgétaire Année 2** : Direction de projet 65 k€ | Licences Vocal & Propreté 160 k€ | Cloud Souverain Monaco 125 k€ | Maintien Cyber NIS 2 & AI Act 50 k€ | Concertation Einstein Quartiers 35 k€.")
+add_bullet("**Lancement Guichet Vocal** : Déploiement d'Allo Niçois Séniors 24/7 pour la prise en charge immédiate des demandes d'aide d'urgence et démarches.")
+add_bullet("**Résultats Financiers Certifiés** : Première rentrée de **+2,50 M€ d'économies nettes** sur la commande publique métropolitaine.")
+add_bullet("**Certification AI Act** : Labellisation et audit conformité du Hub Réglementaire Nice-Monaco.")
+
+add_styled_heading("Phase 3 — Consécration, Opérationnalité Gigafactory & Autonomie (Année 3 : 2028-2029 / 435 k€ brut)", 3)
+add_bullet("**Bilan Budgétaire Année 3** : Direction de projet 65 k€ | Maintenance IA & Sobriété 160 k€ | Cloud Monaco & Supercalculateur 125 k€ | Audit NIS 2 50 k€ | Concertation Récurrente 35 k€.")
+add_bullet("**Opérationnalité AI Gigafactory** : Mise en service du Supercalculateur IA binationale Nice-Monaco co-financé par l'UE.")
+add_bullet("**Bilan Triennal Certifié** : Inscription durable de **+2,5 M€/an d'économies nettes** et consécration de Nice comme Capitale de l'IA de Sécurité & d'Efficience Publique.")
 
 # ---------------------------------------------------------
 # SECTION 6 : ANNEXES DOCUMENTAIRES
