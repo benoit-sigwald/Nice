@@ -16,9 +16,9 @@ if sys.platform.startswith('win'):
 HTML_SOURCE = r"g:\My Drive\Dev\Einstein\index.html"
 HTML_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\nice.html"
 HTML_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\index.html"
-NOTE_SOURCE = r"g:\My Drive\Dev\Einstein\Note_de_Position_Nice_IA_Ciotti.md"
-NOTE_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Note_de_Position_Nice_IA_Ciotti.md"
-NOTE_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Note_de_Position_Nice_IA_Ciotti.md"
+NOTE_SOURCE = r"g:\My Drive\Dev\Einstein\Le_Pacte_Nice_IA.md"
+NOTE_DEST = r"g:\My Drive\Arx Capital\web\arxWeb\Le_Pacte_Nice_IA.md"
+NOTE_DEST_SUB = r"g:\My Drive\Arx Capital\web\arxWeb\Nice\Le_Pacte_Nice_IA.md"
 
 # Translators and mapping cache
 translator = GoogleTranslator(source='fr', target='en')
