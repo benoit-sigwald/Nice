@@ -37,7 +37,6 @@ def set_cell_background(cell, fill_color):
     tcPr.append(shd)
 
 def add_header_banner():
-    # Meta subtitle
     p_sub = doc.add_paragraph()
     p_sub.paragraph_format.space_before = Pt(0)
     p_sub.paragraph_format.space_after = Pt(2)
@@ -47,7 +46,6 @@ def add_header_banner():
     r_sub.font.bold = True
     r_sub.font.color.rgb = SLATE_DARK
 
-    # Native Title (Titre Principal)
     p_title = doc.add_paragraph(style='Title')
     p_title.paragraph_format.space_before = Pt(0)
     p_title.paragraph_format.space_after = Pt(4)
@@ -57,7 +55,6 @@ def add_header_banner():
     r_title.font.bold = True
     r_title.font.color.rgb = NAVY_PRIMARY
     
-    # Subtitle
     p_sub2 = doc.add_paragraph()
     p_sub2.paragraph_format.space_before = Pt(0)
     p_sub2.paragraph_format.space_after = Pt(6)
@@ -66,7 +63,6 @@ def add_header_banner():
     r_sub2.font.size = Pt(11)
     r_sub2.font.color.rgb = NAVY_SECONDARY
     
-    # Meta Author
     p_meta = doc.add_paragraph()
     p_meta.paragraph_format.space_before = Pt(0)
     p_meta.paragraph_format.space_after = Pt(20)
@@ -117,7 +113,6 @@ def add_bullet(text, level=1):
     p.paragraph_format.space_after = Pt(5)
     p.paragraph_format.line_spacing = 1.15
     
-    # Indentation logic for Google Docs
     if level == 1:
         p.paragraph_format.left_indent = Inches(0.35)
     elif level == 2:
@@ -144,7 +139,7 @@ def add_bullet(text, level=1):
 add_header_banner()
 
 # ---------------------------------------------------------
-# SOMMAIRE ET INDEX PARLANT
+# SOMMAIRE ET INDEX PARLANT (MIS À JOUR SAN 1.3 REDONDANT)
 # ---------------------------------------------------------
 add_native_heading("SOMMAIRE & INDEX DU DOCUMENT", 1)
 
@@ -152,11 +147,10 @@ toc_data = [
     ("Résumé Exécutif & Chiffrage Consolidé pour M. le Maire", "Page 2"),
     ("1. Diagnostic Territorial & Opportunités Européennes", "Page 3"),
     ("   1.1 Alignement Institutionnel & Leadership Métropolitain", "Page 3"),
-    ("   1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse & Cannes", "Page 3"),
-    ("   1.3 Évaluation du Pôle Nice-Sophia-Monaco vs Total National", "Page 4"),
-    ("   1.4 Atouts Monaco, Flux Transfrontaliers & Extension Business", "Page 4"),
-    ("   1.5 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories", "Page 4"),
-    ("   1.6 Structuration Opérationnelle & Capture des Subventions", "Page 5"),
+    ("   1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse, Cannes & Poids National", "Page 3"),
+    ("   1.3 Atouts Monaco, Flux Transfrontaliers & Extension Business", "Page 4"),
+    ("   1.4 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories", "Page 4"),
+    ("   1.5 Structuration Opérationnelle & Capture des Subventions", "Page 5"),
     ("2. Pôle 1 : Axe Ville de Nice (Sécurité & Cadre de Vie)", "Page 5"),
     ("   2.1 CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue", "Page 5"),
     ("   2.2 Guichet Vocal Allo Niçois 24/7 : Demandes d'Aide & Sécurité", "Page 6"),
@@ -303,12 +297,12 @@ add_bullet("**Échelle régionale** : La Région Sud affiche un *Plan SUD IA* (7
 add_bullet("**Une gouvernance à unifier (Constat constructif)** : **Les frictions institutionnelles et les complexités d'arbitrage au sein de la Région PACA peuvent ralentir l'accès optimal aux subventions**. Un alignement direct et unifié est indispensable pour accélérer les financements.")
 add_bullet("**La solution** : Seul un **leadership métropolitain incontestable porté au plus haut niveau par M. Éric Ciotti** permettra d'outrepasser ces frictions institutionnelles et d'aller capturer directement les subventions auprès de l'État et des guichets européens.")
 
-add_native_heading("1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse & Cannes", 2)
+add_native_heading("1.2 Le Terreau Azuréen : Sophia Antipolis, Grasse, Cannes & Poids National", 2)
 add_bullet("**Sophia Antipolis (1ère technopole d’Europe)** : ~2 700 entreprises, ~46 000 emplois, ~5 500 chercheurs. Un réservoir mondial d'ingénierie et de recherche d'élite.")
-add_bullet("**Institut 3IA Côte d’Azur & UCA** : L'un des 4 instituts nationaux d'IA (spécialisé en santé numérique) avec Inria, Eurecom et le CNRS.")
+add_bullet("**Institut 3IA Côte d’Azur & UCA** : L'un des 4 instituts nationaux d'IA (spécialisé en santé numérique) avec Inria, Eurecom et le CNRS (représentant **25 % du réseau national des 4 Instituts 3IA**).")
 add_bullet("**Synergie Grasse (Arômes & Parfums)** : Modélisation olfactive, chimie fine et IA sensorielle pour l'industrie aromatique et la santé.")
-add_bullet("**Synergie Cannes (Thales Alenia Space)** : Traitement d'imagerie satellite par IA, observation de la Terre et défense spatiale.")
-add_bullet("**Grands industriels ancres** : **Amadeus** (1er centre de R&D privé de transport en Europe), générateurs de données massives.")
+add_bullet("**Synergie Cannes (Thales Alenia Space)** : Traitement d'imagerie satellite par IA, observation de la Terre et défense spatiale (représentant avec Amadeus **6 % de la dépense privée R&D logicielle/spatiale française**).")
+add_bullet("**Chercheurs R&D Numérique** : ~5 500 chercheurs (public+privé), soit **~12 % du total national hors Île-de-France** (2e bassin français après Paris).")
 add_bullet("**Attractivité Riviera & 2e aéroport de France** : Capacité unique de captation et de rétention des chercheurs d'élite que Paris ne conserve plus.")
 
 if os.path.exists(chart1_png):
@@ -319,27 +313,21 @@ if os.path.exists(chart1_png):
     run_img = p_img.add_run()
     run_img.add_picture(chart1_png, width=Inches(6.2))
 
-add_native_heading("1.3 Évaluation du Pôle Nice - Sophia Antipolis - Monaco vs Total National", 2)
-add_bullet("**Positionnement Stratégique** : Afin d'emporter l'adhésion de l'État et de la Commission Européenne, le territoire fait valoir son **poids relatif massif à l'échelle de la France** :")
-add_bullet("**Chercheurs R&D Numérique** : ~5 500 chercheurs (public+privé), soit **~12 % du total hors Île-de-France** (2e bassin national après Paris).")
-add_bullet("**Recherche Académique 3IA** : > 100 chaires mondiales, soit **~25 % du réseau national des 4 Instituts 3IA** (Paris, Grenoble, Toulouse, Nice-Sophia).")
-add_bullet("**R&D Privée** : Amadeus & Thales Alenia Space (>6 500 ingénieurs), soit **~6 % de la dépense privée logicielle/spatiale française**.")
-
-add_native_heading("1.4 Atouts Monaco, Flux Transfrontaliers & Extension Business", 2)
+add_native_heading("1.3 Atouts Monaco, Flux Transfrontaliers & Extension Business", 2)
 add_bullet("**Monaco Cloud & Data Center Souverain d'État** : Premier Cloud d'État souverain d'Europe (certifié AMSN), garantissant une étanchéité totale contre le Cloud Act américain, connecté en fibre noire dédiée à Nice.")
 add_bullet("**Besoin d'extension de la Principauté pour le business** : Monaco dispose d'un capital et d'un tissu d'entreprises majeurs mais souffre d'une contrainte foncière extrême. L'alliance avec la Métropole Nice Côte d'Azur offre le terrain d'extension économique et technologique indispensable.")
 add_bullet("**45 000 salariés transfrontaliers quotidiens** : Plus de 45 000 salariés traversent chaque jour Nice pour travailler à Monaco (sources INSEE/SCT), constituant un bassin d'emploi unique à irriguer par l'IA.")
 add_bullet("**Une filière IA spécialisée en plein essor à décupler** : ~86 établissements pionniers et ~800 emplois directs IA dans le 06 (étude CCI). Un socle solide qui ne demande qu'à être amplifié et structuré pour passer à l'échelle métropolitaine.")
 add_bullet("**Le verrou électrique & contrainte foncière** : Extrémité d'une « presqu'île électrique » vulnérable (coupure de 2009 ; RTE 2025 saturé), imposant la doctrine de l'IA frugale par nécessité.")
 
-add_native_heading("1.5 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories", 2)
+add_native_heading("1.4 L'Opportunité Historique : 30 Md€ UE & 7 AI Gigafactories", 2)
 add_bullet("**L'Appel d'Offres Européen** : Le **30 juillet 2026**, la Commission Européenne a lancé un appel d'offres historique de **30 milliards d'euros** pour bâtir **7 AI Gigafactories** en Europe.")
 add_bullet("**Lot 1 — Subvention directe UE de 500 M€** par site pour co-financer un supercalculateur d'IA souverain.")
 add_bullet("**Le levier Nice-Monaco** : Candidature binationale transfrontalière unique associant Nice (Plaine du Var / 3IA), Monaco (fonds souverains / Monaco Cloud) et Sophia Antipolis.")
 add_bullet("**Montage mixte à 1,5 Md€** : 500 M€ subvention UE + 300 M€ fonds publics + 700 M€ investisseurs privés.")
 add_bullet("**Calendrier couperet** : Dépôt du dossier de candidature avant le **12 novembre 2026**.")
 
-add_native_heading("1.6 Structuration Opérationnelle & Capture des Subventions", 2)
+add_native_heading("1.5 Structuration Opérationnelle & Capture des Subventions", 2)
 add_bullet("**Méthodologie d'Action** : Pour transformer cette ambition en victoires financières, l'approche est structurée immédiatement selon 4 actions de frappe :")
 add_bullet("**1. Bureau de Candidature Binationale** : Création d'une Task-Force dédiée Nice-Monaco-Sophia pour verrouiller le dossier Gigafactory avant le 12 novembre 2026.")
 add_bullet("**2. Capture des guichets de subvention directes** : Dépôt de dossiers sur Digital Europe (subventions à 50%-70% pour la cyber/IA) et Horizon Europe Cluster 3 (100% pour la sécurité urbaine).")
@@ -525,4 +513,4 @@ add_bullet("**10. Technopole Sophia Antipolis & Invest in Côte d'Azur (2025/202
 add_bullet("**11. Programme Extended Monaco & Monaco Cloud (gouv.mc / monacocloud.mc)** : Data Center Souverain d'État certifié AMSN.")
 
 doc.save(docx_path)
-print(f"Document Word/Google Docs avec styles natifs Titre, Titre 1, Titre 2 et puces indentées généré avec succès : {docx_path}")
+print(f"Document Word/Google Docs allégé de la section 1.3 redondante généré avec succès : {docx_path}")
