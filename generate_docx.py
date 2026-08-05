@@ -305,6 +305,7 @@ add_styled_heading("2.1 CSU Augmenté : Moins d'Écrans, Plus de Policiers dans 
 add_p("Nice dispose du 1er CSU de France (4 300+ caméras). L'enjeu clé de la Vidéosurveillance Algorithmique (VSA - Art. 10 Loi JOP 2024 / Jurisprudence Conseil d'État 2026) est un **changement de doctrine opérationnelle majeur** :")
 add_bullet("**Moins d'agents scotchés devant les écrans** : L'IA effectue le filtrage automatique des flux et ne remonte que les anomalies qualifiées (dépôts sauvages, intrusions, incivilités).")
 add_bullet("**Plus de Policiers Municipaux sur le terrain et dans la rue** : Libération du temps des opérateurs pour réaffecter les effectifs en patrouilles de proximité physiques.")
+add_bullet("**Géolocalisation & Dispatching Intelligent** : Grâce à la géolocalisation en temps réel des patrouilles et équipages de la Police Municipale, le dispatching vers les Niçoises et Niçois dans le besoin se fait de manière ultra-rapide, ciblée et efficace au plus près des appels d'urgence.")
 add_bullet("**Résultat certifié** : Baisse de **65 % des incivilités et dégradations** par la fin de l'impunité et la réduction du délai d'intervention de la PM à **moins de 6 minutes**.")
 
 add_styled_heading("2.2 Guichet Vocal Allo Niçois 24/7 : Demandes d'Aide & Sécurité", 2)
