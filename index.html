@@ -12,16 +12,17 @@
     
     <style>
         :root {
-            /* Colors: Slate & Mediterranean Azure with Crimson highlights */
+            /* Colors: Slate & Mediterranean Warm Ochre with Crimson highlights */
             --bg-pure: #FFFFFF;
             --bg-soft: #F8FAFC;
-            --bg-accent: rgba(2, 132, 199, 0.05);
+            --bg-accent: rgba(234, 88, 12, 0.04);
             --text-main: #1E293B;
             --text-dark: #0F172A;
             --text-muted: #64748B;
             --primary: #1E3A8A; /* Royal Navy */
-            --secondary: #0284C7; /* Azure */
+            --secondary: #EA580C; /* Vieux-Nice Warm Ochre */
             --accent-crimson: #E11D48; /* Crimson Red (Nissa flag accent) */
+            --accent-amber: #F59E0B; /* Golden Amber */
             --success: #10B981;
             --border-color: #E2E8F0;
             --border-hover: #CBD5E1;
@@ -349,9 +350,9 @@
         .card:hover {
             transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
             border-color: var(--secondary);
-            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.16), 
-                        0 10px 20px -10px rgba(2, 132, 199, 0.1), 
-                        0 0 0 1px rgba(2, 132, 199, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(30, 58, 138, 0.14), 
+                        0 10px 20px -10px rgba(234, 88, 12, 0.15), 
+                        0 0 0 1px rgba(234, 88, 12, 0.08);
         }
 
         /* 3D parallax layers */
@@ -496,7 +497,7 @@
             transform: translateY(-4px);
             border-color: var(--secondary);
             box-shadow: 0 20px 40px -15px rgba(30, 58, 138, 0.12), 
-                        0 10px 20px -10px rgba(2, 132, 199, 0.06);
+                        0 10px 20px -10px rgba(234, 88, 12, 0.08);
         }
 
         .slider-row {
@@ -1070,6 +1071,23 @@
                         <div class="result-val net" id="val-net">+2.18 M€/an</div>
                     </div>
                 </div>
+            <!-- Risks & Governance Section -->
+            <div style="margin-top: 50px;" class="reveal">
+                <h3 class="font-serif" style="font-size: 1.5rem; font-weight: 400; margin-bottom: 24px; color: var(--text-dark); text-align: center;" id="c5-risk-title">Gouvernance, Risques & Conformité</h3>
+                <div class="cards-grid-3" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;">
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; color: var(--primary);" id="c5-risk-r1-title">Conformité Réglementaire</h4>
+                        <p style="font-size: 0.84rem; color: var(--text-muted);" id="c5-risk-r1-desc">Alignement avec le règlement européen sur l'IA (AI Act) pour garantir la conformité juridique des algorithmes de vidéoprotection assistée (VSA).</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; color: var(--primary);" id="c5-risk-r2-title">Souveraineté des Données</h4>
+                        <p style="font-size: 0.84rem; color: var(--text-muted);" id="c5-risk-r2-desc">Hébergement hermétique sur Monaco Cloud et contrôles éthiques par le Conseil Citoyen pour exclure tout usage commercial ou fuite.</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1.05rem; font-weight: 600; margin-bottom: 10px; color: var(--primary);" id="c5-risk-r3-title">Sécurité des Systèmes</h4>
+                        <p style="font-size: 0.84rem; color: var(--text-muted);" id="c5-risk-r3-desc">Isolation réseau physique (Air-Gap) du Centre de Supervision Urbain (CSU) pour neutraliser de manière étanche les cyberattaques.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1133,87 +1151,87 @@
                 
                 heroKicker: "Plan Métropolitain d'IA Appliquée (2026-2029)",
                 heroTitle: "L'IA au service de Nice : <em>Sécurité & rigueur budgétaire</em>",
-                heroSubtitle: "Une doctrine d'austérité intelligente conçue pour <strong>M. Éric Ciotti</strong>. Basée sur le Pacte Nice IA, elle privilégie l'optimisation des deniers publics, le renforcement de la sécurité de proximité, et le co-financement européen direct sans dépendance régionale.",
+                heroSubtitle: "Une note d'orientation stratégique métropolitaine proposant une feuille de route technologique au Maire et aux décideurs publics pour 2026-2029. Conçue pour M. Éric Ciotti, elle vise l'optimisation des deniers publics, la sécurité locale et le co-financement direct de l'Union Européenne (UE) sans dépendance régionale.",
                 heroBtnSimulate: "Simuler les économies",
                 heroBtnDownload: "Télécharger le Pacte (.PDF)",
-                heroMetricsTitle: "Chiffres Clés du Pacte",
+                heroMetricsTitle: "Chiffres Clés (Objectifs & Projections)",
                 heroM1: "+2,50 M€ / an",
-                heroM1Lbl: "Gains nets d'audit (Commande Publique)",
+                heroM1Lbl: "Économies annuelles projetées (Commande Publique)",
                 heroM2: "-65 %",
-                heroM2Lbl: "Incivilités visées au CSU",
+                heroM2Lbl: "Objectif de baisse des incivilités au CSU (Centre de Supervision Urbain)",
                 heroM3: "50 %",
-                heroM3Lbl: "Taux de co-financement subventions UE",
+                heroM3Lbl: "Taux ciblé de co-financement de l'UE",
                 
                 c1Kicker: "Chapitre 1",
                 c1Title: "Diagnostic Territorial & Opportunités Européennes",
-                c1Desc: "Analyse des forces en présence : synergie Nice-Monaco, pôle académique 3IA Côte d'Azur et captation directe des fonds européens pour affirmer l'indépendance métropolitaine.",
-                c1Card1Tag: "1.1 Alignement",
-                c1Card1Title: "Leadership & Métropole",
-                c1Card1Desc: "Alignement de la Mairie et de la Métropole pour déployer une gouvernance unifiée et un pilotage commando opérationnel de la transition technologique.",
+                c1Desc: "Diagnostic territorial axé sur le pôle de recherche 3IA Côte d'Azur, la captation directe des fonds européens pour l'indépendance métropolitaine et la synergie de souveraineté Nice-Monaco.",
+                c1Card1Tag: "1.1 Gouvernance",
+                c1Card1Title: "Pilotage Métropolitain",
+                c1Card1Desc: "Déploiement d'une gouvernance unifiée Ville-Métropole sous un pilotage commando (Assistance à Maîtrise d'Ouvrage - AMO) pour accélérer les décisions.",
                 c1Card2Tag: "1.2 Écosystème",
                 c1Card2Title: "Le Terreau Azuréen",
-                c1Card2Desc: "Exploitation de la puissance académique (Sophia Antipolis, 3IA Côte d'Azur) : 2 700 entreprises de pointe et 5 500 chercheurs au service du bassin niçois.",
-                c1Card3Tag: "1.3 Souveraineté",
-                c1Card3Title: "Extension Monaco",
-                c1Card3Desc: "Monaco dispose de capitaux financiers majeurs mais manque d'échelle territoriale. Nice offre le territoire d'expérimentation et le CSU en échange d'infrastructures.",
+                c1Card2Desc: "Exploitation du pôle universitaire et de la technopole de Sophia Antipolis : 2 700 entreprises de pointe et 5 500 chercheurs au service de Nice.",
+                c1Card3Tag: "1.3 Pourquoi Monaco ?",
+                c1Card3Title: "Infrastructure Monaco Cloud",
+                c1Card3Desc: "Monaco dispose d'une infrastructure cloud souveraine déjà opérationnelle. Nous proposons d'y externaliser le Système d'Information (SI) municipal de Nice pour éviter d'investir dans des datacenters locaux.",
                 c1GraphTitle: "1.4 & 1.5 Financement direct & Poids National",
-                c1GraphDesc: "Face aux blocages budgétaires locaux, Nice mise sur les subventions directes de l'Union Européenne (Horizon Europe, Digital Europe). Le budget total IA est co-financé à <strong>50 % par l'UE</strong>, réduisant de moitié le reste à charge réel de la collectivité.",
+                c1GraphDesc: "Nice cible des subventions directes de l'Union Européenne (UE) via Horizon Europe. Le budget IA proposé est co-financé à <strong>50 % par l'UE</strong>, réduisant de moitié le reste à charge réel.",
                 c1GraphCaption: "Figure 1 : Poids des métropoles françaises dans les projets IA financés (Source: Annexe 4)",
                 
                 c2Kicker: "Chapitre 2",
                 c2Title: "Pôle 1 : Axe Ville de Nice (Sécurité & Cadre de Vie)",
-                c2Desc: "L'IA mise au service de la vie quotidienne des habitants : sécurisation de l'espace public, amélioration de la propreté urbaine et assistance de proximité.",
-                c2Card1Tag: "2.1 Securité",
+                c2Desc: "L'IA mise au service de la sécurité locale, de la propreté urbaine et de l'assistance numérique de proximité des habitants.",
+                c2Card1Tag: "2.1 Sécurité",
                 c2Card1Title: "CSU Vidéo-Augmenté",
-                c2Card1Desc: "Boost de 4 300 caméras par l'IA VSA. Détection instantanée des incivilités et menaces en temps réel pour rediriger les policiers vers le terrain.",
-                c2Card1List: "<li>Baisse visée de 65 % des incivilités</li><li>Temps de réaction réduit sous les 6 minutes</li>",
+                c2Card1Desc: "Soutien des 4 300 caméras par de la Vidéoprotection Assistée par Ordinateur (VSA). L'analyse automatique en temps réel permettrait d'optimiser le déploiement des policiers sur le terrain.",
+                c2Card1List: "<li>Baisse projetée de 65 % des incivilités</li><li>Objectif de temps de réaction sous les 6 minutes</li>",
                 c2Card2Tag: "2.2 Services",
                 c2Card2Title: "Allo Niçois Vocal 24/7",
-                c2Card2Desc: "Service d'appel intelligent disponible à toute heure. Spécialement calibré pour l'accompagnement des seniors et l'absorption des flux d'appels administratifs récurrents.",
-                c2Card2List: "<li>40 % des demandes résolues au premier contact</li><li>Zéro temps d'attente pour nos seniors</li>",
+                c2Card2Desc: "Mise en place suggérée d'un agent vocal intelligent 24h/24 connecté à Allo Mairie Nice, conçu pour guider les seniors sans attente et absorber les demandes récurrentes.",
+                c2Card2List: "<li>Estimation de 40 % des requêtes résolues au premier contact</li><li>Zéro temps d'attente pour nos seniors</li>",
                 c2Card3Tag: "2.3 Propreté",
                 c2Card3Title: "Routage Intelligent",
-                c2Card3Desc: "Routage prédictif et dynamique des bennes et véhicules de voirie. Signalement automatisé des encombrants pour une propreté rétablie sous 6 heures.",
-                c2Card3List: "<li>Réduction de 37 % des distances de collecte</li><li>Économies directes de carburant de 30 %</li>",
+                c2Card3Desc: "Optimisation planifiée de la propreté par le routage dynamique des bennes et la détection automatisée des encombrants par caméra embarquée.",
+                c2Card3List: "<li>Diminution estimée de 37 % des distances de collecte</li><li>Potentiel d'économie de carburant de 30 %</li>",
                 
                 c3Kicker: "Chapitre 3",
                 c3Title: "Pôle 2 : Axe Métropole (Budget, DSI & Monaco)",
-                c3Desc: "L'optimisation des structures métropolitaines pour réaliser des gains financiers de masse et garantir l'étanchéité cyber du territoire.",
+                c3Desc: "Optimisation des structures métropolitaines pour réaliser des gains financiers de masse et garantir la résilience cyber du territoire.",
                 c3Card1Tag: "3.1 Rigueur",
-                c3Card1Title: "Audit IA Commande Publique",
-                c3Card1Desc: "Contrôle systématique par IA de 100 % des factures, devis et bordereaux métropolitains. Élimination automatique des doublons et anomalies de prix.",
-                c3Card1List: "<li><strong>+2,5 M€ / an</strong> d'économies nettes certifiées</li><li>Basé sur 300 M€ de volume annuel d'achat</li>",
-                c3Card2Tag: "3.2 Cyber",
+                c3Card1Title: "Audit Commande Publique",
+                c3Card1Desc: "Contrôle automatisé proposé sur 100 % des factures et bordereaux des prix unitaires (BPU) de la Métropole. L'IA détecterait les doublons et les écarts tarifaires.",
+                c3Card1List: "<li><strong>+2,5 M€ / an</strong> d'économies nettes projetées</li><li>Basé sur 300 M€ de volume annuel d'achats</li>",
+                c3Card2Tag: "3.2 Cybersécurité",
                 c3Card2Title: "Bouclier Cyber-IA",
-                c3Card2Desc: "SOC métropolitain souverain fonctionnant 24h/24 pour contrer les rançongiciels et isolation hermétique (Air-Gap) du réseau sensible du CSU.",
-                c3Card2List: "<li>Conforme directive européenne NIS 2</li><li>1,8 M€ à 3 M€ / an de crises évitées</li>",
+                c3Card2Desc: "Création proposée d'un Security Operations Center (SOC - Centre d'Opérations de Sécurité) métropolitain 24h/24. Le réseau du CSU (Centre de Supervision Urbain) serait isolé physiquement (Air-Gap) pour une étanchéité totale.",
+                c3Card2List: "<li>Conforme à la directive européenne NIS 2</li><li>1,8 M€ à 3 M€ / an de coûts de crise évités (projections)</li>",
                 c3Card3Tag: "3.3 Cloud",
                 c3Card3Title: "Alliance Monaco Cloud",
-                c3Card3Desc: "Hébergement souverain externalisé du SI municipal. Mutualisation avec la Principauté pour éliminer les besoins de datacenters propres.",
-                c3Card3List: "<li>1,5 M€ à 2,8 M€ / an d'OPEX économisé</li><li>8 M€ à 12 M€ de CAPEX de stockage évité</li>",
+                c3Card3Desc: "Migration proposée de la Direction des Systèmes d'Information (DSI) municipale vers le Monaco Cloud souverain existant, pour éliminer l'investissement dans des serveurs physiques propres.",
+                c3Card3List: "<li>Dépenses de fonctionnement (OPEX) réduites de 1,5 M€ à 2,8 M€ / an</li><li>Dépenses d'investissement (CAPEX) de 8 M€ à 12 M€ évitées</li>",
                 
                 c4Kicker: "Chapitre 4",
                 c4Title: "Alliance Binationale & Pôle Citoyen",
-                c4Desc: "Un pont technologique et juridique exceptionnel avec la Principauté de Monaco pour servir de modèle national de conformité (AI Act) et soutenir l'éducation locale.",
+                c4Desc: "Partenariat technologique et réglementaire (sandbox AI Act) avec la Principauté de Monaco pour accélérer la numérisation des PME et soutenir l'éducation locale.",
                 c4Card1Tag: "4.1 Financement",
                 c4Card1Title: "Levier Binational",
-                c4Card1Desc: "Le partenariat avec Monaco sert de clé de voûte pour débloquer les financements européens à taux maximal, en combinant souveraineté de stockage et souveraineté d'expérimentation.",
+                c4Card1Desc: "L'alliance Nice-Monaco pourrait servir de levier majeur pour capter le taux maximal de subvention européenne (50%) en alliant souveraineté et innovation.",
                 c4Card2Tag: "4.2 Réglementation",
                 c4Card2Title: "Centre National AI Act",
-                c4Card2Desc: "Nice s'impose comme la sandbox de référence en France pour la mise en conformité des logiciels et modèles d'IA avec la nouvelle réglementation européenne.",
+                c4Card2Desc: "Nice s'impose comme la sandbox de référence en France pour la mise en conformité des logiciels et modèles d'IA avec la réglementation européenne (AI Act).",
                 c4Card3Tag: "4.3 Entreprises",
                 c4Card3Title: "Bibliothèque PME/PMI",
-                c4Card3Desc: "Mise à disposition gratuite d'une bibliothèque de cas d'usage souverains pour accélérer la transition technologique des petites et moyennes entreprises métropolitaines.",
+                c4Card3Desc: "Mise à disposition gratuite d'une bibliothèque de cas d'usage souverains pour accélérer la transition des Petites et Moyennes Entreprises (PME) métropolitaines.",
                 c4CitoyenKicker: "Axe Social & Inclusion",
                 c4CitoyenTitle: "Le Pôle d'Excellence Citoyen (§4.4)",
                 c4P1T: "🏫 Formations AnimaNice",
-                c4P1D: "Ateliers gratuits hebdomadaires pour les familles et séniors dans les centres AnimaNice (Vieux-Nice, Cimiez, Ariane, Fabron) pour maîtriser les IA génératives au quotidien.",
+                c4P1D: "Ateliers hebdomadaires gratuits d'initiation à l'IA pour les familles et les seniors dans les centres AnimaNice (Vieux-Nice, Cimiez, Ariane, Fabron).",
                 c4P2T: "🎓 Pass IA Jeunesse",
-                c4P2D: "Accès souverains et gratuits aux outils de recherche d'IA pour les étudiants et lycéens, via l'Université Côte d'Azur (UCA). 2 000 jeunes ciblés.",
+                c4P2D: "Accès gratuits aux outils d'IA pour les étudiants et lycéens, via l'Université Côte d'Azur (UCA). 2 000 jeunes ciblés pour l'égalité des chances.",
                 c4P3T: "🤝 Médiation de Quartier",
-                c4P3D: "Présence de médiateurs numériques formés dans chaque mairie annexe pour accompagner les citoyens et rompre l'exclusion liée à l'informatique.",
+                c4P3D: "Médiateurs numériques formés présents dans chaque mairie annexe pour accompagner les citoyens et rompre la fracture technologique.",
                 c4P4T: "🗳️ Conseil Citoyen de l'IA",
-                c4P4D: "Comité de Niçois tirés au sort pour évaluer l'impact éthique des technologies déployées et contrôler l'étanchéité des données stockées.",
+                c4P4D: "Comité de Niçois tirés au sort pour auditer l'éthique des technologies déployées et contrôler la protection des données.",
                 
                 c5Kicker: "Chapitre 5",
                 c5Title: "Feuille de Route & Chiffrage Budgétaire",
@@ -1221,16 +1239,24 @@
                 c5RouteTitle: "Calendrier de Déploiement",
                 tDate1: "100 Premiers Jours",
                 tTitle1: "Phase 1 : Lancement Commando",
-                tDesc1: "Nomination de la gouvernance (AMO Benoît Sigwald), lancement de l'audit des contrats de marchés et cadrage technique avec Monaco Cloud.",
+                tDesc1: "Nomination de la gouvernance (AMO Benoît Sigwald), audit des contrats de marchés et cadrage technique avec Monaco Cloud.",
                 tDate2: "12 Mois",
                 tTitle2: "Phase 2 : Premiers Cas en Production",
                 tDesc2: "Mise en route de la vidéo VSA du CSU, lancement d'Allo Niçois vocal et mesure des premières économies d'audit commande publique.",
                 tDate3: "36 Mois",
                 tTitle3: "Phase 3 : Consolidation Souveraine",
-                tDesc3: "Migration complète du SI municipal et établissement de la zone franche transfrontalière Nice-Monaco avec retour sur investissement validé.",
+                tDesc3: "Migration proposée du SI municipal sur Monaco Cloud et établissement de la zone franche Nice-Monaco avec retour sur investissement validé.",
                 c5BudgetTitle: "Budget Annuel Consolidé",
                 c5BudgetSubtitle: "Répartition par axe institutionnel co-financé à 50%",
                 c5GraphCaption: "Figure 2 : Bilan consolidé et part du reste à charge métropolitain (Source: Annexe 12)",
+                
+                c5RiskTitle: "Gouvernance, Risques & Conformité",
+                c5RiskR1Title: "Conformité Réglementaire",
+                c5RiskR1Desc: "Alignement permanent avec le règlement européen sur l'IA (AI Act) pour valider la légalité des algorithmes de vidéoprotection assistée (VSA).",
+                c5RiskR2Title: "Souveraineté des Données",
+                c5RiskR2Desc: "Hébergement hermétique sur Monaco Cloud et contrôles éthiques par le Conseil Citoyen pour exclure tout usage commercial ou fuite.",
+                c5RiskR3Title: "Sécurité des Systèmes",
+                c5RiskR3Desc: "Isolation réseau physique (Air-Gap) du Centre de Supervision Urbain (CSU) pour neutraliser de manière étanche les cyberattaques.",
                 
                 simTitle: "Simulateur de Gains (Commande Publique)",
                 simDesc: "Ajustez le volume d'achat audité et le taux de détection pour estimer le bénéfice net public par rapport au coût commando de la Métropole.",
@@ -1262,104 +1288,112 @@
                 
                 heroKicker: "Metropolitan Plan for Applied AI (2026-2029)",
                 heroTitle: "AI serving Nice: <em>Security & budgetary rigor</em>",
-                heroSubtitle: "A doctrine of intelligent austerity designed for <strong>Mr. Éric Ciotti</strong>. Based on the Nice AI Pact, it prioritizes public funds optimization, increased local safety, and direct EU co-financing without regional dependency.",
+                heroSubtitle: "A metropolitan strategic orientation document proposing a technology roadmap to the Mayor and public decision-makers for 2026-2029. Designed for Mr. Éric Ciotti, it aims to optimize public funds, enhance local safety, and secure direct European Union (EU) co-financing without regional dependency.",
                 heroBtnSimulate: "Simulate savings",
                 heroBtnDownload: "Download the Pact (.PDF)",
-                heroMetricsTitle: "Pact Key Figures",
+                heroMetricsTitle: "Key Figures (Objectives & Projections)",
                 heroM1: "+€2.50M / year",
-                heroM1Lbl: "Net audit savings (Public Procurement)",
+                heroM1Lbl: "Projected annual savings (Public Procurement)",
                 heroM2: "-65 %",
-                heroM2Lbl: "Targeted incivilities at CSU",
+                heroM2Lbl: "Targeted drop in incivilities at CSU (Urban Supervision Centre)",
                 heroM3: "50 %",
-                heroM3Lbl: "EU subventions co-financing rate",
+                heroM3Lbl: "Targeted EU co-financing rate",
                 
                 c1Kicker: "Chapter 1",
                 c1Title: "Territorial Diagnostics & European Opportunities",
-                c1Desc: "Analysis of regional assets: Nice-Monaco synergy, 3IA Côte d'Azur academic hub and direct capture of European funds to assert metropolitan independence.",
-                c1Card1Tag: "1.1 Alignment",
-                c1Card1Title: "Leadership & Metropolis",
-                c1Card1Desc: "Alignment of the City and the Metropolis to deploy a unified governance and operational commando project management.",
+                c1Desc: "Territorial diagnostics leveraging the 3IA Côte d'Azur research hub, direct capture of European Union (EU) funding for independence, and Nice-Monaco sovereignty synergy.",
+                c1Card1Tag: "1.1 Governance",
+                c1Card1Title: "Metropolitan Steering",
+                c1Card1Desc: "Deployment of a unified City-Metropolis governance under commando steering (Project Management Assistance - AMO) to accelerate decisions.",
                 c1Card2Tag: "1.2 Ecosystem",
                 c1Card2Title: "The Azorean Soil",
-                c1Card2Desc: "Exploiting academic power (Sophia Antipolis, 3IA Côte d'Azur): 2,700 advanced companies and 5,500 researchers serving the Nice area.",
-                c1Card3Tag: "1.3 Sovereignty",
-                c1Card3Title: "Monaco Extension",
-                c1Card3Desc: "Monaco has significant financial capital but lacks spatial scale. Nice offers the experimental territory and CSU in exchange for infrastructure.",
+                c1Card2Desc: "Exploiting the university hub and Sophia Antipolis technology park: 2,700 advanced companies and 5,500 researchers serving Nice.",
+                c1Card3Tag: "1.3 Why Monaco?",
+                c1Card3Title: "Monaco Cloud Infrastructure",
+                c1Card3Desc: "Monaco operates an active sovereign cloud infrastructure. We propose to outsource Nice's municipal IT (DSI) to avoid costly local datacenter investments.",
                 c1GraphTitle: "1.4 & 1.5 Direct Funding & National Weight",
-                c1GraphDesc: "Faced with local budget deadlocks, Nice targets direct grants from the European Union (Horizon Europe, Digital Europe). The total AI budget is <strong>50% co-financed by the EU</strong>, halving the actual cost for the city.",
+                c1GraphDesc: "Nice targets direct grants from the European Union (EU) via Horizon Europe. The proposed AI budget is <strong>50% co-financed by the EU</strong>, halving the actual cost.",
                 c1GraphCaption: "Figure 1: Weight of French metropolises in funded AI projects (Source: Appendix 4)",
                 
                 c2Kicker: "Chapter 2",
                 c2Title: "Axis 1: City of Nice (Safety & Living Environment)",
-                c2Desc: "AI at the service of everyday citizen life: public space security, improved urban cleanliness and local support.",
+                c2Desc: "AI dedicated to local safety, urban cleanliness, and close digital assistance for Nice inhabitants.",
                 c2Card1Tag: "2.1 Safety",
                 c2Card1Title: "Video-Augmented CSU",
-                c2Card1Desc: "Enhancing 4,300 cameras with VSA AI. Instant detection of incivilities and real-time threats to redirect police forces to the field.",
-                c2Card1List: "<li>65% reduction in incivilities</li><li>Response time cut below 6 minutes</li>",
+                c2Card1Desc: "Assisting the 4,300 cameras through Computer-Aided Video Protection (VSA). Automated real-time analysis would optimize police field deployment.",
+                c2Card1List: "<li>Projected 65% reduction in incivilities</li><li>Response time target below 6 minutes</li>",
                 c2Card2Tag: "2.2 Services",
                 c2Card2Title: "Allo Niçois Voice 24/7",
-                c2Card2Desc: "Smart call service available 24/7. Specially calibrated for seniors' support and absorption of recurring administrative call flows.",
-                c2Card2List: "<li>40% of queries resolved at first contact</li><li>Zero waiting time for our seniors</li>",
+                c2Card2Desc: "Suggested implementation of a 24/7 intelligent voice agent connected to Allo Mairie Nice, designed to guide seniors without wait and absorb recurring queries.",
+                c2Card2List: "<li>Estimated 40% of queries resolved at first contact</li><li>Zero waiting time for our seniors</li>",
                 c2Card3Tag: "2.3 Cleanliness",
                 c2Card3Title: "Smart Routing",
-                c2Card3Desc: "Predictive and dynamic routing of waste trucks and street cleaning. Automated bulky waste reporting for cleanup under 6 hours.",
-                c2Card3List: "<li>37% reduction in collection mileage</li><li>30% direct fuel savings</li>",
+                c2Card3Desc: "Planned cleanliness optimization through dynamic routing of waste trucks and automated bulky waste detection by onboard cameras.",
+                c2Card3List: "<li>Estimated 37% reduction in collection mileage</li><li>30% potential fuel savings</li>",
                 
                 c3Kicker: "Chapter 3",
                 c3Title: "Axis 2: Metropolis (Budget, IT & Monaco)",
-                c3Desc: "Optimizing metropolitan structures to achieve mass financial gains and guarantee the territory's cyber security.",
+                c3Desc: "Optimizing metropolitan structures to achieve mass financial gains and guarantee regional cyber resilience.",
                 c3Card1Tag: "3.1 Rigor",
-                c3Card1Title: "Public Order AI Audit",
-                c3Card1Desc: "Systematic control by AI of 100% of metropolitan invoices, quotes and price slips. Automatic elimination of duplicates and price anomalies.",
-                c3Card1List: "<li><strong>+€2.5M / year</strong> in certified net savings</li><li>Based on €300M annual purchasing volume</li>",
-                c3Card2Tag: "3.2 Cyber",
+                c3Card1Title: "Public Procurement Audit",
+                c3Card1Desc: "Proposed automated control of 100% of Metropolis invoices and Unit Price Schedules (BPU). The AI would detect duplicates and pricing errors.",
+                c3Card1List: "<li><strong>+€2.5M / year</strong> projected net savings</li><li>Based on €300M annual purchasing volume</li>",
+                c3Card2Tag: "3.2 Cybersecurity",
                 c3Card2Title: "Cyber-AI Shield",
-                c3Card2Desc: "24/7 sovereign metropolitan SOC to counter ransomwares and hermetic isolation (Air-Gap) of the sensitive CSU network.",
-                c3Card2List: "<li>Compliant with European NIS 2 directive</li><li>€1.8M to €3M / year in crises avoided</li>",
+                c3Card2Desc: "Proposed creation of a 24/7 metropolitan Security Operations Center (SOC) against ransomwares. The CSU network would be physically isolated (Air-Gap) for total immunity.",
+                c3Card2List: "<li>Compliant with the European NIS 2 directive</li><li>€1.8M to €3M / year in crisis costs avoided (projections)</li>",
                 c3Card3Tag: "3.3 Cloud",
                 c3Card3Title: "Monaco Cloud Alliance",
-                c3Card3Desc: "Sovereign external hosting of the municipal IT. Pooling with the Principality to eliminate local datacenters dependencies.",
-                c3Card3List: "<li>€1.5M to €2.8M / year OPEX saved</li><li>€8M to €12M datacenter CAPEX avoided</li>",
+                c3Card3Desc: "Proposed migration of the municipal IT Department (DSI) to the existing sovereign Monaco Cloud to eliminate local physical server investments.",
+                c3Card3List: "<li>Operating Expenditure (OPEX) reduced by €1.5M to €2.8M / year</li><li>Capital Expenditure (CAPEX) of €8M to €12M avoided</li>",
                 
                 c4Kicker: "Chapter 4",
                 c4Title: "Cross-Border Alliance & Citizen Hub",
-                c4Desc: "An exceptional technological and legal bridge with the Principality of Monaco to serve as a national compliance model (AI Act) and support local education.",
+                c4Desc: "Technological and regulatory partnership (AI Act sandbox) with the Principality of Monaco to accelerate SME digitalization and support local education.",
                 c4Card1Tag: "4.1 Funding",
                 c4Card1Title: "Binational Lever",
-                c4Card1Desc: "The partnership with Monaco serves as the cornerstone to unlock EU subventions at maximum rate, combining storage and experimental sovereignty.",
+                c4Card1Desc: "The Nice-Monaco alliance could serve as a major lever to capture the maximum EU subvention rate (50%) by combining sovereignty and innovation.",
                 c4Card2Tag: "4.2 Regulation",
                 c4Card2Title: "National AI Act Hub",
-                c4Card2Desc: "Nice stands out as the reference sandbox in France for AI software and model compliance with the new European regulation.",
+                c4Card2Desc: "Nice stands out as the reference regulatory sandbox in France to help local companies comply with the European AI Act regulation.",
                 c4Card3Tag: "4.3 Business",
                 c4Card3Title: "SME/SMI Library",
-                c4Card3Desc: "Free access to a library of sovereign use cases to accelerate the technological transition of metropolitan small and medium enterprises.",
+                c4Card3Desc: "Free access to a library of sovereign use cases to accelerate the digitization of metropolitan Small and Medium Enterprises (SMEs).",
                 c4CitoyenKicker: "Social Axis & Inclusion",
                 c4CitoyenTitle: "The Citizen Excellence Hub (§4.4)",
                 c4P1T: "🏫 AnimaNice Trainings",
-                c4P1D: "Weekly free workshops for families and seniors in AnimaNice community centers (Vieux-Nice, Cimiez, Ariane, Fabron) to master generative AI.",
+                c4P1D: "Weekly free workshops for families and seniors in AnimaNice community centers (Vieux-Nice, Cimiez, Ariane, Fabron) to get familiar with generative AI.",
                 c4P2T: "🎓 Youth AI Pass",
-                c4P2D: "Sovereign and free access to AI research tools for students and high schoolers, via Université Côte d'Azur (UCA). Target: 2,000 youth.",
+                c4P2D: "Free access to AI research tools for students and high schoolers via Université Côte d'Azur (UCA). 2,000 youth targeted for equal opportunity.",
                 c4P3T: "🤝 Local Mediation",
-                c4P3D: "Presence of trained digital mediators in every town hall annex to assist citizens and bridge the digital divide.",
+                c4P3D: "Trained digital mediators present in every town hall annex to assist citizens and bridge the digital divide.",
                 c4P4T: "🗳️ AI Citizen Council",
                 c4P4D: "Committee of Nice citizens drawn by lot to evaluate the ethical impact of deployed technologies and audit data protection.",
                 
                 c5Kicker: "Chapter 5",
-                c5Title: "Feuille de Route & Chiffrage Budgétaire",
+                c5Title: "Roadmap & Budget Scoping",
                 c5Desc: "Phased deployment over 3 years, co-presided by Éric Ciotti, under 50% shared funding with Europe.",
                 c5RouteTitle: "Deployment Timeline",
                 tDate1: "First 100 Days",
                 tTitle1: "Phase 1: Commando Launch",
-                tDesc1: "Appointment of governance (AMO Benoît Sigwald), launch of purchasing contracts audit and technical mapping with Monaco Cloud.",
+                tDesc1: "Appointment of governance (AMO Benoît Sigwald), audit of purchasing contracts, and technical scoping with Monaco Cloud.",
                 tDate2: "12 Months",
                 tTitle2: "Phase 2: First Production Deployments",
                 tDesc2: "Activation of CSU VSA video, launch of voice Allo Niçois and evaluation of first public procurement audit savings.",
                 tDate3: "36 Months",
                 tTitle3: "Phase 3: Sovereign Consolidation",
-                tDesc3: "Complete migration of municipal IT and establishment of the Nice-Monaco transborder free zone with validated ROI.",
+                tDesc3: "Proposed migration of municipal IT (DSI) on Monaco Cloud and establishment of the Nice-Monaco transborder free zone with validated ROI.",
                 c5BudgetTitle: "Consolidated Annual Budget",
                 c5BudgetSubtitle: "Distribution by institutional axis, co-financed at 50%",
                 c5GraphCaption: "Figure 2: Consolidated balance sheet and metropolitan cost share (Source: Appendix 12)",
+                
+                c5RiskTitle: "Governance, Risks & Compliance",
+                c5RiskR1Title: "Regulatory Compliance",
+                c5RiskR1Desc: "Permanent alignment with the European AI Act to validate the legal compliance of assisted videoprotection algorithms (VSA).",
+                c5RiskR2Title: "Data Sovereignty",
+                c5RiskR2Desc: "Sovereign hosting on Monaco Cloud and ethical audits by the Citizen Council to exclude commercial usage or leaks.",
+                c5RiskR3Title: "Systems Security",
+                c5RiskR3Desc: "Physical network isolation (Air-Gap) of the Urban Supervision Centre (CSU) to hermetically neutralize cyberattacks.",
                 
                 simTitle: "Savings Simulator (Public Procurement)",
                 simDesc: "Adjust the audited purchasing volume and detection rate to estimate the net public benefit compared to the Metropole commando cost.",
@@ -1590,6 +1624,15 @@
             document.getElementById('c5-budget-title').innerText = data.c5BudgetTitle;
             document.getElementById('c5-budget-subtitle').innerText = data.c5BudgetSubtitle;
             document.getElementById('c5-graph-caption').innerText = data.c5GraphCaption;
+
+            // Translate Risks & Governance
+            document.getElementById('c5-risk-title').innerText = data.c5RiskTitle;
+            document.getElementById('c5-risk-r1-title').innerText = data.c5RiskR1Title;
+            document.getElementById('c5-risk-r1-desc').innerText = data.c5RiskR1Desc;
+            document.getElementById('c5-risk-r2-title').innerText = data.c5RiskR2Title;
+            document.getElementById('c5-risk-r2-desc').innerText = data.c5RiskR2Desc;
+            document.getElementById('c5-risk-r3-title').innerText = data.c5RiskR3Title;
+            document.getElementById('c5-risk-r3-desc').innerText = data.c5RiskR3Desc;
 
             // Translate Simulator
             document.getElementById('sim-title').innerText = data.simTitle;
