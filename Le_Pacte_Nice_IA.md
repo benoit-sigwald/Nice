@@ -45,7 +45,23 @@ La Métropole Nice Côte d’Azur dispose d'atouts technologiques et industriels
 
 ---
 
-#### 1.3 Les faiblesses et contraintes lucidement posées
+#### 1.3 Évaluation du Pôle Nice - Sophia Antipolis - Monaco vs Total National Français
+
+Afin d'emporter l'adhésion de l'État et de la Commission Européenne, le territoire doit faire valoir son **poids relatif massif à l'échelle de la France** :
+
+| Indicateur de Puissance R&D & IA | Chiffre Pôle Nice - Sophia - Monaco | Poids Relatif vs Total France | Portée Stratégique pour le Pacte |
+| :--- | :---: | :---: | :--- |
+| **Chercheurs & Ingénieurs R&D** | **~5 500 chercheurs** (public + privé) | **~12 % du total hors Île-de-France** | 2e bassin national de chercheurs en ingénierie numérique après Paris. |
+| **Recherche Académique IA (3IA)** | **> 100 chaires mondiales** (3IA Côte d'Azur) | **~25 % du réseau national 3IA** | 1 des 4 instituts 3IA labellisés par l'État (Paris PRAIRIE, Grenoble MIAI, Toulouse ANITI, Nice 3IA). |
+| **R&D Privée & Grands Groupes** | **Amadeus + Thales Alenia Space** (>6 500 ingénieurs) | **~6 % de la R&D privée logicielle/spatiale** | Amadeus = 1er centre de R&D privé de transport en Europe ; Thales = 1er constructeur de satellites. |
+| **Bassin d'Emploi Tech & Startups** | **46 000 emplois qualifiés / 2 700 entreprises** | **1er technopôle d'Europe** | Densité d'entreprises technologiques unique en région PACA. |
+| **Infrastructures Cloud Souveraines** | **Monaco Cloud (1er Cloud d'État UE)** | **Unique hub transfrontalier** | Seul hub souverain binational garantissant la conformité AMSN & NIS 2. |
+
+**L'argumentaire de conviction** : Le triangle Nice - Sophia Antipolis - Monaco constitue **le 2e mastodonte technologique de France** et **le 1er hub transfrontalier d'Europe du Sud**. Pesant **un quart de la recherche publique IA d'élite de province** et **12 % des chercheurs R&D hors Paris**, notre territoire possède la masse critique incontestable pour imposer l'attribution de la Gigafactory de 500 M€ et devenir la Capitale de l'IA appliquée.
+
+---
+
+#### 1.4 Les faiblesses et contraintes lucidement posées
 
 1. **Filière IA pure réduite** : ~86 établissements et ~800 emplois directs IA dans le 06 (étude CCI).
 2. **Le verrou électrique** : Extrémité d'une « presqu'île électrique » très vulnérable (coupure majeure de ~2M d'habitants en 2009 ; capacité RTE/CNDP 2025 saturée).
@@ -54,7 +70,7 @@ La Métropole Nice Côte d’Azur dispose d'atouts technologiques et industriels
 
 ---
 
-#### 1.4 L'Opportunité Historique : Les 30 Md€ de l'UE & Les 7 AI Gigafactories
+#### 1.5 L'Opportunité Historique : Les 30 Md€ de l'UE & Les 7 AI Gigafactories
 
 Le **30 juillet 2026**, la Commission Européenne a officiellement lancé un appel d'offres historique de **30 milliards d'euros** pour bâtir **7 AI Gigafactories** en Europe :
 
@@ -65,7 +81,7 @@ Le **30 juillet 2026**, la Commission Européenne a officiellement lancé un app
 
 ---
 
-#### 1.5 La Doctrine Stratégique Nice IA : 3 Choix Clairs
+#### 1.6 La Doctrine Stratégique Nice IA : 3 Choix Clairs
 
 1. **Renoncer à l'hyperscale, assumer l’IA frugale** : Sobriété énergétique, cas d'usage utiles et sécurité maximale (conforme AI Act).
 2. **Occuper les 2 vides délaissés** : L'adoption par les PME ordinaires (commerce, tourisme, santé) et l'Industrialisation / LLMOps.
@@ -243,32 +259,44 @@ flowchart TD
 
 ---
 
-### 7. ANNEXE : VALIDATION JURIDIQUE, STATISTIQUE ET SOURCES OFFICIELLES
+### 7. ANNEXE : VALIDATION JURIDIQUE, STATISTIQUE ET RÉFÉRENCES DOCUMENTAIRES COMPLÈTES
 
-#### A. Cadre Juridique Stricte & Vidéoprotection IA (VSA)
+#### A. Rapports Stratégiques & Analyses Prospectives
+1. **Note Strategique « Opération Prométhée » — Le Grand Continent (Juillet 2026)** :
+   - Proposition d'un plan souverain de 700 Md$ sur 3 ans pour doter la France d'un laboratoire d'IA de frontière (12 GW de puissance, 1 700 chercheurs).
+   - Source : *Le Grand Continent / Groupe d'Études Géopolitiques (GEG)*.
+2. **Appel d'Offres Historique Européen — AI Gigafactories (30 Juillet 2026)** :
+   - Programme EuroHPC JU (Lot 1) : 30 Md€ d'enveloppe globale, subvention directe UE de 500 M€ par Gigafactory labellisée.
+   - Source : *Commission Européenne / EuroHPC Joint Undertaking* ([eurohpc-ju.europa.eu](https://eurohpc-ju.europa.eu)).
+3. **Plan SUD IA — Région Provence-Alpes-Côte d'Azur (2025-2030)** :
+   - Enveloppe de 70 M€ sur 5 ans (22 mesures, 3 axes).
+   - Source : *Conseil Régional PACA / Ma Région Sud*.
+
+#### B. Cadre Juridique Stricte & Vidéoprotection IA (VSA)
 1. **Règlement Européen sur l'IA (AI Act) — Règlement (UE) 2024/1689 du 13 juin 2024** :
-   - Classification des applications. Exclusion explicite de la reconnaissance faciale biométrique à distance en temps réel dans l'espace public (interdite).
+   - Journal Officiel de l'UE. Exclusion explicite de la reconnaissance faciale biométrique en temps réel dans l'espace public (interdite).
 2. **Loi n° 2023-380 du 19 mai 2023 (Loi JOP 2024 - Art. 10)** :
-   - Cadre expérimental autorisant la Vidéosurveillance Algorithmique (VSA) pour la détection d'événements prédéterminés.
-3. **Jurisprudence du Conseil d'État (Décision du 30 janvier 2026 - Commune de Nice)** :
-   - Obligation d'une base légale explicite et de finalités d'intérêt public circonscrites sans profilage individuel.
-4. **Directive Européenne NIS 2 (Règlementation Cybersécurité des Collectivités)** :
-   - Exigence légale de renforcement des défenses informatiques des collectivités d'importance critique.
+   - Cadre expérimental autorisant la Vidéosurveillance Algorithmique (VSA) pour la détection automatisée d'événements prédéterminés sur la voie publique.
+3. **Jurisprudence du Conseil d'État — Décision du 30 janvier 2026 (Commune de Nice)** :
+   - Validation des protocoles d'expérimentation municipaux sous réserve de finalités d'intérêt public circonscrites et d'absence de profilage biométrique.
+4. **Directive Européenne NIS 2 — Directive (UE) 2022/2555 (Cybersécurité des Collectivités)** :
+   - Obligation légale de renforcement et d'audit pour l'ensemble des SI des métropoles et villes de plus de 100 000 habitants.
 
-#### B. Principauté de Monaco — Textes & Infrastructures Officiels
-1. **Programme Extended Monaco** : Stratégie nationale de transformation numérique lancée par S.A.S. le Prince Albert II ([gouv.mc](https://www.gouv.mc)).
-2. **Monaco Cloud** : 1er Cloud Souverain d'État en Europe, conforme AMSN et VMware Sovereign Cloud ([monacocloud.mc](https://monacocloud.mc)).
-3. **Extended Monaco Entreprises (EME)** : Dispositif officiel d'accompagnement IA et audits *AI Opportunity* ([bss.mc](https://www.bss.mc)).
-4. **Schéma de Coopération Transfrontalière (SCT 2020-2030)** de la Métropole Nice Côte d'Azur ([espaces-transfrontaliers.org](https://www.espaces-transfrontaliers.org)).
+#### C. Principauté de Monaco — Textes & Infrastructures Officiels
+1. **Programme Extended Monaco (2019-2030)** : Stratégie nationale de transformation numérique impulsée par S.A.S. le Prince Albert II ([gouv.mc](https://www.gouv.mc)).
+2. **Monaco Cloud (AMSN & VMware Sovereign Cloud)** : 1er Cloud Souverain d'État en Europe, garanti sans souveraineté extra-européenne ([monacocloud.mc](https://monacocloud.mc)).
+3. **Extended Monaco Entreprises (EME)** : Dispositif d'accompagnement et audits d'opportunité IA pour les acteurs du bassin transfrontalier ([bss.mc](https://www.bss.mc)).
+4. **Schéma de Coopération Transfrontalière (SCT 2020-2030)** : Métropole Nice Côte d'Azur & Principauté de Monaco ([espaces-transfrontaliers.org](https://www.espaces-transfrontaliers.org)).
 
-#### C. Guichets Européens de Financement Direct (Indépendance Région SUD)
-1. **EuroHPC Joint Undertaking (EuroHPC JU) — AI Gigafactories (Lot 1)** : Financement direct de 500 M€ de l'UE pour le supercalculateur d'IA régional ([eurohpc-ju.europa.eu](https://eurohpc-ju.europa.eu)).
-2. **Digital Europe Programme (DIGITAL) — Règlement (UE) 2021/694** : Subventions directes (50%-70%) pour la cybersécurité et l'IA ([ec.europa.eu](https://ec.europa.eu)).
-3. **Horizon Europe — Cluster 3 (« Civil Security for Society »)** : Subventions à 100% pour la cybersécurité urbaine et la protection des infrastructures.
-4. **Interreg ALCOTRA / MARITTIMO** : Co-financement transfrontalier France-Italie-Monaco.
+#### D. Guichets Européens de Financement Direct
+1. **Programme Digital Europe (DIGITAL) — Règlement (UE) 2021/694** : Subventions directes de 50 % à 70 % pour le déploiement de l'IA et la cybersécurité dans les villes ([ec.europa.eu](https://ec.europa.eu)).
+2. **Horizon Europe — Cluster 3 (« Civil Security for Society »)** : Financement à 100 % des technologies de sécurité urbaine et de protection civile.
+3. **Fonds Européen de Développement Régional (FEDER) & Programme Interreg ALCOTRA / MARITTIMO** : Co-financements transfrontaliers France-Italie-Monaco.
 
-#### D. Statistiques & Données Territoriales Vérifiées
-1. **Centre de Supervision Urbain (CSU) de Nice** : > 4 300 caméras raccordées (1er CSU de France).
-2. **Sophia Antipolis** : ~2 700 entreprises, ~46 000 emplois, ~5 500 chercheurs (*Invest in Côte d'Azur*, 2026).
-3. **Flux Pendulaires Nice-Monaco** : > 45 000 salariés traversant quotidiennement la frontière métropolitaine (Source INSEE / SCT 2025).
-4. **Contrainte Électrique Azuréenne** : PACA / 06 presqu'île électrique (RTE / CNDP 2025 ; coupure de déc. 2009). Justification technique de l'IA frugale.
+#### E. Statistiques, Évaluations R&D & Sources Territoriales
+1. **Institut 3IA Côte d'Azur & Université Côte d'Azur (UCA)** : Rapport annuel 2025/2026 (> 100 chaires de recherche de niveau mondial en IA santé/biologie).
+2. **Technopole Sophia Antipolis & Invest in Côte d'Azur** : Chiffres clés 2025/2026 (2 700 entreprises, 46 000 emplois qualifiés, 5 500 chercheurs).
+3. **CCI Nice Côte d'Azur & Observatoire Économique Sirénize** : Étude sur la filière IA et le tissu PME azuréen (86 établissements spécialisés IA).
+4. **Centre de Supervision Urbain (CSU) de Nice** : 4 300+ caméras connectées (1er CSU de France).
+5. **Réseau de Transport d'Électricité (RTE) / CNDP (2025)** : Rapport d'audit sur la « presqu'île électrique » des Alpes-Maritimes et les capacités de charge régionales.
+6. **INSEE / Métropole NCÀ** : Données sur les flux pendulaires Nice-Monaco (> 45 000 salariés transfrontaliers quotidiens).
