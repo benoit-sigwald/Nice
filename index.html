@@ -1347,6 +1347,83 @@
             .hero-title { font-size: 1.95rem; }
             .btn-champagne, .btn-outline { width: 100%; justify-content: center; padding: 12px 20px; }
         }
+
+        /* Note Modal overlay */
+        .note-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .note-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .note-modal-content {
+            background: rgba(15, 23, 42, 0.95);
+            border: 1px solid var(--accent-champagne);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 1200px;
+            height: 85%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 25px 50px -12px rgba(0, 240, 255, 0.25);
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .note-modal-overlay.active .note-modal-content {
+            transform: scale(1);
+        }
+        .note-modal-header {
+            padding: 16px 24px;
+            background: rgba(30, 41, 59, 0.5);
+            border-bottom: 1px solid rgba(216, 185, 138, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .note-modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--accent-champagne);
+            margin: 0;
+        }
+        .note-modal-close {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .note-modal-close:hover {
+            color: var(--accent-champagne);
+        }
+        .note-modal-body {
+            flex: 1;
+            padding: 0;
+            margin: 0;
+            background: #ffffff; /* White background for document reading comfort */
+            position: relative;
+        }
+        .note-modal-body iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -1375,10 +1452,11 @@
             </div>
 
             <div class="nav-actions">
-                <a href="#cadrage" class="btn-champagne" id="nav-btn-note">
-                    Note pour le Maire
+                <a href="javascript:void(0)" onclick="openNoteModal()" class="btn-champagne" id="nav-btn-note">
+                    Le Pacte Nice IA
                 </a>
                 <button class="mobile-toggle" aria-label="Menu" onclick="toggleMobileMenu()">
+                    <span></span>
                     <span></span>
                     <span></span>
                 </button>
@@ -1393,7 +1471,7 @@
             <a href="#monaco-cloud-si" onclick="toggleMobileMenu()" id="mob-nav-cloud">☁️ Migration SI → Monaco Cloud</a>
             <a href="#roi" onclick="toggleMobileMenu()" id="mob-nav-6">📊 Simulateur ROI</a>
             <a href="#synthese" onclick="toggleMobileMenu()" id="mob-nav-synthese">⚡ Synthèse Exécutive</a>
-            <a href="Note_de_Position_Nice_IA_Ciotti.md" target="_blank" style="color: var(--accent-champagne);" id="mob-nav-8">📄 Note Complète (.MD)</a>
+            <a href="javascript:void(0)" onclick="toggleMobileMenu(); openNoteModal()" style="color: var(--accent-champagne);" id="mob-nav-8">📄 Le Pacte Nice IA (.MD)</a>
         </div>
     </header>
 
@@ -2113,6 +2191,7 @@
                 m3b3t: "Passerelle Souveraine",
                 m3b4d: "<strong>2,0 M€ à 4,0 M€/an</strong> d'économies d'infrastructures cloud et investissements.",
                 m3b4t: "Valeur Infra & VC",
+                mobNav8: "📄 Le Pacte Nice IA (.MD)",
                 monacoCard1H3: "Capital & Cloud Souverain",
                 monacoCard1Tag: "🇲🇨 Principauté de Monaco",
                 monacoCard2H3: "Échelle, CSU & Recherche 3IA",
@@ -2123,10 +2202,11 @@
                 monacoKicker: "Partenariat Transfrontalier Majeur",
                 monacoTitle: "L'Alliance Nice - Extended Monaco",
                 navAxes: "Sécurité & Audit",
-                navBtnNote: "Note pour le Maire",
+                navBtnNote: "Le Pacte Nice IA",
                 navCloudSi: "Cloud SI",
                 navMonaco: "Monaco",
                 navSynthese: "Synthèse",
+                noteModalTitle: "🤝 Le Pacte Nice IA",
                 roiCost: "Coût Commando Métropole :",
                 roiCostVal: "0.50 M€ / an",
                 roiGross: "Économies Brutes Générées :",
@@ -2163,13 +2243,13 @@
                 axesDesc: "A doctrine of intelligent austerity: budgetary savings certified first, followed by City and Metropolis skills.",
                 axesKicker: "Budget Priority & Institutions",
                 axesTitle: "Nice IA Structuring Commitments",
-                badgePriorite1: "Priorité 1",
+                badgePriorite1: "Priority 1",
                 bm1d: "Automatic semantic analysis of invoices and contracts detects 0.5% to 2% of duplicates and additional costs on public orders.",
                 bm1t: "🛒 Public Order Audit (DGFiP / US Cities)",
                 bm2d: "Adaptive lighting and predictive HVAC control reduce municipal energy bills by 20% to 50%.",
                 bm2t: "💡 Smart Lighting & Buildings (Barcelona / Singapore)",
                 bm3d: "Dynamic AI routing of dumpsters and vehicles reduces distances by 37% and logistics costs by 30%.",
-                bm3t: "🚛 Flottes & Déchets (Séoul / Londres Southwark)",
+                bm3t: "🚛 Fleets & Waste (Seoul / London Southwark)",
                 bm4d: "24/7 voice assistants absorb 40% of repetitive requests without phone queues.",
                 bm4t: "📞 Voice Citizen Counter (Boston / San Jose)",
                 bmTitle: "🌐 International & French Municipal AI Economies Benchmarks:",
@@ -2179,20 +2259,20 @@
                 c2BudgetTag: "⚡ Metropolitan AI budget: €150k/year <em>(EU co-financed)</em>",
                 c2EconDesc: "• Market Audit: <strong>+2.5 M€/year net</strong> certified<br/>• Cyber ​​Crises avoided: <strong>1.8-3 M€/year</strong> (NIS 2 Directive)",
                 c2EconTitle: "💰 Quantified Savings:",
-                c3BudgetTag: "⚡ Budget IA Monaco ZF : 250 k€/an <em>(Co-financé UE)</em>",
+                c3BudgetTag: "⚡ Monaco ZF AI budget: €250k/year <em>(EU co-financed)</em>",
                 c3GainsDesc: "• Infra Cloud Monaco: <strong>1.2 M€/year</strong> avoided + 2-4 M€ VC<br/>• Free Zone: Binational Single Window & Sandbox",
-                c3GainsTitle: "🇲🇨 Gains Transfrontaliers & Infra :",
+                c3GainsTitle: "🇲🇨 Cross-border & Infra Gains:",
                 card1Label: "CSU cameras powered by AI: <strong>Instant threat detection &amp; maximum security.</strong>",
                 card2Label: "<strong>Budgetary rigor &amp; end of waste:</strong> Net savings certified by the systematic AI audit of metropolitan public procurement.",
                 card3BadgeFluid: "⚡ Metropolitan IA Regulation: Streamlined Traffic (-70% traffic jams)",
                 card3BadgeJam: "🚨 Plaine du Var traffic jams (-45 min)",
                 card3Label: "<strong>Economic growth - Monaco Nice Axis (Free Zone):</strong> Fluid AI regulation of daily commuting mobility.",
-                card4Label: "Levier Europe & Financements Cités (0 € dépendance Région SUD)",
+                card4Label: "Europe Lever & City Funding (€0 dependency SOUTH Region)",
                 cyberBoxH3: "The Metropolitan Shield AI",
                 cyberBoxNis2: "Compliant with NIS 2 Directive — €1.8 million to €3 million/year in attacks prevented",
                 cyberBoxTag: "Cyber-Shield Protocol 2026",
                 cyberDesc: "Faced with cyber threats and rising IT costs, Nice is deploying a shared sovereign cloud architecture.",
-                cyberItem1H4: "1. SOC IA Métropolitain 24/7",
+                cyberItem1H4: "1. SOC IA Metropolitan 24/7",
                 cyberItem1P: "Autonomous AI agents detecting intrusion and data exfiltration attempts on the municipal network in real time.",
                 cyberItem2H4: "2. Eradication of Shadow AI",
                 cyberItem2P: "Provision of a waterproof local sovereign AI environment and blocking of insecure consumer AI.",
@@ -2206,10 +2286,10 @@
                 cyberItem6P: "Sovereign, turnkey sharing of this secure cloud/AI base to the 49 other metropolitan municipalities, reducing their IT costs.",
                 cyberKicker: "Digital Protection & Resilience",
                 cyberTitle: "Cyber ​​Shield, Sovereign Cloud & IS Pooling",
-                heroBtnDiscover: "Découvrir le Pôle Réduction de Coûts",
+                heroBtnDiscover: "Discover the Cost Reduction Center",
                 heroBtnSimulate: "Simulate Budget Savings ↓",
                 heroKicker: "Metropolitan Plan for Safe & Applied AI (2026-2029)",
-                heroSubtitle: "Une doctrine stratégique rédigée pour <strong>M. Éric Ciotti</strong> : Rigueur budgétaire (2,5 M€/an net d'économies d'audit - estimation basée sur des faits concrets), sécurité augmentée au CSU, alliance transfrontalière avec Monaco, cofinancement européen et budget maîtrisé.",
+                heroSubtitle: "A strategic doctrine written for<strong>Mr. Éric Ciotti</strong>: Budgetary rigor (€2.5 million/year net audit savings - estimate based on concrete facts), increased security at the CSU, cross-border alliance with Monaco, European co-financing and controlled budget.",
                 heroTitle: "AI at the service of the people of Nice: Security, rigor and a metropolis where <em class=\"font-serif italic text-champagne\">life is good.</em>",
                 langFlag: "🇬🇧",
                 langLabel: "IN",
@@ -2226,7 +2306,7 @@
                 m2b2d: "3IA Côte d’Azur Institute, 2,700 companies and 5,500 researchers.",
                 m2b2t: "Sophia Antipolis & 3IA",
                 m2b3d: "Metropolitan area of ​​550,000 inhabitants and large business park.",
-                m2b3t: "Échelle & Territoire",
+                m2b3t: "Scale & Territory",
                 m2b4d: "Testing ground for innovations financed by Monaco.",
                 m2b4t: "Business Synergies",
                 m3b1d: "Tax and administrative facilitation France - Principality.",
@@ -2237,29 +2317,31 @@
                 m3b3t: "Sovereign Gateway",
                 m3b4d: "<strong>2.0 M€ to 4.0 M€/year</strong> cloud infrastructure savings and investments.",
                 m3b4t: "Infra & VC Value",
+                mobNav8: "📄 The Nice IA Pact (.MD)",
                 monacoCard1H3: "Capital & Sovereign Cloud",
                 monacoCard1Tag: "🇲🇨 Principality of Monaco",
                 monacoCard2H3: "Scale, CSU & 3IA Research",
                 monacoCard2Tag: "🇫🇷 Nice Côte d’Azur metropolis",
-                monacoCard3H3: "Zone Franche IA & Économie",
+                monacoCard3H3: "Free Zone AI & Economy",
                 monacoCard3Tag: "🤝 Free Zone France - Monaco",
                 monacoDesc: "A tripartite synergy of excellence between the funds and the cloud of the Principality, the power of the Nice CSU and the Cross-Border Free Zone.",
-                monacoKicker: "Partenariat Transfrontalier Majeur",
-                monacoTitle: "L'Alliance Nice - Extended Monaco",
-                navAxes: "Sécurité & Audit",
-                navBtnNote: "Note for the Mayor",
+                monacoKicker: "Major Cross-Border Partnership",
+                monacoTitle: "The Nice Alliance - Extended Monaco",
+                navAxes: "Security & Audit",
+                navBtnNote: "The Nice AI Pact",
                 navCloudSi: "Cloud IS",
                 navMonaco: "Monaco",
-                navSynthese: "Synthèse",
+                navSynthese: "Synthesis",
+                noteModalTitle: "🤝 The Nice AI Pact",
                 roiCost: "Metropole Commando Cost:",
                 roiCostVal: "0.50 M€ / year",
                 roiGross: "Gross Savings Generated:",
                 roiNet: "+1.90 M€ / year",
-                securityTag: "🛡️ CSU Augmenté : Moins d'Écrans, Plus de Policiers dans la Rue",
+                securityTag: "🛡️ Increased CSU: Fewer Screens, More Police Officers on the Street",
                 stratP1Desc: "AI VSA on 4,300+ cameras: instant detection and reassignment of police officers in the field.",
                 stratP1Title: "1. Increased CSU & Security",
                 stratP1Val: "Impact: Incivility -65%",
-                stratP2Desc: "Contrôle à 100 % des factures métropolitaines, devis et BPU pour éliminer le gaspillage.",
+                stratP2Desc: "100% control of metropolitan invoices, quotes and BPU to eliminate waste.",
                 stratP2Title: "2. AI Audit & Public Order",
                 stratP2Val: "Net gain: €2.50 million / year certified",
                 stratP3Desc: "Sovereign migration of municipal IS to Monaco Cloud: 1.5-2.8 M€/year of IT budget freed + 8-12 M€ of data center CAPEX avoided.",
@@ -2267,7 +2349,7 @@
                 stratP3Val: "IT economy: 1.5-2.8 M€/year + 8-12 M€ CAPEX avoided",
                 stratP4Desc: "500 k€/year of total AI Budget (100k City / 150k Metropolis / 250k Monaco ZF), fully co-financed by the EU (Digital Europe, Horizon, FEDER).",
                 stratP4Title: "5. Europe & Cities funding",
-                stratP4Val: "Budget IA Total : 500 k€/an — Co-financé UE",
+                stratP4Val: "Total AI budget: €500k/year — EU co-financed",
                 stratP5Desc: "24/7 sovereign SOC & CSU seal against ransomware attacks.",
                 stratP5Title: "3. Cyber-AI Shield (NIS 2)",
                 stratP5Val: "Value: €1.8 million to €3 million/year of crisis avoided",
@@ -2281,7 +2363,7 @@
                 tabBtn1: "<span class=\"tab-badge\" id=\"badge-priorite-1\">Priority 1</span> 💰 COST REDUCTION CENTER (€2.5M/YEAR)",
                 tabBtn2: "🏛️ SECURITY & COMMON PROXIMITY",
                 tabBtn3: "🏢 RIGOR & CYBER SOVEREIGNTY",
-                unitCard2: "M€ / an",
+                unitCard2: "M€ / year",
             }
         };
 
@@ -2299,6 +2381,12 @@
             }
 
             document.getElementById('nav-btn-note').innerText = data.navBtnNote;
+            if (document.getElementById('mob-nav-8') && data.mobNav8) {
+                document.getElementById('mob-nav-8').innerText = data.mobNav8;
+            }
+            if (document.getElementById('note-modal-title') && data.noteModalTitle) {
+                document.getElementById('note-modal-title').innerText = data.noteModalTitle;
+            }
 
             document.getElementById('hero-kicker').innerText = data.heroKicker;
             document.getElementById('hero-title').innerHTML = data.heroTitle;
@@ -2932,6 +3020,46 @@
                 }
             });
         });
+
+        // 13. Note Modal Controller (Iframe GitHub)
+        function openNoteModal() {
+            const modal = document.getElementById('note-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevents background scroll
+        }
+
+        function closeNoteModal() {
+            const modal = document.getElementById('note-modal');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            document.body.style.overflow = ''; // Restores scroll
+        }
+
+        // Close modal when clicking outside content
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('note-modal');
+            if (e.target === modal) {
+                closeNoteModal();
+            }
+        });
     </script>
+
+    <!-- Modal pour le Pacte Nice IA (Cadrage) -->
+    <div id="note-modal" class="note-modal-overlay">
+        <div class="note-modal-content">
+            <div class="note-modal-header">
+                <h3 id="note-modal-title">🤝 Le Pacte Nice IA</h3>
+                <button class="note-modal-close" onclick="closeNoteModal()" aria-label="Fermer">&times;</button>
+            </div>
+            <div class="note-modal-body">
+                <iframe id="note-iframe" src="https://github.com/benoit-sigwald/Nice/blob/master/Note_de_Position_Nice_IA_Ciotti.md" title="Note de Position Nice IA"></iframe>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

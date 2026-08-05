@@ -1,5 +1,5 @@
-# NICE, CAPITALE DE L’IA SÉCURITAIRE ET APPLIQUÉE
-## Note d'Orientation Stratégique & Justifications Chiffrées — Plan Sécurité, Rigueur Budgétaire, Cyber-Shield, Alliance Monaco & AI Gigafactory (2026-2029)
+# LE PACTE NICE IA : SOUVERAINETÉ & RIGUEUR
+## Doctrine Stratégique & Justifications Chiffrées — Plan Sécurité, Rigueur Budgétaire, Cyber-Shield, Alliance Monaco & AI Gigafactory (2026-2029)
 **Document rédigé pour M. Éric Ciotti par Benoît Sigwald — Senior AI Architect & AMO IA Métropolitain — Août 2026**
 
 ---
