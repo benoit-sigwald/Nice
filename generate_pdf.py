@@ -17,14 +17,14 @@ full_html = f"""<!DOCTYPE html>
         
         @page {{
             size: A4;
-            margin: 20mm 18mm 20mm 18mm;
+            margin: 18mm 16mm 18mm 16mm;
         }}
         
         body {{
             font-family: 'Inter', sans-serif;
             color: #1E293B;
-            line-height: 1.6;
-            font-size: 9.5pt;
+            line-height: 1.5;
+            font-size: 9pt;
             background: #FFFFFF;
         }}
         
@@ -34,27 +34,27 @@ full_html = f"""<!DOCTYPE html>
         
         .header-banner {{
             border-bottom: 2px solid #0F172A;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+            padding-bottom: 6px;
+            margin-bottom: 16px;
         }}
         
         .doc-title {{
             font-family: 'Playfair Display', serif;
-            font-size: 22pt;
+            font-size: 20pt;
             font-weight: 700;
             color: #0F172A;
             margin: 0 0 4px 0;
         }}
         
         .doc-subtitle {{
-            font-size: 11pt;
+            font-size: 10.5pt;
             color: #1E3A8A;
             margin: 0;
             font-weight: 600;
         }}
         
         .meta-tag {{
-            font-size: 8pt;
+            font-size: 7.5pt;
             color: #475569;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -63,26 +63,26 @@ full_html = f"""<!DOCTYPE html>
         
         h1 {{
             font-family: 'Playfair Display', serif;
-            font-size: 14pt;
+            font-size: 13.5pt;
             color: #0F172A;
             border-bottom: 1px solid #CBD5E1;
             padding-bottom: 4px;
-            margin-top: 22px;
-            margin-bottom: 10px;
+            margin-top: 18px;
+            margin-bottom: 8px;
             page-break-after: avoid;
         }}
         
         h2 {{
             font-family: 'Playfair Display', serif;
-            font-size: 11.5pt;
+            font-size: 11pt;
             color: #1E3A8A;
-            margin-top: 14px;
+            margin-top: 12px;
             margin-bottom: 6px;
             page-break-after: avoid;
         }}
         
         p {{
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             text-align: justify;
         }}
         
@@ -93,21 +93,21 @@ full_html = f"""<!DOCTYPE html>
         table {{
             width: 100%;
             border-collapse: collapse;
-            margin: 14px 0;
-            font-size: 8.5pt;
+            margin: 10px 0;
+            font-size: 8pt;
             page-break-inside: avoid;
         }}
         
         th {{
             background: #1E293B;
             color: #FFFFFF;
-            padding: 8px 10px;
+            padding: 6px 8px;
             text-align: left;
             font-weight: 600;
         }}
         
         td {{
-            padding: 7px 10px;
+            padding: 5px 8px;
             border-bottom: 1px solid #E2E8F0;
         }}
         
@@ -116,17 +116,17 @@ full_html = f"""<!DOCTYPE html>
         }}
         
         ul {{
-            margin: 6px 0 10px 18px;
+            margin: 4px 0 8px 16px;
             padding: 0;
         }}
         
         li {{
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }}
         
         .chart-box {{
             text-align: center;
-            margin: 16px 0;
+            margin: 12px 0;
             page-break-inside: avoid;
         }}
         
@@ -139,13 +139,13 @@ full_html = f"""<!DOCTYPE html>
         
         .toc-table td {{
             border-bottom: 1px dashed #E2E8F0;
-            padding: 5px 8px;
+            padding: 4px 6px;
         }}
         
         .footer-note {{
-            margin-top: 30px;
+            margin-top: 20px;
             border-top: 1px solid #E2E8F0;
-            padding-top: 8px;
+            padding-top: 6px;
             font-size: 7.5pt;
             color: #64748B;
             text-align: center;
@@ -180,9 +180,12 @@ full_html = f"""<!DOCTYPE html>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.1 Audit IA de la Commande Publique Métropolitaine (+2,5 M€ / an Net)</td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.2 Bouclier Cybersécurité IA NIS 2 (1,8 M€ à 3 M€ Évités)</td><td style="text-align: right; color: #64748B;"><em>Page 7</em></td></tr>
             <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.3 Alliance Monaco Cloud & Data Center Souverain (1,5 M€ à 2,8 M€ / an)</td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td><strong>4. Alliance Binationale Nice-Monaco & Zone Franche Numérique</strong></td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
-            <tr><td><strong>5. Gouvernance, Déploiement & Feuille de Route 36 Mois</strong></td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
-            <tr><td><strong>6. Annexe : Validation Juridique, Statistique et Références Documentaires Complètes</strong></td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
+            <tr><td><strong>4. Alliance Binationale Nice-Monaco & Hub Réglementaire</strong></td><td style="text-align: right; color: #64748B;"><em>Page 8</em></td></tr>
+            <tr><td><strong>5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre</strong></td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</td><td style="text-align: right; color: #64748B;"><em>Page 9</em></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.2 Feuille de Route Détaillée & Budget par Éléments (36 Mois)</td><td style="text-align: right; color: #64748B;"><em>Page 10</em></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;5.3 Tableau de Synthèse Budgétaire Trimestriel (Q1 à Q12)</td><td style="text-align: right; color: #64748B;"><em>Page 11</em></td></tr>
+            <tr><td><strong>6. Annexe : Validation Juridique, Statistique et Références Documentaires Complètes</strong></td><td style="text-align: right; color: #64748B;"><em>Page 12</em></td></tr>
         </tbody>
     </table>
     
@@ -375,21 +378,78 @@ full_html = f"""<!DOCTYPE html>
         <li><strong>Hub Incertitude Zéro</strong> : Garantie de sécurité juridique totale pour les PME innovantes.</li>
     </ul>
     
-    <h1>5. Gouvernance, Direction de Projet & Jalons Gigafactory</h1>
+    <h1>5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre</h1>
     
-    <h2>5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD</h2>
+    <h2>5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)</h2>
     <ul>
         <li><strong>Présidence du Comité de Pilotage Métropolitain</strong> : <strong>M. Éric Ciotti</strong>, assurant l'arbitrage politique au plus haut niveau et le leadership face aux instances régionales et européennes.</li>
-        <li><strong>Direction du Projet Pacte Nice IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect & AMO IA Métropolitain. Engagement optimisé à <strong>2 à 3 jours par semaine</strong>, réduisant l'honoraires de direction de projet à seulement <strong>65 k€ / an</strong> (au lieu de 130 k€), ramenant le budget total annuel brut à <strong>435 k€ / an</strong> (~217 k€ / an net après co-financement UE).</li>
+        <li><strong>Direction de Projet AMO IA (Temps Partagé)</strong> : <strong>M. Benoît SIGWALD</strong>, Senior AI Architect. Engagement à <strong>2,5 jours par semaine</strong>, réduisant la ligne AMO à <strong>65 k€ / an</strong> et amenant le budget global à <strong>435 k€ / an</strong> (reste à charge net métropolitain : <strong>~217 k€ / an</strong>).</li>
     </ul>
     
-    <h2>5.2 Feuille de Route 36 Mois & Allocations Budgétaires Annuelles</h2>
+    <h2>5.2 Feuille de Route Détaillée Élément par Élément (36 Mois)</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Phase / Période</th>
+                <th>Chantier / Livrable Stratégique</th>
+                <th>Budget Dédié</th>
+                <th>Impact & Résultat Attendus</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Année 1 - Q1</td><td>L1.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Cadrage opérationnel & gouvernance.</td></tr>
+            <tr><td>Année 1 - Q1</td><td>L1.2 Bureau Candidature Binationale Gigafactory</td><td>35,00 k€</td><td>Dossier 500 M€ UE co-rédigé Monaco.</td></tr>
+            <tr><td>Année 1 - Q1</td><td>L1.3 Délibération Métropolitaine & AI Act</td><td>20,00 k€</td><td>Vote cadre juridique & éthique.</td></tr>
+            <tr><td>Année 1 - Q1</td><td>L1.4 Audit CSU & Fibre Monaco Cloud</td><td>38,75 k€</td><td>Cahier des charges interconnexion.</td></tr>
+            <tr><td>Année 1 - Q2</td><td>L2.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Gestion des appels d'offres VSA.</td></tr>
+            <tr><td>Année 1 - Q2</td><td>L2.2 Dépôt Dossier Gigafactory UE (12 Nov)</td><td>10,00 k€</td><td>Candidature officielle 500 M€.</td></tr>
+            <tr><td>Année 1 - Q2</td><td>L2.3 Filtrage VSA CSU (4 300 caméras)</td><td>55,00 k€</td><td>Alertes incivilités en temps réel.</td></tr>
+            <tr><td>Année 1 - Q2</td><td>L2.4 Géolocalisation & Dispatching PM</td><td>33,75 k€</td><td>Patrouilles physiques < 6 min.</td></tr>
+            <tr><td>Année 1 - Q3</td><td>L3.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Suivi ingénierie & recettes.</td></tr>
+            <tr><td>Année 1 - Q3</td><td>L3.2 Audit Commande Publique (Factures 300M€)</td><td>45,00 k€</td><td>Filtrage erreurs & doublons BPU.</td></tr>
+            <tr><td>Année 1 - Q3</td><td>L3.3 SOC Cyber NIS 2 Autonome Air-Gap</td><td>28,75 k€</td><td>Protection inviolable du CSU.</td></tr>
+            <tr><td>Année 1 - Q3</td><td>L3.4 IA Einstein Concertation (1er Quartier)</td><td>15,00 k€</td><td>Restitution citoyenne augmentée.</td></tr>
+            <tr><td>Année 1 - Q4</td><td>L4.1 Pilotage & Direction de Projet (2.5j/sem)</td><td>16,25 k€</td><td>Revue annuelle & bilans.</td></tr>
+            <tr><td>Année 1 - Q4</td><td>L4.2 Généralisation Audit Commande Publique</td><td>45,00 k€</td><td>Rentrée de +2,5 M€/an certifiés.</td></tr>
+            <tr><td>Année 1 - Q4</td><td>L4.3 Recette Sécurité Monaco Cloud AMSN</td><td>23,75 k€</td><td>Certification Cloud Souverain.</td></tr>
+            <tr><td>Année 1 - Q4</td><td>L4.4 Restitution Publique Einstein Quartiers</td><td>20,00 k€</td><td>Arbitrages budgétaires citoyens.</td></tr>
+            <tr><td>Année 2 - S1</td><td>L5.1 Guichet Vocal Allo Niçois Séniors 24/7</td><td>85,00 k€</td><td>Assistance 24/7 & d'urgence.</td></tr>
+            <tr><td>Année 2 - S1</td><td>L5.2 VSA Propreté & Routage Bennes</td><td>65,00 k€</td><td>Rues propres & -18% carburant.</td></tr>
+            <tr><td>Année 2 - S2</td><td>L6.1 Extension Zone Franche Numérique</td><td>85,00 k€</td><td>Attraction PME & Data Center.</td></tr>
+            <tr><td>Année 2 - S2</td><td>L6.2 Concertation Einstein Récurrente</td><td>60,00 k€</td><td>Ingestion avis par quartier.</td></tr>
+            <tr><td>Année 3</td><td>L7.1 Supercalculateur AI Gigafactory</td><td>160,00 k€</td><td>Mise en service opérationnelle.</td></tr>
+            <tr><td>Année 3</td><td>L7.2 Industrialisation IA Frugale & Cyber</td><td>170,00 k€</td><td>Pérennisation & Hub AI Act.</td></tr>
+        </tbody>
+    </table>
+    
+    <h2>5.3 Tableau de Synthèse Budgétaire Trimestriel (435 k€ / an)</h2>
     <ul>
-        <li><strong>Échéance Imminente (12 Novembre 2026)</strong> : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).</li>
-        <li><strong>Phase 1 — Amorçage & CSU (Année 1 : 2026-2027 / 435 k€ brut)</strong> : Direction 65 k€ | VSA CSU 130 k€ | Ingestion Cloud/Fibre Monaco 110 k€ | Audit NIS 2/AI Act 80 k€ | Démocratie Einstein 50 k€. Action 100 jours : Vote de la délibération cadre & Bureau de Candidature. Action 6 mois : VSA CSU & PM géolocalisée. Action 12 mois : Audit commande publique (300 M€).</li>
-        <li><strong>Phase 2 — Échelle & Allo Niçois 24/7 (Année 2 : 2027-2028 / 435 k€ brut)</strong> : Direction 65 k€ | Licences Vocal & Propreté 160 k€ | Cloud Monaco 125 k€ | Maintien Cyber NIS 2 50 k€ | Concertation Quartiers 35 k€. Lancement Allo Niçois 24/7 & premiers <strong>+2,50 M€/an d'économies nettes certifiées</strong>.</li>
-        <li><strong>Phase 3 — Consécration & Gigafactory (Année 3 : 2028-2029 / 435 k€ brut)</strong> : Direction 65 k€ | Maintenance IA Frugale 160 k€ | Supercalculateur Monaco 125 k€ | Audit NIS 2 50 k€ | Concertation Récurrente 35 k€. Mise en service de la AI Gigafactory Nice-Monaco & consécration de Nice comme Capitale de l'IA de Sécurité.</li>
+        <li><strong>Étalement de la Trésorerie</strong> : Les dépenses sont lissées de manière équilibrée à raison de <strong>~108,75 k€ par trimestre</strong> (soit <strong>~72,5 k€ par bimestre</strong>), parfaitement maîtrisables au sein du budget métropolitain.</li>
     </ul>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Trimestre</th>
+                <th>Période Chronologique</th>
+                <th>Budget Brut</th>
+                <th>Co-financement UE (50%)</th>
+                <th>Reste à Charge Net</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Année 1 - Q1</td><td>Août — Octobre 2026</td><td>110,00 k€</td><td>55,00 k€</td><td>55,00 k€</td></tr>
+            <tr><td>Année 1 - Q2</td><td>Novembre 2026 — Janvier 2027</td><td>115,00 k€</td><td>57,50 k€</td><td>57,50 k€</td></tr>
+            <tr><td>Année 1 - Q3</td><td>Février — Avril 2027</td><td>105,00 k€</td><td>52,50 k€</td><td>52,50 k€</td></tr>
+            <tr><td>Année 1 - Q4</td><td>Mai — Juillet 2027</td><td>105,00 k€</td><td>52,50 k€</td><td>52,50 k€</td></tr>
+            <tr style="background: #E2E8F0; font-weight: bold;"><td>Sous-Total Année 1</td><td>Août 2026 — Juillet 2027</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
+            <tr><td>Année 2 - Q5-Q6</td><td>Août 2027 — Janvier 2028</td><td>217,50 k€</td><td>108,75 k€</td><td>108,75 k€</td></tr>
+            <tr><td>Année 2 - Q7-Q8</td><td>Février — Juillet 2028</td><td>217,50 k€</td><td>108,75 k€</td><td>108,75 k€</td></tr>
+            <tr style="background: #E2E8F0; font-weight: bold;"><td>Sous-Total Année 2</td><td>Août 2027 — Juillet 2028</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
+            <tr><td>Année 3 - Q9-Q12</td><td>Août 2028 — Juillet 2029</td><td>435,00 k€</td><td>217,50 k€</td><td>217,50 k€</td></tr>
+            <tr style="background: #0F172A; color: #FFFFFF; font-weight: bold;"><td>TOTAL CUMULÉ 36M</td><td>Août 2026 — Juillet 2029</td><td>1 305,00 k€</td><td>652,50 k€</td><td>652,50 k€</td></tr>
+        </tbody>
+    </table>
     
     <div class="page-break"></div>
     
@@ -429,4 +489,4 @@ cmd = [
 ]
 
 subprocess.run(cmd, check=True)
-print(f"PDF mis à jour avec puces et tournure souple généré avec succès : {pdf_path}")
+print(f"PDF enrichi avec roadmap détaillée et budget trimestriel généré avec succès : {pdf_path}")

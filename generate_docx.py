@@ -141,10 +141,11 @@ toc_data = [
     ("4. Alliance Binationale Nice-Monaco & Hub Réglementaire", "Page 8"),
     ("   4.1 Levier Binational : Clé de Voûte des Financements Européens", "Page 8"),
     ("   4.2 Nice, Centre d'Expertise AI Act de Référence pour la France", "Page 9"),
-    ("5. Gouvernance, Direction de Projet & Jalons Gigafactory", "Page 9"),
-    ("   5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD", "Page 9"),
-    ("   5.2 Feuille de Route Réaliste Synchronisée AI Gigafactory", "Page 10"),
-    ("6. Annexe : Justifications des Gains & Sources Documentaires", "Page 10")
+    ("5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre", "Page 9"),
+    ("   5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)", "Page 9"),
+    ("   5.2 Feuille de Route Détaillée & Budget par Éléments (36 Mois)", "Page 10"),
+    ("   5.3 Tableau de Synthèse Budgétaire Trimestriel (Q1 à Q12)", "Page 11"),
+    ("6. Annexe : Justifications des Gains & Sources Documentaires", "Page 12")
 ]
 
 table_toc = doc.add_table(rows=len(toc_data), cols=2)
@@ -373,33 +374,107 @@ add_bullet("**Audit et certification pour la France** : Accompagnement des entre
 add_bullet("**Hub Incertitude Zéro** : Garantie de sécurité juridique totale pour les PME innovantes.")
 
 # ---------------------------------------------------------
-# SECTION 5 : GOUVERNANCE & DIRECTION
+# SECTION 5 : GOUVERNANCE, ROADMAP & BUDGET TRIMESTRIEL
 # ---------------------------------------------------------
-add_styled_heading("5. Gouvernance, Direction de Projet & Jalons Gigafactory", 1, page_break=True)
+add_styled_heading("5. Gouvernance, Feuille de Route Détaillée & Budget par Trimestre", 1, page_break=True)
 
-add_styled_heading("5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD", 2)
+add_styled_heading("5.1 Présidence Éric Ciotti & Direction Benoît SIGWALD (2,5j/sem)", 2)
 add_bullet("**Présidence du Comité de Pilotage Métropolitain** : **M. Éric Ciotti**, assurant l'arbitrage politique au plus haut niveau et le leadership face aux instances régionales et européennes.")
-add_bullet("**Direction du Projet Pacte Nice IA (Temps Partagé)** : **M. Benoît SIGWALD**, Senior AI Architect & AMO IA Métropolitain. Engagement optimisé à **2 à 3 jours par semaine**, réduisant l'honoraires de direction de projet à seulement **65 k€ / an** (au lieu de 130 k€), ramenant le budget total annuel brut à **435 k€ / an** (~217 k€ / an net après co-financement UE).")
+add_bullet("**Direction de Projet AMO IA (Temps Partagé)** : **M. Benoît SIGWALD**, Senior AI Architect. Engagement à **2,5 jours par semaine**, réduisant la ligne AMO à **65 k€ / an** et amenant le budget global à **435 k€ / an** (reste à charge net métropolitain : **~217 k€ / an**).")
 
-add_styled_heading("5.2 Feuille de Route 36 Mois & Allocations Budgétaires Annuelles", 2)
-add_bullet("**Échéance Imminente (12 Novembre 2026)** : Dépôt officiel du dossier de candidature binationale Nice-Monaco pour l'appel d'offres AI Gigafactories (500 M€ UE).")
+add_styled_heading("5.2 Feuille de Route Détaillée Élément par Élément (36 Mois)", 2)
 
-add_styled_heading("Phase 1 — Amorçage, Candidature Gigafactory & CSU (Année 1 : 2026-2027 / 435 k€ brut)", 3)
-add_bullet("**Bilan Budgétaire Année 1** : Direction de projet 65 k€ | Licences VSA CSU 130 k€ | Ingestion Cloud/Fibre Monaco 110 k€ | Audit AI Act & Cyber NIS 2 80 k€ | Démocratie Participative Einstein 50 k€.")
-add_bullet("**Action 100 Jours** : Vote de la délibération cadre métropolitaine & création du Bureau de Candidature Binationale Nice-Monaco-Sophia.")
-add_bullet("**Action 6 Mois** : Déploiement du filtrage VSA sur le CSU (4 300 caméras) + géolocalisation et dispatching des patrouilles PM.")
-add_bullet("**Action 12 Mois** : Ingestion sémantique du premier lot de factures de la commande publique métropolitaine (300 M€).")
+# Detailed roadmap table element by element
+rm_data = [
+    ["Phase / Période", "Chantier / Livrable Stratégique", "Budget Dédié", "Impact & Résultat Attendus"],
+    ["Année 1 - Q1", "L1.1 Pilotage & Direction de Projet (2.5j/sem)", "16,25 k€", "Cadrage opérationnel & gouvernance."],
+    ["Année 1 - Q1", "L1.2 Bureau Candidature Binationale Gigafactory", "35,00 k€", "Dossier 500 M€ UE co-rédigé Monaco."],
+    ["Année 1 - Q1", "L1.3 Délibération Métropolitaine & AI Act", "20,00 k€", "Vote cadre juridique & éthique."],
+    ["Année 1 - Q1", "L1.4 Audit CSU & Fibre Monaco Cloud", "38,75 k€", "Cahier des charges interconnexion."],
+    ["Année 1 - Q2", "L2.1 Pilotage & Direction de Projet (2.5j/sem)", "16,25 k€", "Gestion des appels d'offres VSA."],
+    ["Année 1 - Q2", "L2.2 Dépôt Dossier Gigafactory UE (12 Nov)", "10,00 k€", "Candidature officielle 500 M€."],
+    ["Année 1 - Q2", "L2.3 Filtrage VSA CSU (4 300 caméras)", "55,00 k€", "Alertes incivilités en temps réel."],
+    ["Année 1 - Q2", "L2.4 Géolocalisation & Dispatching PM", "33,75 k€", "Patrouilles physiques < 6 min."],
+    ["Année 1 - Q3", "L3.1 Pilotage & Direction de Projet (2.5j/sem)", "16,25 k€", "Suivi ingénierie & recettes."],
+    ["Année 1 - Q3", "L3.2 Audit Commande Publique (Factures 300M€)", "45,00 k€", "Filtrage erreurs & doublons BPU."],
+    ["Année 1 - Q3", "L3.3 SOC Cyber NIS 2 Autonome Air-Gap", "28,75 k€", "Protection inviolable du CSU."],
+    ["Année 1 - Q3", "L3.4 IA Einstein Concertation (1er Quartier)", "15,00 k€", "Restitution citoyenne augmentée."],
+    ["Année 1 - Q4", "L4.1 Pilotage & Direction de Projet (2.5j/sem)", "16,25 k€", "Revue annuelle & bilans."],
+    ["Année 1 - Q4", "L4.2 Généralisation Audit Commande Publique", "45,00 k€", "Rentrée de +2,5 M€/an certifiés."],
+    ["Année 1 - Q4", "L4.3 Recette Sécurité Monaco Cloud AMSN", "23,75 k€", "Certification Cloud Souverain."],
+    ["Année 1 - Q4", "L4.4 Restitution Publique Einstein Quartiers", "20,00 k€", "Arbitrages budgétaires citoyens."],
+    ["Année 2 - S1", "L5.1 Guichet Vocal Allo Niçois Séniors 24/7", "85,00 k€", "Assistance 24/7 & d'urgence."],
+    ["Année 2 - S1", "L5.2 VSA Propreté & Routage Bennes", "65,00 k€", "Rues propres & -18% carburant."],
+    ["Année 2 - S2", "L6.1 Extension Zone Franche Numérique", "85,00 k€", "Attraction PME & Data Center."],
+    ["Année 2 - S2", "L6.2 Concertation Einstein Récurrente", "60,00 k€", "Ingestion avis par quartier."],
+    ["Année 3", "L7.1 Supercalculateur AI Gigafactory", "160,00 k€", "Mise en service opérationnelle."],
+    ["Année 3", "L7.2 Industrialisation IA Frugale & Cyber", "170,00 k€", "Pérennisation & Hub AI Act."]
+]
 
-add_styled_heading("Phase 2 — Échelle, Allo Niçois 24/7 & Audit Commande Publique (Année 2 : 2027-2028 / 435 k€ brut)", 3)
-add_bullet("**Bilan Budgétaire Année 2** : Direction de projet 65 k€ | Licences Vocal & Propreté 160 k€ | Cloud Souverain Monaco 125 k€ | Maintien Cyber NIS 2 & AI Act 50 k€ | Concertation Einstein Quartiers 35 k€.")
-add_bullet("**Lancement Guichet Vocal** : Déploiement d'Allo Niçois Séniors 24/7 pour la prise en charge immédiate des demandes d'aide d'urgence et démarches.")
-add_bullet("**Résultats Financiers Certifiés** : Première rentrée de **+2,50 M€ d'économies nettes** sur la commande publique métropolitaine.")
-add_bullet("**Certification AI Act** : Labellisation et audit conformité du Hub Réglementaire Nice-Monaco.")
+table_rm = doc.add_table(rows=len(rm_data), cols=4)
+table_rm.alignment = WD_TABLE_ALIGNMENT.CENTER
+for r_idx, row in enumerate(rm_data):
+    for c_idx, val in enumerate(row):
+        cell = table_rm.cell(r_idx, c_idx)
+        p = cell.paragraphs[0]
+        p.paragraph_format.space_before = Pt(3)
+        p.paragraph_format.space_after = Pt(3)
+        if r_idx == 0:
+            set_cell_background(cell, "1E293B")
+            r = p.add_run(val)
+            r.font.bold = True
+            r.font.color.rgb = RGBColor(255, 255, 255)
+            r.font.size = Pt(8.5)
+        else:
+            set_cell_background(cell, "F8FAFC" if r_idx % 2 == 1 else "FFFFFF")
+            r = p.add_run(val)
+            r.font.size = Pt(8)
+            r.font.color.rgb = BODY_BLACK
 
-add_styled_heading("Phase 3 — Consécration, Opérationnalité Gigafactory & Autonomie (Année 3 : 2028-2029 / 435 k€ brut)", 3)
-add_bullet("**Bilan Budgétaire Année 3** : Direction de projet 65 k€ | Maintenance IA & Sobriété 160 k€ | Cloud Monaco & Supercalculateur 125 k€ | Audit NIS 2 50 k€ | Concertation Récurrente 35 k€.")
-add_bullet("**Opérationnalité AI Gigafactory** : Mise en service du Supercalculateur IA binationale Nice-Monaco co-financé par l'UE.")
-add_bullet("**Bilan Triennal Certifié** : Inscription durable de **+2,5 M€/an d'économies nettes** et consécration de Nice comme Capitale de l'IA de Sécurité & d'Efficience Publique.")
+doc.add_paragraph().paragraph_format.space_after = Pt(10)
+
+add_styled_heading("5.3 Tableau de Synthèse Budgétaire Trimestriel (435 k€ / an)", 2)
+add_bullet("**Étalement de la Trésorerie** : Les dépenses sont lissées de manière équilibrée à raison de **~108,75 k€ par trimestre** (soit **~72,5 k€ par bimestre**), parfaitement maîtrisables au sein du budget métropolitain.")
+
+t_data = [
+    ["Trimestre", "Période Chronologique", "Budget Brut", "Co-financement UE (50%)", "Reste à Charge Net Métropole"],
+    ["Année 1 - Q1", "Août — Octobre 2026", "110,00 k€", "55,00 k€", "55,00 k€"],
+    ["Année 1 - Q2", "Novembre 2026 — Janvier 2027", "115,00 k€", "57,50 k€", "57,50 k€"],
+    ["Année 1 - Q3", "Février — Avril 2027", "105,00 k€", "52,50 k€", "52,50 k€"],
+    ["Année 1 - Q4", "Mai — Juillet 2027", "105,00 k€", "52,50 k€", "52,50 k€"],
+    ["Sous-Total Année 1", "Août 2026 — Juillet 2027", "435,00 k€", "217,50 k€", "217,50 k€"],
+    ["Année 2 - Q5-Q6", "Août 2027 — Janvier 2028", "217,50 k€", "108,75 k€", "108,75 k€"],
+    ["Année 2 - Q7-Q8", "Février — Juillet 2028", "217,50 k€", "108,75 k€", "108,75 k€"],
+    ["Sous-Total Année 2", "Août 2027 — Juillet 2028", "435,00 k€", "217,50 k€", "217,50 k€"],
+    ["Année 3 - Q9-Q12", "Août 2028 — Juillet 2029", "435,00 k€", "217,50 k€", "217,50 k€"],
+    ["TOTAL CUMULÉ 36M", "Août 2026 — Juillet 2029", "1 305,00 k€", "652,50 k€", "652,50 k€"]
+]
+
+table_t = doc.add_table(rows=len(t_data), cols=5)
+table_t.alignment = WD_TABLE_ALIGNMENT.CENTER
+for r_idx, row in enumerate(t_data):
+    for c_idx, val in enumerate(row):
+        cell = table_t.cell(r_idx, c_idx)
+        p = cell.paragraphs[0]
+        p.paragraph_format.space_before = Pt(3)
+        p.paragraph_format.space_after = Pt(3)
+        if r_idx == 0:
+            set_cell_background(cell, "1E293B")
+            r = p.add_run(val)
+            r.font.bold = True
+            r.font.color.rgb = RGBColor(255, 255, 255)
+            r.font.size = Pt(8.5)
+        elif "Sous-Total" in row[0] or "TOTAL" in row[0]:
+            set_cell_background(cell, "E2E8F0")
+            r = p.add_run(val)
+            r.font.bold = True
+            r.font.size = Pt(8.5)
+            r.font.color.rgb = NAVY_PRIMARY
+        else:
+            set_cell_background(cell, "F8FAFC" if r_idx % 2 == 1 else "FFFFFF")
+            r = p.add_run(val)
+            r.font.size = Pt(8)
+            r.font.color.rgb = BODY_BLACK
 
 # ---------------------------------------------------------
 # SECTION 6 : ANNEXES DOCUMENTAIRES
@@ -419,4 +494,4 @@ add_bullet("**10. Technopole Sophia Antipolis & Invest in Côte d'Azur (2025/202
 add_bullet("**11. Programme Extended Monaco & Monaco Cloud (gouv.mc / monacocloud.mc)** : Data Center Souverain d'État certifié AMSN.")
 
 doc.save(docx_path)
-print(f"Document Word/Google Docs avec puces systématiques et reformulation souple généré avec succès : {docx_path}")
+print(f"Document Word/Google Docs enrichi avec roadmap détaillée et budget trimestriel généré avec succès : {docx_path}")
