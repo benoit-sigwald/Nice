@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="shortcut icon" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nissai — Le Pacte IA Nice & Métropole</title>
@@ -772,58 +774,6 @@
             color: var(--success);
         }
 
-        /* APPENDIX SECTION (FULL WIDTH BOTTOM) */
-        .appendix-section {
-            background-color: var(--bg-pure);
-            border-top: 1px solid var(--border-color);
-            padding: 80px 48px;
-        }
-
-        @media (max-width: 640px) {
-            .appendix-section {
-                padding: 60px 24px;
-            }
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-            margin-top: 28px;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--bg-soft);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            font-size: 0.8rem;
-        }
-
-        th {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-weight: 700;
-            text-transform: uppercase;
-            padding: 12px 16px;
-            font-size: 0.72rem;
-            letter-spacing: 0.05em;
-        }
-
-        td {
-            padding: 12px 16px;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-main);
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        tr:hover td {
-            background-color: rgba(197, 168, 128, 0.05);
-        }
-
         /* FOOTER */
         footer {
             background-color: var(--bg-dark);
@@ -970,7 +920,6 @@
             <a href="#purpose" id="nav-btn-purpose">Purpose</a>
             <a href="#monaco" id="nav-btn-monaco">Monaco Partnership</a>
             <a href="#roadmap" id="nav-btn-roadmap">Roadmap</a>
-            <a href="#documents" id="nav-btn-documents">Documents</a>
         </nav>
         
         <div class="nav-right">
@@ -1310,28 +1259,6 @@
         </div>
     </div>
 
-    <!-- Appendix Section (Full Width Bottom) -->
-    <section class="appendix-section" id="documents">
-        <span class="section-kicker" id="app-kicker">Appendix</span>
-        <h2 class="section-title" id="app-title">Appendix: Sources & Justifications</h2>
-        <p class="section-desc" id="app-desc">All numerical assertions on the site and in the strategic document are sourced and verifiable. Find the complete index of 36 sources below.</p>
-        
-        <div class="table-wrapper reveal">
-            <table>
-                <thead>
-                    <tr>
-                        <th id="th-id" style="width: 80px;">Ref</th>
-                        <th id="th-source">Documentary Source / Scientific Justification</th>
-                        <th id="th-stat" style="width: 220px; text-align: right;">Numerical Indicator</th>
-                    </tr>
-                </thead>
-                <tbody id="sources-tbody">
-                    <!-- Loaded dynamically by JS -->
-                </tbody>
-            </table>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="footer-grid">
@@ -1363,7 +1290,6 @@
                 <div class="footer-col-links">
                     <a href="#monaco" id="foot-c2-l1">Monaco Cloud</a>
                     <a href="#monaco" id="foot-c2-l2">Free Zone</a>
-                    <a href="#documents" id="foot-c2-l3">Documents</a>
                     <a href="#contact" id="foot-c2-l4">Contact</a>
                 </div>
             </div>
@@ -1387,7 +1313,6 @@
                 navBtnPurpose: "Objectifs",
                 navBtnMonaco: "Partenariat Monaco",
                 navBtnRoadmap: "Feuille de Route",
-                navBtnDocuments: "Annexe",
                 navBtnContact: "Contact",
                 
                 heroKicker: "Plan Métropolitain d'IA Appliquée (2026-2029)",
@@ -1476,12 +1401,6 @@
                 simLblCost: "Reste à Charge Net",
                 simLblNet: "Bénéfice Net Public",
                 
-                appKicker: "Annexe",
-                appTitle: "Annexe : Sources & Justifications",
-                appDesc: "Toutes les affirmations chiffrées du site et du document stratégique sont sourcées et vérifiables. Retrouvez l'index complet des 36 sources ci-dessous.",
-                thId: "Réf",
-                thSource: "Source Documentaire / Justification scientifique",
-                thStat: "Indicateur Chiffré",
                 
                 ctaTitle: "Bâtissons l'avenir <br>de Nice, ensemble.",
                 ctaDesc: "Pour une ville plus sûre, plus intelligente et meilleure pour tous.",
@@ -1501,7 +1420,6 @@
                 navBtnPurpose: "Purpose",
                 navBtnMonaco: "Monaco Partnership",
                 navBtnRoadmap: "Roadmap",
-                navBtnDocuments: "Documents",
                 navBtnContact: "Contact",
                 
                 heroKicker: "Metropolitan Plan for Applied AI (2026-2029)",
@@ -1590,12 +1508,6 @@
                 simLblCost: "Metropole Remaining Net Cost",
                 simLblNet: "Net Public Benefit",
                 
-                appKicker: "Appendix",
-                appTitle: "Appendix: Sources & Justifications",
-                appDesc: "All numerical assertions on the site and in the strategic document are sourced and verifiable. Find the complete index of 36 sources below.",
-                thId: "Ref",
-                thSource: "Documentary Source / Scientific Justification",
-                thStat: "Numerical Indicator",
                 
                 ctaTitle: "Let's build the future <br>of Nice, together.",
                 ctaDesc: "For a city that is safer, smarter and better for everyone.",
@@ -1609,86 +1521,6 @@
                 footerLinkPdf: "Download PDF",
                 footerLinkDocx: "Word Format (.DOCX)"
             }
-        };
-
-        // 2. Annexe Data: The 36 exact sources of Le Pacte Nice IA
-        const sourcesData = {
-            FR: [
-                { id: "A1", source: "Rapport national de l'Insee (2025) sur le vieillissement de la population azuréenne", stat: "+18% seniors d'ici 2030" },
-                { id: "A2", source: "Audit interne de la DSI de la Mairie de Nice sur la volumétrie des appels récurrents", stat: "42% d'appels administratifs répétitifs" },
-                { id: "A3", source: "Statistiques de Sophia Antipolis (Syndicat Mixte de la technopole, 2025)", stat: "2 700 entreprises, 5 500 chercheurs" },
-                { id: "A4", source: "Rapport de la Commission Européenne sur les subventions Directes numériques", stat: "30 Md€ disponibles sans transit Région" },
-                { id: "A5", source: "Étude comparative du Clusir PACA sur les menaces de ransomware en collectivité", stat: "Hausses de 120% des attaques depuis 2023" },
-                { id: "A6", source: "Rapport annuel de la Police Municipale de Nice sur les interventions physiques", stat: "12 000 interventions liées aux incivilités" },
-                { id: "A7", source: "Statistiques du CSU de Nice sur l'efficacité de la VSA (Vidéoprotection Assistée)", stat: "Détection accélérée, incivilités -65%" },
-                { id: "A8", source: "Chiffres de l'Ademe sur le coût de la gestion des décharges sauvages à Nice", stat: "450 t d'encombrants sauvages par an" },
-                { id: "A9", source: "Bilan carbone de la Métropole NCA sur les flottes logistiques", stat: "3 200 t CO2 rejetées / an" },
-                { id: "A10", source: "Rapport d'activité 2025 d'Extended Monaco (Secrétariat d'État au Numérique)", stat: "100% démarches numérisées" },
-                { id: "A11", source: "Fiche technique souveraineté de Monaco Cloud (Norme haute sécurité AMSN)", stat: "AMSN, HDS, ISO 27001" },
-                { id: "A12", source: "Budget primitif 2026 de la Métropole Nice Côte d'Azur", stat: "Axe Ville 155k€, Métropole 160k€, Monaco 120k€" },
-                { id: "A13", source: "Règlement européen AI Act (Parlement Européen, 2024)", stat: "Classification des systèmes à haut risque" },
-                { id: "A14", source: "Enquête d'opinion métropolitaine sur la perception de l'IA (Nice, Janvier 2026)", stat: "74% favorables sous contrôle éthique local" },
-                { id: "A15", source: "Rapport de l'Alliance Binationale Nice-Monaco sur les pendulaires", stat: "45 000 passages journaliers" },
-                { id: "A16", source: "Étude d'impact financier de l'audit de commande publique (Benchmark US Cities)", stat: "0,5% à 2% d'erreurs de facturation" },
-                { id: "A17", source: "Rapport d'activité des centres de médiation numérique de Nice (2025)", stat: "15 000 Niçois accompagnés" },
-                { id: "A18", source: "Université Côte d'Azur (UCA) - Statistiques d'accès aux ressources IA", stat: "2 000 licences ciblées pour les étudiants" },
-                { id: "A19", source: "Bilan annuel Open Data Nice Côte d'Azur (2025)", stat: "320 jeux de données accessibles" },
-                { id: "A20", source: "Directive Européenne NIS 2 (Cybersecurity Act)", stat: "Sanctions financières et obligation de SOC" },
-                { id: "A21", source: "Rapport d'évaluation de la plateforme d'apprentissage AnimaNice", stat: "85% de satisfaction des seniors formés" },
-                { id: "A22", source: "Fonds Européen de Développement Régional (FEDER) - Taux de subvention direct", stat: "Co-financement garanti à 50%" },
-                { id: "A23", source: "Étude de trafic de la Plaine du Var (Métropole NCA, 2025)", stat: "Baisse de 45 min de temps de trajet visée" },
-                { id: "A24", source: "Bilan financier de la DSI Nice - Économies de licences logicielles", stat: "300 k€/an économisés via mutualisation" },
-                { id: "A25", source: "Rapport de la Commission d'éthique locale sur l'IA (Nice, 2025)", stat: "Zéro stockage hors Monaco Cloud" },
-                { id: "A26", source: "Rapport de la DGFiP sur la commande publique métropolitaine", stat: "300 M€ de volume annuel d'achats" },
-                { id: "A27", source: "Statistiques d'utilisation d'Allo Mairie Nice (2025)", stat: "350 000 appels annuels" },
-                { id: "A28", source: "Évaluation technique de l'isolation du réseau (Air-gap) du CSU", stat: "Zéro intrusion sur flux vidéo" },
-                { id: "A29", source: "Décret municipal portant création du Conseil Citoyen de l'IA (Février 2026)", stat: "15 membres tirés au sort" },
-                { id: "A30", source: "Bilan d'audit sémantique pilote sur les factures d'énergie de la Métropole", stat: "+2,5 M€ d'économies annuelles" },
-                { id: "A31", source: "Rapport national de l'ANSSI sur la résilience des collectivités territoriales", stat: "1,8 M€ à 3 M€ évités par cyber-bouclier" },
-                { id: "A32", source: "Rapport de cadrage d'externalisation du SI municipal sur Monaco Cloud", stat: "1,5-2,8 M€ d'OPEX économisé, 8-12 M€ CAPEX" },
-                { id: "A33", source: "Statistiques de fréquentation des mairies annexes de Nice", stat: "12 mairies annexes équipées de médiateurs" },
-                { id: "A34", source: "Rapport annuel de la Zone Franche Transfrontalière IA", stat: "50 PME accompagnées dès l'Année 1" },
-                { id: "A35", source: "Convention-cadre Ville de Nice et Université Côte d'Azur sur le Pass IA", stat: "Coût de 100k€ financé à 50% par l'Europe" },
-                { id: "A36", source: "Baromètre du numérique en milieu urbain (Arx Consulting, 2026)", stat: "Nice classée première en souveraineté locale" }
-            ],
-            EN: [
-                { id: "A1", source: "National Insee report (2025) on the aging of the Azorean population", stat: "+18% seniors by 2030" },
-                { id: "A2", source: "Internal audit of the Nice IT Department on recurring call volume", stat: "42% repetitive administrative calls" },
-                { id: "A3", source: "Sophia Antipolis statistics (Technopole Joint Union, 2025)", stat: "2,700 companies, 5,500 researchers" },
-                { id: "A4", source: "European Commission report on Direct digital subventions", stat: "€30B available without Region transit" },
-                { id: "A5", source: "PACA Clusir comparative study on ransomware threats in municipalities", stat: "120% increase in attacks since 2023" },
-                { id: "A6", source: "Nice Municipal Police annual report on physical interventions", stat: "12,000 interventions related to incivilities" },
-                { id: "A7", source: "Nice CSU statistics on VSA efficiency (Assisted Videoprotection)", stat: "Accelerated detection, incivilities -65%" },
-                { id: "A8", source: "Ademe figures on the cost of managing illegal dumps in Nice", stat: "450 tons of illegal bulk waste per year" },
-                { id: "A9", source: "Metropolis NCA carbon assessment on logistics fleets", stat: "3,200 t CO2 emitted / year" },
-                { id: "A10", source: "Extended Monaco annual report (State Secretariat for Digital Affairs, 2025)", stat: "100% digitalized procedures" },
-                { id: "A11", source: "Technical sheet on Monaco Cloud sovereignty (AMSN high security standard)", stat: "AMSN, HDS, ISO 27001" },
-                { id: "A12", source: "2026 Nice Côte d'Azur Metropolis primitive budget", stat: "City axis €155k, Metropolis €160k, Monaco €120k" },
-                { id: "A13", source: "European AI Act Regulation (European Parliament, 2024)", stat: "Classification of high-risk systems" },
-                { id: "A14", source: "Metropolitan opinion poll on AI perception (Nice, January 2026)", stat: "74% in favor under local control" },
-                { id: "A15", source: "Nice-Monaco Binational Alliance report on commuting flows", stat: "45,000 daily crossings" },
-                { id: "A16", source: "Financial impact study of procurement audit (US Cities Benchmark)", stat: "0.5% to 2% billing errors detected" },
-                { id: "A17", source: "Activity report of digital mediation centers in Nice (2025)", stat: "15,000 citizens assisted" },
-                { id: "A18", source: "Université Côte d'Azur (UCA) - AI resource access statistics", stat: "2,000 student licenses targeted" },
-                { id: "A19", source: "Open Data Nice Côte d'Azur annual assessment (2025)", stat: "320 open datasets accessible" },
-                { id: "A20", source: "European Directive NIS 2 (Cybersecurity Act)", stat: "Financial penalties and SOC obligation" },
-                { id: "A21", source: "Evaluation report of the AnimaNice training platform", stat: "85% satisfaction rate among trained seniors" },
-                { id: "A22", source: "European Regional Development Fund (ERDF) - Direct subvention rate", stat: "50% co-financing guaranteed" },
-                { id: "A23", source: "Plaine du Var traffic study (Metropole NCA, 2025)", stat: "Targeted 45-minute travel time reduction" },
-                { id: "A24", source: "DSI Nice financial assessment - Software license savings", stat: "€300k/year saved through pooling" },
-                { id: "A25", source: "DGFiP report on metropolitan public procurement", stat: "€300M annual purchasing volume" },
-                { id: "A26", source: "Usage statistics for Allo Mairie Nice (2025)", stat: "350,000 annual calls" },
-                { id: "A27", source: "Technical evaluation of CSU network isolation (Air-gap)", stat: "Zero intrusions on video streams" },
-                { id: "A28", source: "Local ethics committee report on AI (Nice, 2025)", stat: "Zero storage outside Monaco Cloud" },
-                { id: "A29", source: "Municipal decree establishing the AI Citizen Council (February 2026)", stat: "15 members drawn by lot" },
-                { id: "A30", source: "Pilot semantic audit results on Metropolis energy invoices", stat: "+€2.5M annual savings" },
-                { id: "A31", source: "ANSSI national report on local authorities cyber resilience", stat: "€1.8M to €3M prevented by cyber-shield" },
-                { id: "A32", source: "Monaco Cloud municipal IT outsourcing scoping report", stat: "€1.5-2.8M OPEX saved, €8-12M CAPEX avoided" },
-                { id: "A33", source: "Attendance statistics for Nice annex town halls", stat: "12 annex town halls equipped with mediators" },
-                { id: "A34", source: "Cross-Border AI Free Zone annual report", stat: "50 SMEs supported from Year 1" },
-                { id: "A35", source: "Framework agreement between City of Nice and UCA on AI Pass", stat: "€100k cost 50% financed by Europe" },
-                { id: "A36", source: "Digital indicator in urban environment (Arx Consulting, 2026)", stat: "Nice ranked first in local sovereignty" }
-            ]
         };
 
         function setLanguage(lang) {
@@ -1710,7 +1542,6 @@
             document.getElementById('nav-btn-purpose').innerText = data.navBtnPurpose;
             document.getElementById('nav-btn-monaco').innerText = data.navBtnMonaco;
             document.getElementById('nav-btn-roadmap').innerText = data.navBtnRoadmap;
-            document.getElementById('nav-btn-documents').innerText = data.navBtnDocuments;
             document.getElementById('nav-btn-contact').innerText = data.navBtnContact;
 
             // Translate Hero
@@ -1806,14 +1637,6 @@
             document.getElementById('sim-lbl-cost').innerText = data.simLblCost;
             document.getElementById('sim-lbl-net').innerText = data.simLblNet;
 
-            // Translate Appendix
-            document.getElementById('app-kicker').innerText = data.appKicker;
-            document.getElementById('app-title').innerText = data.appTitle;
-            document.getElementById('app-desc').innerText = data.appDesc;
-            document.getElementById('th-id').innerText = data.thId;
-            document.getElementById('th-source').innerText = data.thSource;
-            document.getElementById('th-stat').innerText = data.thStat;
-
             // Translate CTA & Footer
             document.getElementById('cta-title').innerHTML = data.ctaTitle;
             document.getElementById('cta-desc').innerText = data.ctaDesc;
@@ -1824,26 +1647,6 @@
 
             // Re-run simulator calculation to adjust currency formatting/units
             calculateROI();
-            
-            // Re-populate sources table in correct language
-            populateSourcesTable();
-        }
-
-        // 3. Populate Appendix / Sources Table dynamically
-        function populateSourcesTable() {
-            const tbody = document.getElementById('sources-tbody');
-            tbody.innerHTML = '';
-            
-            const list = sourcesData[currentLang];
-            list.forEach(row => {
-                const tr = document.createElement('tr');
-                tr.innerHTML = `
-                    <td style="font-weight: 700; color: var(--accent-gold); width: 80px;">${row.id}</td>
-                    <td>${row.source}</td>
-                    <td style="font-weight: 600; color: var(--primary); width: 220px; text-align: right;">${row.stat}</td>
-                `;
-                tbody.appendChild(tr);
-            });
         }
 
         // 4. Interactive ROI Calculator Logic
